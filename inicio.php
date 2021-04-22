@@ -63,7 +63,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav">
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-              <a style='color: white !important;' class="nav-link" href="?pagina=/index/inicio"><b>Início</b></a>
+              <a style='color: white !important;' class="nav-link" href="?pagina=/index/inicio"><b>Inicio</b></a>
+            </li>
+            <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
+              <a style='color: white !important;' class="nav-link" href="?pagina=/index/acessos"><b>Acessos</b></a>
             </li>
             <div id="form_login">
             <form method="POST" action="classes/usuario/logar.php">
@@ -99,8 +102,6 @@
       </body>
       <footer>
         
-        <p style='color: #00401A;'>Mesa Preta Sistemas - Versão 0.13</p>
- 
-
+        <!-- <p style='color: #00401A;'>Mesa Preta Sistemas - Versão 0.13</p> -->
       </footer>
 </html>

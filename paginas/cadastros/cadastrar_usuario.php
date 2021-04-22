@@ -1,5 +1,6 @@
 <?php
-if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
+session_start();
+if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
     header("Location: /");
 

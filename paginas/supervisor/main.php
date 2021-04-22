@@ -1,21 +1,21 @@
 <?php
   session_start();
 
-  require("config/config.php");
-
   if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '2'){
 
     header("Location: /");
 
   }
  
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet</title>
+    <title>Ficha Tecnica</title>
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">
@@ -91,15 +91,10 @@
 
   </p>
   <ul class="sidebar-navigation">
-    <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Usuarios</b></li>
+  <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Mural</b></li>
     <li>
-      <a href="?pagina=../cadastros/cadastrar_usuario">
+      <a href="?pagina=../cadastros/cadastrar_informativo">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
-      </a>
-    </li>
-    <li>
-      <a href="?pagina=../../classes/usuario/visualizar_usuario">
-        <i class="fa fa-tachometer" aria-hidden="true"></i> <img src="../../imagens/sidebar/toview.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Visualizar</b>
       </a>
     </li>
   </ul>
