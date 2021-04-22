@@ -1,0 +1,54 @@
+/* 
+Paleta de cores utilizadas no sistema em Hexadecimal.
+essa paleta de cores faz parte do manual de diretrizes da unimed oeste
+paraná no site: https://www.unimed.coop.br/web/oestedoparana/unimed/logotipo e sua paleta
+de cores esta disponivel em pdf no link: http://docs.unimedmedianeira.com.br/index.php/s/fW0hp3wYKCgzdWK/download
+*/
+
+#colorIntranet{
+
+    /* primaria */
+    color:(
+        #00995D
+        #B1D34B
+        #FFF0C7
+        #FFFFFF
+    );
+    
+    /* secundaria clara */
+    color:(
+        #ED1651
+        #A3238E
+        #F47920
+        #FFCB08
+        #C4CBCF
+    );
+
+    /* secundaria escura */
+    color:(
+        #00401A
+        #411564
+        #0A5F55
+        #5B5C65
+        #682D00
+    );
+              
+           
+}
+
+#outras_cores{
+
+    /* borda do logo */
+    color:(
+        #009b63
+
+    );
+    
+    /* background do side-bar */
+    color:(
+        #dfe3ee
+    );
+   
+  
+           
+}

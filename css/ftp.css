@@ -1,0 +1,359 @@
+body{
+
+    background-color: 	#ffffff;
+    /* position: relative; */
+    width: 100%;
+
+}
+
+.navbar.navbar-light{
+
+    background-color: #3b5998;
+    width: 10%;
+    z-index: 2;
+
+}
+
+.sidebar{
+
+  z-index: 1;
+
+}
+
+#logo{
+
+    border: 3px solid #009b63;
+
+    border-radius: 10px;
+
+}
+
+#logo a{
+
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(2, 2, 2);
+    
+}
+
+#itens_menu{
+
+    position: absolute;
+    margin-left: 90px;
+    padding: 10px;
+
+}
+
+.row.justify-content-md-center{
+
+    padding-top: 25px;
+
+}
+
+footer {
+
+    position: fixed;
+    bottom:0;
+    left:0;
+    right: -500px;
+    display: grid;
+    background-color:	#dfe3ee;
+
+}
+
+footer p{
+
+    font-size: small;
+    color: #3b5998;
+
+}
+
+.navbar.navbar-expand-lg.navbar-light{
+
+    width: 102%;
+    position: fixed;
+    
+}
+
+#form_login{
+
+    display: grid;
+    position: fixed;
+    right: -50px;
+    padding: -10px !important;
+    
+
+}
+
+#contato_esq{
+
+    background-color: #cad2e9;
+    margin: 10px;
+    padding: 5px;
+    
+    display: inline-block;
+    float: left;
+
+
+
+}
+
+#contato_dir{
+
+    background-color: #cad2e9;
+    margin: 10px;
+    padding: 5px;
+
+    display: inline-block;
+    float: right;
+}
+
+
+#container_adm{
+
+    margin: 20px;
+
+}
+
+.card.text-white.bg-primary.mb-3{
+
+
+    background-color: #8b9dc3 !important;
+
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+
+    background-color: #3b5998 !important;
+
+}
+
+a{
+
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none !important;
+
+}
+
+p a{
+
+    color: blue !important;
+
+}
+
+.btn_adm_h{
+    border-radius: 20px;
+
+    height: 180px;
+    width: 180px;
+    background-color: #8b9dc3;
+    padding: 5px;
+    margin: 20px;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btn_main{
+
+    margin-left: 20px;
+
+}
+
+h1, h2, h4{
+
+  color: #009b63 !important;
+
+}
+
+#navbar-main{
+
+    margin-left: 1000px;
+
+}
+
+.nav-item{
+
+    margin-left: 25px;
+}
+
+.sidebar-container {
+    margin-top: 62px;
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #dfe3ee;
+    color: black;
+    z-index: 1;
+    
+  }
+
+  .sidebar-container a{
+   
+    text-decoration: none;
+    
+  }
+  
+  .content-container {
+    padding-top: 20px;
+  }
+  
+  .sidebar-logo {
+    padding: 10px 15px 10px 30px;
+    font-size: 20px;
+    background-color: #009b63;
+    color: black;
+  }
+  
+  .sidebar-navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+  }
+  
+  .sidebar-navigation li {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+  }
+  
+  .sidebar-navigation li a {
+    padding: 10px 15px 10px 30px;
+    display: block;
+    color: #fff;
+  }
+  
+  .sidebar-navigation li .fa {
+    margin-right: 10px;
+  }
+  
+  .sidebar-navigation li a:active,
+  .sidebar-navigation li a:hover,
+  .sidebar-navigation li a:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .sidebar-navigation li::before {
+    background-color: #2574A9;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+  }
+  
+  .sidebar-navigation li:hover::before {
+    width: 100%;
+  }
+  
+  .sidebar-navigation .header {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #0A5F55;
+    padding: 10px 15px 10px 30px;
+    color: white;
+  }
+  
+  .sidebar-navigation .header::before {
+    background-color: transparent;
+  }
+  
+  .content-container {
+    padding-left: 220px;
+  }
+
+/* efeito quando o mouse passa por cima de um elemento do sidebar */
+.sidebar-navigation  li::before{
+
+  background-color: #009b63;
+  
+
+}
+.sidebar-navigation li:hover{
+
+  border-right: 6px solid rgb(0, 255, 0);
+  color: #ffffff;
+ 
+}
+.sidebar-navigation li:hover b{
+
+  color: #ffffff;
+ 
+}
+
+
+
+
+
+img{
+
+  cursor: pointer;
+
+}
+
+.hidden{
+
+  display: none;
+
+}
+
+.hiddenBtnXContato{
+
+  display: none;
+
+}
+
+.hiddenBtnXUsuarios{
+
+  display: none;
+
+}
+
+
+table{
+
+  max-width: 900px;
+  
+
+}
+
+tr{
+
+  cursor: pointer;
+
+}
+
+
+.boxItens{
+
+  border: 2px solid #00995D;
+  /* border-radius: 20px; */
+  height: 80px;
+  width: 80px;
+  display: flexbox;
+  flex-direction: row;
+  margin: 10px;
+
+}
+
+a{
+
+  display: block;
+  height: 100%;
+  width: 100%;
+
+}
