@@ -50,12 +50,12 @@
         }
 
 
-        public function gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido){
+        public function gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido, $setor){
 
         
 
             global $pdo;
-            $sql = "INSERT INTO usuarios(nome, email, user, pass, permissao, status, tempo, telefone, dataCadastro, dataCadastroUnix, idAdm, excluido) VALUES(:nome, :email, :user, :pass, :permissao, :status, :tempo, :telefone, :dataCadastro, :dataCadastroUnix, :idAdm, :excluido)";
+            $sql = "INSERT INTO usuarios(nome, email, user, pass, permissao, status, tempo, telefone, dataCadastro, dataCadastroUnix, idAdm, excluido, setor) VALUES(:nome, :email, :user, :pass, :permissao, :status, :tempo, :telefone, :dataCadastro, :dataCadastroUnix, :idAdm, :excluido, :setor)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("nome", $nome);
             $sql->bindValue ("email", $email);
@@ -69,6 +69,7 @@
             $sql->bindValue("dataCadastroUnix", $dataCadastroUnix);
             $sql->bindValue("idAdm", $idAdm);
             $sql->bindValue("excluido", $excluido);
+            $sql->bindValue("setor", $setor);
 
             $sql->execute();
 

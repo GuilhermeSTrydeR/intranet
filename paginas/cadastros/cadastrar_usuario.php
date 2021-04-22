@@ -29,10 +29,32 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
                 <option value="3">Administrador</option>
             </select>
         </div>
-
-        <div class="row">    
-            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" required autocomplete="off"> </div>
-                <div class="form-group col-md-2">
+        <br>
+        <div class="row"> 
+        <div class="form-group col-md-3">
+        <label for="setor">Setor</label>
+        <select class="form-select" aria-label="setor" name="setor" required>
+            <option selected></option>
+            <option value="1">Comercial</option>
+            <option value="2">Cadastro</option>
+            <option value="3">Recepção</option>
+            <option value="4">Faturamento</option>
+            <option value="5">Tecnologia da Informação</option>
+            <option value="6">Contabilidade</option>
+            <option value="7">Interc./Audit.</option>
+            <option value="8">Diretoria</option>
+            <option value="9">Financeiro</option>
+            <option value="10">Gerência</option>
+            <option value="11">ANS</option>
+            <option value="12">GED</option>
+            <option value="13">Outros</option>
+        </select>
+</div>
+           
+            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" required autocomplete="off"> 
+        </div>
+        <br><br>
+                <!-- <div class="form-group col-md-2">
                     <label for="status">Status</label>
                 <select class="form-select" aria-label="status" name="status" required>
                     <option selected></option>
@@ -40,12 +62,12 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
                     <option value="2">Temporario</option>
                     <option value="3">Desativado</option>
                     </select>
-                </div>
+                </div> -->
 
         <!-- ao selecionar a opcao de usuario temporario esse campo abaixo 'tempo' devera aparecer para colocar quantas horas esse usuario ficara ativo no sistema, a logica de se criar usuarios temporarios deve-se ao fato da possibilidade de usuarios que nao vao usar o sistema por muito tempo tais como: auditorias internas e externas, visitantes entre outros. -->
-        <div class="form-group col-md-2"> <label for="campo2">Tempo em Horas</label> <input type="number" class="form-control" name="tempo" required autocomplete="off"> </div>
+        <!-- <div class="form-group col-md-2"> <label for="campo2">Tempo em Horas</label> <input type="number" class="form-control" name="tempo" required autocomplete="off"> </div>
             </div>
-        </div>
+        </div> -->
         <br>
         <br>
         <div id="actions" class="row">

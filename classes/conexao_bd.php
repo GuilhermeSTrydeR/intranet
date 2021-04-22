@@ -3,7 +3,7 @@
     $db="localhost";
     $usuario="root";
     $password="";
-    $banco="ftp";
+    $banco="unimedtc_intranet";
 
     global $pdo;
 

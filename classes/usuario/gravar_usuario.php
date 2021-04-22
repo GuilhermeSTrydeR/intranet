@@ -7,7 +7,7 @@
     }
     //aqui sera gravado no banco a funcao gravar do contato.class que no caso eh referenciada abaixo no require
 
-    if(isset($_POST["nome"]) && !empty($_POST["nome"]) && isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["user"]) && !empty($_POST["user"]) && isset($_POST["pass"]) && !empty($_POST["pass"]) && isset($_POST["permissao"]) && !empty($_POST["permissao"]) && isset($_POST["status"]) && !empty($_POST["status"]) && isset($_POST["telefone"]) && !empty($_POST["telefone"]) ){
+    if(isset($_POST["nome"]) && !empty($_POST["nome"]) && isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["user"]) && !empty($_POST["user"]) && isset($_POST["pass"]) && !empty($_POST["pass"]) && isset($_POST["permissao"]) && !empty($_POST["permissao"]) && isset($_POST["status"]) && !empty($_POST["status"]) && isset($_POST["telefone"]) && !empty($_POST["telefone"]) && isset($_POST["setor"]) && !empty($_POST["setor"]) ){
         
         //requer classe de conexao do banco
         require("../conexao_bd.php");
@@ -50,7 +50,13 @@
         $dataCadastroUnix = addslashes($dataCadastroUnix);
         $idAdm = addslashes($idAdm);
         $excluido = addslashes($excluido);
+        $setor = addcslashes($_POST["setor"]);
         
+        // o usuario recem cadastrado recebe status 1 - ativo
+        $status = 1;
+
+        //não é necessario definir tempo logado
+        $tempo = 1;
 
         if($tempo <= 0){
 
@@ -64,7 +70,7 @@
             //aqui pegamos o tempo em horas digitadas pelo usuario e convertemos em segundos(horas [vezes] 3600), depois somamos com os segundos atuais do sistema (unix timestamp) ambos em segundos pra que depois esse valor seja comparado na hora de logar.
             $tempo = (($tempo * 3600) + time());
 
-            $u->gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido);
+            $u->gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido, $setor);
 
         
 

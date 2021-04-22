@@ -22,9 +22,14 @@ body{
 
 #logo{
 
-    border: 3px solid #009b63;
+    border: 5px solid #009b63;
+    border-top-left-radius: 10px ;
+    border-bottom-left-radius: 10px ;
+    border-top-right-radius: 10px;
+    /* border-radius: 10px; */
+    margin-left: 20px;
+    margin-top: -5px;
 
-    border-radius: 10px;
 
 }
 
@@ -285,16 +290,22 @@ h1, h2, h4{
 }
 .sidebar-navigation li:hover{
 
-  border-right: 6px solid rgb(0, 255, 0);
+  border-right: 6px solid #F47920;
   color: #ffffff;
  
 }
 .sidebar-navigation li:hover b{
 
-  color: #ffffff;
+  color: #F47920;
  
 }
 
+.sidebar-navigation .header:hover{
+
+  border-right: 6px solid #0A5F55;
+  color: #ffffff;
+ 
+}
 
 
 
@@ -337,23 +348,44 @@ tr{
 
 }
 
-
+/* classe referente as caixas de links da intranet na pagina inicial */
 .boxItens{
 
-  border: 2px solid #00995D;
-  /* border-radius: 20px; */
-  height: 80px;
-  width: 80px;
-  display: flexbox;
-  flex-direction: row;
+  height: 120px;
+  width: 120px;
+  display: inline;
+  /* flex-direction: row; */
   margin: 10px;
+  /* padding: 5px; */
+  background: #00995D;
+  border: 5px solid #009b63;
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  border-top-right-radius: 10px;
 
 }
 
-a{
+/* referente as caixas de link da pagina inicial, para que o link na caixa ocupe todo o espaço da div */
+.boxItens a{
 
   display: block;
   height: 100%;
   width: 100%;
+  
+}
+
+.boxItens a:hover{
+
+  background: #F47920;
+  border: 5px solid #F47920;
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  border-top-right-radius: 10px;
+  
+}
+
+.nav-link b:hover{
+
+  color: #F47920;
 
 }

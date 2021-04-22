@@ -1,4 +1,7 @@
 <?php
+
+  include("config/config.php");
+
   session_start(); 
   if(isset($_SESSION['logado'])){
 
@@ -62,12 +65,6 @@
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
               <a style='color: white !important;' class="nav-link" href="?pagina=/index/inicio"><b>Início</b></a>
             </li>
-            <li class="nav-item <?= ($pagina == 'sobre')?'active':'' ?>">
-            <a style='color: white !important;' class="nav-link" href="?pagina=/index/sobre"><b>Sobre</b></a>
-            </li>
-            <li class="nav-item <?= ($pagina == 'contato')?'active':'' ?>">
-            <a style='color: white !important;' class="nav-link" href="?pagina=/index/contato"><b>Contato</b></a>
-            </li>
             <div id="form_login">
             <form method="POST" action="classes/usuario/logar.php">
               <div class="row">
@@ -89,7 +86,7 @@
           </ul>
         </div>
       </nav>
-      <br><br><br>
+      <br><br>
       <?php
         //esse include ira colocar na tela a pagina selecionada e que foi atribuida a variavel $pagina, assim sempre que uma pagina for atribuida a variavel $pagina, ela sera incluida abaixo
         include("paginas/$pagina.php");
