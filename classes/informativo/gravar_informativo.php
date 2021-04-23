@@ -19,8 +19,7 @@
         //aqui adicionamos um nivel basico de seguranca
         $titulo = addslashes($_POST["titulo"]);
         $texto = addslashes($_POST["texto"]);
-      
-        $titulo = 'teste';
+
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
         $i->gravar($titulo, $texto);
 

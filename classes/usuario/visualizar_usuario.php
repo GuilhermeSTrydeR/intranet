@@ -27,16 +27,15 @@
         global $pdo;
         $consulta = $pdo->query("SELECT * FROM usuarios;");
 
-        echo "<table class='table table-striped table-bordered table-condensed table-hover'>";
+        echo "<table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>";
         echo "<thead>";
         echo "<tr>";
         echo "<div class='thead'>";
-        echo "<th scope='col'>ID</th>";
-        echo "<th scope='col'>Nome</th>";
-        echo "<th scope='col'>Usuário</th>";
-        echo "<th scope='col'>Permissão</th>";
-        echo "<th scope='col'>Status</th>";
-        echo "<th scope='col'>Tempo</th>";
+        echo "<th style='width: 70px;' scope='col'>ID</th>";
+        echo "<th style='width: 220px;' scope='col'>Nome</th>";
+        echo "<th style='width: 200px;' scope='col'>Usuário</th>";
+        echo "<th style='width: 200px;' scope='col'>Permissão</th>";
+        echo "<th style='width: 200px;' scope='col'>Setor</th>";
         echo "</div>";
         echo "</tr>";
         echo "</thead>";
@@ -113,9 +112,51 @@
                     break;
             }
 
+            switch ($linha['setor']) {
+                case 1:
+                    $linha['setor'] = 'Comercial';
+                    break;
+                case 2:
+                    $linha['setor'] = 'Cadastro';
+                    break;
+                case 3:
+                    $linha['setor'] = 'Recepção';
+                    break;
+                case 4:
+                    $linha['setor'] = 'Faturamento';
+                    break;
+                case 5:
+                    $linha['setor'] = 'Tecnologia da informação';
+                    break;
+                case 6:
+                    $linha['setor'] = 'Contabilidade';
+                    break;
+                case 7:
+                    $linha['setor'] = 'Intercambio / Auditoria';
+                    break;
+                case 8:
+                    $linha['setor'] = 'Diretoria';
+                    break;
+                case 9:
+                    $linha['setor'] = 'Financeiro';
+                    break;
+                case 10:
+                    $linha['setor'] = 'Gerência';
+                    break;
+                case 11:
+                    $linha['setor'] = 'ANS';
+                    break;
+                case 12:
+                    $linha['setor'] = 'GED';
+                    break;
+                case 12:
+                    $linha['setor'] = 'Outros';
+                    break;
+            }
+
             if($linha['excluido'] == 0){
                 echo "<tr>";
-                echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td> <td>". $linha['status'] ."</td> <td>". $linha['tempo'] ."</td> ";
+                echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td> <td>". $linha['setor'] ."</td>";
                 echo "</tr>";
             }
         }

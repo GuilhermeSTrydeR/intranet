@@ -31,95 +31,30 @@
         
         
         // BLOCO DE LOGIN USUARIO COMUM
-        if($u->login($user, $pass) == true && $u->permissao($user) == 1 && $u->status($user) == 1 && $u->verificaExclusao($user) == 0){
-            
-            
+        if($u->login($user, $pass) == true && $u->permissao($user) == 1){
+
             $_SESSION['logado'] = 1;
-            header("location: ../../paginas/comum/main.php");
+            header("location: ../../paginas/admin/main.php");
             
-        }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 1 && $u->status($user) == 2){
 
-            if($u->tempo($user) <= time()){
-
-                echo "<script>alert('Conta Expirada! por favor contate o adminsitrador do sistema.');</script>";
-                $url = '../../index.php';
-                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-
-            }
-            else{
-                $_SESSION['logado'] = 1;
-                header("location: ../../paginas/admin/main.php");
-            }
-
-        }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 1 && $u->status($user) == 3){
-            
-            echo "<script>alert('Conta Desativada, por favor entre em contato com o Administrador do sistema');</script>";
-            $url = '../../index.php';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-            
         }
 
         // BLOCO DE LOGIN USUARIO SUPERVISOR
-        if($u->login($user, $pass) == true && $u->permissao($user) == 2 && $u->status($user) == 1 && $u->verificaExclusao($user) == 0){
+        if($u->login($user, $pass) == true && $u->permissao($user) == 2 && $u->verificaExclusao($user) == 0){
 
             $_SESSION['logado'] = 1;
             header("location: ../../paginas/supervisor/main.php");
             
         }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 2 && $u->status($user) == 2){
-
-            if($u->tempo($user) <= time()){
-
-                echo "<script>alert('Conta Expirada! por favor contate o adminsitrador do sistema.');</script>";
-                $url = '../../index.php';
-                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-
-            }
-            else{
-                $_SESSION['logado'] = 1;
-                header("location: ../../paginas/admin/main.php");
-            }
-        }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 2 && $u->status($user) == 3){
-            
-            echo "<script>alert('Conta Desativada, por favor entre em contato com o Administrador do sistema');</script>";
-            $url = '../../index.php';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-            
-        }
-
 
         //BLOCO DE LOGIN USUARIO ADMINISTRADOR
-        if($u->login($user, $pass) == true && $u->permissao($user) == 3 && $u->status($user) == 1 && $u->verificaExclusao($user) == 0){
+        if($u->login($user, $pass) == true && $u->permissao($user) == 3 && $u->verificaExclusao($user) == 0){
             
             $_SESSION['logado'] = 1;
             header("location: ../../paginas/admin/main.php");
             
         }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 3 && $u->status($user) == 2){
-
-            if($u->tempo($user) <= time()){
-
-                echo "<script>alert('Conta Expirada! por favor contate o adminsitrador do sistema.');</script>";
-                $url = '../../index.php';
-                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-
-            }
-
-            else{
-                $_SESSION['logado'] = 1;
-                header("location: ../../paginas/admin/main.php");
-            }
-        }
-        if($u->login($user, $pass) == true && $u->permissao($user) == 3 && $u->status($user) == 3){
-            
-            echo "<script>alert('Conta Desativada, por favor entre em contato com o Administrador do sistema');</script>";
-            $url = '../../index.php';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-            
-        }
+   
 
         else{
    
