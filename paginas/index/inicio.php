@@ -9,7 +9,7 @@
         </div>
         <div id='textoMural'>
             <text style='word-wrap: break-word; !important;'>
-            
+                
             </text>
 
         </div>
