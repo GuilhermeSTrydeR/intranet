@@ -4,7 +4,7 @@
         .hiddenBtnXUsuarios{
             display: inline-block !important;
         }
-        .hidden{
+        .hiddenPrint{
             display: inline-block !important;
         }
 
@@ -27,19 +27,36 @@
         global $pdo;
         $consulta = $pdo->query("SELECT * FROM usuarios;");
 
-        echo "<table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>";
-        echo "<thead>";
-        echo "<tr>";
-        echo "<div class='thead'>";
-        echo "<th style='width: 70px;' scope='col'>ID</th>";
-        echo "<th style='width: 220px;' scope='col'>Nome</th>";
-        echo "<th style='width: 200px;' scope='col'>Usuário</th>";
-        echo "<th style='width: 200px;' scope='col'>Permissão</th>";
-        echo "<th style='width: 200px;' scope='col'>Setor</th>";
-        echo "</div>";
-        echo "</tr>";
-        echo "</thead>";
-    
+        // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
+        $temInformacao = true;
+
+        if($temInformacao == true){
+            ?>
+                <style>
+                    .hidden{
+                        display: block !important;
+                    }
+                </style>
+            <?php
+            
+        }
+
+        ?>
+
+        <div class='hidden'>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>
+        <thead>
+        <tr>
+        <div class='thead'>
+        <th style='width: 70px;' scope='col'>ID</th>
+        <th style='width: 220px;' scope='col'>Nome</th>
+        <th style='width: 200px;' scope='col'>Usuário</th>
+        <th style='width: 200px;' scope='col'>Permissão</th>
+        <th style='width: 200px;' scope='col'>Setor</th>
+        </div>
+        </tr>
+        </thead>
+        <?php
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             
             //nessa parte verificamos se o status do usuario é diferente de 2, ou seja ele não é temporario
@@ -155,13 +172,15 @@
             }
 
             if($linha['excluido'] == 0){
-                echo "<tr>";
+                echo"<tr>";
                 echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td> <td>". $linha['setor'] ."</td>";
-                echo "</tr>";
+                echo"</tr>";
             }
         }
         
-        echo "</table>";
+        echo"</table>";
+        
 
     ?>
+    </div>
 </center>

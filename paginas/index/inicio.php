@@ -6,7 +6,7 @@
         -->
         <?php
             // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
-            $temInformacao = true;
+            $temInformacao = false;
 
             if($temInformacao == true){
                 ?>

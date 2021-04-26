@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Tecnica</title>
+    <title>Intranet</title>
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">

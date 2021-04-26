@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Tecnica</title>
+    <title>Intranet</title>
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">
@@ -91,7 +91,7 @@
 
   </p>
   <ul class="sidebar-navigation">
-    <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Usuarios</b></li>
+    <!-- <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Usuarios</b></li>
     <li>
       <a href="?pagina=../cadastros/cadastrar_usuario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
@@ -113,7 +113,7 @@
         <i class="fa fa-cog" aria-hidden="true"></i><img src="../../imagens/sidebar/listFeedback.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"> <b>Visualizar</b>
       </a>
     </li>
-    </li>
+    </li> -->
   </ul>
 </div>
 <div class="content-container">

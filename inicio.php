@@ -81,10 +81,11 @@
                   <div class="col">
                     <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off">
                     Entrar 
-                  </button>
+                  </button>     
                   </div>
                 </div>
             </form>
+
             </div>
           </ul>
         </div>

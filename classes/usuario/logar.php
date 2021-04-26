@@ -22,21 +22,18 @@
         $user = $_POST['user'];
         
         $_SESSION['user'] = $user;
-        $_SESSION['tempo'] = $u->tempo($user);
         $_SESSION['permissao'] = $u->permissao($user);
         $_SESSION['nome'] = $u->nome($user);
         $_SESSION['email'] = $u->email($user);
         $_SESSION['telefone'] = $u->telefone($user);
         $_SESSION['id'] = $u->id($user);
         
-        
         // BLOCO DE LOGIN USUARIO COMUM
         if($u->login($user, $pass) == true && $u->permissao($user) == 1){
 
             $_SESSION['logado'] = 1;
             header("location: ../../paginas/admin/main.php");
-            
-
+        
         }
 
         // BLOCO DE LOGIN USUARIO SUPERVISOR
@@ -63,7 +60,6 @@
             echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
     
         }
-
 
     }
 
