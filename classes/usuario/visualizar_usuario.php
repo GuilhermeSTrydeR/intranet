@@ -25,7 +25,21 @@
         include("../../config/config.php");
 
         global $pdo;
-        $consulta = $pdo->query("SELECT * FROM usuarios;");
+
+      
+        if($_POST['sentido'] == 1){
+            $sentidoDaLista = 'SELECT * FROM usuarios ORDER BY id DESC;';
+            $nomeBotao = 'Ordenar Sentido Horario';
+            
+        }
+
+        else{
+            $sentidoDaLista = 'SELECT * FROM usuarios;';
+            $nomeBotao = 'Ordenar Sentido Anti-Horario';
+        }   
+
+
+        $consulta = $pdo->query($sentidoDaLista);
 
         // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
         $temInformacao = true;
@@ -40,10 +54,33 @@
             <?php
             
         }
+        else{
+            ?>
+            <h4>Não há nenhum registro.</h4>
+            <?php
+        }
 
         ?>
 
         <div class='hidden'>
+
+        <!-- esse form serve apenas para inverter a lista -->
+        <form method="POST" action="<?php echo $PHP_SELF; ?>">
+            <?php
+                if($_POST['sentido'] == 1){
+                    $botaoSentido = 0;
+                }
+                else{
+                    $botaoSentido = 1;
+                }
+            ?>
+                <div class="col-sm-12">
+                    <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
+                </div> 
+
+            <button type='submit'><?php echo $nomeBotao;?></button>
+        </form>
+
         <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>
         <thead>
         <tr>
