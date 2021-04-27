@@ -12,6 +12,8 @@ body{
     width: 10%;
     z-index: 2;
 
+    max-height: 60px;
+
 }
 
 .sidebar{
@@ -190,7 +192,7 @@ h1, h2, h4{
 }
 
 .sidebar-container {
-    margin-top: 62px;
+    margin-top: 60px;
     position: fixed;
     width: 220px;
     height: 100%;
@@ -384,20 +386,29 @@ tr{
   width: 110%;
   
 }
+.boxItens p{
+  color: #ffffff;
+  
+}
 
 .boxItens a:hover{
-
+  margin-left: -9px;
+  margin-top: 3px;
+  height: 95%;
+  width: 120.5%;
+  font-weight: 600;
   background: #F47920;
-  border: 5px solid #F47920;
   border-top-left-radius: 10px ;
   border-bottom-left-radius: 10px ;
   border-top-right-radius: 10px;
-  
+
 }
+
 
 .nav-link b:hover{
 
   color: #F47920;
+
 
 }
 
@@ -421,7 +432,7 @@ tr{
 .table{
 
   border: 1px solid #00995D;
-  color: #00995D;
+  color: #000000;
 
 }
 

@@ -51,15 +51,29 @@
         <th style='width: 70px;' scope='col'>ID</th>
         <th style='width: 220px;' scope='col'>Titulo</th>
         <th style='width: 200px;' scope='col'>Texto</th>
+        <th style='width: 200px;' scope='col'>Ativo?</th>
         </div>
         </tr>
         </thead>
         <?php
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             
+            if($linha['ativo'] == 0){
+                $linha['ativo'] = "<p style='color: red';>Não</p>";
+            }
+
+            elseif($linha['ativo'] == 1){
+                $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+            }
+
+            else{
+                $linha['ativo'] = 'Erro';
+            }
+
+        
 
                 echo"<tr>";
-                echo  " <td> {$linha['id']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']}";
+                echo  " <td> {$linha['id']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
                 echo"</tr>";
             
         }

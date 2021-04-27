@@ -32,7 +32,7 @@
         if($u->login($user, $pass) == true && $u->permissao($user) == 1){
 
             $_SESSION['logado'] = 1;
-            header("location: ../../paginas/admin/main.php");
+            header("location: ../../paginas/comum/main.php");
         
         }
 

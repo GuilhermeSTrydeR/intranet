@@ -13,15 +13,14 @@
 
         //aqui instanciamos a classe
         $i = new Informativo();
-
-    
         
         //aqui adicionamos um nivel basico de seguranca
         $titulo = addslashes($_POST["titulo"]);
         $texto = addslashes($_POST["texto"]);
+        $ativo = addslashes($_POST["ativo"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->gravar($titulo, $texto);
+        $i->gravar($titulo, $texto, $ativo);
 
         echo "<script>alert('Informativo cadastrado com sucesso!');</script>";
         $url = '/';

@@ -1,4 +1,5 @@
 <?php
+  session_cache_expire(1);
   session_start();
 
   if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
@@ -7,8 +8,6 @@
 
   }
  
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,7 +40,6 @@
   </div>
     <a href="?pagina=../../paginas/configs/configUser">
       <img src="/imagens/navbar/engrenagem_azul.png" onclick="" width="20" height="20" alt="config">
-
 
   <ul class="navbar-nav" id="navbar-main" style="margin-left: 700px !important;">
     <center>
