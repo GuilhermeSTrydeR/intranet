@@ -67,26 +67,40 @@
             <?php
                 if($_POST['sentido'] == 1){
                     $botaoSentido = 0;
+                
                 }
                 else{
                     $botaoSentido = 1;
+                  
                 }
             ?>
-                <div class="col-sm-12">
-                    <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
-                </div> 
+            <div class="col-sm-12">
+                <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
+            </div> 
+            <div class="row" style='float: right; margin-right: 100px;'>
+                <div class="col">
+                    <button type="submit" style='border: none; background: #ffffff;'>
+                        <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Lista">
+                    </button> 
+                </div>
 
-            <button type='submit'><?php echo $nomeBotao;?></button>
+                <div class="col">
+                    <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
+                    <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
+                </div>
+            </div>
         </form>
-
+        <br>
+        <br>
         <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;' id='tabela_informativo'>
         <thead>
         <tr>
         <div class='thead'>
         <th style='width: 70px;' scope='col'>ID</th>
-        <th style='width: 220px;' scope='col'>Titulo</th>
-        <th style='width: 200px;' scope='col'>Texto</th>
-        <th style='width: 200px;' scope='col'>Ativo?</th>
+        <th style='width: 90px;' scope='col'>Data</th>
+        <th style='width: 150px;' scope='col'>Titulo</th>
+        <th style='width: 520px;' scope='col'>Texto</th>
+        <th style='width: 70px;' scope='col'>Ativo?</th>
         </div>
         </tr>
         </thead>
@@ -105,11 +119,11 @@
                 $linha['ativo'] = 'Erro';
             }
 
-        
+            $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
-                echo"<tr>";
-                echo  " <td> {$linha['id']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
-                echo"</tr>";
+            echo"<tr>";
+            echo  "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
+            echo"</tr>";
             
         }
         

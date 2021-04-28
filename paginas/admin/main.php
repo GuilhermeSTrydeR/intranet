@@ -29,7 +29,7 @@
 
 <!-- logo da instituição -->
 <div id="logo">
-  <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40></a>
+  <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40 title="Intranet Unimed TC"></a>
 </div>
 
   <div style='text-transform: uppercase; font-weight: 500; color: white; margin: 10px;'>
@@ -39,20 +39,16 @@
   ?>
   </div>
     <a href="?pagina=../../paginas/configs/configUser">
-      <img src="/imagens/navbar/engrenagem_azul.png" onclick="" width="20" height="20" alt="config">
+      <img src="/imagens/navbar/engrenagem_azul.png" onclick="" width="20" height="20" alt="config" title="Configurações">
 
   <ul class="navbar-nav" id="navbar-main" style="margin-left: 700px !important;">
     <center>
-      <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
-      <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40" height="40" class="d-inline-block align-top" alt="imprimir" style="margin-left: 30px !important;">
-    </center>
-    <center>
         <a href="?pagina=inicio">
-          <img src="/imagens/navbar/home.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="home" style="margin-left: 30px !important;">
+          <img src="/imagens/navbar/home.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="home" style="margin-left: 30px !important;" title="Tela Inicial">
       </center>
       <center>
         <a href="/funcoes/destruir_sessao.php">
-            <img src="/imagens/navbar/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair" style="margin-left: 30px !important;">
+            <img src="/imagens/navbar/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair" style="margin-left: 30px !important;" title="Sair">
         </a>
       </center>
   </ul>

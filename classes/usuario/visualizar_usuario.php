@@ -77,10 +77,22 @@
                 <div class="col-sm-12">
                     <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
                 </div> 
+                <div class="row" style='float: right; margin-right: 100px;'>
+                    <div class="col">
+                        <button type="submit" style='border: none; background: #ffffff;'>
+                            <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Lista">
+                        </button> 
+                    </div>
+   
+                    <div class="col">
+                        <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
+                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
+                    </div>
 
-            <button type='submit'><?php echo $nomeBotao;?></button>
+                </div>
         </form>
-
+        <br>
+        <br>
         <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>
         <thead>
         <tr>
