@@ -51,6 +51,7 @@
       <!--  bootstrap -->
       <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
       <link rel="stylesheet" href="css/ftp.css">
+      
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: 	#0A5F55;">
@@ -99,6 +100,7 @@
       <script src="../../js/jquery/jquery.js"></script>
       <script src="js/bootstrap/bootstrap.js"></script>
       <script src="js/script.js"></script>
+      
 
       </body>
       <footer>

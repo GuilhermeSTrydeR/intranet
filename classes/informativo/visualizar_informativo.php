@@ -13,16 +13,19 @@
 
         <?php
 
-        include("../../classes/conexao_bd.php");
-        include("informativo.class.php");
 
-        $i = new Informativo();
+       
 
         //include para acessar o banco
         include("../../classes/conexao_bd.php");
 
         //include para acessar as confguracoes definidas
         include("../../config/config.php");
+
+        // include da classe informativo
+        include("informativo.class.php");
+
+        $i = new Informativo();
 
         global $pdo;
 
@@ -41,9 +44,9 @@
         $consulta = $pdo->query($sentidoDaLista);
 
         // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
-        $temInformacao = true;
+        
 
-        if($temInformacao == true){
+        if(isset($consulta)){
             ?>
                 <style>
                     .hidden{
@@ -92,6 +95,7 @@
         </form>
         <br>
         <br>
+        
         <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;' id='tabela_informativo'>
         <thead>
         <tr>
@@ -128,8 +132,9 @@
         }
         
         echo"</table>";
-        
-
+       
+    
     ?>
     </div>
+    
 </center>
