@@ -85,7 +85,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row" style='float: left; margin-left: 300px;'>
+            <div class="row" style='float: left; margin-left: 200px;'>
                 <div class="col">
                     <a href="../../classes/informativo/desativarTodosInformativos.php">
                         <img src="../../imagens/navbar/off.png" alt='botao-desativar-informativo' title="Desativar todos os informativos">
@@ -96,12 +96,21 @@
                         <img src="../../imagens/navbar/on.png" alt='botao-ativar-informativo' title="Ativar todos os informativos">
                     </a>
                 </div>
+            </div>
+            <div class="row" style='float: left; margin-left: 200px;'>
                 <div class="col">
                     <a href="?pagina=../../paginas/cadastros/cadastrar_informativo">
                         <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo">
-                    </a>
+                        </a>
                 </div>
             </div>
+
+
+
+           
+
+
+
             <div class="row" style='float: right; margin-right: 100px;'>
                 <div class="col">
                     <button type="submit" style='border: none; background: #ffffff;'>
@@ -154,7 +163,7 @@
         echo"</table>";
     
     ?>
-    
+
     </div>
     
 </center>
