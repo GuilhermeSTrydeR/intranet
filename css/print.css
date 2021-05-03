@@ -6,6 +6,12 @@
 
     }
 
+    .col{
+
+        display: none !important;
+
+    }
+
     .sidebar-container{
 
         display: none !important;
@@ -21,7 +27,6 @@
         
 
     }
-
 
 
 }

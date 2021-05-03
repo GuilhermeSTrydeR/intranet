@@ -13,9 +13,6 @@
 
         <?php
 
-
-       
-
         //include para acessar o banco
         include("../../classes/conexao_bd.php");
 
@@ -29,7 +26,7 @@
 
         global $pdo;
 
-        if($_POST['sentido'] == 1){
+        if($_POST['sentido'] == 0){
             $sentidoDaLista = 'SELECT * FROM informativo ORDER BY id DESC;';
             $nomeBotao = 'Ordenar Sentido Horario';
             
@@ -80,13 +77,37 @@
             <div class="col-sm-12">
                 <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
             </div> 
+
+            <div class="row" style='float: left; margin-left: 200px;'>
+                <div class="col">
+                    <a href="../../classes/informativo/apagarTodosInformativos.php">
+                        <img src="../../imagens/navbar/x.png" alt='botao-apagar-informativo' title="Apagar todos os informativos">
+                    </a>
+                </div>
+            </div>
+            <div class="row" style='float: left; margin-left: 300px;'>
+                <div class="col">
+                    <a href="../../classes/informativo/desativarTodosInformativos.php">
+                        <img src="../../imagens/navbar/off.png" alt='botao-desativar-informativo' title="Desativar todos os informativos">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../../classes/informativo/ativarTodosInformativos.php">
+                        <img src="../../imagens/navbar/on.png" alt='botao-ativar-informativo' title="Ativar todos os informativos">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="?pagina=../../paginas/cadastros/cadastrar_informativo">
+                        <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo">
+                    </a>
+                </div>
+            </div>
             <div class="row" style='float: right; margin-right: 100px;'>
                 <div class="col">
                     <button type="submit" style='border: none; background: #ffffff;'>
                         <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Lista">
                     </button> 
                 </div>
-
                 <div class="col">
                     <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
                     <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
@@ -95,7 +116,6 @@
         </form>
         <br>
         <br>
-        
         <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;' id='tabela_informativo'>
         <thead>
         <tr>
@@ -132,9 +152,9 @@
         }
         
         echo"</table>";
-       
     
     ?>
+    
     </div>
     
 </center>

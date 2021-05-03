@@ -12,7 +12,7 @@
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("dataCadastro", $dataCadastro);
             
-            
+    
             $sql->execute();
             
         }
@@ -28,18 +28,33 @@
         }
 
         //funcao para desativar os informativos (aconselhavel ao inves de apagar)
-        public function desativarInformativo(){
+        public function desativarTodosInformativo(){
 
-            global $pdo;
-            $sql = "UPDATE informativo SET excluido = '1'";
-            $sql = $pdo->prepare($sql);
-            $sql->execute();
 
-            $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+                global $pdo;
+                $sql = "UPDATE informativo SET ativo = '0'";
+                $sql = $pdo->prepare($sql);
+                $sql->execute();
+                $i = $i + 1;
 
 
         }
+
+        public function ativarTodosInformativo(){
+
+        
+        
+
+            global $pdo;
+            $sql = "UPDATE informativo SET ativo = '1'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+            $i = $i + 1;
+
+
+ 
+
+    }
 
            
 

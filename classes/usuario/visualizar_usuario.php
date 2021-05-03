@@ -27,7 +27,7 @@
         global $pdo;
 
       
-        if($_POST['sentido'] == 1){
+        if($_POST['sentido'] == 0){
             $sentidoDaLista = 'SELECT * FROM usuarios ORDER BY id DESC;';
             $nomeBotao = 'Ordenar Sentido Horario';
             

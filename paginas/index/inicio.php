@@ -41,29 +41,23 @@
             echo"<br>";
 
 
-            echo"<div id='mural' class='hidden'>";
             
             echo "<center>";  
-            echo "<table  class='table' style='border: none; table-layout:fixed; max-width: 100%; word-wrap: break-word; !important;'>";
+            echo "<table  class='table' table-layout:fixed; max-width: 100%; word-wrap: break-word; !important;'>";
         
             
-            if($linha['ativo'] == 0){
-                $temInformacao = false;
-            }
-
-            elseif($linha['ativo'] == 1){
-                // echo "<tr>";
-                // echo "<td style='border: none;'><center><b>Informativo nº: <h1>{$linha['id']}</h1></b></center> </td>";
-                // echo "</tr>";
-
+            if($linha['ativo'] == 1){
+            echo"<tbody style>";
                 echo "<tr>";
-                echo "<td style='border: none;'><center><h1> {$linha['titulo']}</h1></center></td>";
+                echo "<td '><center><h1> {$linha['titulo']}</h1></center></td>";
                 echo "</tr>";
 
                 
                 echo "<tr>";
-                echo nl2br("<td style='border: none;'><h4 style='width:100%;  color: black !important;'>{$linha['texto']}</h4></td>");
+                echo nl2br("<td><h4 style='width:100%;  color: black !important;'>{$linha['texto']}</h4></td>");
                 echo "</tr>";
+            echo"</tbody>";
+               
                 
             }
 
