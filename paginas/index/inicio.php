@@ -43,24 +43,30 @@
 
             
             echo "<center>";  
-            echo "<table  class='table' table-layout:fixed; max-width: 100%; word-wrap: break-word; !important;'>";
+            echo "<table class='table' style='background-color: #f0f2f8;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed; max-width: 100%; word-wrap: break-word; !important;'>";
         
             
+            $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", $linha['dataCadastro']);
+
             if($linha['ativo'] == 1){
-            echo"<tbody style>";
+          
                 echo "<tr>";
-                echo "<td '><center><h1> {$linha['titulo']}</h1></center></td>";
+                echo "<td><center><h1> {$linha['titulo']}</h1></center><br><center><p style='float: left;'>Publicado em: {$linha['dataCadastro']}</p></center> </td>";
                 echo "</tr>";
 
                 
                 echo "<tr>";
-                echo nl2br("<td><h4 style='width:100%;  color: black !important;'>{$linha['texto']}</h4></td>");
+               
+                echo nl2br("<td><h4 style='width:100%; padding: 15px; color: black !important;'>{$linha['texto']}</h4></td>");
+
                 echo "</tr>";
-            echo"</tbody>";
+         
+               
+   
                
                 
             }
-
+        
             echo"</table>";
             echo"</div>";
          

@@ -413,9 +413,7 @@ tr{
 }
 
 td{
-
-  border-bottom: 2px solid #00995D;
-  border-top: none;
+  border: none;
 }
 
 .colunas{

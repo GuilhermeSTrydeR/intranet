@@ -100,21 +100,14 @@
             <div class="row" style='float: left; margin-left: 200px;'>
                 <div class="col">
                     <a href="?pagina=../../paginas/cadastros/cadastrar_informativo">
-                        <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo">
+                        <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Informativo">
                         </a>
                 </div>
             </div>
-
-
-
-           
-
-
-
             <div class="row" style='float: right; margin-right: 100px;'>
                 <div class="col">
                     <button type="submit" style='border: none; background: #ffffff;'>
-                        <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Lista">
+                        <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
                     </button> 
                 </div>
                 <div class="col">

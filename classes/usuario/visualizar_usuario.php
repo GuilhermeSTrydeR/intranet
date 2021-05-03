@@ -80,7 +80,7 @@
                 <div class="row" style='float: right; margin-right: 100px;'>
                     <div class="col">
                         <button type="submit" style='border: none; background: #ffffff;'>
-                            <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Lista">
+                            <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
                         </button> 
                     </div>
    
