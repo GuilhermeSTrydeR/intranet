@@ -2,15 +2,16 @@
 <?php
     class Informativo{
         // funcao para gravar no banco de dados o informativo preenchido no form
-        public function gravar($titulo, $texto, $ativo, $dataCadastro){
+        public function gravar($titulo, $texto, $ativo, $dataCadastro, $imagem){
 
             global $pdo;
-            $sql = "INSERT INTO informativo(titulo, texto, ativo, dataCadastro) VALUES(:titulo, :texto, :ativo, :dataCadastro)";
+            $sql = "INSERT INTO informativo(titulo, texto, ativo, dataCadastro, imagem) VALUES(:titulo, :texto, :ativo, :dataCadastro, :imagem)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("titulo", $titulo);
             $sql->bindValue("texto", $texto);
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("dataCadastro", $dataCadastro);
+            $sql->bindValue("imagem", $imagem);
             
     
             $sql->execute();
@@ -68,8 +69,7 @@
 
     }
 
-           
-
+        
 
 
     }

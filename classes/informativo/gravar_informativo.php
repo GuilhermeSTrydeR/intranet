@@ -1,20 +1,5 @@
 <?php
 
-
-    /*  
-    *$dir é o caminho da pasta onde você deseja que os arquivos sejam salvos. 
-    *Neste exemplo, supondo que esta pagina esteja em public_html/upload/ 
-    *os arquivos serão salvos em public_html/upload/imagens/ 
-    *Obs.: Esta pasta de destino dos arquivos deve estar com as permissões de escrita habilitadas. 
-    */ 
-
-    $dir = "../../uploads/"; 
-    // recebendo o arquivo multipart 
-    $file = $_FILES["Arquivo"]; 
-    // Move o arquivo da pasta temporaria de upload para a pasta de destino 
-    move_uploaded_file($file["tmp_name"], "$dir/".$file["name"]);
-
-    //aqui sera gravado no banco a funcao gravar do informativo.class que no caso eh referenciada abaixo no require
     if(isset($_POST["titulo"]) && !empty($_POST["titulo"]) && isset($_POST["texto"]) && !empty($_POST["texto"])){
         
 
@@ -31,8 +16,32 @@
         //aqui instanciamos a classe
         $i = new Informativo();
 
-     
 
+        /*
+        
+        *$dir é o caminho da pasta onde você deseja que os arquivos sejam salvos. 
+        *Neste exemplo, supondo que esta pagina esteja em public_html/upload/ 
+        *os arquivos serão salvos em public_html/upload/imagens/ 
+        *Obs.: Esta pasta de destino dos arquivos deve estar com as permissões de escrita habilitadas. 
+        */ 
+        $dir = "../../uploads/"; 
+
+        // recebendo o arquivo multipart 
+        $file = $_FILES["Arquivo"];
+
+        // Move o arquivo da pasta temporaria de upload para a pasta de destino e se isso ocorrer a variavel $imagem ira receber o path completo da imagem(isso evita na hora de mostrar a imagem na tela, ficar aquele icone de mensagem nao encontrada)
+        if(move_uploaded_file($file["tmp_name"], "$dir/".$file["name"])){
+
+            // aqui concatenaremos o endereco da imagem para salvar no banco somente se a condição acima for satisfeita, pois se tiver qualquer coisa dentro dessa variavel, na tela inicial no mural em baixo do texto vai fia ruma imagem de erro informando que a imagem nao foi encontrada pois sem essa condicao a variavel $imagem ficara com a string: (../../uploads/) dentro da tag <img>
+            $imagem = ($dir . $file['name']);
+
+        }
+
+
+        
+        
+
+        //aqui sera gravado no banco a funcao gravar do informativo.class que no caso eh referenciada abaixo no require
         $dataCadastro = (time() + $fusoHorario);
         
         //aqui adicionamos um nivel basico de seguranca
@@ -40,8 +49,10 @@
         $texto = addslashes($_POST["texto"]);
         $ativo = addslashes($_POST["ativo"]);
 
+    
+
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->gravar($titulo, $texto, $ativo, $dataCadastro);
+        $i->gravar($titulo, $texto, $ativo, $dataCadastro, $imagem);
 
         echo "<script>alert('Informativo cadastrado com sucesso!');</script>";
         $url = '/';
