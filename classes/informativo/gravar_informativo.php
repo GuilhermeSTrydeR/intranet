@@ -1,7 +1,20 @@
 <?php
-    
-    //aqui sera gravado no banco a funcao gravar do informativo.class que no caso eh referenciada abaixo no require
 
+
+    /*  
+    *$dir é o caminho da pasta onde você deseja que os arquivos sejam salvos. 
+    *Neste exemplo, supondo que esta pagina esteja em public_html/upload/ 
+    *os arquivos serão salvos em public_html/upload/imagens/ 
+    *Obs.: Esta pasta de destino dos arquivos deve estar com as permissões de escrita habilitadas. 
+    */ 
+
+    $dir = "../../uploads/"; 
+    // recebendo o arquivo multipart 
+    $file = $_FILES["Arquivo"]; 
+    // Move o arquivo da pasta temporaria de upload para a pasta de destino 
+    move_uploaded_file($file["tmp_name"], "$dir/".$file["name"]);
+
+    //aqui sera gravado no banco a funcao gravar do informativo.class que no caso eh referenciada abaixo no require
     if(isset($_POST["titulo"]) && !empty($_POST["titulo"]) && isset($_POST["texto"]) && !empty($_POST["texto"])){
         
 
@@ -17,6 +30,8 @@
 
         //aqui instanciamos a classe
         $i = new Informativo();
+
+     
 
         $dataCadastro = (time() + $fusoHorario);
         

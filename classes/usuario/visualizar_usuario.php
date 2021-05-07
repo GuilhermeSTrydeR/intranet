@@ -83,17 +83,15 @@
                             <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
                         </button> 
                     </div>
-   
                     <div class="col" style='margin-left: 200px'>
                         <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
                         <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
                     </div>
-
                 </div>
         </form>
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;'>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
         <thead>
         <tr>
         <div class='thead'>
@@ -232,4 +230,5 @@
 
     ?>
     </div>
+    <div class='row' style='height: 100px;'></div>
 </center>

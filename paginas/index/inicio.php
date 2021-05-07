@@ -31,10 +31,6 @@
         }
     ?>
 
-
-
-        
-
         <?php
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['ativo'] == 1 && $linha['excluido'] == 0){
@@ -53,12 +49,12 @@
                 
             
             echo "<tr>";
-            echo "<td style='border: none; max-width: 500px;'><br><center><b><p style='float: left; margin-left: 65px; color: #F47920'>Publicado em: {$linha['dataCadastro']}</p></b></center><br><br><center><h1> {$linha['titulo']}</h1></center> </td>";
+            echo "<td style='border: none; max-width: 500px;'><br><center><b><p style='float: left; margin-left: 65px; color: #F47920;'>Publicado em: {$linha['dataCadastro']}</p></b></center><br><br><center><h3 style='color: #009b63;'> {$linha['titulo']}</h3></center> </td>";
             echo "</tr>";
 
             echo "<tr>";
             
-            echo nl2br("<td style='border: none;'><h4 style='word-wrap: break-word; max-width: 800px; padding: 15px; margin-left: 50px; color: black !important;'>{$linha['texto']}</h4></td>");
+            echo nl2br("<td style='border: none;'><p style='word-wrap: break-word; max-width: 800px; padding: 15px; margin-left: 50px; color: black !important;'>{$linha['texto']}</p></td>");
 
             echo "</tr>";
             echo"</div>";
@@ -75,6 +71,6 @@
 
     ?>
 
-    
+<div class='row' style='height: 100px;'></div>
 
 </center>

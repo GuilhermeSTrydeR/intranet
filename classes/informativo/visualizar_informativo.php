@@ -116,7 +116,7 @@
 
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important; position: absolute;' id='tabela_informativo'>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;' id='tabela_informativo'>
         <thead>
         <tr>
         <div class='thead'>
@@ -155,10 +155,12 @@
             
         }
         
+        
         echo"</table>";
     
     ?>
 
     </div>
-    
+
+    <div class='row' style='height: 100px;'></div>
 </center>
