@@ -77,14 +77,14 @@
                 <div class="col-sm-12">
                     <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
                 </div> 
-                <div class="row" style='float: right; margin-right: 100px;'>
+                <div class="row" style='float: left; margin-left: 700px; position: fixed;'>
                     <div class="col">
-                        <button type="submit" style='border: none; background: #ffffff;'>
+                        <button type="submit" style='border: none; background: #ffffff; '>
                             <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
                         </button> 
                     </div>
    
-                    <div class="col">
+                    <div class="col" style='margin-left: 200px'>
                         <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
                         <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
                     </div>

@@ -37,38 +37,38 @@
 
         <?php
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            if($linha['ativo'] == 1 && $linha['excluido'] == 0){
 
             echo"<br>";
 
-
+            echo "<div class='mural'>";
             
             echo "<center>";  
-            echo "<table class='table' style='background-color: #f0f2f8;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed; max-width: 100%; word-wrap: break-word; !important;'>";
+            echo "<table class='table' style='background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed;  max-width: 900px; word-wrap: break-word; !important;'>";
         
-            
-            $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", $linha['dataCadastro']);
-
-            if($linha['ativo'] == 1){
           
-                echo "<tr>";
-                echo "<td><center><h1> {$linha['titulo']}</h1></center><br><center><p style='float: left;'>Publicado em: {$linha['dataCadastro']}</p></center> </td>";
-                echo "</tr>";
+            $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i", $linha['dataCadastro']);
 
+            
                 
-                echo "<tr>";
-               
-                echo nl2br("<td><h4 style='width:100%; padding: 15px; color: black !important;'>{$linha['texto']}</h4></td>");
+            
+            echo "<tr>";
+            echo "<td style='border: none; max-width: 500px;'><br><center><b><p style='float: left; margin-left: 65px; color: #F47920'>Publicado em: {$linha['dataCadastro']}</p></b></center><br><br><center><h1> {$linha['titulo']}</h1></center> </td>";
+            echo "</tr>";
 
-                echo "</tr>";
-         
-               
-   
-               
+            echo "<tr>";
+            
+            echo nl2br("<td style='border: none;'><h4 style='word-wrap: break-word; max-width: 800px; padding: 15px; margin-left: 50px; color: black !important;'>{$linha['texto']}</h4></td>");
+
+            echo "</tr>";
+            echo"</div>";
                 
-            }
         
             echo"</table>";
-            echo"</div>";
+
+            }
+            
+         
          
         }
         

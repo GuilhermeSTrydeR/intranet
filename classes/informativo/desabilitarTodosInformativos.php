@@ -12,7 +12,7 @@
         
 
         //aqui invocamos o metodo para marcar a coluna 'excluido' com '1' informando que esse usuario foi excluido
-        $i->desativarTodosInformativo();
+        $i->desabilitarTodosInformativo();
        
 
 

@@ -300,7 +300,8 @@ h1, h2, h4{
   color: #ffffff;
  
 }
-.sidebar-navigation li:hover b{
+
+li:hover b{
 
   color: #F47920;
  
@@ -309,12 +310,9 @@ h1, h2, h4{
 .sidebar-navigation .header:hover{
 
   border-right: 6px solid #0A5F55;
-  color: #ffffff;
+  color: #ffffff !important;
  
 }
-
-
-
 
 img{
 
@@ -346,12 +344,10 @@ img{
 
 }
 
-
 table{
 
   max-width: 900px;
   
-
 }
 
 tr{
@@ -409,16 +405,18 @@ tr{
 
   color: #F47920;
 
-
 }
 
-td{
-  border: none;
-}
 
 .colunas{
 
   display: block !important;
+
+}
+
+.mural table tr{
+
+  cursor: text !important; 
 
 }
 

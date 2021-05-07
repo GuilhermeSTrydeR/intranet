@@ -28,19 +28,31 @@
         }
 
         //funcao para desativar os informativos (aconselhavel ao inves de apagar)
-        public function desativarTodosInformativo(){
+        public function desativarTodosInformativos(){
 
 
                 global $pdo;
-                $sql = "UPDATE informativo SET ativo = '0'";
+                $sql = "UPDATE informativo SET excluido = '1'";
                 $sql = $pdo->prepare($sql);
                 $sql->execute();
-                $i = $i + 1;
+
 
 
         }
 
-        public function ativarTodosInformativo(){
+        public function desabilitarTodosInformativo(){
+
+
+            global $pdo;
+            $sql = "UPDATE informativo SET ativo = '0'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+            $i = $i + 1;
+
+
+    }
+
+        public function habilitarTodosInformativo(){
 
         
         

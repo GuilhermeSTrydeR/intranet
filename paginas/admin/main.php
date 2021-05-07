@@ -32,23 +32,39 @@
   <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40 title="Intranet Unimed TC"></a>
 </div>
 
-  <div style='text-transform: uppercase; font-weight: 500; color: white; margin: 10px;'>
-  <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
-  <?php
-    echo $_SESSION['nome'];
-  ?>
+ 
+  <div class='row' style="position: fixed;"> 
+    <div class='col' style='width: 650px; margin-left: 100px;'>
+    <div style='text-transform: uppercase; font-weight: 500; color: white;'>
+      <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
+      <?php
+        echo $_SESSION['nome'];
+      ?>
+    </div>
+    
+    </div>
+    <div class='col' >
+      <a href="?pagina=../../paginas/configs/configUser">
+        <img src="/imagens/navbar/engrenagem.png" onclick="" width="30" height="30" alt="config" title="Configurações">
+      </a>
+    
+    
+    </div>
+  
+    
+ 
+  
   </div>
-    <a href="?pagina=../../paginas/configs/configUser">
-      <img src="/imagens/navbar/engrenagem_azul.png" onclick="" width="20" height="20" alt="config" title="Configurações">
 
-  <ul class="navbar-nav" id="navbar-main" style="margin-left: 700px !important;">
+
+  <ul class="navbar-nav" id="navbar-main" style="margin-left: 900px !important; position: fixed;">
     <center>
         <a href="?pagina=inicio">
-          <img src="/imagens/navbar/home.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="home" style="margin-left: 30px !important;" title="Tela Inicial">
+          <img src="/imagens/navbar/home.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="home" style="margin-left: 50px !important;" title="Tela Inicial">
       </center>
       <center>
         <a href="/funcoes/destruir_sessao.php">
-            <img src="/imagens/navbar/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair" style="margin-left: 30px !important;" title="Sair">
+            <img src="/imagens/navbar/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair" style="margin-left: 100px !important;" title="Sair">
         </a>
       </center>
   </ul>
@@ -74,7 +90,7 @@
 
   </p>
   <ul class="sidebar-navigation">
-  <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Informativos</b></li>
+  <li class="header" id="liHeader"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Informativos</b></li>
     <li>
       <a href="?pagina=../cadastros/cadastrar_informativo">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
