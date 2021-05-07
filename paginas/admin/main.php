@@ -32,29 +32,15 @@
   <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40 title="Intranet Unimed TC"></a>
 </div>
 
- 
-  <div class='row' style="position: fixed;"> 
-    <div class='col' style='width: 650px; margin-left: 100px;'>
-    <div style='text-transform: uppercase; font-weight: 500; color: white;'>
+    <div style='text-transform: uppercase; position: fixed; font-weight: 500; color: white; margin-left: 100px;'>
       <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
       <?php
         echo $_SESSION['nome'];
       ?>
-    </div>
-    
-    </div>
-    <div class='col' >
       <a href="?pagina=../../paginas/configs/configUser">
-        <img src="/imagens/navbar/engrenagem.png" onclick="" width="30" height="30" alt="config" title="Configurações">
+        <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
       </a>
-    
-    
     </div>
-  
-    
- 
-  
-  </div>
 
 
   <ul class="navbar-nav" id="navbar-main" style="margin-left: 900px !important; position: fixed;">
