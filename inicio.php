@@ -91,16 +91,15 @@
         </div>
       </nav>
       <br><br>
-      <?php
-        //esse include ira colocar na tela a pagina selecionada e que foi atribuida a variavel $pagina, assim sempre que uma pagina for atribuida a variavel $pagina, ela sera incluida abaixo
-        include("paginas/$pagina.php");
-      ?>
       <script src="../../js/bootstrap/popper/popper.min.js"></script>
       <script src="../../js/jquery/jquery.js"></script>
       <script src="js/bootstrap/bootstrap.js"></script>
       <script src="js/script.js"></script>
-      
 
+      <?php
+        //esse include ira colocar na tela a pagina selecionada e que foi atribuida a variavel $pagina, assim sempre que uma pagina for atribuida a variavel $pagina, ela sera incluida abaixo
+        include("paginas/$pagina.php");
+      ?>
       </body>
       <footer>
         

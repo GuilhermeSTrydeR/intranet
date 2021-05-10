@@ -116,7 +116,7 @@
 
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;' id='tabela_informativo'>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;' id='table'>
         <thead>
         <tr>
         <div class='thead'>
@@ -148,17 +148,30 @@
             $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
             echo"<tr>";
-            echo  "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
+            echo "<td class='td'> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
             echo"</tr>";
 
             }
             
         }
         
-        
         echo"</table>";
-    
-    ?>
+        
+        ?>
+
+        <script>
+ 
+        $(document).ready(function(){
+            $('td').click(function(){
+                var id = $(this).parent().find(".td").text();
+                alert(id); 
+                return false;
+            });
+        
+        });
+        
+        </script>
+
 
     </div>
 
