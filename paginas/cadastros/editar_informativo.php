@@ -1,27 +1,59 @@
 <?php
-if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
+  if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
     header("Location: /");
-    
-}
+      
+  }
+
+  // OBS: aqui vai ser recebido apenas o id do informativo por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
+
+  // pega o id vindo por GET
+  $id = $_GET['id'];
 
 
+  //requer classe de conexao do banco
+  require("../../classes/conexao_bd.php");
+
+  //requer o informativo.class onde o comando para gravar no banco ja esta pronto
+  require("../../classes/informativo/informativo.class.php");
+
+  // configuracoes, nesse caso o fuso horario
+  require("../../config/config.php");
+
+  $i = new Informativo();
+
+  global $pdo;
+
+  $sql = "SELECT * FROM informativo WHERE id = $id;";
+
+  $consulta = $pdo->query($sql);
+  
+  while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+  
+    $titulo = $linha['titulo'];
+    $texto = $linha['texto'];
+    $imagem = $linha['imagem']; 
+
+
+  }
 
 ?>
-<center>
 
-<form action="../../classes/informativo/gravar_informativo.php" method="GET" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+<center>
+<form action="../../classes/informativo/editar_informativo.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+  <input type="text" name='id' value="<?php echo $id; ?>" style='display: none;'>
   <div class="form-group">
     <label for="titulo">Titulo</label>
-    <input type="text" class="form-control" id="title" name="titulo" value="<?php echo $_GET['titulo']; ?>" required>
+    <input type="text" class="form-control" id="title" name="titulo" value="<?php echo $titulo; ?>" required>
  
   <br>
         <!-- obs: <textarea> nao suprta o atributo (value) -->
         <label for="texto">Texto</label>
-        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $_GET['texto'];?></textarea>
+        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $texto;?></textarea>
         <br>
         <div class="col-sm-12">
-          <input type="file" class="form-control" name="Arquivo" id="Arquivo" ?>
+          <input type="file" class="form-control" name="Arquivo" id="Arquivo" value="<?php echo $imagem; ?>" ?>
           <br>
           <div class='col' style='float: left;'>
           <label class="form-check-label" for="ativo" >
@@ -30,7 +62,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
-            <a style='color: white !important' href="?pagina=inicio" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
           </div>

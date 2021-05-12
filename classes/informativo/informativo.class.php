@@ -18,6 +18,40 @@
             
         }
 
+        public function editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem){
+
+            global $pdo;
+            $sql = "UPDATE informativo SET titulo = :titulo, texto = :texto, ativo = :ativo, dataCadastro = :dataCadastro, imagem = :imagem WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+ 
+            $sql->bindValue("titulo", $titulo);
+            $sql->bindValue("texto", $texto);
+            $sql->bindValue("ativo", $ativo);
+            $sql->bindValue("dataCadastro", $dataCadastro);
+            $sql->bindValue("imagem", $imagem);
+            
+    
+            $sql->execute();
+            
+        }
+
+        public function retornaImagem($id){
+            global $pdo;
+            
+            $sql = "SELECT imagem FROM informativo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+        
+        
+
         //fucnao para apagar todos os informativos da tabela informativo
         public function apagarTodosInformativos(){
 
@@ -53,6 +87,18 @@
             echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
         }
+
+        public function desabilitarInformativo($id){
+
+            global $pdo;
+            $sql = "UPDATE informativo SET ativo = '0' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+            $i = $i + 1;
+
+
+    }
+
 
 
         public function desabilitarTodosInformativo(){

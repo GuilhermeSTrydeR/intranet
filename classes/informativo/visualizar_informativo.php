@@ -152,12 +152,12 @@
             echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td> <td class='noprint'>";
             ?>
 
-            <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&titulo=<?php echo $linha['titulo']?>&texto=<?php echo $linha['texto']?>&imagem=<?php echo $linha['imagem'] ?>&ativo=<?php echo $linha['ativo'] ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+            <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
             
             <br>
             <br>
 
-            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Excluir</button></a>
+            <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
 
             <?php
             echo "</td></tr>";
