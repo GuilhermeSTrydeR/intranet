@@ -61,7 +61,15 @@
           </label>
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
-            <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
+            
+        
+
+            <div class="col-md-12"> 
+
+            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-success'>Excluir</button></a> 
+
+            <button type="submit" class="btn btn-success">Salvar</button> 
+          
             <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
