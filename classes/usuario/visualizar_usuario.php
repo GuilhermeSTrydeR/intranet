@@ -95,11 +95,11 @@
         <thead>
         <tr>
         <div class='thead'>
-        <th style='width: 70px;' scope='col'>ID</th>
-        <th style='width: 220px;' scope='col'>Nome</th>
-        <th style='width: 200px;' scope='col'>Usuário</th>
-        <th style='width: 200px;' scope='col'>Permissão</th>
-        <th style='width: 200px;' scope='col'>Setor</th>
+        <th style='width: 50px;' scope='col'>ID</th>
+        <th style='width: 280px;' scope='col'>Nome</th>
+        <th style='width: 130px;' scope='col'>Usuário</th>
+        <th style='width: 110px;' scope='col'>Permissão</th>
+        <th style='width: 180px;' scope='col'>Setor</th>
         </div>
         </tr>
         </thead>

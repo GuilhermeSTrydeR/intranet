@@ -65,6 +65,7 @@
                 echo "<td>";
                 echo "<center>";
                 echo "<img style='max-height: 600px; max-width: 800px;' src='" . $linha['imagem'] ."'></img>";
+                echo"<div class='row' style='height: 100px;'></div>";
                 echo "</center>";
                 echo "</td>";
                 echo "</tr>";
@@ -74,11 +75,12 @@
 
 
 
-
+            
             echo"</div>";
                 
-        
+            
             echo"</table>";
+            
 
             }
             

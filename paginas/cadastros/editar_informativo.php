@@ -4,21 +4,24 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     header("Location: /");
     
 }
+
+
+
 ?>
 <center>
 
-<form action="../../classes/informativo/gravar_informativo.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+<form action="../../classes/informativo/gravar_informativo.php" method="GET" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
   <div class="form-group">
     <label for="titulo">Titulo</label>
-    <input type="text" class="form-control" id="title" name="titulo" required>
+    <input type="text" class="form-control" id="title" name="titulo" value="<?php echo $_GET['titulo']; ?>" required>
  
   <br>
- 
-    <label for="texto">Texto</label>
-        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" required ></textarea>
+        <!-- obs: <textarea> nao suprta o atributo (value) -->
+        <label for="texto">Texto</label>
+        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $_GET['texto'];?></textarea>
         <br>
         <div class="col-sm-12">
-          <input type="file" class="form-control" name="Arquivo" id="Arquivo">
+          <input type="file" class="form-control" name="Arquivo" id="Arquivo" ?>
           <br>
           <div class='col' style='float: left;'>
           <label class="form-check-label" for="ativo" >

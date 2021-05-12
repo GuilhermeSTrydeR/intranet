@@ -41,6 +41,20 @@
 
         }
 
+        public function desativarInformativo($id){
+            
+            global $pdo;
+            $sql = "UPDATE informativo SET excluido = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+
+            echo "<script>alert('Informativo Excluido com Sucesso!');</script>";
+            $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+
+        }
+
+
         public function desabilitarTodosInformativo(){
 
 

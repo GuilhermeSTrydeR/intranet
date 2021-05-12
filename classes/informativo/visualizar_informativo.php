@@ -116,15 +116,16 @@
 
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;' id='table'>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px;' id='table'>
         <thead>
         <tr>
         <div class='thead'>
-        <th style='width: 70px;' scope='col'>ID</th>
-        <th style='width: 90px;' scope='col'>Data</th>
-        <th style='width: 150px;' scope='col'>Titulo</th>
-        <th style='width: 520px;' scope='col'>Texto</th>
+        <th style='width: 50px;' scope='col'>ID</th>
+        <th style='width: 80px;' scope='col'>Data</th>
+        <th style='width: 140px;' scope='col'>Titulo</th>
+        <th style='width: 300px;' scope='col'>Texto</th>
         <th style='width: 70px;' scope='col'>Ativo?</th>
+        <th style='width: 130px;' scope='col' class='noprint'>Opções</th>
         </div>
         </tr>
         </thead>
@@ -148,19 +149,40 @@
             $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
             echo"<tr>";
-            echo "<td class='td'> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td> {$linha['texto']} </td> <td> {$linha['ativo']} </td>";
-            echo"</tr>";
+            echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td> <td class='noprint'>";
+            ?>
+
+            <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&titulo=<?php echo $linha['titulo']?>&texto=<?php echo $linha['texto']?>&imagem=<?php echo $linha['imagem'] ?>&ativo=<?php echo $linha['ativo'] ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+            
+            <br>
+            <br>
+
+            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Excluir</button></a>
+
+            <?php
+            echo "</td></tr>";
 
             }
             
         }
         
+
+
         echo"</table>";
         
         ?>
 
-        <script>
- 
+
+     
+        
+
+
+        <!-- funcao para pegar o id do informativo clicado na table -->
+
+        <!-- optei por usar botoes nas TD -->
+
+        <!-- <script>
+
         $(document).ready(function(){
             $('td').click(function(){
                 var id = $(this).parent().find(".td").text();
@@ -170,7 +192,7 @@
         
         });
         
-        </script>
+        </script> -->
 
 
     </div>
