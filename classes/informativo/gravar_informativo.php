@@ -55,13 +55,13 @@
         $i->gravar($titulo, $texto, $ativo, $dataCadastro, $imagem);
 
         echo "<script>alert('Informativo cadastrado com sucesso!');</script>";
-        $url = '/';
+        $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     }
     else{
         echo "<script>alert('algo deu errado!, por favor tente novamente');</script>";
-        $url = '/';
+        $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     }

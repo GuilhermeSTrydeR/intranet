@@ -76,7 +76,7 @@
 
   </p>
   <ul class="sidebar-navigation">
-  <li class="header" id="liHeader"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Informativos</b></li>
+  <li class="header" id="liHeader"><img src="../../imagens/sidebar/feed.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Informativos</b></li>
     <li>
       <a href="?pagina=../cadastros/cadastrar_informativo">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
@@ -84,13 +84,13 @@
     </li>
     <li>
       <a href="?pagina=../../classes/informativo/visualizar_informativo">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/registerFeedback.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Visualizar</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/view.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Visualizar</b> 
       </a>
     </li>
     <li class="header"><img src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Usuarios</b></li>
     <li>
       <a href="?pagina=../cadastros/cadastrar_usuario">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/adduser.png" class="d-inline-block align-top" alt="sair" style="margin-right: 30px !important;"><b>Cadastrar</b> 
       </a>
     </li>
     <li>

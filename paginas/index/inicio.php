@@ -54,7 +54,7 @@
 
             echo "<tr>";
             
-            echo nl2br("<td style='border: none;'><p style='word-wrap: break-word; max-width: 800px; padding: 15px; margin-left: 50px; color: black !important;'>{$linha['texto']}</p></td>");
+            echo nl2br("<td style='border: none;'><p style='word-wrap: break-word; max-width: 1000px; padding: 15px; margin-left: 50px; color: black !important;'>{$linha['texto']}</p></td>");
 
             echo "</tr>";
 
@@ -64,7 +64,7 @@
                 echo "<tr>";
                 echo "<td>";
                 echo "<center>";
-                echo "<img style='max-height: 600px; max-width: 800px;' src='" . $linha['imagem'] ."'></img>";
+                echo "<img style='max-width: 1000px;' src='" . $linha['imagem'] ."'></img>";
                 echo"<div class='row' style='height: 100px;'></div>";
                 echo "</center>";
                 echo "</td>";

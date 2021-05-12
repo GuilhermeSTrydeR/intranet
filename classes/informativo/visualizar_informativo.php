@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
         <style>
 
@@ -27,18 +30,18 @@
         global $pdo;
 
         if($_POST['sentido'] == 0){
-            $sentidoDaLista = 'SELECT * FROM informativo ORDER BY id DESC;';
+            $_SESSION['sentidodaLista'] = 'SELECT * FROM informativo ORDER BY id DESC;';
             $nomeBotao = 'Ordenar Sentido Horario';
             
         }
 
         else{
-            $sentidoDaLista = 'SELECT * FROM informativo;';
+            $_SESSION['sentidodaLista']  = 'SELECT * FROM informativo;';
             $nomeBotao = 'Ordenar Sentido Anti-Horario';
         }   
 
 
-        $consulta = $pdo->query($sentidoDaLista);
+        $consulta = $pdo->query($_SESSION['sentidodaLista'] );
 
         // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
         
@@ -113,10 +116,10 @@
                     </div>
                 </div>
             </form>
-
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px;' id='table'>
+        <br>
+        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
         <thead>
         <tr>
         <div class='thead'>

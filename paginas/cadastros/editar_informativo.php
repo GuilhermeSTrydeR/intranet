@@ -63,18 +63,22 @@
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             
         
+          <div class=row>
+            <div class="col" style='margin-right: 65px !important;'> 
+            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+            </div>
 
-            <div class="col-md-12"> 
-
-            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-success'>Excluir</button></a> 
-
+            <div class="col"> 
             <button type="submit" class="btn btn-success">Salvar</button> 
-          
+            </div>
+
+            <div class="col"> 
             <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
             </div>
-          </div>
-          </div>
-       
+            
+            </div>
+            </div>
+           
           <br>
           <br>
         </div>
