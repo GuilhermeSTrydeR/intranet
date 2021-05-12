@@ -156,8 +156,24 @@
             
             <br>
             <br>
+            <?php
+                if($i->retornaAtivo($linha['id']) == 1){
+            ?>
+                         <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+            <?php
+                }
+                else{
+            ?>
+                        <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+            <?php
+                }
+            ?>
 
-            <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+           
+            <br>
+            <br>
+            
+
 
             <?php
             echo "</td></tr>";

@@ -35,6 +35,22 @@
             
         }
 
+        public function retornaAtivo($id){
+            global $pdo;
+            
+            $sql = "SELECT ativo FROM informativo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
+
         public function retornaImagem($id){
             global $pdo;
             
@@ -124,11 +140,20 @@
             $sql->execute();
             $i = $i + 1;
 
-
- 
-
     }
+    public function habilitarInformativo($id){
 
+        
+        global $pdo;
+        $sql = "UPDATE informativo SET ativo = '1' WHERE id = '$id'";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
+        $i = $i + 1;
+
+
+
+
+}
         
 
 

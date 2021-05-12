@@ -1,6 +1,5 @@
 <?php
 
-
         //requer classe de conexao do banco
         require("../conexao_bd.php");
 
