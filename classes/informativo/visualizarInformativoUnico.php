@@ -31,6 +31,16 @@
         }
     ?>
 
+<div class="row" style='float: left; margin-left: 400px; position: absolute;'>
+        <div class='col'>
+   
+        <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" style='margin-left: 600px; margin-top: 50px;' title="Imprimir">
+
+        </div>
+
+</div>
+<div class='noprint' style='height: 100px;'></div>
+
         <?php
 
         $id = $_GET['id'];
@@ -56,7 +66,7 @@
             
             echo "<tr>";
        
-            
+            echo "<br>";
             echo nl2br("<td><p id='texto'>{$linha['texto']}</p></td>");
 
             echo "</tr>";

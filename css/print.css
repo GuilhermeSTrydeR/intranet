@@ -60,6 +60,7 @@
 
     #tblInfUnico h3{
         color:#00995D;
+        margin-top: -50px;
         margin-left: 10px;
         max-width: 700px;
       }
@@ -67,6 +68,7 @@
       #tblInfUnico p{
         color:#F47920;
         float: left;
+        margin-top: -50px;
         margin-left: 50px;
         max-width: 700px;
       }
@@ -74,6 +76,7 @@
       #tblInfUnico #texto{
         color:#000000;
         margin-left: 50px !important;
+        margin-top: 20px;
         max-width: 700px;
       }
       
