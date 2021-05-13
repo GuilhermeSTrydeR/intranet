@@ -346,10 +346,21 @@ img{
 
 }
 
-table{
+.td-table {
+  max-width: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
+
+
+.tableInformativo{
+
+  position:absolute;
   max-width: 1100px;
-  
+  margin-left: 70px;
+
 }
 
 tr{
