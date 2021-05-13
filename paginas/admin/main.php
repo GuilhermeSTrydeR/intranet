@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">
+</head>
+
   </head>
 <body>
 <?php
@@ -107,6 +109,7 @@
     </div>
   </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <?php
         //esse include ira colocar na tela a pagina selecionada e que foi atribuida a variavel $pagina, assim sempre que uma pagina for atribuida a variavel $pagina, ela sera incluida abaixo

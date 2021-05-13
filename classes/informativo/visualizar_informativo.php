@@ -175,6 +175,7 @@ session_start();
            
             <br>
             <br>
+            <a href="?pagina=../../classes/informativo/visualizarInformativoUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
             
 
 
