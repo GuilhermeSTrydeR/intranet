@@ -50,6 +50,7 @@
       <!--  bootstrap -->
       <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
       <link rel="stylesheet" href="css/ftp.css">
+      <link rel="stylesheet" href="css/print.css">
       
     </head>
     <body style='background: #f0f2f8'>
