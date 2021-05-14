@@ -121,9 +121,21 @@
 
         }
 
-        public function status($user){
+        public function habilitarUsuario($id){
+        
             global $pdo;
-            
+            $sql = "UPDATE usuarios SET ativo = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+
+           
+           
+    
+        }
+
+        public function status($user){
+
+            global $pdo;
             $sql = "SELECT status FROM usuarios WHERE user = '$user'";
             $stmt = $pdo->prepare( $sql );
             $stmt->bindParam( ':user', $user );        
@@ -131,7 +143,6 @@
 
             $res = $stmt->fetchColumn();
     
-        
             return $res;
 
         }
@@ -219,6 +230,19 @@
 
         }
 
+        public function desativarUsuario($id){
+            
+            global $pdo;
+            $sql = "UPDATE usuarios SET excluido = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+
+            echo "<script>alert('Usuario Excluido com Sucesso!');</script>";
+            $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+
+        }
+
         public function apagarTodosUsuarios(){
 
             global $pdo;
@@ -228,18 +252,36 @@
             
         }
 
-        public function desativarUsuarios(){
+        public function desabilitarUsuario($id){
 
             global $pdo;
-            $sql = "UPDATE usuarios SET excluido = '1'";
+            $sql = "UPDATE usuarios SET ativo = '0' WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
             $sql->execute();
-
-            $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+        
 
 
         }
+
+        public function retornaAtivo($id){
+
+            global $pdo;
+            
+            $sql = "SELECT ativo FROM usuarios WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+
+
+        }
+
+        
 
         public function verificaExclusao($user){
             global $pdo;
@@ -252,6 +294,20 @@
             $res = $stmt->fetchColumn();
     
         
+            return $res;
+
+        }
+
+        public function verificaAtivo($id){
+            global $pdo;
+            
+            $sql = "SELECT ativo FROM usuarios WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
             return $res;
 
         }

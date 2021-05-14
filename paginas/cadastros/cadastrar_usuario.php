@@ -8,12 +8,12 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 ?>
 <center style="margin-left: 60px; margin-top: 100px !important;">
     <h2>Novo Usuário</h2>
-    <form action="../../classes/usuario/gravar_usuario.php" autocomplete="off" method="POST" style="margin-left: 300px;">
+    <form action="../../classes/usuario/editar_usuario.php" autocomplete="off" method="POST" style="margin-left: 220px;">
         <!-- area de campos do form -->
         <hr />
         <div class="row">
             <div class="form-group col-md-7"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" required size="60"> </div>
-            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input type="text" class="form-control" name="user" required autocomplete="off"> </div>
+            <div class="form-group col-md-4"> <label for="campo2">Usuário</label> <input type="text" class="form-control" name="user" required autocomplete="off"> </div>
         </div>
 
         <div class="row">
@@ -21,7 +21,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
             <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" name="telefone" required size="15"> </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
             <label for="permissao">Permissão</label>
             <select class="form-select" aria-label="Permissao" name="permissao" required>
                 <option selected></option>
@@ -32,7 +32,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         </div>
         <br>
         <div class="row"> 
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-4">
         <label for="setor">Setor</label>
         <select class="form-select" aria-label="setor" name="setor" required>
             <option selected></option>

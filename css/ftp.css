@@ -140,18 +140,33 @@ footer p{
 
 }
 
-a{
+.sidebar-container a{
 
-    color: rgb(0, 0, 0) !important;
-    text-decoration: none !important;
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none !important;
 
 }
 
 
+.navbar a{
 
-p a{
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none !important;
 
+}
+
+
+#linkImagem{
+    
     color: blue !important;
+
+
+}
+
+
+.row a{
+
+  text-decoration: none;
 
 }
 
@@ -194,9 +209,9 @@ h1, h2, h4{
 }
 
 .sidebar-container {
-    margin-top: 55px;
+    margin-top: 45px;
     position: fixed;
-    width: 220px;
+    width: 130px;
     height: 100%;
     left: 0;
     overflow-x: hidden;
@@ -229,6 +244,7 @@ h1, h2, h4{
     margin: 0;
     list-style-type: none;
     position: relative;
+
   }
   
   .sidebar-navigation li {
@@ -324,13 +340,21 @@ img{
 
 .hidden{
 
-  display: none;
-
+  display: none !important;
+ 
 }
+
+
 
 .hiddenPrint{
 
   display: none;
+
+}
+
+.print{
+
+  display: none !important;
 
 }
 
@@ -346,8 +370,29 @@ img{
 
 }
 
+
+.tableMural{
+
+  width: 1100px;
+
+}
+
+.tableMural p{
+
+  width: 1000px;
+  margin-left: 70px;
+
+}
+
+.tableMural #texto{
+
+  width: 900px;
+  margin-left: 1200px;
+
+}
+
 .td-table {
-  max-width: 10px;
+  width: 1000px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -372,6 +417,16 @@ img{
   margin-left: 250px;
   max-width: 900px;
 }
+
+#tblInfUnico{
+
+  word-wrap: break-word !important;
+ 
+  margin-left: 800 !important;
+
+}
+
+
 
 
 #tblInfUnico #img{
@@ -470,11 +525,6 @@ tr{
   padding: 15px;
 
 
-}
-
-a{
-
-  border-bottom-left-radius: ;
 }
 
 /* .form-group{

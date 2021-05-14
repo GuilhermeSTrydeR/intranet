@@ -34,7 +34,7 @@
 <div class="row" style='float: left; margin-left: 400px; position: absolute;'>
         <div class='col'>
    
-        <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" style='margin-left: 600px; margin-top: 50px;' title="Imprimir">
+        <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" style='margin-left: 600px; margin-top: 50px;' title="Imprimir">
 
         </div>
 
@@ -58,9 +58,8 @@
             $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i", $linha['dataCadastro']);
 
             
-                
-            
-            echo "<tr>";
+      
+            echo "<tr>";    
             echo "<td ><br><center><b><p >Publicado em: {$linha['dataCadastro']}</p></b></center><br><br><center><h3> {$linha['titulo']}</h3><br></center> </td>";
             echo "</tr>";
             
@@ -79,8 +78,8 @@
                 echo "</center>";
                 echo "</td>";
                 echo "</tr>";
-
-            echo"</div>";
+                echo "</div>";
+  
                 
             
             echo"</table>";

@@ -20,6 +20,8 @@
 
     }
 
+
+
     .table{
 
         position: absolute !important;
@@ -32,8 +34,7 @@
     .print{
 
         display: block !important;
-        width: 750px !important; 
-
+     
     }
 
     img{

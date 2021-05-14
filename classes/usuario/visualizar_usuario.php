@@ -85,22 +85,24 @@
                     </div>
                     <div class="col" style='margin-left: 200px'>
                         <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
-                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
+                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
                     </div>
                 </div>
         </form>
         <br>
         <br>
         <br>
-        <table class='table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
+        <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
         <thead>
         <tr>
         <div class='thead'>
         <th style='width: 50px;' scope='col'>ID</th>
-        <th style='width: 280px;' scope='col'>Nome</th>
-        <th style='width: 130px;' scope='col'>Usuário</th>
-        <th style='width: 110px;' scope='col'>Permissão</th>
-        <th style='width: 180px;' scope='col'>Setor</th>
+        <th style='width: 200px;' scope='col'>Nome</th>
+        <th style='width: 150px;' scope='col'>Usuário</th>
+        <th style='width: 100px;' scope='col'>Permissão</th>
+        <th style='width: 120px;' scope='col'>Setor</th>
+        <th style='width: 120px;' scope='col'>Ativo?</th>
+        <th class='noprint' style='width: 120px;' scope='col'>Opções</th>
         </div>
         </tr>
         </thead>
@@ -220,8 +222,32 @@
             }
 
             if($linha['excluido'] == 0){
+                if($linha['ativo'] == 0){
+                    $linha['ativo'] = "<p style='color: red';>Não</p>";
+                }
+
+                elseif($linha['ativo'] == 1){
+                    $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                }
+
+                else{
+                    $linha['ativo'] = 'Erro';
+                }
+
+
                 echo"<tr>";
-                echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td> <td>". $linha['setor'] ."</td>";
+                echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td>  <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
+
+                ?>
+
+                <td class='noprint'>
+                <a href="/paginas/admin/main.php?pagina=../cadastros/editar_usuario&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+
+                <br><br>
+
+                
+                </td>
+                <?php
                 echo"</tr>";
             }
         }

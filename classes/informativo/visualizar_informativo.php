@@ -42,6 +42,12 @@ session_start();
 
 
         $consulta = $pdo->query($_SESSION['sentidodaLista'] );
+        if($temDado == 1){
+
+
+
+        }
+
 
         // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
         
@@ -64,7 +70,7 @@ session_start();
 
         ?>
 
-        <div class='hidden'>
+
 
         <form method="POST" action="<?php echo $PHP_SELF; ?>">
             <?php
@@ -112,13 +118,15 @@ session_start();
                     </div>
                     <div class="col">
                         <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
-                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="40"  height="40" class="row" alt="imprimir" title="Imprimir">
+                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
                     </div>
                 </div>
             </form>
         <br>
         <br>
         <br>
+        
+
         <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
         <thead>
         <tr>
@@ -191,6 +199,7 @@ session_start();
         echo"</table>";
         
         ?>
+
 
 
      
