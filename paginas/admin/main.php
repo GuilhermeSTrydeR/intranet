@@ -78,6 +78,7 @@
 
   </p>
   <ul class="sidebar-navigation">
+  <center><h4>MENU</h4></center>
   <li class="header" id="liHeader"><img src="../../imagens/sidebar/feed.png" height='40' class="d-inline-block align-top" alt="sair" style="margin-left: 20px !important;"><b>Informativos</b></li>
     <li>
       <a href="?pagina=../cadastros/cadastrar_informativo">

@@ -179,6 +179,25 @@
 
         }
 
+        public function editar($id, $nome, $email, $pass, $permissao, $telefone, $setor){
+
+
+            global $pdo;
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, pass = :pass, permissao = :permissao, telefone = :telefone, setor = :setor WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+ 
+            $sql->bindValue("nome", $nome);
+            $sql->bindValue("email", $email);
+            $sql->bindValue("pass", md5($pass));
+            $sql->bindValue("permissao", $permissao);
+            $sql->bindValue("telefone", $telefone);
+            $sql->bindValue("setor", $setor);
+            
+            $sql->execute();
+            echo "<script>alert('Usuario alterado com sucesso!');</script>";
+            
+        }
+
         public function email($user){
 
             global $pdo;

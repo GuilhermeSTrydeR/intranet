@@ -49,18 +49,21 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
     if($ativo == 0){
         $ativo = "Não";
         $corBG = "Red";
+        $corFonte = "white";
      
     }
 
     elseif($ativo == 1){
         $ativo = "Sim";
         $corBG = "Green";
+        $corFonte = "white";
      
     }
 
     else{
         $ativo = 'Erro';
         $corBG = "Yellow";
+        $corFonte = "black";
       
     }
 
@@ -68,48 +71,47 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 ?>
 <center style=" margin-top: 100px !important;">
     <h2>Editar Usuario</h2>
-    <form action="../../classes/usuario/gravar_usuario.php" autocomplete="off" method="POST" style="margin-left: 220px;">
+    <form action="../../classes/usuario/editar_usuario.php" method="POST" style="margin-left: 220px;">
         <!-- area de campos do form -->
         <hr />
 
   
         <div class="row">
-            <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="nome"  value="<?php echo $id ?>" required size="60"> </div>
+            <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
 
-            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="nome" style='color: white; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>" required size="60"> </div>
+            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
 
-            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>" required size="60"> </div>
+            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>"  size="60"> </div>
 
-            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>" required autocomplete="off"> </div>
+            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>"  autocomplete="off"> </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" value="<?php echo $email ?>" required> </div>
+            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" value="<?php echo $email ?>" > </div>
 
-            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" name="telefone" value="<?php echo $telefone ?>" required size="15"> </div>
+            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" name="telefone" value="<?php echo $telefone ?>"  size="15"> </div>
 
             <div class="form-group col-md-3">
             <label for="permissao">Permissão</label>
-            <select class="form-select" aria-label="Permissao" name="permissao" required>
+            <select class="form-select" aria-label="Permissao" name="permissao" >
 
             <?php
                 switch ($permissao) {
                     case 1:
-                        $permissão = "Comum";
+                        $permissaoString = "Comum";
                         break;
                     case 2:
-                        $permissão = "Supervisor";
+                        $permissaoString = "Supervisor";
                         break;
                     case 3:
-                        $permissão = "Administrador";
+                        $permissaoString = "Administrador";
                         break;
                 }
               
             
             ?>
 
-
-                <option selected><?php echo "Atual: " . $permissão ?></option>
+                <option selected value="<?php echo $permissao;?>"> <?php echo "Atual: " . $permissaoString; ?> </option>
                 <option value="1">Comum</option>
                 <option value="2">Supervisor</option>
                 <option value="3">Administrador</option>
@@ -119,49 +121,49 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         <div class="row"> 
         <div class="form-group col-md-4">
         <label for="setor">Setor</label>
-        <select class="form-select" aria-label="setor" name="setor" required>
+        <select class="form-select" aria-label="setor" name="setor" >
 
             <?php
                 switch ($setor) {
                     case 1:
-                        $setor = "Comercial";
+                        $setorString = "Comercial";
                         break;
                     case 2:
-                        $setor = "Cadastro";
+                        $setorString = "Cadastro";
                         break;
                     case 3:
-                        $setor = "Recepção";
+                        $setorString = "Recepção";
                         break;
                     case 4:
-                        $setor = "Faturamento";
+                        $setorString = "Faturamento";
                         break;
                     case 5:
-                        $setor = "Tecnologia da Informação";
+                        $setorString = "Tecnologia da Informação";
                         break;
                     case 6:
-                        $setor = "Contabilidade";
+                        $setorString = "Contabilidade";
                         break;
                     case 7:
-                        $setor = "Interc./Audit.";
+                        $setorString = "Interc./Audit.";
                         break;
                     case 8:
-                        $setor = "Diretoria";
+                        $setorString = "Diretoria";
                         break;
                     case 9:
-                        $setor = "Financeiro";
+                        $setorString = "Financeiro";
                         break;
                     case 10:
-                        $setor = "Gerência";
+                        $setorString = "Gerência";
                         break;
                     case 11:
-                        $setor = "ANS";
+                        $setorString = "ANS";
                         break;
                     case 12:
-                        $setor = "GED";
+                        $setorString = "GED";
                         break;
                     
                     case 13:
-                        $setor = "Outros";
+                        $setorString = "Outros";
                         break;
                     
                 }
@@ -170,7 +172,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
             ?>
 
 
-            <option selected><?php echo "Atual: " . $setor ?></option>
+            <option selected value="<?php echo $setor;?>"> <?php echo "Atual: " . $setorString; ?> 
             <option value="1">Comercial</option>
             <option value="2">Cadastro</option>
             <option value="3">Recepção</option>
@@ -187,7 +189,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         </select>
 </div>
            
-            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" value="<?php echo $pass ?>" required autocomplete="off"> 
+            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" value="<?php echo $pass ?>"  autocomplete="off"> 
         </div>
         <br><br>
                 <!-- <div class="form-group col-md-2">
