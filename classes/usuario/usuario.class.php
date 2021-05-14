@@ -188,7 +188,18 @@
  
             $sql->bindValue("nome", $nome);
             $sql->bindValue("email", $email);
-            $sql->bindValue("pass", md5($pass));
+
+            if(empty($pass)){
+
+                $sql->bindValue("pass", md5($pass));
+
+            }
+            else{
+
+                $sql->bindValue("pass", $pass);
+
+            }
+        
             $sql->bindValue("permissao", $permissao);
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("setor", $setor);

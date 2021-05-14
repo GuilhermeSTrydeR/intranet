@@ -12,7 +12,7 @@
         //aqui instanciamos a classe
         $u = new Usuario();
 
-
+    
         //aqui adicionamos um nivel basico de seguranca
         $id = $_POST["id"];
         $nome = $_POST["nome"];
