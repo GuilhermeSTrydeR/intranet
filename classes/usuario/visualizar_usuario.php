@@ -66,7 +66,24 @@
                 <div class="col-sm-12">
                     <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
                 </div> 
-                <div class="row" style='float: left; margin-left: 700px; position: fixed;'>
+                <div class="row" style='float: left; margin-left: 700px; position: absolute;'>
+                    <div class="col">
+                        <a href="?pagina=../../paginas/cadastros/cadastrar_usuario">
+                            <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Usuario">
+                            </a>
+                    </div>
+                    <div class="col">
+                        <button type="submit" style='border: none; background: #ffffff;'>
+                            <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
+                        </button> 
+                    </div>
+                    <div class="col">
+                        <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
+                        <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
+                    </div>
+                </div>
+                
+                <!-- <div class="row" style='float: left; margin-left: 700px; position: fixed;'>
                     <div class="col">
                         <button type="submit" style='border: none; background: #ffffff; '>
                             <img src="../../imagens/navbar/updown.png" alt='botao-inverter-lista' title="Inverter Sentido da Lista">
@@ -76,7 +93,7 @@
                         <a href="../usuarios/main.php"><?$_SESSION['nome']?></a>
                         <img src="/imagens/navbar/printer.png" class="hiddenPrint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
                     </div>
-                </div>
+                </div> -->
         </form>
         <br>
         <br>

@@ -63,7 +63,12 @@
                         echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; ' src='" . $linha['imagem'] ."'></img></a>";
                         echo"<br>";
 
-                        echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
+                        // sera exibido o link para download apenas se houver uma imagem na variavel
+                        if(isset($linha['imagem'])){
+                            echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
+
+                        }
+                        
                       
                         
                         

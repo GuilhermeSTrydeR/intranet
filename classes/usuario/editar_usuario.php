@@ -13,6 +13,7 @@
         //aqui instanciamos a classe
         $u = new Usuario();
 
+        // se caso foi digitado alguma senha no campo referente, essa nova senha sera salva
         if(isset($_POST["pass"]) && !empty($_POST["pass"])){
 
 
@@ -27,15 +28,10 @@
 
                 $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor);
                 
-
-               
-        
-
         }
 
+        // porem se nenhuma senha for digitada, a mesma senha sera preservada
         else{
-
-                
                 $id = $_POST["id"];
                 $nome = $_POST["nome"];
                 $email = $_POST["email"];
