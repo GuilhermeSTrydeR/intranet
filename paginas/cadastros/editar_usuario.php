@@ -19,6 +19,9 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
   $consulta = $pdo->query($sql);
   
+  //   essa variavel recebendo '0' indica que o post veio do 'editar_usuario'
+  $_SESSION['configOuEdit'] = 0;
+
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
   

@@ -1,4 +1,5 @@
 <?php
+        session_start();
         //requer classe de conexao do banco
         require("../conexao_bd.php");
 
@@ -22,12 +23,12 @@
                 $permissao = $_POST["permissao"];
                 $telefone = $_POST["telefone"];
                 $setor = $_POST["setor"];
+                $configOuEdit = $_SESSION['configOuEdit'];
 
                 $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor);
                 
-                
-                $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+
+               
         
 
         }
@@ -42,14 +43,23 @@
                 $permissao = $_POST["permissao"];
                 $telefone = $_POST["telefone"];
                 $setor = $_POST["setor"];
+                $configOuEdit = $_SESSION['configOuEdit'];
                 
         
                 $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor);
                 
         
         
-                $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+                
+                if($configOuEdit == 1){
+                        $url = '../../';
+                        echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+
+                }
+                elseif($configOuEdit == 0){
+                        $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+                        echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+                }
                 
         }
 

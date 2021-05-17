@@ -1,7 +1,11 @@
 <?php
 
 
-  $u = new Usuario();
+$u = new Usuario();
+
+
+//essa variavel vai simplesmente determinar se o post veio pelo editar_usuario ou editar_configuracoes pois ambos utilizam a mesma class
+
 
 //por questoes de seguranca obvias, o id eh recebido com informarcoes do usuario logado pois se utilizarmos $_GET nessa parte, qualquer usuario (comum, supervisor ou administrador) podera alterar a id no cabecalho html e editar qualquer usuario independente de sua permissao.
   $id = $u->id($_SESSION['user']);
@@ -12,7 +16,8 @@
 
   $consulta = $pdo->query($sql);
   
-
+//   essa variavel recebendo '1' indica que o post veio do 'editar_configuracoes'
+  $_SESSION['configOuEdit'] = 1;
 
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
@@ -29,6 +34,7 @@
     $excluido = $linha['excluido']; 
     $ativo = $linha['ativo']; 
     $setor = $linha['setor']; 
+   
 
 
     if($ativo == 0){
@@ -221,15 +227,15 @@
         <div id="actions" class="row">
 
                 <?php
-                    // se o usuario for comum nao podera visuzalizar os botes de ativar/desativar e excluir
+
+                    // se o usuario for comum nao podera visuzalizar os botoes de ativar/desativar e excluir
                     if($u->permissao($user) == 3 || $u->permissao($user) == 2){
+
                 ?>
 
                 <div class="col">
                     <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
 
-
-                
                     <?php
                         if($u->retornaAtivo($id) == 1){
                     ?>
@@ -253,9 +259,7 @@
     
 
                 <div class="col"> <button type="submit" class="btn btn-success">Salvar</button> 
-                <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario" class="btn btn-danger">Cancelar</a> </div>
-
-
+                <a style='color: white !important' href="/" class="btn btn-danger">Cancelar</a> </div>
         </div>
     </form>
 
