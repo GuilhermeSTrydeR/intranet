@@ -72,7 +72,7 @@
             $sql->execute();
 
             echo "<script>alert('Usuario: ". $_POST['user'] .'\n' . "Nome: ". $_POST['nome'] .'\n\n' . "Cadastrado!');</script>";
-            $url = '/';
+            $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
             echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
 

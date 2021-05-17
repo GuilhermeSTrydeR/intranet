@@ -11,16 +11,6 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
   // pega o id vindo por GET
   $id = $_GET['id'];
 
-
-  //requer classe de conexao do banco
-  require("../../classes/conexao_bd.php");
-
-  //requer o informativo.class onde o comando para gravar no banco ja esta pronto
-  require("../../classes/usuario/usuario.class.php");
-
-  // configuracoes, nesse caso o fuso horario
-  require("../../config/config.php");
-
   $u = new Usuario();
 
   global $pdo;

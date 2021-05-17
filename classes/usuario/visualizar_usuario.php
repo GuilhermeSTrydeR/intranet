@@ -13,16 +13,6 @@
 
         <?php
 
-        include("../../classes/conexao_bd.php");
-        include("usuario.class.php");
-
-        $c = new Usuario();
-
-        //include para acessar o banco
-        include("../../classes/conexao_bd.php");
-
-        //include para acessar as confguracoes definidas
-        include("../../config/config.php");
 
         global $pdo;
 
@@ -30,7 +20,6 @@
         if($_POST['sentido'] == 0){
             $sentidoDaLista = 'SELECT * FROM usuarios ORDER BY id DESC;';
             $nomeBotao = 'Ordenar Sentido Horario';
-            
         }
 
         else{
@@ -253,7 +242,6 @@
         }
         
         echo"</table>";
-        
 
     ?>
     </div>

@@ -7,6 +7,19 @@
     header("Location: /");
 
   }
+
+    //requer classe de conexao do banco
+    require("../../classes/conexao_bd.php");
+
+    //requer o contato.class onde o comando para gravar no banco ja esta pronto
+    require("../../classes/usuario/usuario.class.php");
+
+    //configuracoes basicas, nesse caso, configuracoes de fuso horario
+    require("../../config/config.php");
+
+    //aqui instanciamos a classe
+    $u = new Usuario();
+
  
 ?>
 <!DOCTYPE html>
@@ -37,9 +50,10 @@
     <div style='text-transform: uppercase; position: fixed; font-weight: 500; color: white; margin-left: 100px;'>
       <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
       <?php
-        echo $_SESSION['nome'];
+        echo $u->nome($_SESSION['user']);
       ?>
-      <a href="?pagina=../../paginas/configs/configUser">
+     
+      <a href="?pagina=../cadastros/editar_configuracoes&id=<?php echo($u->id($_SESSION['user'])); ?>">
         <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
       </a>
     </div>

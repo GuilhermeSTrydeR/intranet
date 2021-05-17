@@ -8,7 +8,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 ?>
 <center style="margin-left: 60px; margin-top: 100px !important;">
     <h2>Novo Usuário</h2>
-    <form action="../../classes/usuario/editar_usuario.php" autocomplete="off" method="POST" style="margin-left: 220px;">
+    <form action="../../classes/usuario/gravar_usuario.php" autocomplete="off" method="POST" style="margin-left: 220px;">
         <!-- area de campos do form -->
         <hr />
         <div class="row">
