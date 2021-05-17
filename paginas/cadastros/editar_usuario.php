@@ -189,7 +189,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         </select>
 </div>
            
-            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" value="<?php echo $pass ?>"  autocomplete="off"> 
+            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" placeholder="••••••••••••••••••••••••••" autocomplete="off"> 
         </div>
         <br><br>
                 <!-- <div class="form-group col-md-2">

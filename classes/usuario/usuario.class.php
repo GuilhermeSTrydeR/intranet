@@ -178,6 +178,24 @@
 
 
         }
+        
+        public function editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor){
+
+
+            global $pdo;
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, permissao = :permissao, telefone = :telefone, setor = :setor WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+ 
+            $sql->bindValue("nome", $nome);
+            $sql->bindValue("email", $email);
+            $sql->bindValue("permissao", $permissao);
+            $sql->bindValue("telefone", $telefone);
+            $sql->bindValue("setor", $setor);
+            
+            $sql->execute();
+            echo "<script>alert('Usuario alterado com sucesso!');</script>";
+            
+        }
 
         public function editar($id, $nome, $email, $pass, $permissao, $telefone, $setor){
 
@@ -188,18 +206,7 @@
  
             $sql->bindValue("nome", $nome);
             $sql->bindValue("email", $email);
-
-            if(empty($pass)){
-
-                $sql->bindValue("pass", md5($pass));
-
-            }
-            else{
-
-                $sql->bindValue("pass", $pass);
-
-            }
-        
+            $sql->bindValue("pass", md5($pass));
             $sql->bindValue("permissao", $permissao);
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("setor", $setor);

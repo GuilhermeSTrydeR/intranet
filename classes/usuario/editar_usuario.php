@@ -8,31 +8,53 @@
         //configuracoes basicas, nesse caso, configuracoes de fuso horario
         require("../../config/config.php");
 
-     
+
         //aqui instanciamos a classe
         $u = new Usuario();
 
-    
-        //aqui adicionamos um nivel basico de seguranca
-        $id = $_POST["id"];
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $pass = $_POST["pass"];
-        $permissao = $_POST["permissao"];
-        $telefone = $_POST["telefone"];
-        $setor = $_POST["setor"];
+        if(isset($_POST["pass"]) && !empty($_POST["pass"])){
+
+
+                $id = $_POST["id"];
+                $nome = $_POST["nome"];
+                $email = $_POST["email"];
+                $pass = $_POST["pass"];
+                $permissao = $_POST["permissao"];
+                $telefone = $_POST["telefone"];
+                $setor = $_POST["setor"];
+
+                $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor);
+                
+                
+                $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
         
-   
+
+        }
+
+        else{
+
+                
+                $id = $_POST["id"];
+                $nome = $_POST["nome"];
+                $email = $_POST["email"];
+
+                $permissao = $_POST["permissao"];
+                $telefone = $_POST["telefone"];
+                $setor = $_POST["setor"];
+                
+        
+                $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor);
+                
+        
+        
+                $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+                
+        }
+
+
       
-
-
-        $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor);
-        
-       
-       
-        $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-        echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-        
 
         
 
