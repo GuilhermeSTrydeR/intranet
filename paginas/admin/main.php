@@ -52,8 +52,9 @@
       <?php
         echo $u->nome($_SESSION['user']);
       ?>
-     
-      <a href="?pagina=../cadastros/editar_configuracoes&id=<?php echo($u->id($_SESSION['user'])); ?>">
+    
+
+      <a href="?pagina=../cadastros/editar_configuracoes">
         <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
       </a>
     </div>

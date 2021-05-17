@@ -6,6 +6,18 @@
     header("Location: /");
 
   }
+
+      //requer classe de conexao do banco
+      require("../../classes/conexao_bd.php");
+
+      //requer o contato.class onde o comando para gravar no banco ja esta pronto
+      require("../../classes/usuario/usuario.class.php");
+  
+      //configuracoes basicas, nesse caso, configuracoes de fuso horario
+      require("../../config/config.php");
+  
+      //aqui instanciamos a classe
+      $u = new Usuario();
  
 
 
@@ -39,7 +51,7 @@
     echo $_SESSION['nome'];
   ?>
   </div>
-    <a href="?pagina=../../paginas/configs/configUser">
+    <a href="?pagina=../cadastros/editar_configuracoes">
       <img src="/imagens/navbar/engrenagem_azul.png" onclick="" width="20" height="20" alt="config">
 
 

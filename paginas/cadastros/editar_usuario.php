@@ -203,7 +203,9 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                 
 
                 <div class="col">
-                    <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+                    <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
+
+
 
                     <?php
                         if($u->retornaAtivo($id) == 1){
@@ -213,7 +215,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                         }
                         else{
                     ?>
-                        <a href="../../classes/usuario/habilitarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                        <a href="../../classes/usuario/habilitarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Ativar</button></a>
                      <?php
                         }
                     ?>

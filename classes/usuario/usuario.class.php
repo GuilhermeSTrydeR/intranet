@@ -267,6 +267,8 @@
 
         }
 
+
+
         public function desativarUsuario($id){
             
             global $pdo;
