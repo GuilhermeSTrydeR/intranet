@@ -175,7 +175,7 @@ session_start();
                 }
                 else{
             ?>
-                        <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Ativar</button></a>
+                        <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
             <?php
                 }
             ?>

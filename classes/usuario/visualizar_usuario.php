@@ -113,6 +113,9 @@
         </tr>
         </thead>
         <?php
+
+    
+
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             
             //nessa parte verificamos se o status do usuario é diferente de 2, ou seja ele não é temporario
@@ -240,9 +243,8 @@
                     $linha['ativo'] = 'Erro';
                 }
 
-
-                echo"<tr>";
-                echo  " <td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td>  <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
+          
+                echo  "<td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td>  <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
 
                 ?>
 

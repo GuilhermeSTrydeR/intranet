@@ -49,10 +49,8 @@
 
     <div style='text-transform: uppercase; position: fixed; font-weight: 500; color: white; margin-left: 100px;'>
       <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
-      <?php
-        echo $u->nome($_SESSION['user']);
-      ?>
-    
+     
+      <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $u->nome($_SESSION['user']); ?></a>
 
       <a href="?pagina=../cadastros/editar_configuracoes">
         <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
@@ -93,27 +91,26 @@
 
   </p>
   <ul class="sidebar-navigation">
-  <center><h4>MENU</h4></center>
-  <li class="header" id="liHeader"><img src="../../imagens/sidebar/feed.png" height='40' class="d-inline-block align-top" alt="sair" style="margin-left: 20px !important;"><b>Informativos</b></li>
-    <li>
-      <a href="?pagina=../cadastros/cadastrar_informativo">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/register.png" class="d-inline-block align-top" alt="sair" height='40' style="margin-left: 10px !important;"><b style='margin-left: 5px;'>Cadastrar</b> 
+  <center><h4></h4></center>
+  <br>
+  <li>
+      <a href="/paginas/admin/main.php">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -5px;' height='50' width='50'><b style='margin-left: 5px '>Inicio</b> 
       </a>
     </li>
-    <li>
+   <li>
       <a href="?pagina=../../classes/informativo/visualizar_informativo">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/view.png" height='40' class="d-inline-block align-top" alt="sair" style="margin-left: 10px !important;"><b style='margin-left: 5px;'>Visualizar</b> 
-      </a>
-    </li>
-    <li class="header"><img height='40' src="../../imagens/sidebar/user.png" class="d-inline-block align-top" alt="sair" style="margin-left: 20px !important;"><b style='margin-left: 5px;'>Usuarios</b> </li>
-    <li>
-      <a href="?pagina=../cadastros/cadastrar_usuario">
-        <i class="fa fa-home" aria-hidden="true"></i><img height='40' src="../../imagens/sidebar/adduser.png" class="d-inline-block align-top" alt="sair" style="margin-left: 10px !important;"><b style='margin-left: 5px;'>Cadastrar</b>  
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40'><b style='margin-left: -20px;'>Informativos</b> 
       </a>
     </li>
     <li>
       <a href="?pagina=../../classes/usuario/visualizar_usuario">
-        <i class="fa fa-tachometer" aria-hidden="true"></i> <img height='40' src="../../imagens/sidebar/toview.png" class="d-inline-block align-top" alt="sair" style="margin-left: 10px !important;"><b style='margin-left: 5px;'>Visualizar</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -5px;'>Usuarios</b> 
+      </a>
+    </li>
+    <li>
+      <a href="?pagina=../../paginas/timeline/inicio">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -5px;'>Timeline</b> 
       </a>
     </li>
   </ul>
