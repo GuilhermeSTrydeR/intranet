@@ -113,6 +113,11 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: 5px;'>Mural</b> 
       </a>
     </li>
+    <li>
+      <a href="?pagina=../../classes/aniversarios/visualizar_aniversario">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/modal/cake.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -18px;'>Aniversarios</b> 
+      </a>
+    </li>
   </ul>
 </div>
 <div class="content-container">

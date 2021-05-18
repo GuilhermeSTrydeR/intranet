@@ -50,12 +50,12 @@
         }
 
 
-        public function gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido, $setor){
+        public function gravar($nome, $email, $user, $pass, $permissao, $status, $tempo, $telefone, $dataCadastro, $dataCadastroUnix, $idAdm, $excluido, $setor, $nasc){
 
         
 
             global $pdo;
-            $sql = "INSERT INTO usuarios(nome, email, user, pass, permissao, telefone, dataCadastro, dataCadastroUnix, idAdm, excluido, setor) VALUES(:nome, :email, :user, :pass, :permissao, :telefone, :dataCadastro, :dataCadastroUnix, :idAdm, :excluido, :setor)";
+            $sql = "INSERT INTO usuarios(nome, email, user, pass, permissao, telefone, dataCadastro, dataCadastroUnix, idAdm, excluido, setor, nasc) VALUES(:nome, :email, :user, :pass, :permissao, :telefone, :dataCadastro, :dataCadastroUnix, :idAdm, :excluido, :setor, :nasc)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("nome", $nome);
             $sql->bindValue ("email", $email);
@@ -68,6 +68,7 @@
             $sql->bindValue("idAdm", $idAdm);
             $sql->bindValue("excluido", $excluido);
             $sql->bindValue("setor", $setor);
+            $sql->bindValue("nasc", $nasc);
 
             $sql->execute();
 
@@ -179,11 +180,11 @@
 
         }
         
-        public function editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor){
+        public function editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor, $nasc){
 
 
             global $pdo;
-            $sql = "UPDATE usuarios SET nome = :nome, email = :email, permissao = :permissao, telefone = :telefone, setor = :setor WHERE id = '$id'";
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, permissao = :permissao, telefone = :telefone, setor = :setor, nasc = :nasc WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("nome", $nome);
@@ -191,6 +192,7 @@
             $sql->bindValue("permissao", $permissao);
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("setor", $setor);
+            $sql->bindValue("nasc", $nasc);
             
             $sql->execute();
             echo "<script>alert('Usuario alterado com sucesso!');</script>";

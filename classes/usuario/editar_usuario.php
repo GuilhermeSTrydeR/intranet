@@ -24,9 +24,10 @@
                 $permissao = $_POST["permissao"];
                 $telefone = $_POST["telefone"];
                 $setor = $_POST["setor"];
+                $nasc = $_POST["nasc"];
                 $configOuEdit = $_SESSION['configOuEdit'];
 
-                $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor);
+                $u->editar($id, $nome, $email, $pass, $permissao, $telefone, $setor, $nasc);
                 
         }
 
@@ -35,30 +36,30 @@
                 $id = $_POST["id"];
                 $nome = $_POST["nome"];
                 $email = $_POST["email"];
-
                 $permissao = $_POST["permissao"];
                 $telefone = $_POST["telefone"];
                 $setor = $_POST["setor"];
                 $configOuEdit = $_SESSION['configOuEdit'];
+                $nasc = $_POST["nasc"];
                 
         
-                $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor);
+                $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor, $nasc);
                 
         
         
                 
-                if($configOuEdit == 1){
-                        $url = '../../';
-                        echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-
-                }
-                elseif($configOuEdit == 0){
-                        $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
-                        echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-                }
+               
                 
         }
+        if($configOuEdit == 1){
+                $url = '../../';
+                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
+        }
+        elseif($configOuEdit == 0){
+                $url = '/paginas/admin/main.php?pagina=../../classes/usuario/visualizar_usuario';
+                echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+        }
 
       
 

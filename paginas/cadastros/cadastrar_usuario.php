@@ -51,8 +51,11 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
             <option value="13">Outros</option>
         </select>
 </div>
-           
-            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" required autocomplete="off"> 
+        <div class="form-group col-md-3"> 
+            <label for="campo2">Data de Nascimento</label> <input type="date" class="form-control" name="nasc" required autocomplete="off"> 
+        </div>
+        <div class="form-group col-md-3"> 
+            <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" required autocomplete="off"> 
         </div>
         <br><br>
                 <!-- <div class="form-group col-md-2">

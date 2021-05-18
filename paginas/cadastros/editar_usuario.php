@@ -37,6 +37,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
     $excluido = $linha['excluido']; 
     $ativo = $linha['ativo']; 
     $setor = $linha['setor']; 
+    $nasc = $linha['nasc'];
 
 
     if($ativo == 0){
@@ -181,7 +182,10 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
             <option value="13">Outros</option>
         </select>
 </div>
-           
+        <div class="form-group col-md-3"> 
+            <label for="campo2">Data de Nascimento</label> <input value=<?php echo $nasc;?> type="date" class="form-control" name="nasc" required autocomplete="off"> 
+        </div>
+
             <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" placeholder="••••••••••••••••••••••••••" autocomplete="off"> 
         </div>
         <br><br>
