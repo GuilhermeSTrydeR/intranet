@@ -18,17 +18,7 @@
 
 
 
-        // condicao estatica para resolver o problema de exibir as bordas da div sem ter informacoes dentro(porem ainda precisar integrar essa funcao a saida real) 
-        if(isset($consulta)){
-            ?>
-            <style>
-                .hidden{
-                    display: block !important;
-                }
-            </style>
-            <?php
-
-        }
+ 
     ?>
 
         <?php
@@ -116,9 +106,44 @@
 
 
 </script>
+<div style='height: 150px;'>
 
-
-
-<div class='row' style='height: 100px;'></div>
+</div>
 
 </center>
+
+<div id='modalInicio' style=' z-index: 2147483648; width: 85%; height: 15%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 25px #00000069; border-radius: 5px; display: flex; flex-direction: row; justify-items: center;  padding: 0 20px; position: fixed; bottom: 10px; left: 50%; transform: translate(-50%, 0);'>
+
+
+    <div class='row'>
+        <div class='col'>
+        <input style='height: 50%; float: right;' id="botao" type="button" class='btn btn-danger' value="Fechar " onclick="mudarCor()"/>
+        
+        </div>
+    
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+    function mudarCor(){
+        // referencia o primeiro 'h1' do layout html
+        const texto = document.getElementById( 'modalInicio' ).style.display = 'none';
+
+        
+    }
+
+</script>  
+
+
+</div>
+
+
+

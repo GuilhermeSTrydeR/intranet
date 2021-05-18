@@ -109,8 +109,8 @@
       </a>
     </li>
     <li>
-      <a href="?pagina=../../paginas/timeline/inicio">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -5px;'>Timeline</b> 
+      <a href="?pagina=../../paginas/mural/inicio">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: 5px;'>Mural</b> 
       </a>
     </li>
   </ul>
