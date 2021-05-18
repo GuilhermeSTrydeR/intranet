@@ -16,9 +16,6 @@
         $sql = 'SELECT * FROM informativo ORDER BY id DESC;';
         $consulta = $pdo->query($sql);
 
-
-
- 
     ?>
 
         <?php
@@ -30,14 +27,11 @@
             echo "<div class='mural'>";
             
             echo "<center>";  
+            
             echo "<table class='tableMural' style='background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed;  max-width: 900px; word-wrap: break-word; !important;'>";
-        
           
             $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i", $linha['dataCadastro']);
-
-            
-                
-            
+    
             echo "<tr>";
             echo "<td style='border: none; max-width: 500px;'><br><center><b><p style='float: left; margin-left: -300px; color: #F47920;'>Publicado em: {$linha['dataCadastro']}</p></b></center><br><br><center><h3 style='color: #009b63; word-wrap: break-word; max-width: 1000px;'> {$linha['titulo']}</h3></center> </td>";
             echo "</tr>";
@@ -59,9 +53,6 @@
 
                         }
                         
-                      
-                        
-                        
                         echo"<div class='row' style='height: 100px;'></div>";
                     echo "</center>";
                 echo "</td>";
@@ -73,76 +64,77 @@
             
             echo"</table>";
             
-
             }
             
-         
-         
         }
         
-
     ?>
 
+    <script>
+        // essas funcoes sao para aumentar e diminuir as imagens do mural ao passar, no caso la na tag <img> sao chamadas pelo evento (mouseOver) e (MouseOut)
+        // function aumenta(obj){
+        //     // recebemos primeiro as dimensoes originais para depois voltar elas, (nao adianta dividir por 2 depois que multiplicar pois as imagens perdem sua proporcao original)
+        //     obj.heightOriginal = obj.height;
+        //     obj.widthOriginal = obj.width;
 
 
+        //     obj.height=obj.height*2;
+        // 	obj.width=obj.width*2;
+        // }
+        
+        // function diminui(obj){
+        // 	obj.height=obj.heightOriginal
+        // 	obj.width=obj.widthOriginal
+        // }
 
 
-<script>
-// essas funcoes sao para aumentar e diminuir as imagens do mural ao passar, no caso la na tag <img> sao chamadas pelo evento (mouseOver) e (MouseOut)
-// function aumenta(obj){
-//     // recebemos primeiro as dimensoes originais para depois voltar elas, (nao adianta dividir por 2 depois que multiplicar pois as imagens perdem sua proporcao original)
-//     obj.heightOriginal = obj.height;
-//     obj.widthOriginal = obj.width;
-
-
-//     obj.height=obj.height*2;
-// 	obj.width=obj.width*2;
-// }
- 
-// function diminui(obj){
-// 	obj.height=obj.heightOriginal
-// 	obj.width=obj.widthOriginal
-// }
-
-
-</script>
+    </script>
 <div style='height: 140px;'>
 
 </div>
 
 </center>
 
-<div id='modalInicio' style='          z-index: 2147483648;         height: auto; width: 80%;        background: #ffffff 0% 0% no-repeat padding-box;         box-shadow: 0px 3px 25px #00000069;         border-radius: 5px;         display: flex;         flex-direction: row;         justify-items: center;         align-items: center;         padding: 0 20px;         position: fixed;         bottom: 30px;         left: 50%;         transform: translate(-50%, 0);       '>
+<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%;         transform: translate(-50%, 0); '>
 
        
 
-    <div class='row'>
-        <div class='col' style='float: right;'>
-            <input style='float: right; height: 90%; width: 90%; margin-top: 5px;' id="botao" type="button" class='btn btn-danger' value="Fechar " onclick="fecharModal()"/>
-        </div>
-    </div>
-    <div class='row'>
-        <p style='color: #009b63'>
-            Aniversariantes
+        <div class='row'>
+            <div class="col-2" style='background: ffffff;'>
+           
+                <p style='color: #009b63; float: left; margin-top: 20px; margin-left: 20px;'>
+                <img src="../../imagens/modal/cake.png" alt="aniversariantes">
+                <br>
+                    <b>Aniversariantes <br> do Mês</b>
+                </p>
+            
+        
+            </div>   
 
-        </p>
-        <div class='col'>
-          aqui devera vir do banco os aniversarios aqui devera vir do banco os aniversarios aqui devera vir do banco os aniversarios
-        </div>
+                <div class='col-9' style='background: #ffffff; float: left;'>
+                
+            </div>
+
+            <div class='col-1'>
+    
+                <input style='float: right; border-top-right-radius: 20px; 'id="botao" type="button" class='btn btn-danger' value="Fechar" onclick="fecharModal()"/>
+        
+            </div>
+
+
     </div>
+ 
 
 
 
 </div>
 
 
-
-
-
 <script>
 
     function fecharModal(){
         const texto = document.getElementById( 'modalInicio' ).style.display = 'none';
+        // const texto = document.getElementById( 'sombraInicio' ).style.display = 'none';
     }
 
 </script>  
