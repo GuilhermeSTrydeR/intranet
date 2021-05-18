@@ -106,21 +106,29 @@
 
 
 </script>
-<div style='height: 150px;'>
+<div style='height: 140px;'>
 
 </div>
 
 </center>
 
-<div id='modalInicio' style=' z-index: 2147483648; width: 85%; height: 15%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 25px #00000069; border-radius: 5px; display: flex; flex-direction: row; justify-items: center;  padding: 0 20px; position: fixed; bottom: 10px; left: 50%; transform: translate(-50%, 0);'>
+<div id='modalInicio' style='          z-index: 2147483648;         height: auto; width: 80%;        background: #ffffff 0% 0% no-repeat padding-box;         box-shadow: 0px 3px 25px #00000069;         border-radius: 5px;         display: flex;         flex-direction: row;         justify-items: center;         align-items: center;         padding: 0 20px;         position: fixed;         bottom: 30px;         left: 50%;         transform: translate(-50%, 0);       '>
 
+       
 
     <div class='row'>
-        <div class='col'>
-        <input style='height: 50%; float: right;' id="botao" type="button" class='btn btn-danger' value="Fechar " onclick="mudarCor()"/>
-        
+        <div class='col' style='float: right;'>
+            <input style='float: right; height: 90%; width: 90%; margin-top: 5px;' id="botao" type="button" class='btn btn-danger' value="Fechar " onclick="fecharModal()"/>
         </div>
-    
+    </div>
+    <div class='row'>
+        <p style='color: #009b63'>
+            Aniversariantes
+
+        </p>
+        <div class='col'>
+          aqui devera vir do banco os aniversarios aqui devera vir do banco os aniversarios aqui devera vir do banco os aniversarios
+        </div>
     </div>
 
 
@@ -133,11 +141,8 @@
 
 <script>
 
-    function mudarCor(){
-        // referencia o primeiro 'h1' do layout html
+    function fecharModal(){
         const texto = document.getElementById( 'modalInicio' ).style.display = 'none';
-
-        
     }
 
 </script>  
