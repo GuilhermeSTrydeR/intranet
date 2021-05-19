@@ -170,7 +170,7 @@ session_start();
         
         ?>
       
-        <h4 style='margin-top: 175px;'>Proximos Aniversarios</h4>
+        <h4 style='margin-top: 275px;'>Proximos Aniversarios</h4>
         <br>
         <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 15%; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
         <thead>
@@ -187,8 +187,22 @@ session_start();
 
         <?php
         
-        // nessa variavel eh atribuido o mes atual para ser exibido apenas os aniversariantes do mes ativos e nao excluidos
-        $mesAtual = (date('m') + 1);
+
+        // essa condicao determina o mes posterior incrementando a variavel do mes, caso for dezembro(nao ha mes 13) entao o mes recebe janeiro(01)
+
+        // se mes atual menor ou igual a 11, eh incrementado em 1
+        if($mesAtual <= 11){
+
+            $mesAtual++;
+
+        }
+        // caso o mes for 12, eh resetado para 1
+        else{
+
+            $mesAtual = 1;
+            
+        }
+
 
         $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
    
@@ -256,13 +270,6 @@ session_start();
                     echo "</td></tr>";
                 }
 
-   
-
-
-
-            
-       
-
             }
         }
         
@@ -271,9 +278,9 @@ session_start();
      
 ?>
 
-<h4 style='margin-top: 175px;'>Todos os Aniversarios</h4>
+    <h4 style='margin-top: 175px; '>Todos os Aniversarios</h4>
         <br>
-        <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 15%; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
+        <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 15%;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
         <thead>
         <tr>
         <div class='thead'>
@@ -341,7 +348,7 @@ session_start();
                             break;
                     
            
-                        }
+                    }
 
                     $linha['ativo'] = "<p style='color: green;'>Sim</p>";
                     echo"<tr>";
@@ -351,23 +358,31 @@ session_start();
                     $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
         
                     echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td>";
-                    ?>
-        
-                    <?php
+                
+   
+                    
                     echo "</td></tr>";
+                 
+                    
                 }
 
-   
+                
 
-
-
+               
             
        
 
             }
+
+           
         }
+
         
         echo"</table>";
+
+    
+
+       
 
      
 ?>
@@ -375,7 +390,13 @@ session_start();
 
 
 
-    </div>
 
-    <div class='row' style='height: 100px;'></div>
+ 
+
+
 </center>
+<div style='height: 500px;'>
+
+
+
+</div>
