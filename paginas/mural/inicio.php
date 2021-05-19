@@ -72,11 +72,13 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
                 }
                 
-              
-                
-                
                 echo"<div class='row' style='height: 100px;'></div>";
             echo "</center>";
+
+            // esse echo define o espacamento do informativo dentro do mural de fundo branco
+            echo"<div class='row' style='height: 100px;'></div>";
+
+
         echo "</td>";
     echo "</tr>";
 
@@ -85,6 +87,8 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     echo"<div class='print' style='border-bottom: 1px dotted black; margin: 20px;'></div>";
     
     echo"</table>";
+       // esse echo define o espacamento entre os informativos
+       echo"<div class='row' style='margin-bottom: 100px;'></div>";
     
 
     }

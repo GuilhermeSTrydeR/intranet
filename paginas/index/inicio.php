@@ -10,15 +10,12 @@
         // include da classe informativo
         include("../../classes/informativo/informativo.class.php");
 
-        // $i = new Informativo();
         global $pdo;
 
         $sql = 'SELECT * FROM informativo ORDER BY id DESC;';
         $consulta = $pdo->query($sql);
 
-    ?>
-
-        <?php
+   
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['ativo'] == 1 && $linha['excluido'] == 0){
 
@@ -52,17 +49,24 @@
                             echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
 
                         }
-                        
+                        // esse echo define o espacamento do informativo dentro do mural de fundo branco
                         echo"<div class='row' style='height: 100px;'></div>";
                     echo "</center>";
                 echo "</td>";
             echo "</tr>";
 
-            echo"</div>";
+        
 
+            echo"</div>";
+ 
             echo"<div class='print' style='border-bottom: 1px dotted black; margin: 20px;'></div>";
+
+
             
             echo"</table>";
+            
+            // esse echo define o espacamento entre os informativos
+            echo"<div class='row' style='margin-bottom: 100px;'></div>";
             
             }
             
@@ -111,7 +115,7 @@
         
             </div>   
 
-                <div class='col-9' style='background: #ffffff; float: left;'>
+            <div class='col-9' style='background: #ffffff; float: left;'>
                 
             </div>
 

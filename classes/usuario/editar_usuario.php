@@ -31,7 +31,7 @@
                 
         }
 
-        // porem se nenhuma senha for digitada, a mesma senha sera preservada
+        // porem se nenhuma senha for digitada, a mesma que esta no banco senha sera preservada
         else{
                 $id = $_POST["id"];
                 $nome = $_POST["nome"];
@@ -45,11 +45,7 @@
         
                 $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor, $nasc);
                 
-        
-        
-                
-               
-                
+ 
         }
         if($configOuEdit == 1){
                 $url = '../../';
