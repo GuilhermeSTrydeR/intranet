@@ -121,7 +121,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
     if($cont > 0){
     
-        echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%;         transform: translate(-50%, 0); '>";
+        echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
   
     }
 
@@ -131,8 +131,8 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         <div class='row'>
             <div class="col-2" style='background: ffffff;'>
            
-                <p style='color: #009b63; float: left; margin-left: 20px; '>
-                <img src="../../imagens/modal/cake.png" style='margin-top: 10px;' alt="aniversariantes">
+                <p style='color: #009b63; float: left; margin-left: 20px; margin-bottom: 5px;'>
+                <img src="../../imagens/modal/cake.png" style='margin-top: 5px;' alt="aniversariantes">
                 <br>
                     <b>Aniversariantes</b>
                 </p>
@@ -147,7 +147,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 $mesAtual = date('m');
         
                 $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
-                echo "<table style='margin-top: 35px;'>";
+                echo "<table style='margin-top: 15px;'>";
                 
 
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
