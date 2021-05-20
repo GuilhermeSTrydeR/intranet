@@ -258,8 +258,9 @@
         }
         else{
 
-            echo "<h4>Não há registros.</h4>";
-
+            echo "<h4>Não há usuarios cadastrados.</h4>";
+            echo "<br>";
+            echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_usuario'>Para cadastrar um novo usuario, clique aqui!</a>";
         }
    
    

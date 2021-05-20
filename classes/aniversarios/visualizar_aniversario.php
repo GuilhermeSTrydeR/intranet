@@ -353,7 +353,6 @@ session_start();
         // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
         $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios ORDER BY Month(nasc), Day(nasc)");
    
-
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['excluido'] == 0){
             

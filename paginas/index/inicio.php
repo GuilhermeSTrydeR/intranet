@@ -129,18 +129,18 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
 
         <div class='row'>
-            <div class="col-2" style='background: ffffff;'>
-           
-                <p style='color: #009b63; float: left; margin-left: 20px; margin-bottom: 5px;'>
+            <div class="col-2" style='background: ffffff; '>
+            <center style='margin-left: 20px;'>
+                <p style='color: #009b63; float: left; margin-bottom: 5px;'>
                 <img src="../../imagens/modal/cake.png" style='margin-top: 5px;' alt="aniversariantes">
                 <br>
                     <b>Aniversariantes</b>
                 </p>
-            
+                </center>
         
             </div>   
-
-            <div class='col-9' style='background: #ffffff; float: left;'>
+   
+            <div class='col-9' style='background: #ffffff; float: left; '>
             <?php
 
                 global $pdo;
@@ -153,10 +153,13 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($linha['ativo'] == 1 && $linha['excluido'] == 0){
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
-
+                             
                                 echo "<td>";
+                        
                                 echo "<div style='margin-left: 35px;'><h5 style='color: #00995D;'>{$linha['nome']}</h5><center><h4  style='color: #F47920 !important;'>{$linha['nasc']}</h4></center></div>";
+                  
                                 echo "</td>";
+                                
             
                     }
                 }
@@ -165,6 +168,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 ?>
 
             </div>
+        
 
             <div class='col-1'>
     

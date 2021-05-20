@@ -42,37 +42,20 @@ session_start();
 
 
         $consulta = $pdo->query($_SESSION['sentidodaLista'] );
-        if($temDado == 1){
 
 
+        $cont = 0;
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+            $cont++;
 
         }
-
-
-        // aqui devera receber em vez de 'true' o retorno de uma funcao para verificar se ha linhas na tabela 'informativo'pois se nao houver, o elemento continua escondido
         
+  
 
-        if(isset($consulta)){
+        if($cont > 0){
             ?>
-                <style>
-                    .hidden{
-                        display: block !important;
-                    }
-                </style>
-            <?php
-            
-        }
-        else{
-            ?>
-            <h4>Não há nenhum registro.</h4>
-            <?php
-        }
-
-        ?>
-
-
-
-        <form method="POST" action="<?php echo $PHP_SELF; ?>">
+            <form method="POST" action="<?php echo $PHP_SELF; ?>">
             <?php
                 if($_POST['sentido'] == 1){
                     $botaoSentido = 0;
@@ -122,27 +105,30 @@ session_start();
                     </div>
                 </div>
             </form>
-        <br>
-        <br>
-        <br>
+            <br>
+            <br>
+            <br>
         
 
-        <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
-        <thead>
-        <tr>
-        <div class='thead'>
-        <th style='width: 50px;' scope='col'>ID</th>
-        <th style='width: 80px;' scope='col'>Data</th>
-        <th style='width: 140px;' scope='col'>Titulo</th>
-        <th style='width: 300px;' scope='col'>Texto</th>
-        <th style='width: 70px;' scope='col'>Ativo?</th>
-        <th style='width: 130px;' scope='col' class='noprint'>Opções</th>
-        </div>
-        </tr>
-        </thead>
-        <?php
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            if($linha['excluido'] == 0){
+            <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
+            <thead>
+            <tr>
+            <div class='thead'>
+            <th style='width: 50px;' scope='col'>ID</th>
+            <th style='width: 80px;' scope='col'>Data</th>
+            <th style='width: 140px;' scope='col'>Titulo</th>
+            <th style='width: 300px;' scope='col'>Texto</th>
+            <th style='width: 70px;' scope='col'>Ativo?</th>
+            <th style='width: 130px;' scope='col' class='noprint'>Opções</th>
+            </div>
+            </tr>
+            </thead>
+            <?php
+
+            $consulta = $pdo->query($_SESSION['sentidodaLista'] );
+
+            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+           
             
                 if($linha['ativo'] == 0){
                     $linha['ativo'] = "<p style='color: red';>Não</p>";
@@ -157,28 +143,28 @@ session_start();
                 }
             
 
-            $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
+                $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
-            echo"<tr>";
-            echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td> <td class='noprint'>";
-            ?>
+                echo"<tr>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td> <td class='noprint'>";
+                ?>
 
-            <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
-            
-            <br>
-            <br>
-            <?php
-                if($i->retornaAtivo($linha['id']) == 1){
-            ?>
-                         <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
-            <?php
-                }
-                else{
-            ?>
-                        <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
-            <?php
-                }
-            ?>
+                <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                
+                <br>
+                <br>
+                <?php
+                    if($i->retornaAtivo($linha['id']) == 1){
+                ?>
+                            <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                <?php
+                    }
+                    else{
+                ?>
+                            <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                <?php
+                    }
+                ?>
 
            
             <br>
@@ -188,17 +174,34 @@ session_start();
 
 
             <?php
+
             echo "</td></tr>";
 
-            }
+            
+        
+
+        
+
             
         }
-        
-
-
+      
         echo"</table>";
-        
+    }
+    else{
+
+        echo "<h4>Não há informativos cadastrados</h4>";
+        echo "<br>";
+        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_informativo'>Para cadastrar um novo informativo, clique aqui!</a>";
+
+    }
+
+
+
+       
         ?>
+
+        
+    
 
 
 
