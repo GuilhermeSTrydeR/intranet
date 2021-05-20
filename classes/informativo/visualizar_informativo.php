@@ -30,13 +30,13 @@ session_start();
         global $pdo;
 
         if($_POST['sentido'] == 0){
-            $_SESSION['sentidodaLista'] = 'SELECT * FROM informativo ORDER BY id DESC;';
+            $_SESSION['sentidodaLista'] = 'SELECT * FROM informativo WHERE excluido = 0 ORDER BY id DESC';
             $nomeBotao = 'Ordenar Sentido Horario';
             
         }
 
         else{
-            $_SESSION['sentidodaLista']  = 'SELECT * FROM informativo;';
+            $_SESSION['sentidodaLista']  = 'SELECT * FROM informativo WHERE excluido = 0';
             $nomeBotao = 'Ordenar Sentido Anti-Horario';
         }   
 

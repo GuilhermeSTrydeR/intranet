@@ -154,14 +154,11 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($linha['ativo'] == 1 && $linha['excluido'] == 0){
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
 
-                               
                                 echo "<td>";
-                                echo "<div style='margin-left: 35px;'><h5>{$linha['nome']}</h5><center><h4>{$linha['nasc']}</h4></center></div>";
+                                echo "<div style='margin-left: 35px;'><h5 style='color: #00995D;'>{$linha['nome']}</h5><center><h4  style='color: #F47920 !important;'>{$linha['nasc']}</h4></center></div>";
                                 echo "</td>";
-               
-
+            
                     }
-                  
                 }
           
                 echo"</table>";
