@@ -47,7 +47,10 @@
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
                         echo "<div style='float: left' id={$linha['nome']} class='boxItens'>";
-                            echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p>{$linha['nome']}</p></center></a>";
+                            echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
+                            width: 100%;
+                            overflow: hidden;             
+                            text-overflow:    ellipsis;'>{$linha['nome']}</p></center></a>";
                         echo "</div>";
                         
                         $i++;
@@ -61,7 +64,7 @@
             
             else{
 
-                echo "<h4>Não há Acessos cadastrados</h4>";
+                echo "<h4 style='margin-top: 20%;'>Não há Acessos cadastrados</h4>";
                
             }
             

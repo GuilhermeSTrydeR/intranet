@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <?php
 
 if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
@@ -83,7 +85,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         <div class="row">
             <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" value="<?php echo $email ?>" > </div>
 
-            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" name="telefone" value="<?php echo $telefone ?>"  size="15"> </div>
+            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id='telefone' name="telefone" value="<?php echo $telefone ?>"  size="15"> </div>
 
             <div class="form-group col-md-3">
             <label for="permissao">Permissão</label>
@@ -238,4 +240,9 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
         </div>
     </form>
+
+    <!-- mascara para o telefone, nesse caso ele pega o id telefone e aplica essa mascara -->
+    <script type="text/javascript">
+        $("#telefone").mask("(00) 0000-0000");
+    </script>   
 </center>
