@@ -34,6 +34,7 @@
     $titulo = $linha['titulo'];
     $texto = $linha['texto'];
     $imagem = $linha['imagem']; 
+    $ativo = $linha['ativo']; 
 
 
   }
@@ -59,7 +60,15 @@
           <label class="form-check-label" for="ativo" >
             Exibir no mural
           </label>
-          <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
+          <!-- nesse input sera checado se o informativo esta ativo, se o mesmo estiver ativo, sera escrito no html o atributo (checked) fazendo assim o input ficar marcado -->
+          <input class="form-check-input" type="checkbox" name='ativo' value= '1' <?php 
+
+            if($i->retornaAtivo($id) == 1){
+              echo "checked";
+            }
+          
+          
+          ?>>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             
         
