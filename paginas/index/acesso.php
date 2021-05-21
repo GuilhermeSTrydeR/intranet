@@ -46,11 +46,11 @@
                 echo "<div class='row'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo "<div style='float: left' id={$linha['nome']} class='boxItens'>";
+                        echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
                             echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
                             width: 100%;
-                            overflow: hidden;             
-                            text-overflow:    ellipsis;'>{$linha['nome']}</p></center></a>";
+                            overflow: hidden !important;             
+                            text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
                         echo "</div>";
                         
                         $i++;

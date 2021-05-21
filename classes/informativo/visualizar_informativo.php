@@ -70,12 +70,12 @@ session_start();
                 <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
             </div> 
         
-                <div class="row" style='float: left; margin-left: 400px; position: absolute;'>
-                    <div class="col">
+                <div class="row" style='float: left; margin-left: 500px; position: absolute;'>
+                    <!-- <div class="col">
                         <a href="../../classes/informativo/apagarTodosInformativos.php">
                             <img src="../../imagens/navbar/x.png" alt='botao-apagar-informativo' title="Apagar todos os informativos">
                         </a>
-                    </div>
+                    </div> -->
             
                     <div class="col">
                         <a href="../../classes/informativo/desabilitarTodosInformativos.php">

@@ -69,12 +69,12 @@ $u = new Usuario();
   
         <div class="row">
             <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
-
-            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
+<!-- 
+            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div> -->
 
             <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>"  size="60"> </div>
 
-            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>"  autocomplete="off"> </div>
+            <div class="form-group col-md-4"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>"  autocomplete="off"> </div>
         </div>
 
         <div class="row">
@@ -234,12 +234,18 @@ $u = new Usuario();
                 ?>
 
                 <div class="col">
-                    <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
+
+
+                    <!-- nao eh interessante exibir um botao para excluir o proprio usuario e nem para desativalo, para fazer isso va em (usuarios->editar)  -->
+
+                    <!-- <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a>  -->
+                    
+                    <!-- <a href="../../classes/usuario/desabilitarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
 
                     <?php
                         if($u->retornaAtivo($id) == 1){
                     ?>
-                         <a href="../../classes/usuario/desabilitarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                        -->
                     <?php
                         }
                         else{
