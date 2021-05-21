@@ -210,8 +210,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                 
 
                 <div class="col">
-                    <a href="../../classes/usuario/apagarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
-
+                <a href="?pagina=../confirmaExcluir/usuario&id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
 
 
                     <?php

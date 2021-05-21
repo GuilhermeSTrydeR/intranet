@@ -15,25 +15,25 @@
   require("../../classes/conexao_bd.php");
 
   //requer o informativo.class onde o comando para gravar no banco ja esta pronto
-  require("../../classes/informativo/informativo.class.php");
+  require("../../classes/acesso/acesso.class.php");
 
   // configuracoes, nesse caso o fuso horario
   require("../../config/config.php");
 
-  $i = new Informativo();
+  $ac = new Acesso();
 
   global $pdo;
 
-  $sql = "SELECT * FROM informativo WHERE id = $id;";
+  $sql = "SELECT * FROM acesso WHERE id = $id;";
 
   $consulta = $pdo->query($sql);
   
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
   
-    $titulo = $linha['titulo'];
-    $texto = $linha['texto'];
-    $imagem = $linha['imagem']; 
+ 
+    $nome = $linha['nome'];
+    $link = $linha['link']; 
 
 
   }
@@ -41,44 +41,40 @@
 ?>
 
 <center>
-<form action="../../classes/informativo/editar_informativo.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+<form action="../../classes/acesso/editar_acesso.php" method="POST" style='max-width: 500px; margin-top: 50px;'>
   <input type="text" name='id' value="<?php echo $id; ?>" style='display: none;'>
   <div class="form-group">
-    <label for="titulo">Titulo</label>
-    <input type="text" class="form-control" id="title" name="titulo" value="<?php echo $titulo; ?>" required>
+    <label for="titulo">Nome</label>
+    <input type="text" class="form-control" id="title" name="nome" value="<?php echo $nome; ?>" required>
+    <br>
+    <label for="titulo">Link</label>
+    <input type="text" class="form-control" id="title" name="link" value="<?php echo $link; ?>" required>
  
   <br>
-        <!-- obs: <textarea> nao suprta o atributo (value) -->
-        <label for="texto">Texto</label>
-        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $texto;?></textarea>
+
         <br>
         <div class="col-sm-12">
-          <input type="file" class="form-control" name="Arquivo" id="Arquivo" value="<?php echo $imagem; ?>" ?>
+        
           <br>
           <div class='col' style='float: left;'>
           <label class="form-check-label" for="ativo" >
-            Exibir no mural
+            Exibir nos Acessos
           </label>
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             
-        
+
           <div class=row>
             <div class="col" style='margin-right: 65px !important;'> 
-            <a href="?pagina=../confirmaExcluir/informativo&id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+            <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
             </div> 
-
-
-            <!-- <div class="col" style='margin-right: 65px !important;'> 
-            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
-            </div> -->
 
             <div class="col"> 
             <button type="submit" class="btn btn-success">Salvar</button> 
             </div>
 
             <div class="col"> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso" class="btn btn-danger">Cancelar</a> 
             </div>
             
             </div>

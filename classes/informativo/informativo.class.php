@@ -50,6 +50,36 @@
 
         }
 
+        public function retornaData($id){
+            global $pdo;
+            
+            $sql = "SELECT dataCadastro FROM informativo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
+        public function retornaTitulo($id){
+            global $pdo;
+            
+            $sql = "SELECT titulo FROM informativo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
 
         public function retornaImagem($id){
             global $pdo;

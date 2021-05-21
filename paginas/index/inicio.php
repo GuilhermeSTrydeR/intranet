@@ -48,7 +48,7 @@
 
                             }
                             // esse echo define o espacamento do informativo dentro do mural de fundo branco
-                            echo"<div class='row' style='height: 100px;'></div>";
+                            echo"<div class='row' style='height: 50px;'></div>";
                         echo "</center>";
                     echo "</td>";
                 echo "</tr>";
@@ -62,7 +62,7 @@
 
                 
                 echo"</table>";
-                echo"<div class='row' style='height: 100px;'></div>";
+                echo"<div class='row' style='height: 20px;'></div>";
                 
             }
             

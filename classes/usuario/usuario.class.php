@@ -179,6 +179,26 @@
 
 
         }
+
+        
+        public function retornaNome($id){
+
+            global $pdo;
+            
+            $sql = "SELECT nome FROM usuarios WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':user', $user );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+
+        }
+
+
         
         public function editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor, $nasc){
 
