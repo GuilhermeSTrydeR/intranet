@@ -26,7 +26,7 @@
 
         global $pdo;
 
-        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0");
+        $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0");
             
         // o contador eh iniciado com zero
         $cont = 0;
@@ -45,15 +45,10 @@
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
  
             echo "<div class='col'>";
-            echo "<a href='?pagina=../../paginas/cadastros/cadastrar_acesso'>";
+            echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
             echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
             echo "</a>";
-            echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
-            echo "<img src='../../imagens/navbar/list.png' alt='botao-visualizar-grupo-acessos' title='Grupos de Acesso' height='40' style='margin-left: 40px;'>";
-            echo "</a>";
-            // echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
-            // echo "<img src='../../imagens/navbar/plusplus.png' alt='botao-novo-grupo-informativo' title='Novo Grupo de Acessos' width='40' style='margin-left: 40px;'>";
-            // echo "</a>";
+  
             echo "</div>";
             echo "</div>";
             echo "<br>";
@@ -64,17 +59,15 @@
             echo "<div class='thead'>";
           
             echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 100px;' scope='col'>Nome</th>";
-            echo "<th style='width: 150px;' scope='col'>Link</th>";
-            echo "<th style='width: 150px;' scope='col'>Grupo</th>";
+            echo "<th style='width: 250px;' scope='col'>Nome do Grupo</th>";
             echo "<th style='width: 50px;' scope='col'>Ativo</th>";
-            echo "<th style='width: 250px;' scope='col'>Opções</th>";
+            echo "<th style='width: 150px;' scope='col'>Opções</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
     
             // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
-            $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0");
+            $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0");
        
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
               
@@ -91,10 +84,10 @@
                 }
             
 
-               $linha['grupo'] = $ac->retornaNome($linha['grupo']);
+               
 
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']}  </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td>  <td> {$linha['ativo']}</td>";
 
              
 
@@ -104,23 +97,24 @@
 
                 <td class='noprint'>
               
-                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_grupo_acesso&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+
+                    <a href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
      
 
-                    <a href=<?php echo $linha['link']; ?> target="_blank"><button type='button' class='btn btn-primary' style='width: 100px;'>Acessar</button></a>
                 
                     <br><br>
 
      
                     <?php
-                        if($ac->retornaAtivo($linha['id']) == 1){
+                        if($ac->retornagrupoAtivo($linha['id']) == 1){
                     ?>
-                                <a href="../../classes/acesso/desabilitarAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                                <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
                     <?php
                         }
                         else{
                     ?>
-                                <a href="../../classes/acesso/habilitarAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                                <a href="../../classes/acesso/habilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
                     <?php
                         }
                     ?> 

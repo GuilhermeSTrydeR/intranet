@@ -16,12 +16,25 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
   require("../../config/config.php");
 
   $ac = new Acesso();
+
   global $pdo;
 
+  // $sql = "SELECT * FROM acesso WHERE id = $id;";
+
+  $consulta = $pdo->query($sql);
+  
+  // while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
 
+  // }
+
+  $id = $_GET['id'];
+
+  $nomeGrupo = $ac->retornaNome($id);
 
 ?>
+
+
 <center>
 
 <form action="../../classes/acesso/gravar_acesso.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
@@ -33,33 +46,9 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
  
     <label for="link">link</label>
     <input type="text" class="form-control" id="link" name="link" required>
-    <br>
-    <label for="setor">Grupo</label>
-        <select class="form-select" aria-label="grupo" name="grupo" required>
-          <?php
-  
-            $sql = "SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1";
-            $consulta = $pdo->query($sql);
-
-            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-
-              $nome = $linha['nome'];
-              $id = $linha['id'];
-
-              echo"<option value='$id'>$nome</option>";
-            } 
-
-          ?>
-
-
- 
-            
-        </select>
-
-    
-
-
-
+  <br>
+    <label for="grupo">Grupo</label>
+    <input type="text" READONLY class="form-control" value=<?php echo $nomeGrupo;?> id="link" name="grupo" required>
 
 
 

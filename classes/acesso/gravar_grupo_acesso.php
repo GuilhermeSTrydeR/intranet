@@ -15,14 +15,12 @@
         $ac = new Acesso();
 
         $nome = addslashes($_POST["nome"]);
-        $link = addslashes($_POST["link"]);
         $ativo = addslashes($_POST["ativo"]);
-        $grupo = addslashes($_POST["grupo"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $ac->gravar($nome, $link, $ativo, $grupo);
+        $ac->gravarGrupoAcesso($nome, $ativo);
 
-        echo "<script>alert('Acesso cadastrado com sucesso!');</script>";
+        echo "<script>alert('Grupo de acesso cadastrado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
