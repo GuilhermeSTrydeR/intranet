@@ -161,8 +161,10 @@
 
         }
         else{
-
             $ac->truncateAcesso();
+            $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';
+            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+
         }
    
             
