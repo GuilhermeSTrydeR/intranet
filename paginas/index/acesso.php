@@ -15,7 +15,7 @@
 
 
 
-        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1");
+        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1 AND grupo = 1");
             
         // o contador eh iniciado com zero
         $cont = 0;
@@ -35,7 +35,7 @@
                 
                 echo"<div class='container'>";
         
-                $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1");
+                $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1 AND grupo = 1");
                 
                 $numItensLinha = 4;
 

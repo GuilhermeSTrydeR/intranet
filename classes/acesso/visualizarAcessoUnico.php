@@ -77,7 +77,7 @@
             echo "</thead>";
     
             // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
-            $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id'");
+            $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
        
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 

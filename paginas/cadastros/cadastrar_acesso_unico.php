@@ -72,7 +72,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $id; ?>" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
           </div>

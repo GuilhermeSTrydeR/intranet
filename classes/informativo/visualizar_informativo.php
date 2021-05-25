@@ -12,10 +12,10 @@ session_start();
         }
 
         </style>
-
-
+        <h4>Informativos</h4>
+        <br><br>
         <?php
-
+  
         //include para acessar o banco
         include("../../classes/conexao_bd.php");
 
@@ -70,7 +70,7 @@ session_start();
                 <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
             </div> 
         
-                <div class="row" style='float: left; margin-left: 500px; position: absolute;'>
+                <div class="row" style='float: left; margin-left: 700px; position: absolute;'>
                     <!-- <div class="col">
                         <a href="../../classes/informativo/apagarTodosInformativos.php">
                             <img src="../../imagens/navbar/x.png" alt='botao-apagar-informativo' title="Apagar todos os informativos">

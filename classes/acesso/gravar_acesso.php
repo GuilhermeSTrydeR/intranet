@@ -1,6 +1,5 @@
 <?php
 
-  
         //requer classe de conexao do banco
         require("../conexao_bd.php");
 
@@ -9,7 +8,6 @@
 
         // configuracoes, nesse caso o fuso horario
         require("../../config/config.php");
-
 
         //aqui instanciamos a classe
         $ac = new Acesso();

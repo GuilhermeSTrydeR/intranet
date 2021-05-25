@@ -2,7 +2,7 @@
     session_start();
 ?>
 
-<center style="margin-left: 100px; margin-top: 150px !important; position: relative !important;">
+<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
     <style>
 
         a{
@@ -10,6 +10,9 @@
         }
     
     </style>
+
+    <h4>Grupos de Acesso</h4>
+    <br><br>
 
     <?php
 
@@ -61,7 +64,7 @@
             
 
             
-            echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
+            echo "<div class='row' style='float: left; margin-left: 800px; margin-top: -50px; position: absolute;'>";
  
             echo "<div class='col'>";
             echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";

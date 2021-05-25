@@ -10,9 +10,8 @@
 
         </style>
 
-
+        <h4>Usuarios</h4>
         <?php
-
 
         global $pdo;
 
@@ -249,11 +248,6 @@
             }
             
             echo"</table>";
-    
-
-
-
-            
 
         }
         else{
@@ -263,8 +257,6 @@
             echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_usuario'>Para cadastrar um novo usuario, clique aqui!</a>";
         }
    
-   
-
 
     ?>
     </div>
