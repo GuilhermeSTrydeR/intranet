@@ -48,7 +48,13 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     <input type="text" class="form-control" id="link" name="link" required>
   <br>
     <label for="grupo">Grupo</label>
-    <input type="text" READONLY class="form-control" value=<?php echo $nomeGrupo;?> id="link" name="grupo" required>
+    <select disabled class="form-select" aria-label="Permissao" name="grupoDisabled" >
+      <option selected  value="<?php echo $id;?>"> <?php echo $nomeGrupo; ?> </option>
+      <option value="1">Comum</option>
+      <option value="2">Supervisor</option>
+      <option value="3">Administrador</option>
+    </select>
+    <input type="text" class='hidden' readonly value=<?php echo $id; ?> class="form-control" id="link" name="grupo" required>
 
 
 

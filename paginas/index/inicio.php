@@ -8,6 +8,10 @@
         include("../../config/config.php");
 
         
+
+     
+
+        
         global $pdo;
 
         $sql = 'SELECT * FROM informativo ORDER BY id DESC;';

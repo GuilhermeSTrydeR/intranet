@@ -119,7 +119,7 @@
       </a>
     </li>
     <li>
-      <a href="?pagina=../../classes/acesso/visualizar_acesso">
+      <a href="?pagina=../../classes/acesso/visualizar_grupo_acesso">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair"><b>Acessos</b> 
       </a>
     </li>

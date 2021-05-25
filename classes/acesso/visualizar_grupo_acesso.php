@@ -26,6 +26,23 @@
 
         global $pdo;
 
+
+        $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE id = 1");
+
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+        
+            $cont++;
+
+        }
+        if($cont <= 0){
+
+            $ac->criarGrupo();
+        }
+
+
+
+
+
         $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0");
             
         // o contador eh iniciado com zero
@@ -42,11 +59,13 @@
         if($cont > 0){
 
             
+
+            
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
  
             echo "<div class='col'>";
             echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
-            echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
+            echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo grupo de acesso'>";
             echo "</a>";
   
             echo "</div>";
@@ -119,7 +138,7 @@
                         }
                     ?> 
 
-                    <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
+                    <a href="../../classes/acesso/apagarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
                     <br><br>
                 </td>
            
@@ -143,9 +162,7 @@
         }
         else{
 
-            echo "<h4>Não há Acessos cadastrados.</h4>";
-            echo "<br>";
-            echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_acesso'>Para cadastrar um novo acesso, clique aqui!</a>";
+            $ac->truncateAcesso();
         }
    
             

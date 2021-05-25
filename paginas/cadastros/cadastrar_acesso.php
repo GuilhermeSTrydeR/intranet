@@ -36,11 +36,12 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     <br>
     <label for="setor">Grupo</label>
         <select class="form-select" aria-label="grupo" name="grupo" required>
+          <option selected></option>
           <?php
   
             $sql = "SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1";
             $consulta = $pdo->query($sql);
-
+            
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
               $nome = $linha['nome'];

@@ -21,7 +21,7 @@
         $ac->gravarGrupoAcesso($nome, $ativo);
 
         echo "<script>alert('Grupo de acesso cadastrado com sucesso!');</script>";
-        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
+        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     

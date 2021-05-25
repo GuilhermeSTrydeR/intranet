@@ -16,6 +16,7 @@
 
         //aqui invocamos o metodo para marcar a coluna 'excluido' com '1' informando que esse usuario foi excluido
         $ac->apagarGrupoAcesso($id);
+        
        
 
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';

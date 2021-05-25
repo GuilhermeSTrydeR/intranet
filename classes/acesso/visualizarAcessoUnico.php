@@ -26,6 +26,8 @@
 
         $id = $_GET['id'];
 
+        $grupo = $ac->retornaNome($id);
+
         global $pdo;
 
         $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
@@ -37,6 +39,7 @@
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                
             $cont++;
+            
 
         }
 
@@ -153,9 +156,9 @@
         }
         else{
 
-            echo "<h4>Não há Acessos cadastrados.</h4>";
+            echo "<h4>Não há acessos cadastrados nesse grupo.</h4>";
             echo "<br>";
-            echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_acesso'>Para cadastrar um novo acesso, clique aqui!</a>";
+            echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>Para cadastrar um novo acesso no grupo <b>$grupo</b>, clique aqui!</a>";
         }
    
             

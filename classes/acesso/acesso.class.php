@@ -1,6 +1,28 @@
 
 <?php
     class Acesso{
+
+        
+        public function criarGrupo(){
+
+            global $pdo;
+            $sql = "INSERT INTO acesso_grupo(id, nome, ativo) VALUES('1', 'Publico', '1')";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("nome", $nome);
+         
+            $sql->execute();
+            
+        }
+
+        public function truncateAcesso(){
+
+            global $pdo;
+            $sql = "TRUNCATE TABLE acesso_grupo";
+            $sql = $pdo->prepare($sql);
+         
+            $sql->execute();
+            
+        }
    
 
         public function gravar($nome, $link, $ativo, $grupo){
@@ -16,7 +38,7 @@
             $sql->execute();
             
         }
-        public function  gravarGrupoAcesso($nome, $ativo){
+        public function gravarGrupoAcesso($nome, $ativo){
 
             global $pdo;
             $sql = "INSERT INTO acesso_grupo(nome, ativo) VALUES(:nome, :ativo)";
@@ -84,12 +106,14 @@
             $sql->execute();
 
 
-            $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';
-            echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+            // $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';
+            // echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
   
             
         }
+
+        
 
         
         public function desabilitarAcesso($id){
@@ -165,7 +189,7 @@
 
         }
 
-        public function retornagrupoAtivo($id){
+        public function retornaGrupoAtivo($id){
             global $pdo;
             
             $sql = "SELECT ativo FROM acesso_grupo WHERE id = '$id'";

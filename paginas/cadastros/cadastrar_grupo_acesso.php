@@ -9,7 +9,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
 <form action="../../classes/acesso/gravar_grupo_acesso.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
   <div class="form-group">
-    <label for="nome">Nome</label>
+    <label for="nome">Nome do grupo de acesso</label>
     <input type="text" class="form-control" id="nome" name="nome" required>
  
   <br>

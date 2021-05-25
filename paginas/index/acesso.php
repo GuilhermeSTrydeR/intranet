@@ -1,5 +1,6 @@
 <?php
     session_start();
+  
 ?>
 <center style="margin-left: 40px; margin-top: 50px !important; position: relative !important;">
     <style>
@@ -10,13 +11,9 @@
 
     <?php
 
-        //include para acessar o banco
-        include("../../classes/conexao_bd.php");
+  
 
-        //include para acessar as confguracoes definidas
-        include("../../config/config.php");
 
-        global $pdo;
 
         $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1");
             

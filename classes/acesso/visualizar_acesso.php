@@ -48,12 +48,9 @@
             echo "<a href='?pagina=../../paginas/cadastros/cadastrar_acesso'>";
             echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
             echo "</a>";
-            echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
-            echo "<img src='../../imagens/navbar/list.png' alt='botao-visualizar-grupo-acessos' title='Grupos de Acesso' height='40' style='margin-left: 40px;'>";
+            echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
+            echo "<img src='../../imagens/navbar/plusplus.png' alt='botao-novo-grupo-informativo' title='Novo Grupo de Acessos' width='40' style='margin-left: 40px;'>";
             echo "</a>";
-            // echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
-            // echo "<img src='../../imagens/navbar/plusplus.png' alt='botao-novo-grupo-informativo' title='Novo Grupo de Acessos' width='40' style='margin-left: 40px;'>";
-            // echo "</a>";
             echo "</div>";
             echo "</div>";
             echo "<br>";
@@ -64,11 +61,11 @@
             echo "<div class='thead'>";
           
             echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 100px;' scope='col'>Nome</th>";
+            echo "<th style='width: 150px;' scope='col'>Nome</th>";
             echo "<th style='width: 150px;' scope='col'>Link</th>";
-            echo "<th style='width: 150px;' scope='col'>Grupo</th>";
+            echo "<th style='width: 50px;' scope='col'>Grupo</th>";
             echo "<th style='width: 50px;' scope='col'>Ativo</th>";
-            echo "<th style='width: 250px;' scope='col'>Opções</th>";
+            echo "<th style='width: 150px;' scope='col'>Opções</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
@@ -91,10 +88,10 @@
                 }
             
 
-               $linha['grupo'] = $ac->retornaNome($linha['grupo']);
+                $linha['grupo'] = $ac->retornaNome($linha['grupo']);
 
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']}  </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td>  <td> {$linha['link']}  </td> <td> {$linha['grupo']} </td> <td> {$linha['ativo']}</td>";
 
              
 
