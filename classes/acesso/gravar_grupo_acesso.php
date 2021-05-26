@@ -16,9 +16,10 @@
 
         $nome = addslashes($_POST["nome"]);
         $ativo = addslashes($_POST["ativo"]);
+        $permissao = addslashes($_POST["permissao"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $ac->gravarGrupoAcesso($nome, $ativo);
+        $ac->gravarGrupoAcesso($nome, $ativo, $permissao);
 
         echo "<script>alert('Grupo de acesso cadastrado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';

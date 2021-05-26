@@ -50,7 +50,7 @@
     <br>
     <label for="titulo">Link</label>
     <input type="text" class="form-control" id="title" name="link" value="<?php echo $link; ?>" required>
- 
+    <input type="text" class='hidden' name="idGrupo" value="<?php echo $idGrupo; ?>">
   <br>
 
         <br>
@@ -75,7 +75,7 @@
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
           <div class=row>
             <div class="col" style='margin-right: 65px !important;'> 
-            <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+            <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $id; ?>&idGrupo=<?php echo $idGrupo; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
             </div> 
 
             <div class="col"> 

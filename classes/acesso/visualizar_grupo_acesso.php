@@ -81,7 +81,8 @@
             echo "<div class='thead'>";
           
             echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 250px;' scope='col'>Nome do Grupo</th>";
+            echo "<th style='width: 180px;' scope='col'>Nome do Grupo</th>";
+            echo "<th style='width: 100px;' scope='col'>Permissão</th>";
             echo "<th style='width: 50px;' scope='col'>Ativo</th>";
             echo "<th style='width: 150px;' scope='col'>Opções</th>";
             echo "</div>";
@@ -105,53 +106,80 @@
                     $linha['ativo'] = 'Erro';
                 }
             
+                if($linha['permissao'] == 1){
 
+                    $linha['permissao'] = "Publico";
+
+                }
+
+                elseif($linha['permissao'] > 1 ){
+
+                    $linha['permissao'] = "Restrito";
+
+                }
+
+                else{
+
+                    $linha['permissao'] = "Sem permissão";
+
+                }
                
 
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td>  <td> {$linha['ativo']}</td>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td>  <td> {$linha['ativo']}</td>";
 
-             
 
-        
-                
                 ?>
-
                 <td class='noprint'>
               
                     <a href="/paginas/admin/main.php?pagina=../cadastros/editar_grupo_acesso&id=<?php echo $linha['id']?>&idGrupo=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
                     <a href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
-     
+                <?php
+                    if($linha['id'] > 1){
+                ?>
 
+                <br><br>
+
+                    
+                <?php
+                    if($ac->retornagrupoAtivo($linha['id']) == 1){
+                ?>  
+                    
+                    <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+
+                <?php
+                    }
+                    else{
+                ?>
+                            <a href="../../classes/acesso/habilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                <?php
+                    }
+
+               
+                    }
+              
                 
-                    <br><br>
-
-     
-                    <?php
-                        if($ac->retornagrupoAtivo($linha['id']) == 1){
-                    ?>
-                                <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
-                    <?php
-                        }
-                        else{
-                    ?>
-                                <a href="../../classes/acesso/habilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
-                    <?php
-                        }
+                
+            
+                    if($linha['id'] > 1){    
                     ?> 
-
                     <a href="../../classes/acesso/apagarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
                     <br><br>
+                    <?php
+                    }
+                    ?>
+
+
                 </td>
            
             
 
             <?php
-
+            
 
             echo"</tr>";
-
+            
            
                 
 
@@ -161,7 +189,7 @@
             
             
             echo"</table>";
-
+          
         }
         else{
             $ac->truncateAcesso();

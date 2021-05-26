@@ -38,13 +38,14 @@
             $sql->execute();
             
         }
-        public function gravarGrupoAcesso($nome, $ativo){
+        public function gravarGrupoAcesso($nome, $ativo, $permissao){
 
             global $pdo;
-            $sql = "INSERT INTO acesso_grupo(nome, ativo) VALUES(:nome, :ativo)";
+            $sql = "INSERT INTO acesso_grupo(nome, ativo, permissao) VALUES(:nome, :ativo, :permissao)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("nome", $nome);
             $sql->bindValue("ativo", $ativo);
+            $sql->bindValue("permissao", $permissao);
          
             $sql->execute();
             
@@ -65,14 +66,15 @@
             
         }
 
-        public function editarGrupoAcesso($id, $nome, $ativo){
+        public function editarGrupoAcesso($id, $nome, $ativo, $permissao){
 
             global $pdo;
-            $sql = "UPDATE acesso_grupo SET nome = :nome, ativo = :ativo WHERE id = '$id'";
+            $sql = "UPDATE acesso_grupo SET nome = :nome, ativo = :ativo, permissao = :permissao WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("nome", $nome);
             $sql->bindValue("ativo", $ativo);
+            $sql->bindValue("permissao", $permissao);
           
             $sql->execute();
 
@@ -102,6 +104,10 @@
 
             global $pdo;
             $sql = "UPDATE acesso_grupo SET excluido = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+
+            $sql = "UPDATE acesso SET excluido = '1' WHERE grupo = '$id'";
             $sql = $pdo->prepare($sql);
             $sql->execute();
 

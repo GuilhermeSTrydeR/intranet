@@ -47,12 +47,16 @@
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
 
-            echo "<h1>Grupo: ". $nomeGrupo . "</h1> <br><br><br>";
+            echo "<h4>Grupo: ". $nomeGrupo . "</h4> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
 
  
-            echo "<div class='col'>";
-            echo "<a href='?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>";
+            echo "<div class='col' >";
+            echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
+            echo "<img height='40' src='../../imagens/navbar/back.png' alt='Voltar para grupos de acesso' title='Voltar para grupos de acesso'>";
+            echo "</a>";
+
+            echo "<a style='margin-left: 100px; href='?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>";
             echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
             echo "</a>";
 
@@ -69,10 +73,11 @@
             echo "<div class='thead'>";
           
             echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 250px;' scope='col'>Nome</th>";
-            echo "<th style='width: 150px;' scope='col'>Grupo</th>";
-            echo "<th style='width: 50px;' scope='col'>Ativo</th>";
-            echo "<th style='width: 100px;' scope='col'>Opções</th>";
+            echo "<th style='width: 220px;' scope='col'>Nome</th>";
+            echo "<th style='width: 120px;' scope='col'>Link</th>";
+            echo "<th style='width: 100px;' scope='col'>Grupo</th>";
+            echo "<th style='width: 90px;' scope='col'>Ativo</th>";
+            echo "<th style='width: 200px;' scope='col'>Opções</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
@@ -102,7 +107,7 @@
 
         
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
 
              
 
@@ -114,11 +119,13 @@
               
                     <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&idGrupo=<?php echo $id; ?>&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
+                    <a href="<?php echo $linha['link']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+
                     <br><br>
 
                     <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
            
-                    <br><br>
+          
 
      
                     <?php
