@@ -1,3 +1,7 @@
+<?php
+   //include para acessar as confguracoes definidas
+   include("../../config/config.php");
+?>
 <center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
         <style>
 
@@ -11,6 +15,16 @@
         </style>
 
         <h4>Usuarios</h4>
+ 
+        <div class='print'>
+            <?php
+            
+                echo gmdate('d/m/y \á\s\ H:i:s', time() + $fusoHorario);
+        
+            ?>
+        </div>
+
+
         <?php
 
         global $pdo;
@@ -82,10 +96,8 @@
                         </div>
                     </div> -->
             </form>
-            <br>
-            <br>
-            <br>
-            <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
+       <br>
+            <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; margin-top: 50px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
             <thead>
             <tr>
             <div class='thead'>

@@ -50,13 +50,13 @@
             echo "<h4>Grupo: ". $nomeGrupo . "</h4> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
 
- 
-            echo "<div class='col' >";
-            echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
-            echo "<img height='40' src='../../imagens/navbar/back.png' alt='Voltar para grupos de acesso' title='Voltar para grupos de acesso'>";
-            echo "</a>";
+            echo "<div class='col'>";
 
-            echo "<a style='margin-left: 100px; href='?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>";
+            echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
+            echo "<img src='../../imagens/navbar/back.png' alt='botao-novo-informativo' width='40' title='Novo Acesso'>";
+            echo "</a>";
+            
+            echo "<a style='margin-left: 100px;' href='?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>";
             echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
             echo "</a>";
 

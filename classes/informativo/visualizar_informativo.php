@@ -12,8 +12,20 @@ session_start();
         }
 
         </style>
+        
         <h4>Informativos</h4>
+        
+        <div class='print'><?php
+        
+            echo gmdate('d/m/y \á\s\ H:i:s', time() + $fusoHorario);
+          
+        ?>
+        
+        
+        </div>
         <br><br>
+
+        
         <?php
   
         //include para acessar o banco
@@ -108,11 +120,18 @@ session_start();
             <br>
             <br>
             <br>
-        
+            
+            
+            
+           
+            
 
             <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
             <thead>
+            
             <tr>
+
+            
             <div class='thead'>
             <th style='width: 50px;' scope='col'>ID</th>
             <th style='width: 80px;' scope='col'>Data</th>
