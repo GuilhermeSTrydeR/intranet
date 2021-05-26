@@ -195,6 +195,21 @@
 
         }
 
+        public function retornaPermissao($id){
+            global $pdo;
+            
+            $sql = "SELECT permissao FROM acesso_grupo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
         public function retornaGrupoAtivo($id){
             global $pdo;
             

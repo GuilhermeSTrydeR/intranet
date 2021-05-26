@@ -1,7 +1,10 @@
 <?php
+
     session_start();
-  
+    require ('classes/acesso/acesso.class.php');
+    $ac = new Acesso();
 ?>
+
 <center style="margin-left: 40px; margin-top: 50px !important; position: relative !important;">
     <style>
 
@@ -11,46 +14,52 @@
 
     <?php
 
-  
+       
 
-
-
-        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1 AND grupo = 1");
+        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1");
             
         // o contador eh iniciado com zero
         $cont = 0;
+
+        
+
+        
             
         // para cada registro no banco a variavel $cont recebera 1 incremento
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-               
+
+            
+            echo "<br>";
+
             $cont++;
         }
-            // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
+            // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado os acessos
             if($cont > 0){
-
-
-             
-
-
-                
+              
                 echo"<div class='container'>";
         
-                $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1 AND grupo = 1");
+                $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1");
                 
-                $numItensLinha = 4;
-
-                $i = 0;
                 echo "<div class='row'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+                    $permissaoGrupo = $ac->retornaPermissao($linha['grupo']);
+                    
+                    if($permissaoGrupo == 1){
 
                         echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
                             echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
                             width: 100%;
                             overflow: hidden !important;             
                             text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                            
                         echo "</div>";
                         
                         $i++;
+    
+                    }
+                   
+                        
 
               
          
@@ -65,10 +74,6 @@
                
             }
             
-
-            
-            
-        
 
     ?>
 

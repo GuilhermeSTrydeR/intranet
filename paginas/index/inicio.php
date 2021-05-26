@@ -7,16 +7,12 @@
         //include para acessar as confguracoes definidas
         include("../../config/config.php");
 
-        
 
-     
 
-        
         global $pdo;
 
         $sql = 'SELECT * FROM informativo ORDER BY id DESC;';
         $consulta = $pdo->query($sql);
-
    
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['ativo'] == 1 && $linha['excluido'] == 0){

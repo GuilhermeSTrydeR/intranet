@@ -15,7 +15,7 @@
         </style>
 
         <h4>Usuarios</h4>
- 
+        <br>
         <div class='print'>
             <?php
             
