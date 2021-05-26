@@ -82,7 +82,7 @@
             </div>
 
             <div class="col"> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso&id=<?php echo $id; ?>" class="btn btn-danger">Cancelar</a> 
             </div>
             
             </div>

@@ -2,7 +2,7 @@
     session_start();
 ?>
 
-<center style="margin-left: 100px; margin-top: 150px !important; position: relative !important;">
+<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
     <style>
 
         a{
@@ -39,6 +39,7 @@
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                
             $cont++;
+            $nomeGrupo = $ac->retornaNome($linha['grupo']);
             
 
         }
@@ -46,7 +47,7 @@
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
 
-            
+            echo "<h1>Grupo: ". $nomeGrupo . "</h1> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
 
  
@@ -111,7 +112,7 @@
 
                 <td class='noprint'>
               
-                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&idGrupo=<?php echo $id; ?>&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
                     <br><br>
 
@@ -123,12 +124,12 @@
                     <?php
                         if($ac->retornaAtivo($linha['id']) == 1){
                     ?>
-                                <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                                <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
                     <?php
                         }
                         else{
                     ?>
-                                <a href="../../classes/acesso/habilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                                <a href="../../classes/acesso/habilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
                     <?php
                         }
                     ?> 

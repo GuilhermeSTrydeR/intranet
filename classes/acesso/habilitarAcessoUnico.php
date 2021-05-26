@@ -6,6 +6,7 @@
         require("acesso.class.php");
 
         $id = $_GET['id'];
+        $idGrupo = $_GET['idGrupo'];
         
 
         //aqui instanciamos a classe
@@ -18,7 +19,7 @@
         //apos apagar todos os usuarios, precisamos criar outro usuario administrador, se nao, nao sera possivel acessar o sistema/
         // $u->gravarPosExcluirUsuarios('admin', 'admin@admin', 'admin', md5('admin'), '3', '1', '1', 'xxxxxxx-xxxx', 'null', 'null', '1');
        
-        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=' . $id;
+        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=' . $idGrupo;
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 ?>
 

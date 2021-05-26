@@ -9,6 +9,7 @@
 
   // pega o id vindo por GET
   $id = $_GET['id'];
+  $idGrupo = $_GET['idGrupo'];
 
 
   //requer classe de conexao do banco
@@ -82,7 +83,7 @@
             </div>
 
             <div class="col"> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $idGrupo; ?>" class="btn btn-danger">Cancelar</a> 
             </div>
             
             </div>

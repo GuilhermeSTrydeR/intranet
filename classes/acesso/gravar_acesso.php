@@ -12,6 +12,7 @@
         //aqui instanciamos a classe
         $ac = new Acesso();
 
+        $id = addslashes($_POST["grupo"]);
         $nome = addslashes($_POST["nome"]);
         $link = addslashes($_POST["link"]);
         $ativo = addslashes($_POST["ativo"]);
@@ -21,7 +22,7 @@
         $ac->gravar($nome, $link, $ativo, $grupo);
 
         echo "<script>alert('Acesso cadastrado com sucesso!');</script>";
-        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
+        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=' . $id;
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     

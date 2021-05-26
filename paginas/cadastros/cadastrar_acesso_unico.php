@@ -34,7 +34,6 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
 ?>
 
-
 <center>
 
 <form action="../../classes/acesso/gravar_acesso.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
@@ -48,42 +47,30 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     <input type="text" class="form-control" id="link" name="link" required>
   <br>
     <label for="grupo">Grupo</label>
-    <select disabled class="form-select" aria-label="Permissao" name="grupoDisabled" >
+    <select disabled class="form-select" aria-label="Permissao" name="grupo" >
       <option selected  value="<?php echo $id;?>"> <?php echo $nomeGrupo; ?> </option>
-      <option value="1">Comum</option>
-      <option value="2">Supervisor</option>
-      <option value="3">Administrador</option>
     </select>
     <input type="text" class='hidden' readonly value=<?php echo $id; ?> class="form-control" id="link" name="grupo" required>
-
-
-
-        <br>
+      <br>
         <div class="col-sm-12">
-
         <br>
           <div class='col' style='float: left;'>
           <label class="form-check-label" for="ativo" >
             Exibir nos Acessos
           </label>
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
-          
           <div class='col' style='float: left;'>
-
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
             <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $id; ?>" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
           </div>
-
           <br>
           <br>
-        </div>
-
-        </div>  
+      </div>
+    </div>  
   </div>
- 
   <div class='row' style='height: 100px;'></div>
 </form>
 </center>
