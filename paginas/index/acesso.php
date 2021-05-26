@@ -29,7 +29,7 @@
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
             
-            echo "<br>";
+    
 
             $cont++;
         }

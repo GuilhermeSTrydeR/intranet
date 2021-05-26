@@ -63,7 +63,7 @@
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
                         echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
-                            echo "<a href=?pagina=../../classes/acesso/visualizar_acesso_grupo_selecionado&id=" .$linha['id'] . " ><i class='active'></i><center><p style='white-space: pre-line;
+                            echo "<a href=?pagina=../../classes/acesso/visualizar_acesso_grupo_selecionado&id=" .$linha['id'] . "&nome=" . $linha['nome'] . " ><i class='active'></i><center><p style='white-space: pre-line;
                             width: 100%;
                             overflow: hidden !important;             
                             text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
