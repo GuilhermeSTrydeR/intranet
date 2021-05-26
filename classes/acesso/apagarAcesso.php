@@ -8,7 +8,7 @@
         require("acesso.class.php");
 
         $id = $_GET['id'];
-
+        $idGrupo = $_GET['idGrupo'];
         
         //aqui instanciamos a classe
         $ac = new Acesso();
@@ -18,7 +18,7 @@
         $ac->apagarAcesso($id);
        
 
-        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
+        $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=' . $idGrupo;
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 ?>
 

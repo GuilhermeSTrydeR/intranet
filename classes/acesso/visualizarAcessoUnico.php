@@ -116,7 +116,7 @@
 
                     <br><br>
 
-                    <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
+                    <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
            
                     <br><br>
 
