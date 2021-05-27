@@ -46,6 +46,7 @@
 
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
+   
 
             echo "<h4>Grupo: ". $nomeGrupo . "</h4> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";

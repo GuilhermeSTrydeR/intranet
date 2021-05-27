@@ -86,7 +86,6 @@ session_start();
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                
                 $cont++;
-              
             
                 // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
                 if($cont > 0){
