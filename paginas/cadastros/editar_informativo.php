@@ -51,7 +51,7 @@
   <br>
         <!-- obs: <textarea> nao suprta o atributo (value) -->
         <label for="texto">Texto</label>
-        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $texto;?></textarea>
+        <textarea maxlength ="10000" class="form-control" id="text" rows="8"  name="texto" ><?php echo $texto;?></textarea>
         <br>
         <div class="col-sm-12">
         <div class="row">

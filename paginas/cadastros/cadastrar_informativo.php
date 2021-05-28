@@ -15,7 +15,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
   <br>
  
         <label for="texto">Texto</label>
-        <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" required ></textarea>
+        <textarea maxlength ="10000" class="form-control" id="text" rows="8"  name="texto" required ></textarea>
         <br>
         <div class="row">
           <div class="col-sm">

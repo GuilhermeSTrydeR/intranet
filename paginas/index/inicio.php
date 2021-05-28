@@ -19,7 +19,7 @@
    
 
             if($linha['ativo'] == 1 && $linha['excluido'] == 0){
-                if(($linha['inicio'] <= date('Y-m-d') && $linha['fim'] >= date('Y-m-d')) || $linha['inicio'] == '0000-00-00' && $linha['fim'] == '0000-00-00'){
+                if(($linha['inicio'] <= date('Y-m-d') && $linha['fim'] >= date('Y-m-d')) || $linha['inicio'] <= '0000-00-00' && $linha['fim'] == '0000-00-00' || $linha['fim'] == null){
         
                     echo"<br>";
                     echo"<br>";
