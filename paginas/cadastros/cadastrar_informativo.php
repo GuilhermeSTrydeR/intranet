@@ -14,10 +14,21 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
  
   <br>
  
-    <label for="texto">Texto</label>
+        <label for="texto">Texto</label>
         <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" required ></textarea>
         <br>
+        <div class="row">
+          <div class="col-sm">
+            <label for="inico">Inicio</label>
+            <input type="date" class="form-control" id="title" name="inicio">
+          </div>
+          <div class="col-sm">
+            <label for="fim">Fim</label>
+            <input type="date" class="form-control" id="title" name="fim">
+          </div>
+        </div>
         <div class="col-sm-12">
+        <br>
           <input type="file" class="form-control" name="Arquivo" id="Arquivo">
           <br>
           <div class='col' style='float: left;'>

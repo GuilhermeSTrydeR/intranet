@@ -13,7 +13,6 @@ session_start();
 
         </style>
 
-
         <?php
 
         //include para acessar o banco

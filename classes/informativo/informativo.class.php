@@ -2,26 +2,28 @@
 <?php
     class Informativo{
         // funcao para gravar no banco de dados o informativo preenchido no form
-        public function gravar($titulo, $texto, $ativo, $dataCadastro, $imagem){
+        public function gravar($titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim){
 
             global $pdo;
-            $sql = "INSERT INTO informativo(titulo, texto, ativo, dataCadastro, imagem) VALUES(:titulo, :texto, :ativo, :dataCadastro, :imagem)";
+            $sql = "INSERT INTO informativo(titulo, texto, ativo, dataCadastro, imagem, inicio, fim) VALUES(:titulo, :texto, :ativo, :dataCadastro, :imagem, :inicio, :fim)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("titulo", $titulo);
             $sql->bindValue("texto", $texto);
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("dataCadastro", $dataCadastro);
             $sql->bindValue("imagem", $imagem);
+            $sql->bindValue("inicio", $inicio);
+            $sql->bindValue("fim", $fim);
             
     
             $sql->execute();
             
         }
 
-        public function editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem){
+        public function editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim){
 
             global $pdo;
-            $sql = "UPDATE informativo SET titulo = :titulo, texto = :texto, ativo = :ativo, dataCadastro = :dataCadastro, imagem = :imagem WHERE id = '$id'";
+            $sql = "UPDATE informativo SET titulo = :titulo, texto = :texto, ativo = :ativo, dataCadastro = :dataCadastro, imagem = :imagem, inicio = :inicio, fim = :fim WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("titulo", $titulo);
@@ -29,6 +31,8 @@
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("dataCadastro", $dataCadastro);
             $sql->bindValue("imagem", $imagem);
+            $sql->bindValue("inicio", $inicio);
+            $sql->bindValue("fim", $fim);
             
     
             $sql->execute();

@@ -46,11 +46,13 @@
         $titulo = addslashes($_POST["titulo"]);
         $texto = addslashes($_POST["texto"]);
         $ativo = addslashes($_POST["ativo"]);
+        $inicio = addslashes($_POST["inicio"]);
+        $fim = addslashes($_POST["fim"]);
 
     
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem);
+        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
 
         echo "<script>alert('Informativo alterado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
@@ -69,11 +71,13 @@
         $titulo = addslashes($_POST["titulo"]);
         $texto = addslashes($_POST["texto"]);
         $ativo = addslashes($_POST["ativo"]);
+        $inicio = addslashes($_POST["inicio"]);
+        $fim = addslashes($_POST["fim"]);
 
         $imagem = $i->retornaImagem($id);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem);
+        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
 
         echo "<script>alert('Informativo alterado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';

@@ -29,13 +29,13 @@
   $consulta = $pdo->query($sql);
   
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-
   
     $titulo = $linha['titulo'];
     $texto = $linha['texto'];
     $imagem = $linha['imagem']; 
     $ativo = $linha['ativo']; 
-
+    $inicio = $linha['inicio']; 
+    $fim = $linha['fim']; 
 
   }
 
@@ -54,6 +54,17 @@
         <textarea maxlength ="10000" class="form-control" id="text" rows="15"  name="texto" ><?php echo $texto;?></textarea>
         <br>
         <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm">
+            <label for="inico">Inicio</label>
+            <input type="date" class="form-control" id="title" name="inicio" value=<?php echo $inicio; ?>>
+          </div>
+          <div class="col-sm">
+            <label for="fim">Fim</label>
+            <input type="date" class="form-control" id="title" name="fim" value=<?php echo $fim; ?>>
+          </div>
+        </div>
+<br>
           <input type="file" class="form-control" name="Arquivo" id="Arquivo" value="<?php echo $imagem; ?>" ?>
           <br>
           <div class='col' style='float: left;'>

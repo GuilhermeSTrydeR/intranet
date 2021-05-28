@@ -48,11 +48,13 @@
         $titulo = addslashes($_POST["titulo"]);
         $texto = addslashes($_POST["texto"]);
         $ativo = addslashes($_POST["ativo"]);
+        $inicio = addslashes($_POST["inicio"]);
+        $fim = addslashes($_POST["fim"]);
 
     
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->gravar($titulo, $texto, $ativo, $dataCadastro, $imagem);
+        $i->gravar($titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
 
         echo "<script>alert('Informativo cadastrado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
