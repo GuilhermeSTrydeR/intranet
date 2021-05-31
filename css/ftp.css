@@ -474,6 +474,8 @@ tr{
 }
 .boxItens:hover{
   box-shadow: 5px 5px 15px #F47920;
+  background-color: #0A5F55;
+  border-color: #0A5F55;
 
 }
 
@@ -502,15 +504,17 @@ tr{
   border-bottom-left-radius: 10px ;
   border-top-right-radius: 10px; */
 
-  font-weight: 900 !important;
-  color: #F47920 !important;
+  /* font-weight: 500 !important; */
+  /* color: #F47920 !important;  */
+  
  
 }
 
 
 .nav-link b:hover{
 
-  color: #F47920;
+  /* color: #F47920; */
+  
 
 }
 

@@ -25,15 +25,16 @@
         }
    
 
-        public function gravar($nome, $link, $ativo, $grupo){
+        public function gravar($nome, $link, $ativo, $grupo, $permissao){
 
             global $pdo;
-            $sql = "INSERT INTO acesso(nome, link, ativo, grupo) VALUES(:nome, :link, :ativo, :grupo)";
+            $sql = "INSERT INTO acesso(nome, link, ativo, grupo, permissao) VALUES(:nome, :link, :ativo, :grupo, :permissao)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("nome", $nome);
             $sql->bindValue("link", $link);
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("grupo", $grupo);
+            $sql->bindValue("permissao", $permissao);
          
             $sql->execute();
             
@@ -51,15 +52,17 @@
             
         }
        
-        public function editar($id, $nome, $link, $ativo){
+        public function editar($id, $nome, $link, $ativo, $permissao, $grupo){
 
             global $pdo;
-            $sql = "UPDATE acesso SET nome = :nome, link = :link, ativo = :ativo WHERE id = '$id'";
+            $sql = "UPDATE acesso SET nome = :nome, link = :link, ativo = :ativo, permissao = :permissao, grupo = :grupo WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("nome", $nome);
             $sql->bindValue("link", $link);
             $sql->bindValue("ativo", $ativo);
+            $sql->bindValue("permissao", $permissao);
+            $sql->bindValue("grupo", $grupo);
           
             $sql->execute();
 
@@ -199,6 +202,21 @@
             global $pdo;
             
             $sql = "SELECT permissao FROM acesso_grupo WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
+        public function retornaPermissaoAcesso($id){
+            global $pdo;
+            
+            $sql = "SELECT permissao FROM acesso WHERE id = '$id'";
             $stmt = $pdo->prepare( $sql );
             $stmt->bindParam( ':id', $id );        
             $stmt->execute();

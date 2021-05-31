@@ -43,19 +43,27 @@
                 echo "<div class='row'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
+                    // aqui recebemos as informacoes sobre os niveis de permissao que o usuario deve ter para visualizar os itens abaixo, no caso 1 todos os usuarios poderao ver o grupo, e se algum item mesmo dentro do grupo publico tiver permissao maior que 1, somente usuarios logados poderao ver, pois o grupo publico e os acessos publicos possuem permissao 1 no maximo
+
+                    // recebmos a permissao do grupo
                     $permissaoGrupo = $ac->retornaPermissao($linha['grupo']);
+
+                    // recebmos a permissao individual do acesso
+                    $permissaoAcesso = $ac->retornaPermissaoAcesso($linha['id']);
                     
                     if($permissaoGrupo == 1){
+                        if($permissaoAcesso == 1){
 
-                        echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
-                            echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
-                            width: 100%;
-                            overflow: hidden !important;             
-                            text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                            echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
+                                echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
+                                width: 100%;
+                                overflow: hidden !important;             
+                                text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                                
+                            echo "</div>";
                             
-                        echo "</div>";
-                        
-                        $i++;
+                            $i++;
+                        }
     
                     }
                    

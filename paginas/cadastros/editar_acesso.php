@@ -31,11 +31,22 @@
   
   while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
-  
- 
     $nome = $linha['nome'];
     $link = $linha['link']; 
+    $permissao = $linha['permissao']; 
+    $grupo = $linha['grupo'];
 
+  }
+
+  if($permissao == 1){
+
+    $permissaoString = "Publico";
+
+  }
+
+  elseif($permissao == 2){
+
+    $permissaoString = "Restrito";
 
   }
 
@@ -52,7 +63,36 @@
     <input type="text" class="form-control" id="title" name="link" value="<?php echo $link; ?>" required>
     <input type="text" class='hidden' name="idGrupo" value="<?php echo $idGrupo; ?>">
   <br>
+  <label for="titulo">Permissão</label>
+  <select class="form-select" aria-label="Permissao" name="permissao">
+      <option selected value="<?php echo $permissao;?>"> <?php echo "Atual: " . $permissaoString; ?> </option> 
+      <option value="1">Publico (qualquer um pode ver se o grupo tambem for publico)</option>
+      <option value="2">Restrito (somente usuarios logados podem ver)</option>
+  </select>
+  <br>
 
+  <?php
+  
+    $grupoString = $ac->retornaNome($grupo);
+  
+  ?>
+
+  <label for="grupo">Grupo</label>
+  <select class="form-select" aria-label="Grupo" name="grupo">
+  <option selected value="<?php echo $grupo;?>"> <?php echo "Atual: " . $grupoString; ?> </option> 
+  <?php
+
+    $sql = "SELECT * FROM acesso_grupo";  
+    $consulta = $pdo->query($sql);
+    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+
+      echo "<option value=" . $linha['id'] . ">" . $linha['nome'] . "</option>";
+
+     
+    }
+?>
+        </select>
         <br>
         <div class="col-sm-12">
         

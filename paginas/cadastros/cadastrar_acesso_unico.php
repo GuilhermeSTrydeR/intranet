@@ -46,6 +46,12 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     <label for="link">link</label>
     <input type="text" class="form-control" id="link" name="link" required>
   <br>
+  <label for="link">Permissão</label>
+  <select class="form-select" aria-label="Permissao" name="permissao">
+      <option value="1">Publico (qualquer um pode ver se o grupo tambem for publico)</option>
+      <option value="2">Restrito (somente usuarios logados podem ver)</option>
+    </select>
+    <br>
     <label for="grupo">Grupo</label>
     <select disabled class="form-select" aria-label="Permissao" name="grupo" >
       <option selected  value="<?php echo $id;?>"> <?php echo $nomeGrupo; ?> </option>
