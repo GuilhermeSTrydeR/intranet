@@ -110,29 +110,23 @@
                 echo"<tr>";
                 echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
 
-             
-
-        
-                
                 ?>
 
                 <td class='noprint'>
               
                     <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&idGrupo=<?php echo $id; ?>&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
-                    <a href="<?php echo $linha['link']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+                    <a href="<?php echo $linha['link']?>" target='_blank'><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
 
                     <br><br>
 
                     <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
            
-          
 
-     
                     <?php
                         if($ac->retornaAtivo($linha['id']) == 1){
                     ?>
-                                <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                                <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>" ><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
                     <?php
                         }
                         else{

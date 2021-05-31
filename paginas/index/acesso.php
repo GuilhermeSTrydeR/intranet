@@ -53,22 +53,23 @@
 
                     $ativo = $ac->retornaGrupoAtivo($linha['grupo']);
                     
-                    if($permissaoGrupo == 1 && $ativo == 1){
-                        if($permissaoAcesso == 1){
+                    if($ativo == 1){
+                        if(($permissaoGrupo == 1 && $permissaoAcesso == 1) || ($permissaoGrupo != 1 && $permissaoAcesso == 1)){
+                           
 
-                            echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
-                                echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
-                                width: 100%;
-                                overflow: hidden !important;             
-                                text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                                echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
+                                    echo "<a href={$linha['link']} target='_blank'><i class='active'></i><center><p style='white-space: pre-line;
+                                    width: 100%;
+                                    overflow: hidden !important;             
+                                    text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                                    
+                                echo "</div>";
                                 
-                            echo "</div>";
+                                $i++;
                             
-                            $i++;
+        
                         }
-    
                     }
-                   
                         
 
               
