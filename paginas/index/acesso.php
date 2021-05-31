@@ -50,8 +50,10 @@
 
                     // recebmos a permissao individual do acesso
                     $permissaoAcesso = $ac->retornaPermissaoAcesso($linha['id']);
+
+                    $ativo = $ac->retornaGrupoAtivo($linha['grupo']);
                     
-                    if($permissaoGrupo == 1){
+                    if($permissaoGrupo == 1 && $ativo == 1){
                         if($permissaoAcesso == 1){
 
                             echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
