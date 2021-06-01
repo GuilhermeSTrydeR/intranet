@@ -120,76 +120,75 @@ session_start();
             <br>
             <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>
             <thead>
-            <tr>
-            <div class='thead'>
-            <th style='width: 30px;' scope='col'>ID</th>
-            <th style='width: 60px;' scope='col'>Data</th>
-            <th style='width: 140px;' scope='col'>Titulo</th>
-            <th style='width: 200px;' scope='col'>Texto</th>
-            <th style='width: 50px;' scope='col'>Ativo?</th>
-            <th style='width: 70px;' scope='col'>Periodo</th>
-            <th style='width: 80px;' scope='col' class='noprint'>Opções</th>
-            </div>
-            </tr>
+                <tr>
+                    <div class='thead'>
+                        <th style='width: 30px;' scope='col'>ID</th>
+                        <th style='width: 60px;' scope='col'>Data</th>
+                        <th style='width: 140px;' scope='col'>Titulo</th>
+                        <th style='width: 200px;' scope='col'>Texto</th>
+                        <th style='width: 50px;' scope='col'>Ativo?</th>
+                        <th style='width: 70px;' scope='col'>Periodo</th>
+                        <th style='width: 80px;' scope='col' class='noprint'>Opções</th>
+                    </div>
+                </tr>
             </thead>
             <?php
 
-            $consulta = $pdo->query($_SESSION['sentidodaLista'] );
+                $consulta = $pdo->query($_SESSION['sentidodaLista'] );
 
-            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            
-                if($linha['ativo'] == 0){
-                    $linha['ativo'] = "<p style='color: red';>Não</p>";
-                }
-
-                elseif($linha['ativo'] == 1){
-                    $linha['ativo'] = "<p style='color: green;'>Sim</p>";
-                }
-
-                else{
-                    $linha['ativo'] = 'Erro';
-                }
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 
-                // converte a data de timestamp linux para padrao brasileiro
-                $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
+                    if($linha['ativo'] == 0){
+                        $linha['ativo'] = "<p style='color: red';>Não</p>";
+                    }
 
-          
-                if($linha['inicio'] > '0000-00-00'){
+                    elseif($linha['ativo'] == 1){
+                        $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                    }
 
-                    $inicio = date('d/m/Y',  strtotime($linha['inicio']));
+                    else{
+                        $linha['ativo'] = 'Erro';
+                    }
                     
-                }
-                else{
+                    // converte a data de timestamp linux para padrao brasileiro
+                    $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
-                    $inicio = "Sem Inicio";
+            
+                    if($linha['inicio'] > '0000-00-00'){
 
-                }
-          
+                        $inicio = date('d/m/Y',  strtotime($linha['inicio']));
+                        
+                    }
+                    else{
 
-                if($linha['fim'] > '0000-00-00'){
+                        $inicio = "Sem Inicio";
 
-                    $fim = date('d/m/Y',  strtotime($linha['fim']));
-                }
-                else{
+                    }
+            
+                    if($linha['fim'] > '0000-00-00'){
 
-                    $fim = "Sem Fim";
+                        $fim = date('d/m/Y',  strtotime($linha['fim']));
+                    }
 
-                }
+                    else{
 
-           
-                if($linha['inicio'] == '0000-00-00' && $linha['fim'] == '0000-00-00'){
+                        $fim = "Sem Fim";
 
-                    $periodo = 'Permanente';
-                }
+                    }
+            
+                    if($linha['inicio'] == '0000-00-00' && $linha['fim'] == '0000-00-00'){
 
-                else{
-                    $periodo = ($inicio . " - " . $fim);
-                }
+                        $periodo = 'Permanente';
+                    }
 
-               
+                    else{
 
-                echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td><td> $periodo </td> <td class='noprint'>";
+                        $periodo = ($inicio . " - " . $fim);
+                    }
+
+            
+                    echo"<tr>";
+                    echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td><td> $periodo </td> <td class='noprint'>";
                 ?>
 
                 <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
@@ -200,12 +199,16 @@ session_start();
                 <?php
                     if($i->retornaAtivo($linha['id']) == 1){
                 ?>
-                            <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+
+                <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                
                 <?php
                     }
                     else{
                 ?>
-                            <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+
+                <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                
                 <?php
                     }
                 ?>
@@ -232,18 +235,7 @@ session_start();
 
     }
 
-
-       
         ?>
-
-
-    
-
-
-
-     
-        
-
 
         <!-- funcao para pegar o id do informativo clicado na table -->
 

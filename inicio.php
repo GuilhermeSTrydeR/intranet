@@ -57,7 +57,7 @@
     <body style='background: #f0f2f8'>
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: 	#0A5F55;">
         <div id="logo">
-            <a href="/"><img src="imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40></a>
+            <a href="/"><img src="imagens/unimed/logo.png" alt="logo-unimed" width= 40 height= 33></a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

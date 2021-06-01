@@ -44,7 +44,7 @@
 
 <!-- logo da instituição -->
 <div id="logo">
-  <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 50 height= 40 title="Intranet Unimed TC"></a>
+  <a href="/"><img src="../../imagens/unimed/logo.png" alt="logo-unimed" width= 40 height= 33 title="Intranet Unimed TC"></a>
 </div>
 
     <div style='text-transform: uppercase; position: fixed; font-weight: 500; color: white; margin-left: 100px;'>
