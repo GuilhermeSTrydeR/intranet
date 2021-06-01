@@ -493,7 +493,7 @@ tr{
   
 }
 
-.boxItens a:hover p{
+.boxItens:hover p{
   /* margin-left: -9px;
   margin-top: 3px;
   height: 95%;
@@ -505,9 +505,8 @@ tr{
   border-top-right-radius: 10px; */
 
   /* font-weight: 500 !important; */
-  /* color: #F47920 !important;  */
+  color: #F47920 !important; 
   
- 
 }
 
 

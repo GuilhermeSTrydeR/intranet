@@ -67,92 +67,86 @@
             echo "</div>";
             echo "</div>";
             echo "<br>";
-            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>";
+            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
             
-            echo "<thead>";
-            echo "<tr>";
-            echo "<div class='thead'>";
-          
-            echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 220px;' scope='col'>Nome</th>";
-            echo "<th style='width: 120px;' scope='col'>Link</th>";
-            echo "<th style='width: 100px;' scope='col'>Grupo</th>";
-            echo "<th style='width: 90px;' scope='col'>Ativo</th>";
-            echo "<th style='width: 200px;' scope='col'>Opções</th>";
-            echo "</div>";
-            echo "</tr>";
-            echo "</thead>";
-    
-            // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
-            $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
-       
-            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-
-
-                $linha['grupo'] = $ac->retornaNome($linha['grupo']);
-
-                if($linha['ativo'] == 0){
-                    $linha['ativo'] = "<p style='color: red';>Não</p>";
-                }
-
-                elseif($linha['ativo'] == 1){
-                    $linha['ativo'] = "<p style='color: green;'>Sim</p>";
-                }
-
-                else{
-                    $linha['ativo'] = 'Erro';
-                }
-
-
-                
-
+                echo "<thead>";
+                    echo "<tr>";
+                        echo "<div class='thead'>";
+                            echo "<th style='width: 50px;' scope='col'>Id</th>";
+                            echo "<th style='width: 220px;' scope='col'>Nome</th>";
+                            echo "<th style='width: 120px;' scope='col'>Link</th>";
+                            echo "<th style='width: 100px;' scope='col'>Grupo</th>";
+                            echo "<th style='width: 90px;' scope='col'>Ativo</th>";
+                            echo "<th style='width: 200px;' scope='col'>Opções</th>";
+                        echo "</div>";
+                    echo "</tr>";
+                echo "</thead>";
         
-                echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
+                $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
+        
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
-                ?>
 
-                <td class='noprint'>
-              
-                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&idGrupo=<?php echo $id; ?>&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                    $linha['grupo'] = $ac->retornaNome($linha['grupo']);
 
-                    <a href="<?php echo $linha['link']?>" target='_blank'><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+                    if($linha['ativo'] == 0){
+                        $linha['ativo'] = "<p style='color: red';>Não</p>";
+                    }
 
-                    <br><br>
+                    elseif($linha['ativo'] == 1){
+                        $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                    }
 
-                    <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
-           
+                    else{
+                        $linha['ativo'] = 'Erro';
+                    }
 
-                    <?php
-                        if($ac->retornaAtivo($linha['id']) == 1){
+
+                    echo"<tr>";
+                    echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+
                     ?>
-                                <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>" ><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
-                    <?php
-                        }
-                        else{
-                    ?>
-                                <a href="../../classes/acesso/habilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
-                    <?php
-                        }
-                    ?> 
 
-                   
-                </td>
-           
+                    <td class='noprint'>
+                
+                        <a href="/paginas/admin/main.php?pagina=../cadastros/editar_acesso&idGrupo=<?php echo $id; ?>&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+
+                        <a href="<?php echo $linha['link']?>" target='_blank'><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+
+                        <br><br>
+
+                        <a href="../../classes/acesso/apagarAcesso.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger-red' style='width: 100px;'>Excluir</button></a>
+
+                        <?php
+                            if($ac->retornaAtivo($linha['id']) == 1){
+                        ?>
+                                    <a href="../../classes/acesso/desabilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>" ><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                        <?php
+                            }
+                            else{
+                        ?>
+                                    <a href="../../classes/acesso/habilitarAcessoUnico.php?id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id;?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                        <?php
+                            }
+                        ?> 
+
+                    </td>
             
-
-            <?php
-
-
-            echo"</tr>";
-
-           
                 
 
-               
-            }
-    
+                <?php
+
+
+                echo"</tr>";
+
             
+                    
+
+                
+                }
+        
+                
             
             echo"</table>";
 

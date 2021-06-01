@@ -97,7 +97,7 @@
                     </div> -->
             </form>
        <br>
-            <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; margin-top: 50px; table-layout:fixed; border: 2px solid ##00995D; max-width: 900px; word-wrap: break-word; !important;'>
+            <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; margin-top: 50px; table-layout:fixed; border: 2px solid ##00995D; max-width: 1000px; word-wrap: break-word; !important;'>
             <thead>
             <tr>
             <div class='thead'>

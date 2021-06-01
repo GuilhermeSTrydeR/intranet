@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
+<center style="margin-left: 70px; margin-top: 100px !important; position: relative !important;">
         <style>
 
         .hiddenBtnXUsuarios{
@@ -91,7 +91,7 @@ session_start();
                 
                     echo "<h4>Aniversariantes do Mês de " . $mesAtualSting  . "</h4>";
                     echo "<br>";
-                    echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>";
+                    echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
@@ -213,7 +213,7 @@ session_start();
             
             echo "<h4 style='margin-top: 100px;'>Proximos Aniversarios</h4>";
             echo "<br>";
-            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>";
+            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
             echo "<thead>";
             echo "<tr>";
             echo "<div class='thead'>";
@@ -336,7 +336,7 @@ session_start();
 
         echo "<h4 style='margin-top: 100px; '>Todos os Aniversarios</h4>";
         echo "<br>";
-        echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>";
+        echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
         echo "<thead>";
         echo "<tr>";
         echo "<div class='thead'>";

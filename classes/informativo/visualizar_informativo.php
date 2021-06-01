@@ -63,8 +63,6 @@ session_start();
 
         }
         
-  
-
         if($cont > 0){
             ?>
             <form method="POST" action="<?php echo $PHP_SELF; ?>">
@@ -120,25 +118,17 @@ session_start();
             <br>
             <br>
             <br>
-            
-            
-            
-           
-            
-
-            <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 200px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>
+            <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>
             <thead>
-            
             <tr>
-
-            
             <div class='thead'>
-            <th style='width: 50px;' scope='col'>ID</th>
-            <th style='width: 80px;' scope='col'>Data</th>
+            <th style='width: 30px;' scope='col'>ID</th>
+            <th style='width: 60px;' scope='col'>Data</th>
             <th style='width: 140px;' scope='col'>Titulo</th>
-            <th style='width: 300px;' scope='col'>Texto</th>
-            <th style='width: 70px;' scope='col'>Ativo?</th>
-            <th style='width: 130px;' scope='col' class='noprint'>Opções</th>
+            <th style='width: 200px;' scope='col'>Texto</th>
+            <th style='width: 50px;' scope='col'>Ativo?</th>
+            <th style='width: 70px;' scope='col'>Periodo</th>
+            <th style='width: 80px;' scope='col' class='noprint'>Opções</th>
             </div>
             </tr>
             </thead>
@@ -147,7 +137,6 @@ session_start();
             $consulta = $pdo->query($_SESSION['sentidodaLista'] );
 
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-           
             
                 if($linha['ativo'] == 0){
                     $linha['ativo'] = "<p style='color: red';>Não</p>";
@@ -160,18 +149,54 @@ session_start();
                 else{
                     $linha['ativo'] = 'Erro';
                 }
-            
-
+                
+                // converte a data de timestamp linux para padrao brasileiro
                 $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i:s", ($linha['dataCadastro']));
 
+          
+                if($linha['inicio'] > '0000-00-00'){
+
+                    $inicio = date('d/m/Y',  strtotime($linha['inicio']));
+                    
+                }
+                else{
+
+                    $inicio = "Sem Inicio";
+
+                }
+          
+
+                if($linha['fim'] > '0000-00-00'){
+
+                    $fim = date('d/m/Y',  strtotime($linha['fim']));
+                }
+                else{
+
+                    $fim = "Sem Fim";
+
+                }
+
+           
+                if($linha['inicio'] == '0000-00-00' && $linha['fim'] == '0000-00-00'){
+
+                    $periodo = 'Permanente';
+                }
+
+                else{
+                    $periodo = ($inicio . " - " . $fim);
+                }
+
+               
+
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td> <td class='noprint'>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td><td> $periodo </td> <td class='noprint'>";
                 ?>
 
                 <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
                 
                 <br>
                 <br>
+
                 <?php
                     if($i->retornaAtivo($linha['id']) == 1){
                 ?>
@@ -191,17 +216,10 @@ session_start();
             <a href="?pagina=../../classes/informativo/visualizarInformativoUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
             
 
-
             <?php
 
             echo "</td></tr>";
 
-            
-        
-
-        
-
-            
         }
       
         echo"</table>";

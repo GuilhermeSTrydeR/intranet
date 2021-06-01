@@ -74,17 +74,17 @@
             echo "</div>";
             echo "</div>";
             echo "<br>";
-            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 900px;' id='table'>";
+            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
             
             echo "<thead>";
             echo "<tr>";
             echo "<div class='thead'>";
           
-            echo "<th style='width: 50px;' scope='col'>Id</th>";
-            echo "<th style='width: 180px;' scope='col'>Nome do Grupo</th>";
-            echo "<th style='width: 100px;' scope='col'>Permissão</th>";
-            echo "<th style='width: 50px;' scope='col'>Ativo</th>";
-            echo "<th style='width: 150px;' scope='col'>Opções</th>";
+            echo "<th style='width: 100px;' scope='col'>Id</th>";
+            echo "<th style='width: 250px;' scope='col'>Nome do Grupo</th>";
+            echo "<th style='width: 250px;' scope='col'>Permissão</th>";
+            echo "<th style='width: 100px;' scope='col'>Ativo</th>";
+            echo "<th style='width: 200px;' scope='col'>Opções</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
