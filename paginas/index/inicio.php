@@ -117,13 +117,11 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 }
 
 
+// caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
+if($cont > 0){
 
-    // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
-    if($cont > 0){
-    
-        echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 0px 3px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
-  
-    }
+    echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 5px 5px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
+
 
     ?>
 
@@ -178,15 +176,19 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
 
     </div>
- 
 
+<!-- aqui fecha o IF do modal de aniversarios (PHP com HTML mesclado) -->
+<?php
+    }
+?>
 
 
 </div>
 
 
-<script>
 
+<script>
+    // essa funcao ira ser chamada no botao para fechar o modal, ou seja ela fecha o modal
     function fecharModal(){
         const texto = document.getElementById( 'modalInicio' ).style.display = 'none';
         // const texto = document.getElementById( 'sombraInicio' ).style.display = 'none';
@@ -195,7 +197,6 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 </script>  
 
 
-</div>
 
 
 

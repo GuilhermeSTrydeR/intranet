@@ -474,8 +474,7 @@ tr{
 }
 .boxItens:hover{
   box-shadow: 5px 5px 15px #F47920;
-  background-color: #0A5F55;
-  border-color: #0A5F55;
+
 
 }
 
@@ -505,7 +504,7 @@ tr{
   border-top-right-radius: 10px; */
 
   /* font-weight: 500 !important; */
-  color: #F47920 !important; 
+  /* color: #F47920 !important;  */
   
 }
 

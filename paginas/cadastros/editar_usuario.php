@@ -17,7 +17,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
   global $pdo;
 
-  $sql = "SELECT * FROM usuarios WHERE id = $id;";
+  $sql = "SELECT * FROM usuarios WHERE id = '$id';";
 
   $consulta = $pdo->query($sql);
   
@@ -71,7 +71,6 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         <!-- area de campos do form -->
         <hr />
 
-  
         <div class="row">
             <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
 
@@ -157,16 +156,11 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                     case 12:
                         $setorString = "GED";
                         break;
-                    
                     case 13:
                         $setorString = "Outros";
-                        break;
-                    
+                        break; 
                 }
-              
-            
             ?>
-
 
             <option selected value="<?php echo $setor;?>"> <?php echo "Atual: " . $setorString; ?> 
             <option value="1">Comercial</option>

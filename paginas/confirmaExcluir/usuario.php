@@ -3,7 +3,9 @@
     require("../../classes/conexao_bd.php");
 
 
-  
+    // require("../../classes/usuario/usuario.class.php");
+
+    // $u = new Usuario();
 
     $id = $_GET['id'];
 

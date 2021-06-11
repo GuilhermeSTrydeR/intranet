@@ -82,7 +82,7 @@
   <option selected value="<?php echo $grupo;?>"> <?php echo "Atual: " . $grupoString; ?> </option> 
   <?php
 
-    $sql = "SELECT * FROM acesso_grupo";  
+    $sql = "SELECT * FROM acesso_grupo WHERE excluido = 0";  
     $consulta = $pdo->query($sql);
     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
