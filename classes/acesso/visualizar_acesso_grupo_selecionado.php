@@ -2,7 +2,7 @@
     session_start();
 ?>
 
-<center style="margin-left: 212px; margin-top: -22px; !important; position: relative !important;">
+<center style="margin-left: 225px; margin-top: -23px; !important; position: relative !important;">
     <style>
 
         a{
@@ -36,8 +36,7 @@
         echo "<div class='row'>";
  
         echo "<h4>Grupo: $nome</h4>";
-        echo "<br>";
-        echo "<br>";
+
         echo "<br>";
 
         echo "<a href='/'>";
