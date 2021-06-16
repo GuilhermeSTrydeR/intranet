@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 
 <center style="margin-left: 225px; margin-top: -23px; !important; position: relative !important;">
     <style>

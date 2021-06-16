@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 
 <center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
     <style>
@@ -29,7 +27,7 @@
 
         global $pdo;
 
-
+        $cont = 0;
         $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE id = 1");
 
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -61,9 +59,7 @@
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
 
-            
 
-            
             echo "<div class='row' style='float: left; margin-left: 800px; margin-top: -50px; position: absolute;'>";
  
             echo "<div class='col'>";
@@ -91,7 +87,8 @@
     
             // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
             $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0");
-       
+            $id = $linha['id'];
+            
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
               
                 if($linha['ativo'] == 0){
@@ -123,7 +120,7 @@
                     $linha['permissao'] = "Sem permissão";
 
                 }
-               
+
 
                 echo"<tr>";
                 echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td>  <td> {$linha['ativo']}</td>";
@@ -131,8 +128,8 @@
 
                 ?>
                 <td class='noprint'>
-              
-                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_grupo_acesso&id=<?php echo $linha['id']?>&idGrupo=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+         
+                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_grupo_acesso&id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
                     <a href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
                 <?php
@@ -146,7 +143,7 @@
                     if($ac->retornagrupoAtivo($linha['id']) == 1){
                 ?>  
                     
-                    <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                    <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id='<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
 
                 <?php
                     }

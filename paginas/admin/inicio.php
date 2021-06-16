@@ -20,10 +20,7 @@
 
 
     ?>
-        <?php
-    session_start();
-  
-?>
+
 <center style="margin-left: 100px; margin-top: 50px !important; position: relative !important;">
     <style>
 

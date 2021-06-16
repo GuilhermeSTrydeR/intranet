@@ -1,5 +1,6 @@
 <?php
-session_start();
+// desligar todos os erros e notices nessa pagina
+error_reporting(0);
 ?>
 <center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
         <style>
@@ -16,7 +17,7 @@ session_start();
         <h4>Informativos</h4>
         
         <div class='print'><?php
-        
+            
             echo gmdate('d/m/y \á\s\ H:i:s', time() + $fusoHorario);
           
         ?>

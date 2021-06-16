@@ -30,7 +30,7 @@ if($cont > 0){
  
     $consulta = $pdo->query($sql);
     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-        if($linha['ativo'] == 1 && linha['excluido'] == 0){
+        if($linha['ativo'] == 1 && $linha['excluido'] == 0){
             if((($linha['inicio'] <= date('Y-m-d') || $linha['inicio'] == '0000-00-00' || $linha['inicio'] == null) && ($linha['fim'] >= date('Y-m-d') || $linha['fim'] == '0000-00-00' || $linha['fim'] == null))){
 
             echo"<br>";
@@ -97,7 +97,7 @@ else{
     echo "</style>";
 
   
-    echo "<h4 style='margin-top: 10%;'>Não há informativos cadastrados ou ativados para serem<br>exibidos no mural</h4>";
+    echo "<h4 style='margin-top: 10%;'>Não há informativos cadastrados ou ativos para serem<br>exibidos no mural</h4>";
     echo "<br>";
     echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_informativo'>Para cadastrar um novo informativo, clique aqui!</a>";
 

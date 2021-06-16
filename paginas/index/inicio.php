@@ -2,11 +2,6 @@
 
     <?php
 
-        include("../../classes/conexao_bd.php");
-
-        //include para acessar as confguracoes definidas
-        include("../../config/config.php");
-
         global $pdo;
 
         $sql = 'SELECT * FROM informativo ORDER BY id DESC;';

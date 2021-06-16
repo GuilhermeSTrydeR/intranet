@@ -21,7 +21,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
   // $sql = "SELECT * FROM acesso WHERE id = $id;";
 
-  $consulta = $pdo->query($sql);
+  // $consulta = $pdo->query($sql);
   
   // while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 

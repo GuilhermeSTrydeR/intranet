@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+
     require ('classes/acesso/acesso.class.php');
     $ac = new Acesso();
 ?>
@@ -52,7 +52,7 @@
                     $permissaoAcesso = $ac->retornaPermissaoAcesso($linha['id']);
 
                     $ativo = $ac->retornaGrupoAtivo($linha['grupo']);
-                    
+                    $i = 0;
                     if($ativo == 1){
                         if(($permissaoGrupo == 1 && $permissaoAcesso == 1) || ($permissaoGrupo != 1 && $permissaoAcesso == 1)){
 
