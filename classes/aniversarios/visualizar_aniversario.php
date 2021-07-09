@@ -69,16 +69,37 @@
                 break;
           
             }
-//#################################################################################################
+
+            $consulta = $pdo->query("SELECT * FROM aniversario WHERE excluido = 0");
+            
+            // o contador eh iniciado com zero
+            $cont = 0;
+                
+            // para cada registro no banco a variavel $cont recebera 1 incremento
+            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                   
+                $cont++;
+    
+            }
+    
+            // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
+            if($cont > 0){
+                //#################################################################################################
 // bloco da table dos aniversarios do mes
 //#################################################################################################           
             
             // essa consultaeh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
-            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
             
             // o contador eh iniciado com zero
             $cont = 0;
-            
+            ?>
+            <div class="col" style='margin-left: 600px;'>
+                            <a href="?pagina=../../paginas/cadastros/cadastrar_aniversario">
+                                <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Usuario">
+                                </a>
+                        </div>
+            <?php
             // para cada registro no banco a variavel $cont recebera 1 incremento
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                
@@ -101,7 +122,7 @@
                     echo "</tr>";
                     echo "</thead>";
 
-                    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+                    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
             
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                      
@@ -198,7 +219,7 @@
         }
 
             
-        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
 
         $cont = 0;
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -229,7 +250,7 @@
 
     
 
-            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
     
 
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -317,7 +338,7 @@
 //#################################################################################################    
 
     // essa consulta eh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
-    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios WHERE excluido = 0 ORDER BY Month(nasc), Day(nasc)");
+    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 ORDER BY Month(nasc), Day(nasc)");
     
     // o contador eh iniciado com zero
     $cont = 0;
@@ -347,7 +368,7 @@
         echo "</thead>";
 
         // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
-        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM usuarios ORDER BY Month(nasc), Day(nasc)");
+        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario ORDER BY Month(nasc), Day(nasc)");
    
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['excluido'] == 0){
@@ -429,6 +450,19 @@
         echo"</table>";
 
     }
+
+
+        
+    }//fim if
+    else{
+
+        echo "<h4>Não há aniversarios cadastrados.</h4>";
+        echo "<br>";
+        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_aniversario'>Para cadastrar um novo aniversario, clique aqui!</a>";
+
+    }
+
+
 
 ?>
 

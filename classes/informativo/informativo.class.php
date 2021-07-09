@@ -139,7 +139,7 @@
         }
 
         public function desabilitarInformativo($id){
-
+            $i = 0;
             global $pdo;
             $sql = "UPDATE informativo SET ativo = '0' WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
@@ -153,7 +153,7 @@
 
         public function desabilitarTodosInformativo(){
 
-
+            $i = 0;
             global $pdo;
             $sql = "UPDATE informativo SET ativo = '0'";
             $sql = $pdo->prepare($sql);
@@ -167,7 +167,7 @@
 
         
         
-
+            $i = 0;
             global $pdo;
             $sql = "UPDATE informativo SET ativo = '1'";
             $sql = $pdo->prepare($sql);
@@ -177,7 +177,7 @@
     }
     public function habilitarInformativo($id){
 
-        
+        $i = 0;
         global $pdo;
         $sql = "UPDATE informativo SET ativo = '1' WHERE id = '$id'";
         $sql = $pdo->prepare($sql);
