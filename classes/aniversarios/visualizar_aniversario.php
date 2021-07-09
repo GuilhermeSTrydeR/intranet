@@ -1,4 +1,3 @@
-
 <center style="margin-left: 70px; margin-top: 100px !important; position: relative !important;">
         <style>
 
@@ -89,7 +88,7 @@
 //#################################################################################################           
             
             // essa consultaeh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
-            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+            $consulta = $pdo->query("SELECT * FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
             
             // o contador eh iniciado com zero
             $cont = 0;
@@ -118,16 +117,17 @@
                     echo "<th style='width: 180px;' scope='col'>Nome</th>";
                     echo "<th style='width: 70px;' scope='col'>Setor</th>";
                     echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
+                    echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
 
-                    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+                    $consulta = $pdo->query("SELECT * FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
             
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                      
                         
-                            if($linha['ativo'] == 1 && isset($linha['nasc']) ){
+                            if(isset($linha['nasc']) ){
                                 
                                 switch($linha['setor']) {
                                     case 1:
@@ -173,14 +173,20 @@
                        
                                     }
             
-                                $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                            
                                 echo"<tr>";
-                        
+                                
+                                if($linha['ativo'] == 0){
+                                    $linha['ativo'] = "<p style='color: red;'>Não</P>";
+                                }
+                                elseif($linha['ativo'] == 1){
+                                    $linha['ativo'] = "<p style='color: green;'>Sim</P>";
+                                }
             
                                 // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                                 $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
                     
-                                echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td>";
+                                echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td><td> {$linha['ativo']} </td>";
                              
                                 echo "</td></tr>";
                             }
@@ -219,7 +225,7 @@
         }
 
             
-        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+        $consulta = $pdo->query("SELECT * FROM aniversario WHERE excluido = 0 AND Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
 
         $cont = 0;
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -240,6 +246,7 @@
             echo "<th style='width: 180px;' scope='col'>Nome</th>";
             echo "<th style='width: 70px;' scope='col'>Setor</th>";
             echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
+            echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
@@ -250,13 +257,13 @@
 
     
 
-            $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+            $consulta = $pdo->query("SELECT * FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
     
 
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 if($linha['excluido'] == 0){
                 
-                    if($linha['ativo'] == 1 && isset($linha['nasc']) ){
+                    if(isset($linha['nasc']) ){
                         
                         switch($linha['setor']) {
                             case 1:
@@ -302,14 +309,20 @@
             
                             }
 
-                        $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                       
                         echo"<tr>";
-                
+
+                        if($linha['ativo'] == 0){
+                            $linha['ativo'] = "<p style='color: red;'>Não</P>";
+                        }
+                        elseif($linha['ativo'] == 1){
+                            $linha['ativo'] = "<p style='color: green;'>Sim</P>";
+                        }
 
                         // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
             
-                        echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td>";
+                        echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td> <td> {$linha['ativo']} </td>";
                    
                         echo "</td></tr>";
                     }
@@ -338,7 +351,7 @@
 //#################################################################################################    
 
     // essa consulta eh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
-    $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE excluido = 0 ORDER BY Month(nasc), Day(nasc)");
+    $consulta = $pdo->query("SELECT * FROM aniversario WHERE excluido = 0 ORDER BY Month(nasc), Day(nasc)");
     
     // o contador eh iniciado com zero
     $cont = 0;
@@ -363,6 +376,7 @@
         echo "<th style='width: 180px;' scope='col'>Nome</th>";
         echo "<th style='width: 70px;' scope='col'>Setor</th>";
         echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
+        echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
         echo "</div>";
         echo "</tr>";
         echo "</thead>";
@@ -373,7 +387,7 @@
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['excluido'] == 0){
             
-                if($linha['ativo'] == 1 && isset($linha['nasc']) ){
+                if(isset($linha['nasc']) ){
                     
                     switch($linha['setor']) {
                         case 1:
@@ -419,14 +433,21 @@
            
                     }
 
-                    $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                  
                     echo"<tr>";
+
+                    if($linha['ativo'] == 0){
+                        $linha['ativo'] = "<p style='color: red;'>Não</P>";
+                    }
+                    elseif($linha['ativo'] == 1){
+                        $linha['ativo'] = "<p style='color: green;'>Sim</P>";
+                    }
             
 
                     // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                     $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
         
-                    echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td>";
+                    echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td> <td> {$linha['ativo']} </td>";
                 
    
                     
