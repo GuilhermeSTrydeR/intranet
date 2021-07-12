@@ -324,9 +324,7 @@
                         // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
             
-                        echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td> <td> {$linha['ativo']} </td>";
-                   
-                        echo "</td></tr>";
+                        echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_aniversario&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                     }
 
                 }
@@ -385,7 +383,7 @@
         echo "</thead>";
 
         // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
-        $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario ORDER BY Month(nasc), Day(nasc)");
+        $consulta = $pdo->query("SELECT * FROM aniversario ORDER BY Month(nasc), Day(nasc)");
    
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             if($linha['excluido'] == 0){
@@ -450,11 +448,7 @@
                     // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                     $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
         
-                    echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td> <td> {$linha['ativo']} </td>";
-                
-   
-                    
-                    echo "</td></tr>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_aniversario&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                  
                     
                 }
