@@ -114,10 +114,11 @@
                     echo "<tr>";
                     echo "<div class='thead'>";
                     // echo "<th style='width: 50px;' scope='col'>ID</th>";
-                    echo "<th style='width: 180px;' scope='col'>Nome</th>";
+                    echo "<th style='width: 140px;' scope='col'>Nome</th>";
                     echo "<th style='width: 70px;' scope='col'>Setor</th>";
                     echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
                     echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+                    echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
@@ -186,9 +187,9 @@
                                 // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                                 $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
                     
-                                echo " <td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']}  </td><td> {$linha['ativo']} </td>";
+                                echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_aniversario&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
-                                echo "</td></tr>";
+                                echo "</tr>";
                             }
     
                         
@@ -243,10 +244,11 @@
             echo "<tr>";
             echo "<div class='thead'>";
             echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
-            echo "<th style='width: 180px;' scope='col'>Nome</th>";
+            echo "<th style='width: 140px;' scope='col'>Nome</th>";
             echo "<th style='width: 70px;' scope='col'>Setor</th>";
             echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
             echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+            echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
@@ -373,10 +375,11 @@
         echo "<tr>";
         echo "<div class='thead'>";
         echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
-        echo "<th style='width: 180px;' scope='col'>Nome</th>";
+        echo "<th style='width: 140px;' scope='col'>Nome</th>";
         echo "<th style='width: 70px;' scope='col'>Setor</th>";
         echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
         echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+        echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
         echo "</div>";
         echo "</tr>";
         echo "</thead>";

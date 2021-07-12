@@ -12,7 +12,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
     <div class="row">
       <div class="form-group col-md-6"> 
         <label for="nome">Nome do Colaborador</label> 
-        <input = type="text" class="form-control" name="nome" size="60"> 
+        <input = type="text" class="form-control" name="nome" size="60" required> 
       </div> 
     </div>
     <br>

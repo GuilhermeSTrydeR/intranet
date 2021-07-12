@@ -1,27 +1,22 @@
 <?php   
         //requer classe de conexao do banco
         require("../../classes/conexao_bd.php");
-
-  
         require("../../classes/informativo/informativo.class.php");
 
         $id = $_GET['id'];
         
-
         //aqui instanciamos a classe
         $i = new Informativo();
         $tituloInformativo = $i->retornaTitulo($id);
         $dataInformativo = $i->retornaData($id);
         $dataInformativo = gmdate("d/m/y \á\s\ H:i:s", ($dataInformativo));
         
-
-
 ?>  
 <center>
     <div style="background: #f0f2f8; padding: 10px; width: 70%; margin-left: 50px; margin-top: 10%; border-top-left-radius: 20px;  border-top-right-radius: 20px;  border-bottom-left-radius: 20px;">
         <h2>
             Tem certeza que deseja excluir o informativo selecionado? 
-            
+    
         </h2>
 <br><br>
         <h4>
