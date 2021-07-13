@@ -1,6 +1,6 @@
 
 
-<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
+<center style="margin-left: 3px; margin-top: 100px !important; position: relative !important;">
     <style>
 
         a{
