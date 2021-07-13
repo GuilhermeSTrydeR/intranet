@@ -14,7 +14,9 @@ include("../../classes/informativo/informativo.class.php");
 // $i = new Informativo();
 global $pdo;
 
-$sql = 'SELECT * FROM informativo WHERE excluido = 0 AND ativo = 1 ORDER BY id DESC;';
+
+
+$sql = "SELECT * FROM informativo WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00' ORDER BY id DESC";
 $consulta = $pdo->query($sql);
 
 $cont = 0;
@@ -97,7 +99,7 @@ else{
     echo "</style>";
 
   
-    echo "<h4 style='margin-top: 10%;'>Não há informativos cadastrados ou ativos para serem<br>exibidos no mural</h4>";
+    echo "<h4 style='margin-top: 10%;'>Não há informativos cadastrados ou ativos com a data vigente para serem<br>exibidos no mural</h4>";
     echo "<br>";
     echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_informativo'>Para cadastrar um novo informativo, clique aqui!</a>";
 
