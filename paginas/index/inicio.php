@@ -76,7 +76,7 @@
         }
 
     else{
-        echo "<img src='../../imagens/unimed/logo_unimed.png' height='300' style='margin-top: 150px;' alt='logo_unimed'>";
+        echo "<img  src='../../imagens/unimed/logo_unimed_tc.png' height='300' style='margin-top: 75px;' alt='logo_unimed'>";
     }
 
 

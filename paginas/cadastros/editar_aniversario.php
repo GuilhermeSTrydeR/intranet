@@ -104,7 +104,7 @@ else{
   <div class="form-group">
   <div class='row'>
   <input type="text" name='id' value="<?php echo $id; ?>" style='display: none;'>
-  <div class="form-group col-md-2"> <label for="ativo">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
+  <div class="form-group col-md-2"> <label for="ativo">Exibir Aniversario?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
   </div>
     <br>
     <div class="row">

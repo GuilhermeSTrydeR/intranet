@@ -115,9 +115,9 @@
                     echo "<div class='thead'>";
                     // echo "<th style='width: 50px;' scope='col'>ID</th>";
                     echo "<th style='width: 140px;' scope='col'>Nome</th>";
-                    echo "<th style='width: 70px;' scope='col'>Setor</th>";
-                    echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
-                    echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+                    echo "<th style='width: 50px;' scope='col'>Setor</th>";
+                    echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
+                    echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
                     echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
@@ -245,9 +245,9 @@
             echo "<div class='thead'>";
             echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
             echo "<th style='width: 140px;' scope='col'>Nome</th>";
-            echo "<th style='width: 70px;' scope='col'>Setor</th>";
-            echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
-            echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+            echo "<th style='width: 50px;' scope='col'>Setor</th>";
+            echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
+            echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
             echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
             echo "</div>";
             echo "</tr>";
@@ -374,9 +374,9 @@
         echo "<div class='thead'>";
         echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
         echo "<th style='width: 140px;' scope='col'>Nome</th>";
-        echo "<th style='width: 70px;' scope='col'>Setor</th>";
-        echo "<th style='width: 50px;' scope='col'>Aniversario</th>";
-        echo "<th style='width: 50px;' scope='col'>Ativo?</th>";
+        echo "<th style='width: 50px;' scope='col'>Setor</th>";
+        echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
+        echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
         echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
         echo "</div>";
         echo "</tr>";
