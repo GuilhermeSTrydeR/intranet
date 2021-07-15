@@ -41,11 +41,21 @@
 
         }
 
+        
+        if($ac->retornaPermissao($id) == 1){
+            $permissaoString = '<blue style="color:blue;">Publico</blue>';
+        }
+        elseif($ac->retornaPermissao($id) == 2){
+            $permissaoString = '<red style="color:red;">Restrito</red>';
+        }
+
+
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
    
 
-            echo "<h4>Grupo: ". $nomeGrupo . "</h4> <br><br><br>";
+            echo "<h4>Grupo: ". $nomeGrupo . "</h4>";
+            echo "<h4>Permissão de Acesso: ". $permissaoString . "</h4> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
 
             echo "<div class='col'>";

@@ -5,8 +5,6 @@
 
         global $pdo;
 
-     
-
         $sql = "SELECT * FROM informativo WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00'";
         $consulta = $pdo->query($sql);
 

@@ -7,18 +7,15 @@
 
         $id = $_GET['id'];
         
-
         //aqui instanciamos a classe
         $an = new Aniversario();
         
-
         //aqui invocamos o metodo para marcar a coluna 'excluido' com '1' informando que esse usuario foi excluido
         $an->desabilitarAniversario($id);
        
         $url = '/paginas/admin/main.php?pagina=../cadastros/editar_aniversario&id=' . $id;
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-       
-      
+
 ?>
 
     
