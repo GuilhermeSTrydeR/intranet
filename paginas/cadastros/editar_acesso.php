@@ -22,6 +22,7 @@
   require("../../config/config.php");
 
   $ac = new Acesso();
+  $permissaoGrupo = $ac->retornaPermissao($idGrupo);
 
   global $pdo;
 
@@ -63,12 +64,25 @@
     <input type="text" class="form-control" id="title" name="link" value="<?php echo $link; ?>" required>
     <input type="text" class='hidden' name="idGrupo" value="<?php echo $idGrupo; ?>">
   <br>
-  <label for="titulo">Permissão</label>
-  <select class="form-select" aria-label="Permissao" name="permissao">
-      <option selected value="<?php echo $permissao;?>"> <?php echo "Atual: " . $permissaoString; ?> </option> 
-      <option value="1">Publico (qualquer um pode ver se o grupo tambem for publico)</option>
-      <option value="2">Restrito (somente usuarios logados podem ver)</option>
-  </select>
+  <?php 
+  if($permissaoGrupo == 1){
+    ?>
+      <label for="link">Permissão</label>
+      <select class="form-select" aria-label="Permissao" name="permissao">
+        <option value="1">Publico (qualquer um pode ver se o grupo tambem for publico)</option>
+        <option value="2">Restrito (somente usuarios logados podem ver)</option>
+      </select>
+    <?php
+  }elseif($permissaoGrupo == 2){
+    ?>
+    <label for="permissao">Permissão</label>
+    <select disabled class="form-select" aria-label="Permissao" name="grupo" >
+      <option selected  value="2">Restrito (somente usuarios logados podem ver) </option>
+    </select>
+    <input type="text" class='hidden' readonly value="2" class="form-control" id="link" name="permissao" required>
+    <?php
+  }
+    ?>
   <br>
 
   <?php
