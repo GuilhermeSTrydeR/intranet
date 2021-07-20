@@ -79,12 +79,13 @@
                 echo "<thead>";
                     echo "<tr>";
                         echo "<div class='thead'>";
-                            echo "<th style='width: 50px;' scope='col'>Id</th>";
-                            echo "<th style='width: 220px;' scope='col'>Nome</th>";
+                            echo "<th style='width: 30px;' scope='col'>Id</th>";
+                            echo "<th style='width: 120px;' scope='col'>Nome</th>";
+                            echo "<th style='width: 80px;' scope='col'>Permissão</th>";
                             echo "<th style='width: 120px;' scope='col'>Link</th>";
                             echo "<th style='width: 100px;' scope='col'>Grupo</th>";
                             echo "<th style='width: 90px;' scope='col'>Ativo</th>";
-                            echo "<th style='width: 200px;' scope='col'>Opções</th>";
+                            echo "<th style='width: 170px;' scope='col'>Opções</th>";
                         echo "</div>";
                     echo "</tr>";
                 echo "</thead>";
@@ -109,9 +110,27 @@
                         $linha['ativo'] = 'Erro';
                     }
 
+                    if($linha['permissao'] == 1){
+
+                        $linha['permissao'] = "Publico";
+    
+                    }
+    
+                    elseif($linha['permissao'] > 1 ){
+    
+                        $linha['permissao'] = "Restrito";
+    
+                    }
+    
+                    else{
+    
+                        $linha['permissao'] = "Sem permissão";
+    
+                    }
+
 
                     echo"<tr>";
-                    echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                    echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
 
                     ?>
 

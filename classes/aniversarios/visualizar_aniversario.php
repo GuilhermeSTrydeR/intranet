@@ -167,7 +167,7 @@
                                     case 12:
                                         $linha['setor'] = 'GED';
                                         break;
-                                    case 12:
+                                    case 13:
                                         $linha['setor'] = 'Outros';
                                         break;
                                 
@@ -304,7 +304,7 @@
                             case 12:
                                 $linha['setor'] = 'GED';
                                 break;
-                            case 12:
+                            case 13:
                                 $linha['setor'] = 'Outros';
                                 break;
                         
@@ -427,7 +427,7 @@
                         case 12:
                             $linha['setor'] = 'GED';
                             break;
-                        case 12:
+                        case 13:
                             $linha['setor'] = 'Outros';
                             break;
                     
