@@ -23,6 +23,7 @@
 
   $ac = new Acesso();
   $permissaoGrupo = $ac->retornaPermissao($idGrupo);
+  $permissaoAcesso = $ac->retornaPermissaoAcesso($id);
 
   global $pdo;
 
@@ -51,6 +52,18 @@
 
   }
 
+  if($permissaoAcesso == 1){
+
+    $permissaoAcessoString = "Publico";
+
+  }
+
+  elseif($permissaoAcesso == 2){
+
+    $permissaoAcessoString = "Restrito";
+
+  }
+
 ?>
 
 <center>
@@ -69,6 +82,7 @@
     ?>
       <label for="link">Permissão</label>
       <select class="form-select" aria-label="Permissao" name="permissao">
+        <option SELECTED value=<?php echo $permissaoAcesso; ?>><?php echo "Atual: " . $permissaoAcessoString;?></option>
         <option value="1">Publico (qualquer um pode ver se o grupo tambem for publico)</option>
         <option value="2">Restrito (somente usuarios logados podem ver)</option>
       </select>

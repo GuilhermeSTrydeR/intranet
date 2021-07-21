@@ -116,7 +116,7 @@
     
                     }
     
-                    elseif($linha['permissao'] > 1 ){
+                    elseif($linha['permissao'] == 2 ){
     
                         $linha['permissao'] = "Restrito";
     
