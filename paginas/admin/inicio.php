@@ -1,4 +1,4 @@
-<center style="margin-left: 100px; margin-top: 100px !important;">
+<center style="margin-left: 30px; margin-top: 100px !important;">
 
     
     <?php
@@ -50,13 +50,14 @@
 
                 
                 echo"<div class='container'>";
-        
-                $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1");
+                echo "<p style='float: left;'>Interno</p>";
+                echo "<br><hr>";
+                $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 1");
                 
                 $numItensLinha = 4;
 
                 $i = 0;
-                echo "<div class='row'>";
+                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                         if($linha['ativo'] == 1){
 
@@ -73,6 +74,37 @@
          
                 }
                 echo "</div>";
+
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                 
+                echo"<div class='container'>";
+                echo "<p style='float: left;'>Externo</p>";
+                echo "<br><hr>";
+                $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 0");
+                
+                $numItensLinha = 4;
+
+                $i = 0;
+                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                        if($linha['ativo'] == 1){
+
+                            echo "<div style='float: left;' id={$linha['nome']} class='boxItens'>";
+                                echo "<a href=?pagina=../../classes/acesso/visualizar_acesso_grupo_selecionado&id=" .$linha['id'] . "&nome=" . $linha['nome'] . " ><i class='active'></i><center><p style='white-space: pre-line;
+                                width: 100%;
+                                overflow: hidden !important;             
+                                text-overflow: ellipsis; max-height: 100px;'>{$linha['nome']}</p></center></a>";
+                            echo "</div>";
+                            
+                            $i++;
+                        }
+              
+         
+                }
+                echo "</div>";
+
 
             }
             

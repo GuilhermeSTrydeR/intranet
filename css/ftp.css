@@ -457,8 +457,8 @@ tr{
 /* classe referente as caixas de links da intranet na pagina inicial */
 .boxItens{
 
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   display: block;
   /* flex-direction: row; */
   margin: 20px;
@@ -469,6 +469,7 @@ tr{
   border-bottom-left-radius: 10px ;
   border-top-right-radius: 10px;
   box-shadow: 5px 5px 15px #000000;
+  font-size: 14px;
   
 
 }
