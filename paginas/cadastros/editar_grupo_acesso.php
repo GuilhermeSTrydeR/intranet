@@ -24,6 +24,8 @@
 
   global $pdo;
 
+
+
   $sql = "SELECT * FROM acesso_grupo WHERE id = $id;";
 
   $consulta = $pdo->query($sql);
@@ -39,12 +41,12 @@
 
     if($interno == 0){
 
-      $internoString = "Não";
+      $internoString = "Externo";
 
     }
     elseif($interno == 1){
 
-      $internoString = "Sim";
+      $internoString = "Interno";
 
     }
     

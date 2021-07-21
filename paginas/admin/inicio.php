@@ -50,14 +50,14 @@
 
                 
                 echo"<div class='container'>";
-                echo "<p style='float: left;'>Interno</p>";
+                echo "<h4 style='float: left;'>Interno</h4>";
                 echo "<br><hr>";
                 $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 1");
                 
                 $numItensLinha = 4;
 
                 $i = 0;
-                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
+                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px; max-width: 95%'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                         if($linha['ativo'] == 1){
 
@@ -80,14 +80,14 @@
                 echo "<br>";
                  
                 echo"<div class='container'>";
-                echo "<p style='float: left;'>Externo</p>";
+                echo "<h4 style='float: left;'>Externo</h4>";
                 echo "<br><hr>";
                 $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 0");
                 
                 $numItensLinha = 4;
 
                 $i = 0;
-                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
+                echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;  max-width: 95%'>";
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                         if($linha['ativo'] == 1){
 

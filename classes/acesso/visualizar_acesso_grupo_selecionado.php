@@ -31,7 +31,7 @@
         echo "</a>";
         echo "<br><br>";
 
-        echo "<p style='float: left;'>Interno</p>";
+        echo "<h4 style='float: left;'>Interno</h4>";
         echo "<br>";
         echo "<hr>";
 
@@ -78,7 +78,7 @@
             echo "<br>";
 
 
-            echo "<p style='float: left;'>Externo</p>";
+            echo "<h4 style='float: left;'>Externo</h4>";
             echo "<br>";
             echo "<hr>";
     

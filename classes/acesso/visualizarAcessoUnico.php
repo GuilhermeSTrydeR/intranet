@@ -49,6 +49,17 @@
             $permissaoString = '<red style="color:red;">Restrito</red>';
         }
 
+        if($linha['interno'] == 0){
+
+            $internoString = "Externo";
+
+        }
+        elseif($linha['interno']){
+
+            $internoString = "Interno";
+
+        }
+
 
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
@@ -85,7 +96,8 @@
                             echo "<th style='width: 120px;' scope='col'>Link</th>";
                             echo "<th style='width: 100px;' scope='col'>Grupo</th>";
                             echo "<th style='width: 90px;' scope='col'>Ativo</th>";
-                            echo "<th style='width: 170px;' scope='col'>Opções</th>";
+                            echo "<th style='width: 90px;' scope='col'>Interno / Externo</th>";
+                            echo "<th style='width: 210px;' scope='col'>Opções</th>";
                         echo "</div>";
                     echo "</tr>";
                 echo "</thead>";
@@ -130,7 +142,7 @@
 
 
                     echo"<tr>";
-                    echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td>";
+                    echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td> <td> {$linha['link']} </td> <td> {$linha['grupo']} </td>  <td> {$linha['ativo']}</td> <td> {$internoString}</td>";
 
                     ?>
 

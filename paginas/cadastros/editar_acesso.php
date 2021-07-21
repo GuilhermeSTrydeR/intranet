@@ -37,6 +37,19 @@
     $link = $linha['link']; 
     $permissao = $linha['permissao']; 
     $grupo = $linha['grupo'];
+    $interno = $linha['interno'];
+
+  }
+
+  if($interno == 0){
+
+    $internoString = "Externo";
+
+  }
+
+  elseif($interno == 1){
+
+    $internoString = "Interno";
 
   }
 
@@ -117,11 +130,22 @@
 
       echo "<option value=" . $linha['id'] . ">" . $linha['nome'] . "</option>";
 
-     
     }
 ?>
+
         </select>
+
         <br>
+
+
+        
+        <label for="interno">Interno / Externo</label>
+          <select class="form-select" aria-label="Permissao" name="interno" >
+            <option selected value=<?php echo $interno?>> <?php echo "Atual: " . $internoString ?> </option> 
+            <option value="0">Externo</option>
+            <option value="1">Interno</option>
+          </select>
+
         <div class="col-sm-12">
         
           <br>
