@@ -1,5 +1,5 @@
 
-<center style="margin-left: 225px; margin-top: -23px; !important; position: relative !important;">
+<center style="margin-left: 150px; margin-top: -23px; !important; position: relative !important;">
     <style>
 
         a{
@@ -10,11 +10,6 @@
 
     <?php
 
-        //include para acessar o banco
-        include("../../classes/conexao_bd.php");
-
-        //include para acessar as confguracoes definidas
-        include("../../config/config.php");
 
         //include para acessar as confguracoes definidas
         include("acesso.class.php");

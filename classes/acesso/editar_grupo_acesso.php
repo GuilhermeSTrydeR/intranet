@@ -18,9 +18,10 @@
         $nome = addslashes($_POST["nome"]);
         $ativo = addslashes($_POST["ativo"]);
         $permissao = addslashes($_POST["permissao"]);
+        $interno = addslashes($_POST["interno"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $ac->editarGrupoAcesso($id, $nome, $ativo, $permissao);
+        $ac->editarGrupoAcesso($id, $nome, $ativo, $permissao, $interno);
 
         echo "<script>alert('Grupo de acesso editado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';

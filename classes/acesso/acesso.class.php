@@ -69,15 +69,16 @@
             
         }
 
-        public function editarGrupoAcesso($id, $nome, $ativo, $permissao){
+        public function editarGrupoAcesso($id, $nome, $ativo, $permissao, $interno){
 
             global $pdo;
-            $sql = "UPDATE acesso_grupo SET nome = :nome, ativo = :ativo, permissao = :permissao WHERE id = '$id'";
+            $sql = "UPDATE acesso_grupo SET nome = :nome, ativo = :ativo, permissao = :permissao, interno = :interno WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("nome", $nome);
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("permissao", $permissao);
+            $sql->bindValue("interno", $interno);
           
             $sql->execute();
 

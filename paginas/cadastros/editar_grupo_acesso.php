@@ -35,6 +35,18 @@
     $nome = $linha['nome'];
     $ativo = $linha['ativo'];
     $permissao = $linha['permissao'];
+    $interno = $linha['interno'];
+
+    if($interno == 0){
+
+      $internoString = "Não";
+
+    }
+    elseif($interno == 1){
+
+      $internoString = "Sim";
+
+    }
     
 
 
@@ -57,6 +69,7 @@
 
     <?php
 
+
       if($permissao == 1){
 
         $permissaoString = "Publico";
@@ -78,6 +91,19 @@
       <option selected value="<?php echo $permissao;?>"> <?php echo "Atual: " . $permissaoString; ?> </option> 
       <option value="1">Publico (qualquer um pode ver)</option>
       <option value="2">Restrito (somente usuarios logados podem ver)</option>
+    </select>
+
+ 
+  <br>
+
+  <label for="titulo">Interno / Externo</label>
+<br><br>
+
+
+    <select class="form-select" aria-label="Permissao" name="interno" >
+      <option selected value="<?php echo $interno;?>"> <?php echo "Atual: " . $internoString; ?> </option> 
+      <option value="0">Externo</option>
+      <option value="1">Interno</option>
     </select>
 
  
@@ -176,6 +202,17 @@
 
  
   <br>
+  <br>
+
+<label for="titulo">Interno / Externo</label>
+<br><br>
+
+
+  <select class="form-select" aria-label="Permissao" name="interno" >
+    <option selected value="<?php echo $interno;?>"> <?php echo "Atual: " . $internoString; ?> </option> 
+    <option value="0">Externo</option>
+    <option value="1">Interno</option>
+  </select>
 
         <br>
         <div class="col-sm-12">

@@ -76,10 +76,11 @@
             echo "<tr>";
             echo "<div class='thead'>";
           
-            echo "<th style='width: 100px;' scope='col'>Id</th>";
-            echo "<th style='width: 250px;' scope='col'>Nome do Grupo</th>";
-            echo "<th style='width: 250px;' scope='col'>Permissão</th>";
+            echo "<th style='width: 80px;' scope='col'>Id</th>";
+            echo "<th style='width: 230px;' scope='col'>Nome do Grupo</th>";
+            echo "<th style='width: 100px;' scope='col'>Permissão</th>";
             echo "<th style='width: 100px;' scope='col'>Ativo</th>";
+            echo "<th style='width: 80px;' scope='col'>Interno?</th>";
             echo "<th style='width: 200px;' scope='col'>Opções</th>";
             echo "</div>";
             echo "</tr>";
@@ -90,6 +91,19 @@
             $id = $linha['id'];
             
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                if($linha['interno'] == 0){
+                    $interno = "Não";
+                }
+
+                elseif($linha['interno'] == 1){
+                    $interno = "Sim";
+                }
+
+                else{
+                    $interno = 'Erro';
+                }
+
+
               
                 if($linha['ativo'] == 0){
                     $linha['ativo'] = "<p style='color: red';>Não</p>";
@@ -123,15 +137,17 @@
 
 
                 echo"<tr>";
-                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td>  <td> {$linha['ativo']}</td>";
+                echo "<td> {$linha['id']} </td> <td> {$linha['nome']} </td> <td> {$linha['permissao']} </td>  <td> {$linha['ativo']}</td> <td>$interno</td>";
 
+              
 
                 ?>
+
                 <td class='noprint'>
          
                     <a href="/paginas/admin/main.php?pagina=../cadastros/editar_grupo_acesso&id=<?php echo $linha['id']; ?>&idGrupo=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
 
-                    <a href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+                    <a href="/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=<?php echo $linha['id'];?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
                 <?php
                     if($linha['id'] > 1){
                 ?>
@@ -143,8 +159,7 @@
                     if($ac->retornagrupoAtivo($linha['id']) == 1){
                 ?>  
                     
-                    <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id='<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
-
+                    <a href="../../classes/acesso/desabilitarGrupoAcesso.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
                 <?php
                     }
                     else{
