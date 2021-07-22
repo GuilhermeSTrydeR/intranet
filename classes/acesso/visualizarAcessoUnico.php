@@ -49,17 +49,7 @@
             $permissaoString = '<red style="color:red;">Restrito</red>';
         }
 
-        if($linha['interno'] == 0){
-
-            $internoString = "Externo";
-
-        }
-        elseif($linha['interno']){
-
-            $internoString = "Interno";
-
-        }
-
+      
 
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
@@ -106,6 +96,18 @@
                 $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
         
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+                    if($linha['interno'] == 0){
+
+                        $internoString = "Externo";
+            
+                    }
+                    elseif($linha['interno'] == 1){
+            
+                        $internoString = "Interno";
+            
+                    }
+            
 
 
                     $linha['grupo'] = $ac->retornaNome($linha['grupo']);

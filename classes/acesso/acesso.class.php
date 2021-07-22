@@ -52,10 +52,10 @@
             
         }
        
-        public function editar($id, $nome, $link, $ativo, $permissao, $grupo){
+        public function editar($id, $nome, $link, $ativo, $permissao, $grupo, $interno){
 
             global $pdo;
-            $sql = "UPDATE acesso SET nome = :nome, link = :link, ativo = :ativo, permissao = :permissao, grupo = :grupo WHERE id = '$id'";
+            $sql = "UPDATE acesso SET nome = :nome, link = :link, ativo = :ativo, permissao = :permissao, grupo = :grupo, interno = :interno WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
  
             $sql->bindValue("nome", $nome);
@@ -63,6 +63,7 @@
             $sql->bindValue("ativo", $ativo);
             $sql->bindValue("permissao", $permissao);
             $sql->bindValue("grupo", $grupo);
+            $sql->bindValue("interno", $interno);
           
             $sql->execute();
 

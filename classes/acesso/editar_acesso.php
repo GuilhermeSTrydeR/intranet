@@ -22,9 +22,10 @@
         $idGrupo = $_POST["idGrupo"];
         $permissao = $_POST["permissao"];
         $grupo = $_POST["grupo"];
+        $interno = $_POST["interno"];
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $ac->editar($id, $nome, $link, $ativo, $permissao, $grupo);
+        $ac->editar($id, $nome, $link, $ativo, $permissao, $grupo, $interno);
 
         echo "<script>alert('Acesso alterado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizarAcessoUnico&id=' . $idGrupo;
