@@ -4,8 +4,8 @@
     require ('classes/acesso/acesso.class.php');
     $ac = new Acesso();
     
-    //bool recebido por get para saber se sera listado grupos internos ou externos
-    $idInterno = $_GET['id'];
+    //bool recebido por get para saber se sera listado grupos internos ou externos(essa feature foi descontinuada)
+    // $idInterno = $_GET['id'];
 
 
 ?>

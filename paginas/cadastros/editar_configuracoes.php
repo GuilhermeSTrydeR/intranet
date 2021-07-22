@@ -61,7 +61,7 @@ $u = new Usuario();
   }
 ?>
 <center style=" margin-top: 100px !important;">
-    <h2>Editar Configurações</h2>
+    <h2>Editar Configurações do Seu Usuario</h2>
     <form action="../../classes/usuario/editar_usuario.php" method="POST" style="margin-left: 220px;">
         <!-- area de campos do form -->
         <hr />
@@ -268,5 +268,17 @@ $u = new Usuario();
                 <a style='color: white !important' href="/" class="btn btn-danger">Cancelar</a> </div>
         </div>
     </form>
+    <br><br><br><br><br>
+    <h2>Configurações do Sistema</h2>
+    <hr>
+    
+    <div style='float: left;' id='backup_banco' class='boxItens'>
+        <a href='../../config/backupBanco.php'><i class='active'></i><center><p style='white-space: pre-line;
+        width: 100%;
+        overflow: hidden !important;             
+        text-overflow: ellipsis; max-height: 100px;'>Fazer Backup do Banco de Dados</p></center></a>
+    </div>
+
+
 
 </center>

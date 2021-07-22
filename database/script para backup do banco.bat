@@ -1,0 +1,1 @@
+C:\xampp\mysql\bin\mysqldump -u root unimedtc_intranet > 20210722.sql

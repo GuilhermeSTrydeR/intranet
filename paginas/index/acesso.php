@@ -18,6 +18,7 @@
 
     <?php
 
+//essa primeira consulta serve apenas para verificar se há registros no banco, se não houver, o cabecalho nao eh montado, isso evita mostrar um cabecalho sem informacao nenhuma 
 $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND permissao = 1");
             
 // o contador eh iniciado com zero
@@ -28,7 +29,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
        
     $cont++;
 }
-    // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
+    // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o cabecalho, caso contrario, nem o cabecalho sera exibido
     if($cont > 0){
         
         echo"<div class='container'>";
@@ -38,9 +39,10 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
         $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1  AND permissao = 1 AND interno = 1");
         
+        //teste ainda nao funcional de responsividade, tentei colocar um numerador maximo para os itens em linha
         $numItensLinha = 4;
-
         $i = 0;
+
         echo "<div class='row' style='background: #dfe3ee; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 if($linha['ativo'] == 1){
@@ -66,7 +68,8 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         echo"<br>";
         echo"<hr>";
 
-        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1  AND permissao = 1 AND interno = 0");
+        //nessa parte sera listado todos os acessos publicos ordenados pelo seu grupo, ou seja serao agrupados
+        $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 AND ativo = 1  AND permissao = 1 AND interno = 0 ORDER BY grupo");
         
         $numItensLinha = 4;
 
@@ -90,6 +93,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
     }
     
+    //caso aquele primeiro while nao retorne nenhum registro, essa mensagem abaixo sera exibida ao usuario
     else{
 
         echo "<h4 style='margin-top: 20%;'>Não há Acessos cadastrados</h4>";
