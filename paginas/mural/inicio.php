@@ -1,6 +1,20 @@
 <center style=' margin-left: 140px;'>
 
 <body style='background: #f0f2f8;'>
+<style>
+        #liMural{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }       
+
+        #liMural b{
+            color: #F47920;
+        }
+
+</style>
+
+
 <?php
 
 include("../../classes/conexao_bd.php");

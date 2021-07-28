@@ -15,6 +15,16 @@
             display: inline-block !important;
         }
 
+        #liUsuario{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }       
+
+        #liUsuario b{
+            color: #F47920;
+        }
+
         </style>
 
         <h4>Usuarios</h4>

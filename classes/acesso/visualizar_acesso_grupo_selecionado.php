@@ -10,7 +10,6 @@
 
     <?php
 
-
         //include para acessar as confguracoes definidas
         include("acesso.class.php");
 
@@ -37,14 +36,10 @@
 
 
         echo "<div class='row'  style='background: #dfe3ee; max-width: 95%; margin-left: -80px; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
- 
- 
 
         echo "<br>";
         echo "<br>";
         echo "<br>";
-
-
             
         // para cada registro no banco a variavel $cont recebera 1 incremento
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -54,8 +49,6 @@
         }
   
         if($cont > 0){
-
-            
 
             $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND ativo = 1 AND excluido = 0 AND interno = 1");
           
@@ -77,7 +70,6 @@
             echo "<br>";
             echo "<br>";
 
-
             echo "<h4 style='float: left;'>Externo</h4>";
             echo "<br>";
             echo "<hr>";
@@ -85,17 +77,11 @@
     
             echo "<div class='row'  style='background: #dfe3ee; max-width: 95%; margin-left: -80px; border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px;'>";
      
-     
-    
             echo "<br>";
-    
-    
             echo "<br>";
             echo "<br>";
             echo "<br>";
     
-    
-                
             // para cada registro no banco a variavel $cont recebera 1 incremento
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                    
@@ -124,14 +110,14 @@
                     echo "</div>";
                 }
         
-        else{
+            else{
 
-            echo "<br><br><br><br>";
-            echo "<h4>Não há acessos cadastrados nesse grupo.</h4>";
-            echo "<br>";
-            echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>Para cadastrar um novo acesso no grupo <b>$nome</b>, clique aqui!</a>";
-        
-        }  
+                echo "<br><br><br><br>";
+                echo "<h4>Não há acessos cadastrados nesse grupo.</h4>";
+                echo "<br>";
+                echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>Para cadastrar um novo acesso no grupo <b>$nome</b>, clique aqui!</a>";
+            
+            }  
 
     ?>
 </center>

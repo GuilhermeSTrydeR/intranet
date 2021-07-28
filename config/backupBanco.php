@@ -12,7 +12,7 @@
    
     
     //a funcao shell_exec executa um script no shell, no caso esse script vai ate a pasta do servidor local(nesse caso o XAMPP) e ateh a pasta onde tem o executavel mysqldump.exe e executa passando alguns parametros basicos para gerar o DUMP do banco e salva em um arquivo contendo data e hora atual e a extensao .sql
-    shell_exec('C:\xampp\mysql\bin\mysqldump -u root ' . $banco . ' > ../database/backup_interno/'. date('dmY-His') .'.sql');
+    shell_exec('C:\xampp\mysql\bin\mysqldump -u root ' . $banco . ' > ../database/backup_interno/'. date('Ymd-His') .'.sql');
 
     // echo "<img src='../imagens/backup_banco/4.png' height='500' style='margin-top: 75px;' alt='logo_unimed'>";
     echo "</center>";

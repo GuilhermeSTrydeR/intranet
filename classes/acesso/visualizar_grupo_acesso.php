@@ -6,6 +6,16 @@
         a{
             text-decoration: none;
         }
+
+        #liAcesso{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }       
+
+        #liAcesso b{
+            color: #F47920;
+        }
     
     </style>
 

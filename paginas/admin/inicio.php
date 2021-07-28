@@ -25,7 +25,18 @@
     <style>
 
         a{text-decoration: none;}
-    
+
+        #liInicio{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }
+
+        #liInicio b{
+            color: #F47920;
+        }
+        
+
     </style>
 
     <?php

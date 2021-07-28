@@ -31,10 +31,18 @@
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">
-</head>
-
+  
   </head>
 <body>
+<style>
+
+  li b{
+    font-size: 15px;
+  }
+
+</style>
+
+
 <?php
 
   $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
@@ -93,32 +101,32 @@
   <ul class="sidebar-navigation">
   <center><h4></h4></center>
   <br>
-  <li>
+  <li id='liInicio'>
       <a href="/paginas/admin/main.php">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -5px;' height='50' width='50'><b style='margin-left: 5px '>Inicio</b> 
       </a>
     </li>
-   <li>
+   <li id='liInformativo'>
       <a href="?pagina=../../classes/informativo/visualizar_informativo">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40'><b style='margin-left: -20px;'>Informativos</b> 
       </a>
     </li>
-    <li>
+    <li id='liUsuario'>
       <a href="?pagina=../../classes/usuario/visualizar_usuario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -5px;'>Usuarios</b> 
       </a>
     </li>
-    <li>
+    <li id='liMural'> 
       <a href="?pagina=../../paginas/mural/inicio">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: 5px;'>Mural</b> 
       </a>
     </li>
-    <li>
+    <li id='liAniversario'>
       <a href="?pagina=../../classes/aniversarios/visualizar_aniversario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/modal/cake.png" height='40' class="d-inline-block align-top" alt="sair"><b style='margin-left: -18px;'>Aniversarios</b> 
       </a>
     </li>
-    <li>
+    <li id='liAcesso'>
       <a href="?pagina=../../classes/acesso/visualizar_grupo_acesso">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair"><b>Acessos</b> 
       </a>

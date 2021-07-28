@@ -12,6 +12,18 @@ error_reporting(0);
             display: inline-block !important;
         }
 
+        a{text-decoration: none;}
+
+        #liInformativo{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }       
+
+        #liInformativo b{
+            color: #F47920;
+        }
+
         </style>
         
         <h4>Informativos</h4>

@@ -8,6 +8,16 @@
             display: inline-block !important;
         }
 
+        #liAniversario{
+            background: #009b63;
+            border-right: 6px solid #F47920;
+            color: #ffffff;
+        }       
+
+        #liAniversario b{
+            color: #F47920;
+        }
+
         </style>
 
         <?php
