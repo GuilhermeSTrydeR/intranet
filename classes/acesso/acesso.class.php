@@ -2,8 +2,8 @@
 <?php
     class Acesso{
 
-        
-        public function criarGrupo(){
+        //essa funcao cria um novo grupo
+        public function criarGrupo(){   
 
             global $pdo;
             $sql = "INSERT INTO acesso_grupo(id, nome, ativo) VALUES('1', 'Publico', '1')";
@@ -14,6 +14,7 @@
             
         }
 
+        //essa funcao apaga(do banco) algum acesso, nao aconselhado usar!!!!!!
         public function truncateAcesso(){
 
             global $pdo;
@@ -24,7 +25,7 @@
             
         }
    
-
+        //essa funcao grava um novo acesso
         public function gravar($nome, $link, $ativo, $grupo, $permissao){
 
             global $pdo;
@@ -39,6 +40,8 @@
             $sql->execute();
             
         }
+
+        //essa funcao grava um novo grupod e acesso
         public function gravarGrupoAcesso($nome, $ativo, $permissao){
 
             global $pdo;
@@ -51,7 +54,8 @@
             $sql->execute();
             
         }
-       
+        
+        //essa funcao edita um acesso
         public function editar($id, $nome, $link, $ativo, $permissao, $grupo, $interno){
 
             global $pdo;
@@ -69,7 +73,8 @@
 
             
         }
-
+        
+        //essa funcao edita um grupo de acessos
         public function editarGrupoAcesso($id, $nome, $ativo, $permissao, $interno){
 
             global $pdo;
@@ -86,8 +91,7 @@
             
         }
 
-        
-
+        //essa funcao altera de 0 para 1 a coluna excluido da tabela acesso, fazendo assim com que aquele acesso fique inativo e nao apareca para o usuario, porem ainda vai estar registrado no banco
         public function apagarAcesso($id){
 
 
@@ -104,8 +108,8 @@
             
         }
 
+        //essa funcao troca de 0 para 1 a coluna excluido da tabela acesso_grupo, fazendo assim com que aquele grupo de acesso fique inativo e nao apareca para o usuario, porem ainda vai estar registrado no banco
         public function apagarGrupoAcesso($id){
-
 
             global $pdo;
             $sql = "UPDATE acesso_grupo SET excluido = '1' WHERE id = '$id'";
@@ -126,7 +130,7 @@
 
         
 
-        
+        //essa funcao altera de 1 para 0 a coluna ativo da tabela acesso, fazendo assim com que aquele acesso fique ativo e apareca para o usuario
         public function desabilitarAcesso($id){
 
 
@@ -139,7 +143,8 @@
             // echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
             
         }
-
+        
+        //essa funcao troca de 1 para 0 a coluna ativo da tabela acesso_grupo, fazendo assim com que aquele grupo de acesso fique ativo e apareca para o usuario
         public function desabilitarGrupoAcesso($id){
 
 
@@ -154,7 +159,6 @@
         }
 
         public function habilitarAcesso($id){
-
 
             global $pdo;
             $sql = "UPDATE acesso SET ativo = '1' WHERE id = '$id'";
