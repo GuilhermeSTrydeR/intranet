@@ -168,12 +168,9 @@
             // $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
             // echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
-  
-            
         }
 
         public function habilitarGrupoAcesso($id){
-
 
             global $pdo;
             $sql = "UPDATE acesso_grupo SET ativo = '1' WHERE id = '$id'";
@@ -183,11 +180,7 @@
             // $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_acesso';
             // echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
-  
-            
         }
-        
-        
 
         public function retornaAtivo($id){
             global $pdo;
@@ -213,7 +206,6 @@
             $stmt->execute();
 
             $res = $stmt->fetchColumn();
-    
         
             return $res;
 
@@ -249,7 +241,6 @@
 
         }
 
-      
 
         public function retornaNome($id){
             global $pdo;

@@ -18,7 +18,7 @@
         $ac->apagarGrupoAcesso($id);
         
        
-
+        //aqui eh encaminhado de volta apara a pagina para visualizar os acessos
         $url = '/paginas/admin/main.php?pagina=../../classes/acesso/visualizar_grupo_acesso';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 ?>

@@ -118,7 +118,7 @@ global $pdo;
 // essa variavel recebe o mes atual
 $mesAtual = date('m');
 
-// essa consultaeh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
+// essa consulta eh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
 $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' AND ativo = 1 AND excluido = 0 ORDER BY Day(nasc)");
 
 // o contador eh iniciado com zero
@@ -161,15 +161,78 @@ if($cont > 0){
         
                 $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
                 echo "<table style='margin-top: 15px;'>";
-                
+
+
+
 
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($linha['ativo'] == 1 && $linha['excluido'] == 0){
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
+
+                                //nessa parte o retorno do banco que retorna o nome completo do usuario logado, vai dividir o nome completo em um array onde cada nome ficara num indice, o fator definido para a divisao eh o espaco (' ')
+                                // $nome = $u->nome($_SESSION['user']);
+                                $nome = $linha['nome'];
+                                $nome = explode(" ", $nome);
+                        
+                                //esse bloco condicional ira exibir o nome do usuario com os seguintes temros, caso o usuario tenha cadastrado apenas 1 nome, ele ira entrar na condicao verdadeira e sera exibido o indice 0 (primeiro indice) do array, pois se nao houver essa condicao e tiver apenas 1 nome cadastrado o mesmo iria se repetir, e caso ele tenha cadastrado mais de um nome, sera exibido o primeiro e o ultimo
+                                if(count($nome) == 1){
+                        
+                                    $linha['nome'] = $nome[0];
+                            
+                                }
+                                else{
+                        
+                                    $linha['nome'] = $nome[0] . ' ' . end($nome);
+                                
+                                }
+
+                                switch($linha['setor']) {
+                                    case 1:
+                                        $linha['setor'] = 'Comercial';
+                                        break;
+                                    case 2:
+                                        $linha['setor'] = 'Cadastro';
+                                        break;
+                                    case 3:
+                                        $linha['setor'] = 'Recepção';
+                                        break;
+                                    case 4:
+                                        $linha['setor'] = 'Faturamento';
+                                        break;
+                                    case 5:
+                                        $linha['setor'] = 'Tecnologia da informação';
+                                        break;
+                                    case 6:
+                                        $linha['setor'] = 'Contabilidade';
+                                        break;
+                                    case 7:
+                                        $linha['setor'] = 'Intercambio / Auditoria';
+                                        break;
+                                    case 8:
+                                        $linha['setor'] = 'Diretoria';
+                                        break;
+                                    case 9:
+                                        $linha['setor'] = 'Financeiro';
+                                        break;
+                                    case 10:
+                                        $linha['setor'] = 'Gerência';
+                                        break;
+                                    case 11:
+                                        $linha['setor'] = 'ANS';
+                                        break;
+                                    case 12:
+                                        $linha['setor'] = 'GED';
+                                        break;
+                                    case 13:
+                                        $linha['setor'] = 'Outros';
+                                        break;
+                                
+                       
+                                    }
                              
                                 echo "<td>";
                         
-                                echo "<div style='margin-left: 35px;'><h5 style='color: #00995D;'>{$linha['nome']}</h5><center><h4  style='color: #F47920 !important;'>{$linha['nasc']}</h4></center></div>";
+                                echo "<div style='margin-left: 35px;'><h5 style='color: #00995D; margin-bottom: -5px;'>{$linha['nome']}</h5><center><text style='color: grey; font-size: 16px;'>{$linha['setor']}</text><h4 style='color: #F47920 !important; margin-top: -5px;'>{$linha['nasc']}</h4></center></div>";
                   
                                 echo "</td>";
                                 

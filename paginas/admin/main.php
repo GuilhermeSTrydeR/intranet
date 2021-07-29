@@ -57,8 +57,30 @@
 
     <div style='text-transform: uppercase; position: fixed; font-weight: 500; color: white; margin-left: 100px;'>
       <!-- nessa parte sera transformado o nome do usuario todo em maiusculo -->
+
+
+
+      <?php
+        //nessa parte o retorno da funcao 'nome' que retorna o nome completo do usuario logado, vai dividir o nome completo em um array onde cada nome ficara num indice, o fator definido para a divisao eh o espaco (' ')
+        $nome = $u->nome($_SESSION['user']);
+        $nome = explode(" ", $nome);
+
+        //esse bloco condicional ira exibir o nome do usuario com os seguintes temros, caso o usuario tenha cadastrado apenas 1 nome, ele ira entrar na condicao verdadeira e sera exibido o indice 0 (primeiro indice) do array, pois se nao houver essa condicao e tiver apenas 1 nome cadastrado o mesmo iria se repetir, e caso ele tenha cadastrado mais de um nome, sera exibido o primeiro e o ultimo
+        if(count($nome) == 1){
+          ?>
+            <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $nome[0]?></a>
+          <?php
+        }
+        else{
+          ?>
+             <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $nome[0] . ' ' . end($nome) ?></a>
+          <?php
+        }
+
+
+      ?>
      
-      <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $u->nome($_SESSION['user']); ?></a>
+     
 
       <a href="?pagina=../cadastros/editar_configuracoes">
         <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
