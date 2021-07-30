@@ -459,13 +459,14 @@ tr{
   border-top-left-radius: 10px ;
   border-bottom-left-radius: 10px ;
   border-top-right-radius: 10px;
-  box-shadow: 5px 5px 15px #000000;
+  box-shadow: 5px 10px 8px #888888;
   font-size: 14px;
   
 
 }
 .boxItens:hover{
-  box-shadow: 5px 5px 15px #F47920;
+box-shadow: 5px 10px 8px #F47920;
+  
 
 
 }
