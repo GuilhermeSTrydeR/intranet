@@ -1,4 +1,7 @@
 <?php
+    //esse comando vai ocultar os erros e warnings na tela do usuario, somente nas paginas em que o ini_set('display_errors','off') eh declarado
+    ini_set('display_errors','Off');
+
     session_start();
     if(!isset($_POST['user']) && !isset($_POST['pass'])){
 
@@ -84,14 +87,15 @@
             </script>
 
             <?php
-             $url = '../../paginas/admin/main.php?pagina=cadastrar_usuario';
+             $url = '../../paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_usuario';
              echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
         }
     }
     else{
+      
         echo "<script>alert('Algo deu errado!, por favor tente novamente.');</script>";
-        $url = '../../paginas/admin/main.php?pagina=cadastrar_usuario';
+        $url = '/';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     }

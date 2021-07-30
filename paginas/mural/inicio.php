@@ -49,9 +49,7 @@ if($cont > 0){
         if($linha['ativo'] == 1 && $linha['excluido'] == 0){
             if((($linha['inicio'] <= date('Y-m-d') || $linha['inicio'] == '0000-00-00' || $linha['inicio'] == null) && ($linha['fim'] >= date('Y-m-d') || $linha['fim'] == '0000-00-00' || $linha['fim'] == null))){
 
-            echo"<br>";
-
-            echo "<div class='mural' style='margin-top: 50px;'>";
+            echo "<div class='mural' style='margin-top: 20px;'>";
             
             echo "<center>";  
             echo "<table class='tableMural' style='box-shadow: 10px; background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed;  max-width: 900px; word-wrap: break-word; !important;'>";

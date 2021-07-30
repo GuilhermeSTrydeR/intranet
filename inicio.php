@@ -73,16 +73,17 @@
             <div id="form_login">
             <form method="POST" action="classes/usuario/logar.php">
               <div class="row">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Usuário" name="user" required>
+                  <div class="col" style='margin-right: -20px;'>
+                    <input type="text" class="form-control" placeholder="Usuário" name="user" style='height: 30px; margin-top: 5px;' required>
                   </div>
-                  <div class="col">
-                    <input type="password" class="form-control" placeholder="Senha" name="pass"  required>
+                  <div class="col" style='margin-right: -20px;'>
+                    <input type="password" class="form-control" placeholder="Senha" name="pass" style='height: 30px; margin-top: 5px;'  required>
                     </div>
+
                   <!-- <button type="submit" value="login" id="login" name="logar">Logar</button> -->
-                  <div class="col">
+                  <div class="col" style='margin-right: -20px;'>
                     <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off">
-                    Entrar 
+                    Entrar
                   </button>     
                   </div>
                 </div>

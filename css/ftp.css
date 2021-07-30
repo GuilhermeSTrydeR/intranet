@@ -12,7 +12,7 @@ body{
     width: 10%;
     z-index: 2;
 
-    max-height: 45px;
+    max-height: 40px;
 
 }
 
@@ -157,77 +157,64 @@ footer p{
 
 
 #linkImagem{
-    
-    color: blue !important;
 
+  color: blue !important;
 
 }
 
-
 .row a{
-
   text-decoration: none;
-
 }
 
 .btn_adm_h{
     border-radius: 20px;
-
     height: 180px;
     width: 180px;
     background-color: #8b9dc3;
     padding: 5px;
     margin: 20px;
-
     align-items: center;
     display: flex;
     justify-content: center;
-    
 }
 
 .btn_main{
-
     margin-left: 20px;
-
 }
 
 h1, h2, h4{
-
   color: #009b63 !important;
-
 }
 
 #navbar-main{
-
     margin-left: 1000px;
-
 }
 
 .nav-item{
-
     margin-left: 25px;
 }
 
 .sidebar-container {
-    margin-top: 45px;
+    margin-top: 40px;
     position: fixed;
-    width: 110px;
+    width: 100px;
     height: 100%;
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
     background: #dfe3ee;
     color: black;
-    z-index: 1;
-    
+    z-index: 1; 
   }
 
   .sidebar-container a{
-   
     text-decoration: none;
-    
   }
-  
+
+  .sidebar-container b{
+    font-size: 13px;
+  }
+
   .content-container {
     padding-top: 20px;
   }
@@ -252,13 +239,15 @@ h1, h2, h4{
     position: relative;
     display: inline-block;
     width: 100%;
-    line-height: 20px;
+   
+    line-height: 5px;
   }
   
   .sidebar-navigation li a {
     padding: 10px 15px 10px 30px;
     display: block;
     color: #fff;
+
   }
   
   .sidebar-navigation li .fa {

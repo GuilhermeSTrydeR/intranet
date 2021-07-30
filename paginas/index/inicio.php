@@ -26,9 +26,7 @@
                 if($linha['ativo'] == 1 && $linha['excluido'] == 0){
                         if((($linha['inicio'] <= date('Y-m-d') || $linha['inicio'] == '0000-00-00' ||   $linha['inicio'] == null) && ($linha['fim'] >= date('Y-m-d') || $linha['fim'] == '0000-00-00' || $linha['fim'] == null))){
 
-                        echo"<br>";
-                        echo"<br>";
-                        echo"<br>";
+                    
                         echo "<div class='mural'>";
                         
                         echo "<center>";  
@@ -135,6 +133,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
 if($cont > 0){
 
+
     echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 5px 5px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
 
 
@@ -170,7 +169,7 @@ if($cont > 0){
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
 
                                 //nessa parte o retorno do banco que retorna o nome completo do usuario logado, vai dividir o nome completo em um array onde cada nome ficara num indice, o fator definido para a divisao eh o espaco (' ')
-                                // $nome = $u->nome($_SESSION['user']);
+                       
                                 $nome = $linha['nome'];
                                 $nome = explode(" ", $nome);
                         
@@ -226,7 +225,6 @@ if($cont > 0){
                                     case 13:
                                         $linha['setor'] = 'Outros';
                                         break;
-                                
                        
                                     }
                              

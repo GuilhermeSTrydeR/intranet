@@ -59,11 +59,6 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 
     
 
-
-
-
-
-
         <br>
         <div class="col-sm-12">
 

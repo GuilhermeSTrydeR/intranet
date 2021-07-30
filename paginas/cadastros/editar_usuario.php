@@ -76,19 +76,19 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
             <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
 
-            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>"  size="60"> </div>
+            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>"  size="60" REQUIRED> </div>
 
-            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>"  autocomplete="off"> </div>
+            <div class="form-group col-md-3"> <label for="campo2">Usuário</label> <input READONLY type="text" class="form-control" name="user" value="<?php echo $user ?>"  autocomplete="off" REQUIRED> </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" value="<?php echo $email ?>" > </div>
+            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" value="<?php echo $email ?>" REQUIRED> </div>
 
-            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id='telefone' name="telefone" value="<?php echo $telefone ?>"  size="15"> </div>
+            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id='telefone' name="telefone" value="<?php echo $telefone ?>"  size="15" REQUIRED> </div>
 
             <div class="form-group col-md-3">
             <label for="permissao">Permissão</label>
-            <select class="form-select" aria-label="Permissao" name="permissao" >
+            <select class="form-select" aria-label="Permissao" name="permissao" REQUIRED>
 
             <?php
                 switch ($permissao) {
@@ -116,7 +116,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         <div class="row"> 
         <div class="form-group col-md-4">
         <label for="setor">Setor</label>
-        <select class="form-select" aria-label="setor" name="setor" >
+        <select class="form-select" aria-label="setor" name="setor" REQUIRED>
 
             <?php
                 switch ($setor) {
@@ -179,10 +179,10 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         </select>
 </div>
         <div class="form-group col-md-3"> 
-            <label for="campo2">Data de Nascimento</label> <input value=<?php echo $nasc;?> type="date" class="form-control" name="nasc" required autocomplete="off"> 
+            <label for="campo2">Data de Nascimento</label> <input value=<?php echo $nasc;?> type="date" class="form-control" name="nasc" required autocomplete="off" REQUIRED> 
         </div>
 
-            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" placeholder="••••••••••••••••••••••••••" autocomplete="off"> 
+            <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" placeholder="••••••••••••••••••••••••••" autocomplete="off" > 
         </div>
         <br><br>
                 <!-- <div class="form-group col-md-2">

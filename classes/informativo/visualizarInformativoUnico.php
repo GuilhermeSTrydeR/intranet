@@ -73,7 +73,18 @@
                 echo "<tr>";
                 echo "<td>";
                 echo "<center>";
-                echo "<img id='img' onMouseOver='aumenta(this)' onMouseOut='diminui(this)' src='" . $linha['imagem'] ."'></img>";
+                echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; margin-left: 100px;' src='" . $linha['imagem'] ."'></img></a>";
+                echo "<br>";
+                echo "<div style='margin-left: 200px;' class='noprint'>";
+
+                    // sera exibido o link para download apenas se houver uma imagem na variavel
+                    if(isset($linha['imagem'])){
+                        echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
+                    }
+
+                echo "</div>";
+                
+                
                 echo"<div class='row' style='height: 100px;'></div>";
                 echo "</center>";
                 echo "</td>";
