@@ -27,11 +27,11 @@
                         if((($linha['inicio'] <= date('Y-m-d') || $linha['inicio'] == '0000-00-00' ||   $linha['inicio'] == null) && ($linha['fim'] >= date('Y-m-d') || $linha['fim'] == '0000-00-00' || $linha['fim'] == null))){
 
                     
-                        echo "<div class='mural'>";
-                        
+                        echo "<div class='mural' >";
+                   
                         echo "<center>";  
                         
-                        echo "<table class='tableMural' style='background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed;  max-width: 900px; word-wrap: break-word; !important;'>";
+                        echo "<table class='tableMural' style='background-color: #ffffff;   border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; ' table-layout:fixed;  max-width: 900px; word-wrap: break-word; !important;'>";
                     
                         $linha['dataCadastro'] = gmdate("d/m/y á\s\ H:i", $linha['dataCadastro']);
                 
@@ -66,6 +66,7 @@
 
 
                         echo"</table>";
+                        echo '<br>';
                         echo"<div class='row' style='height: 20px;'></div>";
                 }
 
@@ -134,7 +135,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 if($cont > 0){
 
 
-    echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 90%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 5px 5px 15px #000000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
+    echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 97%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 5px 10px 8px #888888;  border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
 
 
     ?>
