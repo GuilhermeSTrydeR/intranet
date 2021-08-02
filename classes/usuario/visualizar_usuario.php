@@ -114,13 +114,13 @@
             <thead>
             <tr>
             <div class='thead'>
-            <th style='width: 50px;' scope='col'>ID</th>
-            <th style='width: 200px;' scope='col'>Nome</th>
-            <th style='width: 150px;' scope='col'>Usuário</th>
-            <th style='width: 100px;' scope='col'>Permissão</th>
-            <th style='width: 120px;' scope='col'>Setor</th>
-            <th style='width: 120px;' scope='col'>Ativo?</th>
-            <th class='noprint' style='width: 120px;' scope='col'>Opções</th>
+            <th style='width: 30px;' scope='col'>ID</th>
+            <th style='width: 180px;' scope='col'>Nome</th>
+            <th style='width: 120px;' scope='col'>Usuário</th>
+            <th style='width: 90px;' scope='col'>Permissão</th>
+            <th style='width: 80px;' scope='col'>Setor</th>
+            <th style='width: 50px;' scope='col'>Ativo?</th>
+            <th class='noprint' style='width: 90px;' scope='col'>Opções</th>
             </div>
             </tr>
             </thead>

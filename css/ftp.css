@@ -462,13 +462,10 @@ tr{
   box-shadow: 5px 10px 8px #888888;
   font-size: 14px;
   
-
 }
+
 .boxItens:hover{
-box-shadow: 5px 10px 8px #F47920;
-  
-
-
+  box-shadow: 5px 10px 8px #F47920;
 }
 
 /* referente as caixas de link da pagina inicial, para que o link na caixa ocupe todo o espaço da div */

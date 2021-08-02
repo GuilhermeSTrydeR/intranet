@@ -117,6 +117,7 @@ global $pdo;
 // essa variavel recebe o mes atual
 $mesAtual = date('m');
 
+
 // essa consulta eh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
 $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' AND ativo = 1 AND excluido = 0 ORDER BY Day(nasc)");
 
@@ -135,42 +136,31 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 if($cont > 0){
 
 
-    echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 97%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 5px 10px 8px #888888;  border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
-
+    echo "<div id='modalInicio' style='z-index: 2147483648; height: auto; width: 97%; background: #ffffff 0% 0% no-repeat padding-box; box-shadow: 1px 1px 15px 1px #000000;  border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 0); '>";
 
     ?>
-
-
         <div class='row'>
             <div class="col-2" style='background: ffffff; '>
-            <center style='margin-left: 20px;'>
-                <p style='color: #009b63; float: left; margin-bottom: 5px;'>
-                <img src="../../imagens/modal/cake.png" style='margin-top: 5px;' alt="aniversariantes">
-                <br>
-                    <b>Aniversariantes</b>
-                </p>
+                <center style='margin-left: 20px;'>
+                    <p style='color: #009b63; float: left; margin-bottom: 5px;'>
+                    <img src="../../imagens/modal/cake.png" style='margin-top: 5px;' alt="aniversariantes">
+                    <br>
+                        <b>Aniversariantes</b>
+                    </p>
                 </center>
-        
             </div>   
-   
             <div class='col-9' style='background: #ffffff; float: left; '>
             <?php
-
                 global $pdo;
                 $mesAtual = date('m');
-        
                 $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
                 echo "<table style='margin-top: 15px;'>";
-
-
-
 
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($linha['ativo'] == 1 && $linha['excluido'] == 0){
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
 
                                 //nessa parte o retorno do banco que retorna o nome completo do usuario logado, vai dividir o nome completo em um array onde cada nome ficara num indice, o fator definido para a divisao eh o espaco (' ')
-                       
                                 $nome = $linha['nome'];
                                 $nome = explode(" ", $nome);
                         
@@ -181,7 +171,7 @@ if($cont > 0){
                             
                                 }
                                 else{
-                        
+                                    
                                     $linha['nome'] = $nome[0] . ' ' . end($nome);
                                 
                                 }
@@ -226,16 +216,11 @@ if($cont > 0){
                                     case 13:
                                         $linha['setor'] = 'Outros';
                                         break;
-                       
-                                    }
-                             
+                                }
+
                                 echo "<td>";
-                        
-                                echo "<div style='margin-left: 35px;'><h5 style='color: #00995D; margin-bottom: -5px;'>{$linha['nome']}</h5><center><text style='color: grey; font-size: 16px;'>{$linha['setor']}</text><h4 style='color: #F47920 !important; margin-top: -5px;'>{$linha['nasc']}</h4></center></div>";
-                  
+                                    echo "<div style='margin-left: 35px;'><h5 style='color: #00995D; margin-bottom: -5px;'>{$linha['nome']}</h5><center><text style='color: grey; font-size: 16px;'>{$linha['setor']}</text><h4 style='color: #F47920 !important; margin-top: -5px;'>{$linha['nasc']}</h4></center></div>";
                                 echo "</td>";
-                                
-            
                     }
                 }
           
