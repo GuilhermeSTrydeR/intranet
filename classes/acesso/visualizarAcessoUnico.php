@@ -87,25 +87,24 @@
                             echo "<th style='width: 120px;' scope='col'>Link</th>";
                             echo "<th style='width: 100px;' scope='col'>Grupo</th>";
                             echo "<th style='width: 90px;' scope='col'>Ativo</th>";
-                            echo "<th style='width: 90px;' scope='col'>Interno / Externo</th>";
+                            echo "<th style='width: 90px;' scope='col'>Interno?</th>";
                             echo "<th style='width: 210px;' scope='col'>Opções</th>";
                         echo "</div>";
                     echo "</tr>";
                 echo "</thead>";
         
-                
                 $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
         
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
                     if($linha['interno'] == 0){
 
-                        $internoString = "Externo";
+                        $internoString = "Não";
             
                     }
                     elseif($linha['interno'] == 1){
             
-                        $internoString = "Interno";
+                        $internoString = "Sim";
             
                     }
             
