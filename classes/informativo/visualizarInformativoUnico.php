@@ -1,4 +1,12 @@
-<center style='margin-left: 100px; background: #f0f2f8; margin-top: -10;'>
+<style>
+
+    body{
+
+        background: #f0f2f8;
+    }
+
+</style>
+<center style='margin-left: 100px;'>
 
     <?php
 
@@ -33,19 +41,19 @@
 
     <br><br>
 
-<div class='infoContainer' style='background-color: white; box-shadow: 10px; background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px;table-layout:fixed;  max-width: 1000px; word-wrap: break-word; !important;'>
+<div class='infoContainer' style='background-color: white; box-shadow: 10px; background-color: #ffffff;  border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px;table-layout:fixed;  max-width: 1100px; word-wrap: break-word; !important;'>
 
 
 
     <div class="row" style='float: left; margin-left: 200px; position: absolute;'>
             <div class='col'>
     
-            <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" style='margin-left: 600px; margin-top: 50px;' title="Imprimir">
+            <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" style='margin-left: 700px; margin-top: 50px;' title="Imprimir">
 
             </div>
 
     </div>
-    <div class='noprint' style='height: 100px;'></div>
+    <div class='noprint' style='height: 50px;'></div>
 
             <?php
 
@@ -57,7 +65,7 @@
 
                 echo "<div class='mural' style='margin-left: -150px;'>";
                 
-                echo "<center>";  
+                echo "<center style='margin-left: -150px; max-width: 100%;'>";  
                 echo "<table id='tblInfUnico'>";
             
             
@@ -72,14 +80,14 @@
                 echo "<tr>";
         
                 echo "<br>";
-                echo nl2br("<td><p id='texto'>{$linha['texto']}</p></td>");
+                echo nl2br("<td><p id='texto' style='width: 100%;'>{$linha['texto']}</p></td>");
 
                 echo "</tr>";
 
                     echo "<tr>";
                     echo "<td>";
                     echo "<center>";
-                    echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; margin-left: 100px;' src='" . $linha['imagem'] ."'></img></a>";
+                    echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; margin-left: 300px;' src='" . $linha['imagem'] ."'></img></a>";
                     echo "<br>";
                     echo "<div style='margin-left: 200px;' class='noprint'>";
 
@@ -116,4 +124,3 @@
 <div class='row' style='height: 100px;'></div>
 
 </center>
-
