@@ -1,4 +1,4 @@
-<center style="margin-left: 30px; margin-top: 100px !important;">
+<center style="margin-left: 30px; ">
 
     
     <?php

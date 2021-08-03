@@ -74,15 +74,15 @@
             <form method="POST" action="classes/usuario/logar.php">
               <div class="row">
                   <div class="col" style='margin-right: -20px;'>
-                    <input type="text" class="form-control" placeholder="Usuário" name="user" style='height: 30px; margin-top: 5px;' required>
+                    <input type="text" class="form-control" placeholder="Usuário" name="user" style='height: 34px; margin-top: 2px;' required>
                   </div>
                   <div class="col" style='margin-right: -20px;'>
-                    <input type="password" class="form-control" placeholder="Senha" name="pass" style='height: 30px; margin-top: 5px;'  required>
+                    <input type="password" class="form-control" placeholder="Senha" name="pass" style='height: 34px; margin-top: 2px;'  required>
                     </div>
 
                   <!-- <button type="submit" value="login" id="login" name="logar">Logar</button> -->
                   <div class="col" style='margin-right: -20px;'>
-                    <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off" style='height: 34px; margin-top: 2px;'>
                     Entrar
                   </button>     
                   </div>

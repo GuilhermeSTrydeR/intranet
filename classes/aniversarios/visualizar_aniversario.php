@@ -1,4 +1,4 @@
-<center style="margin-left: 50px; margin-top: 100px !important; position: relative !important;">
+<center style="margin-left: 50px; margin-top: 30px !important; position: relative !important;">
         <style>
 
         .hiddenBtnXUsuarios{

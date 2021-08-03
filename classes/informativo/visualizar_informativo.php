@@ -2,7 +2,7 @@
 // desligar todos os erros e notices nessa pagina
 error_reporting(0);
 ?>
-<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
+<center style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
         <style>
 
         .hiddenBtnXUsuarios{

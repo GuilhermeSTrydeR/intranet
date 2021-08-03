@@ -1,5 +1,6 @@
+<!-- tag para centralizar os elementos que estao dentro dela -->
+<center style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
 
-<center style="margin-left: 100px; margin-top: 100px !important; position: relative !important;">
     <style>
 
         a{
@@ -54,7 +55,7 @@
         // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
         if($cont > 0){
    
-
+            // nome do grupo, permissao e os botoes de criar um novo acesso nesse grupo e botao de voltar
             echo "<h4>Grupo: ". $nomeGrupo . "</h4>";
             echo "<h4>Permissão de Acesso: ". $permissaoString . "</h4> <br><br><br>";
             echo "<div class='row' style='float: left; margin-left: 700px; margin-top: -50px; position: absolute;'>";
@@ -92,7 +93,7 @@
                     echo "</tr>";
                 echo "</thead>";
         
-                // a consulta atual sera realizada em todos os aniversarios ordenados por mes e respectivamente o dia 
+                
                 $consulta = $pdo->query("SELECT * FROM acesso WHERE grupo = '$id' AND excluido = 0");
         
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
