@@ -107,8 +107,6 @@
                         $internoString = "Sim";
             
                     }
-            
-
 
                     $linha['grupo'] = $ac->retornaNome($linha['grupo']);
 
