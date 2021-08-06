@@ -39,13 +39,13 @@
             $cont++;
             $nomeGrupo = $ac->retornaNome($linha['grupo']);
             
-
         }
 
         
         if($ac->retornaPermissao($id) == 1){
             $permissaoString = '<blue style="color:blue;">Publico</blue>';
         }
+        
         elseif($ac->retornaPermissao($id) == 2){
             $permissaoString = '<red style="color:red;">Restrito</red>';
         }

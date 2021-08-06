@@ -5,7 +5,7 @@
 
         global $pdo;
 
-        $sql = "SELECT * FROM informativo WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00'";
+        $sql = "SELECT * FROM informativo  WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00'";
         $consulta = $pdo->query($sql);
 
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -16,7 +16,8 @@
 
         if($cont > 0){
 
-            $sql = 'SELECT * FROM informativo ORDER BY id DESC;';
+
+            $sql = "SELECT * FROM informativo ORDER BY id DESC";
             $consulta = $pdo->query($sql);
     
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -67,7 +68,10 @@
 
                         echo"</table>";
                         echo '<br>';
-                        echo"<div class='row' style='height: 20px;'></div>";
+                        
+                        echo"<div class='row' style='height: 50px;'></div>";
+
+                      
                 }
 
             

@@ -139,15 +139,13 @@
         }
 
         public function desabilitarInformativo($id){
-            $i = 0;
+
             global $pdo;
             $sql = "UPDATE informativo SET ativo = '0' WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
             $sql->execute();
-            $i = $i + 1;
-
-
-    }
+    
+        }
 
 
 
