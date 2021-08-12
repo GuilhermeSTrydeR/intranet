@@ -117,7 +117,7 @@
             <th style='width: 30px;' scope='col'>ID</th>
             <th style='width: 180px;' scope='col'>Nome</th>
             <th style='width: 120px;' scope='col'>Usuário</th>
-            <th style='width: 90px;' scope='col'>Permissão</th>
+            <!-- <th style='width: 90px;' scope='col'>Permissão</th> -->
             <th style='width: 80px;' scope='col'>Setor</th>
             <th style='width: 50px;' scope='col'>Ativo?</th>
             <th class='noprint' style='width: 90px;' scope='col'>Opções</th>
@@ -256,7 +256,7 @@
                     }
     
               
-                    echo  "<td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td> <td> {$linha['permissao']} </td>  <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
+                    echo  "<td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td>   <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
     
                     ?>
     
