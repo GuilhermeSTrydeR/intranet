@@ -31,7 +31,7 @@ a{text-decoration: none;}
 </div>
 
 <div style='float: left;' class='boxItens'>
-    <a href="?pagina=../../classes/aniversarios/visualizar_aniversario" ><i class='active'></i><center><p style='white-space: pre-line;
+    <a href="?pagina=../../classes/contato/visualizar_contato" ><i class='active'></i><center><p style='white-space: pre-line;
     width: 100%;
     overflow: hidden !important;             
     text-overflow: ellipsis; max-height: 100px;'>Contatos</p></center></a>
