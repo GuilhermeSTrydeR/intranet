@@ -43,7 +43,7 @@
         $_SESSION['user'] = $user;
         $_SESSION['permissao'] = $u->permissao($user);
       
-        // nessa parte sera atribuido a variavel de sessao "permissaoString" sua permissao de usuario, afim de ser usado nas paginas mais a frente para indicar os diretorios de cada usuario logado, pois algumas telas necessitam da raiz do usuario, ex:  $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo'; note que exiustem um "admin" nesse diretorio com isso caso o usuario supervisor estivesse logado ele nao conseguiria ir para essa pagina pois quando fosse validar a sua permissao, a mesma iria ser divergente com a necessaria (2 != 3) e com isso voltaria para o diretorio: '/'
+        // nessa parte sera atribuido a variavel de sessao "permissaoString" sua permissao de usuario, afim de ser usado nas paginas mais a frente para indicar os diretorios de cada usuario logado, pois algumas telas necessitam da raiz do usuario, ex:  $url = '/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural'; note que exiustem um "admin" nesse diretorio com isso caso o usuario supervisor estivesse logado ele nao conseguiria ir para essa pagina pois quando fosse validar a sua permissao, a mesma iria ser divergente com a necessaria (2 != 3) e com isso voltaria para o diretorio: '/'
         switch($_SESSION['permissao']) {
             case 1:
                 $_SESSION['permissaoString'] = 'comum';

@@ -5,7 +5,7 @@
       
   }
 
-  // OBS: aqui vai ser recebido apenas o id do informativo por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
+  // OBS: aqui vai ser recebido apenas o id do mural por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
 
   // pega o id vindo por GET
   $id = $_GET['id'];
@@ -14,17 +14,17 @@
   //requer classe de conexao do banco
   require("../../classes/conexao_bd.php");
 
-  //requer o informativo.class onde o comando para gravar no banco ja esta pronto
-  require("../../classes/informativo/informativo.class.php");
+  //requer o mural.class onde o comando para gravar no banco ja esta pronto
+  require("../../classes/mural/mural.class.php");
 
   // configuracoes, nesse caso o fuso horario
   require("../../config/config.php");
 
-  $i = new Informativo();
+  $i = new mural();
 
   global $pdo;
 
-  $sql = "SELECT * FROM informativo WHERE id = $id;";
+  $sql = "SELECT * FROM mural WHERE id = $id;";
 
   $consulta = $pdo->query($sql);
   
@@ -42,7 +42,7 @@
 ?>
 
 <center>
-<form action="../../classes/informativo/editar_informativo.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+<form action="../../classes/mural/editar_mural.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
   <input type="text" name='id' value="<?php echo $id; ?>" style='display: none;'>
   <div class="form-group">
     <label for="titulo">Titulo</label>
@@ -71,7 +71,7 @@
           <label class="form-check-label" for="ativo" >
             Exibir no mural
           </label>
-          <!-- nesse input sera checado se o informativo esta ativo, se o mesmo estiver ativo, sera escrito no html o atributo (checked) fazendo assim o input ficar marcado -->
+          <!-- nesse input sera checado se o mural esta ativo, se o mesmo estiver ativo, sera escrito no html o atributo (checked) fazendo assim o input ficar marcado -->
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' <?php 
 
             if($i->retornaAtivo($id) == 1){
@@ -85,12 +85,12 @@
         
           <div class=row>
             <div class="col" style='margin-right: 65px !important;'> 
-            <a href="?pagina=../confirmaExcluir/informativo&id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+            <a href="?pagina=../confirmaExcluir/mural&id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
             </div> 
 
 
             <!-- <div class="col" style='margin-right: 65px !important;'> 
-            <a href="../../classes/informativo/apagarInformativo.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
+            <a href="../../classes/mural/apagarmural.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red'>Excluir</button></a> 
             </div> -->
 
             <div class="col"> 
@@ -98,7 +98,7 @@
             </div>
 
             <div class="col"> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural" class="btn btn-danger">Cancelar</a> 
             </div>
             
             </div>

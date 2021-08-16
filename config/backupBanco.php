@@ -9,7 +9,7 @@
     //div para centralizar os elementos da pagina
     echo "<center>";
 
-    //informativo no topo da pagina
+    //mural no topo da pagina
     echo "<h1><red style='color: red;'>Tela de Teste, algumas partes ainda não estão funcionais</red></h1>";
 
     //gif para representar o loading do backup do banco
@@ -25,7 +25,7 @@
     //bota de seta para retornar as configuracoes
     echo "<div style='margin-left: 500px;'>";
         echo "<a href='../../paginas/admin/main.php?pagina=../cadastros/editar_configuracoes'>
-        <img src='../../imagens/navbar/back.png' alt='botao-desativar-informativo' title='Voltar' height=130> </a>";
+        <img src='../../imagens/navbar/back.png' alt='botao-desativar-mural' title='Voltar' height=130> </a>";
     echo "</div>";
 
 ?>

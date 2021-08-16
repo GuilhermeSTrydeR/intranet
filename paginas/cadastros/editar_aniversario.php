@@ -162,7 +162,7 @@ else{
                         }
                     ?> 
 
-          <a style='color: white !important;' href="/paginas/admin/main.php?pagina=../../classes/aniversarios/visualizar_aniversario" class="btn btn-danger">Cancelar</a> 
+          <a style='color: white !important;' href="/paginas/admin/main.php?pagina=../../classes/aniversarios/visualizar_aniversario" class="btn btn-primary">Cancelar</a> 
 
           <button type="submit" class="btn btn-success">
             Salvar
@@ -170,8 +170,6 @@ else{
        
       </div>
     </div>  
-       
-    
        
           <br>
           <br>

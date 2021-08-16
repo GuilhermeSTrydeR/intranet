@@ -7,7 +7,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
 ?>
 <center>
 
-<form action="../../classes/informativo/gravar_informativo.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
+<form action="../../classes/mural/gravar_mural.php" method="POST" enctype="multipart/form-data" style='max-width: 500px; margin-top: 50px;'>
   <div class="form-group">
     <label for="titulo">Titulo</label>
     <input type="text" class="form-control" id="title" name="titulo" required>
@@ -38,7 +38,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
             <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
-            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo" class="btn btn-danger">Cancelar</a> 
+            <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
           </div>

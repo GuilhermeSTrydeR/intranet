@@ -63,20 +63,20 @@
             echo "<div class='col'>";
 
             echo "<a href='?pagina=../../classes/acesso/visualizar_grupo_acesso'>";
-            echo "<img src='../../imagens/navbar/back.png' alt='botao-novo-informativo' width='40' title='Novo Acesso'>";
+            echo "<img src='../../imagens/navbar/back.png' alt='botao-novo-mural' width='40' title='Novo Acesso'>";
             echo "</a>";
             
             echo "<a style='margin-left: 100px;' href='?pagina=../../paginas/cadastros/cadastrar_acesso_unico&id=$id'>";
-            echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-informativo' title='Novo Acesso'>";
+            echo "<img src='../../imagens/navbar/plus.png' alt='botao-novo-mural' title='Novo Acesso'>";
             echo "</a>";
 
             // echo "<a href='?pagina=../../paginas/cadastros/cadastrar_grupo_acesso'>";
-            // echo "<img src='../../imagens/navbar/plusplus.png' alt='botao-novo-grupo-informativo' title='Novo Grupo de Acessos' width='40' style='margin-left: 40px;'>";
+            // echo "<img src='../../imagens/navbar/plusplus.png' alt='botao-novo-grupo-mural' title='Novo Grupo de Acessos' width='40' style='margin-left: 40px;'>";
             // echo "</a>";
             echo "</div>";
             echo "</div>";
             echo "<br>";
-            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
+            echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
             
                 echo "<thead>";
                     echo "<tr>";

@@ -4,7 +4,7 @@
         //requer classe de conexao do banco
         require("../conexao_bd.php");
 
-        //requer o informativo.class onde o comando para gravar no banco ja esta pronto
+        //requer o mural.class onde o comando para gravar no banco ja esta pronto
         require("acesso.class.php");
 
         // configuracoes, nesse caso o fuso horario

@@ -9,7 +9,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
   //requer classe de conexao do banco
   require("../../classes/conexao_bd.php");
 
-  //requer o informativo.class onde o comando para gravar no banco ja esta pronto
+  //requer o mural.class onde o comando para gravar no banco ja esta pronto
   require("../../classes/acesso/acesso.class.php");
 
   // configuracoes, nesse caso o fuso horario

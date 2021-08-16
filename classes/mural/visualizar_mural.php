@@ -14,19 +14,19 @@ error_reporting(0);
 
         a{text-decoration: none;}
 
-        #liInformativo{
+        #limural{
             background: #009b63;
             border-right: 6px solid #F47920;
             color: #ffffff;
         }       
 
-        #liInformativo b{
+        #limural b{
             color: #F47920;
         }
 
         </style>
         
-        <h4>Informativos</h4>
+        <h4>Mural</h4>
         
         <div class='print'><?php
             
@@ -47,21 +47,21 @@ error_reporting(0);
         //include para acessar as confguracoes definidas
         include("../../config/config.php");
 
-        // include da classe informativo
-        include("informativo.class.php");
+        // include da classe mural
+        include("mural.class.php");
 
-        $i = new Informativo();
+        $i = new mural();
 
         global $pdo;
 
         if($_POST['sentido'] == 0){
-            $_SESSION['sentidodaLista'] = 'SELECT * FROM informativo WHERE excluido = 0 ORDER BY id DESC';
+            $_SESSION['sentidodaLista'] = 'SELECT * FROM mural WHERE excluido = 0 ORDER BY id DESC';
             $nomeBotao = 'Ordenar Sentido Horario';
             
         }
 
         else{
-            $_SESSION['sentidodaLista']  = 'SELECT * FROM informativo WHERE excluido = 0';
+            $_SESSION['sentidodaLista']  = 'SELECT * FROM mural WHERE excluido = 0';
             $nomeBotao = 'Ordenar Sentido Anti-Horario';
         }   
 
@@ -93,27 +93,32 @@ error_reporting(0);
                 <input name='sentido' value=<?php echo $botaoSentido;?> style='display: none;'>
             </div> 
         
-                <div class="row" style='float: left; margin-left: 700px; position: absolute;'>
+                <div class="row" style='float: left; margin-left: 600px; position: absolute;'>
                     <!-- <div class="col">
-                        <a href="../../classes/informativo/apagarTodosInformativos.php">
-                            <img src="../../imagens/navbar/x.png" alt='botao-apagar-informativo' title="Apagar todos os informativos">
+                        <a href="../../classes/mural/apagarTodosmurals.php">
+                            <img src="../../imagens/navbar/x.png" alt='botao-apagar-mural' title="Apagar todos os murals">
                         </a>
                     </div> -->
+                    <div class="col">
+                        <a href="?pagina=../../paginas/mural/inicio">
+                            <img src="../../imagens/sidebar/timeline.png" height="50" alt='botao-desativar-mural' title="Visualizar o mural">
+                        </a>
+                    </div>
             
                     <div class="col">
-                        <a href="../../classes/informativo/desabilitarTodosInformativos.php">
-                            <img src="../../imagens/navbar/off.png" alt='botao-desativar-informativo' title="Desativar todos os informativos">
+                        <a href="../../classes/mural/desabilitarTodosMurais.php">
+                            <img src="../../imagens/navbar/off.png" alt='botao-desativar-mural' title="Desativar todos os murals">
                         </a>
                     </div>
                     <div class="col">
-                        <a href="../../classes/informativo/habilitarTodosInformativos.php">
-                            <img src="../../imagens/navbar/on.png" alt='botao-ativar-informativo' title="Ativar todos os informativos">
+                        <a href="../../classes/mural/habilitarTodosMurais.php">
+                            <img src="../../imagens/navbar/on.png" alt='botao-ativar-mural' title="Ativar todos os murals">
                         </a>
                     </div>
               
                     <div class="col">
-                        <a href="?pagina=../../paginas/cadastros/cadastrar_informativo">
-                            <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Informativo">
+                        <a href="?pagina=../../paginas/cadastros/cadastrar_mural">
+                            <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo mural">
                             </a>
                     </div>
          
@@ -131,7 +136,7 @@ error_reporting(0);
             <br>
             <br>
             <br>
-            <table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>
+            <table class='tablemural table table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>
             <thead>
                 <tr>
                     <div class='thead'>
@@ -204,7 +209,7 @@ error_reporting(0);
                     echo "<td> {$linha['id']} </td> <td> {$linha['dataCadastro']} </td>  <td> {$linha['titulo']}  </td> <td class='td-table'> {$linha['texto']} </td> <td> {$linha['ativo']} </td><td> $periodo </td> <td class='noprint'>";
                 ?>
 
-                <a href="/paginas/admin/main.php?pagina=../cadastros/editar_informativo&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                <a href="/paginas/admin/main.php?pagina=../cadastros/editar_mural&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
                 
                 <br>
                 <br>
@@ -213,14 +218,14 @@ error_reporting(0);
                     if($i->retornaAtivo($linha['id']) == 1){
                 ?>
 
-                <a href="../../classes/informativo/desabilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                <a href="../../classes/mural/desabilitarmural.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
                 
                 <?php
                     }
                     else{
                 ?>
 
-                <a href="../../classes/informativo/habilitarInformativo.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
+                <a href="../../classes/mural/habilitarmural.php?id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Ativar</button></a>
                 
                 <?php
                     }
@@ -229,7 +234,7 @@ error_reporting(0);
            
                 <br>
                 <br>
-            <a href="?pagina=../../classes/informativo/visualizarInformativoUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+            <a href="?pagina=../../classes/mural/visualizarmuralUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
             
 
             <?php
@@ -242,15 +247,15 @@ error_reporting(0);
     }
     else{
 
-        echo "<h4>Não há informativos cadastrados</h4>";
+        echo "<h4>Não há murals cadastrados</h4>";
         echo "<br>";
-        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_informativo'>Para cadastrar um novo informativo, clique aqui!</a>";
+        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_mural'>Para cadastrar um novo mural, clique aqui!</a>";
 
     }
 
         ?>
 
-        <!-- funcao para pegar o id do informativo clicado na table -->
+        <!-- funcao para pegar o id do mural clicado na table -->
 
         <!-- optei por usar botoes nas TD -->
 

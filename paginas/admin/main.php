@@ -128,9 +128,9 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -15px;' height='50' width='50'><b style='margin-left: 5px '>Inicio</b> 
       </a>
     </li>
-   <li id='liInformativo'>
-      <a href="?pagina=../../classes/informativo/visualizar_informativo">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -20px;'>Informativos</b> 
+   <li id='limural'>
+      <a href="?pagina=../../classes/mural/visualizar_mural">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: 3px;'>Mural</b> 
       </a>
     </li>
     <li id='liUsuario'>
@@ -138,11 +138,11 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -5px;'>Usuarios</b> 
       </a>
     </li>
-    <li id='liMural'> 
+    <!-- <li id='liMural'> 
       <a href="?pagina=../../paginas/mural/inicio">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: 5px;'>Mural</b> 
       </a>
-    </li>
+    </li> -->
     <li id='liAniversario'>
       <a href="?pagina=../../classes/aniversarios/visualizar_aniversario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/modal/cake.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -18px;'>Aniversarios</b> 
@@ -151,6 +151,16 @@
     <li id='liAcesso'>
       <a href="?pagina=../../classes/acesso/visualizar_grupo_acesso">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b>Acessos</b> 
+      </a>
+    </li>
+    <li id='liContato'>
+      <a href="?pagina=../../classes/contato/visualizar_contato">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -5px;'>Contatos</b> 
+      </a>
+    </li>
+    <li id='liInstitucional'>
+      <a href="/">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -13px;'>Institucional</b> 
       </a>
     </li>
   </ul>

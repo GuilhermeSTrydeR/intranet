@@ -8,7 +8,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
 }
 
-  // OBS: aqui vai ser recebido apenas o id do informativo por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
+  // OBS: aqui vai ser recebido apenas o id do mural por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
 
   // pega o id vindo por GET
   $id = $_GET['id'];

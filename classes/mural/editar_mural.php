@@ -1,22 +1,23 @@
 <?php
 
-    if(isset($_POST["titulo"]) && !empty($_POST["titulo"]) && isset($_POST["texto"]) && !empty($_POST["texto"])){
-        
-
         //requer classe de conexao do banco
         require("../conexao_bd.php");
 
-        //requer o informativo.class onde o comando para gravar no banco ja esta pronto
-        require("informativo.class.php");
+        //requer o mural.class onde o comando para gravar no banco ja esta pronto
+        require("mural.class.php");
 
         // configuracoes, nesse caso o fuso horario
         require("../../config/config.php");
 
 
         //aqui instanciamos a classe
-        $i = new Informativo();
+        $i = new mural();
+
+        $id = $_POST['id'];
 
 
+    // verificar se ha algum informacao na variaval da imagem, pois sem validar isso, quando editar e nao selecionar nenhuma imagem, a imagem anterior sera perdida
+    if($_FILES["Arquivo"]["size"] > 0){
         /*
         
         *$dir é o caminho da pasta onde você deseja que os arquivos sejam salvos. 
@@ -38,10 +39,7 @@
         }
 
 
-        
-        
-
-        //aqui sera gravado no banco a funcao gravar do informativo.class que no caso eh referenciada abaixo no require
+        //aqui sera gravado no banco a funcao gravar do mural.class que no caso eh referenciada abaixo no require
         $dataCadastro = (time() + $fusoHorario);
         
         //aqui adicionamos um nivel basico de seguranca
@@ -54,19 +52,37 @@
     
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $i->gravar($titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
+        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
 
-        echo "<script>alert('Informativo cadastrado com sucesso!');</script>";
-        $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
+        echo "<script>alert('mural alterado com sucesso!');</script>";
+        $url = '/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
+    
     }
+
     else{
-        echo "<script>alert('algo deu errado!, por favor tente novamente');</script>";
-        $url = '/paginas/admin/main.php?pagina=../../classes/informativo/visualizar_informativo';
+
+
+        //aqui sera gravado no banco a funcao gravar do mural.class que no caso eh referenciada abaixo no require
+        $dataCadastro = (time() + $fusoHorario);
+        
+        //aqui adicionamos um nivel basico de seguranca
+        $titulo = addslashes($_POST["titulo"]);
+        $texto = addslashes($_POST["texto"]);
+        $ativo = addslashes($_POST["ativo"]);
+        $inicio = addslashes($_POST["inicio"]);
+        $fim = addslashes($_POST["fim"]);
+
+        $imagem = $i->retornaImagem($id);
+
+        //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
+        $i->editar($id, $titulo, $texto, $ativo, $dataCadastro, $imagem, $inicio, $fim);
+
+        echo "<script>alert('mural alterado com sucesso!');</script>";
+        $url = '/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
     }
-
 
 ?>

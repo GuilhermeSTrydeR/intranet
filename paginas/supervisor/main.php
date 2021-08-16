@@ -128,9 +128,9 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -15px;' height='50' width='50'><b style='margin-left: 5px '>Inicio</b> 
       </a>
     </li>
-   <li id='liInformativo'>
-      <a href="?pagina=../../classes/informativo/visualizar_informativo">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -20px;'>Informativos</b> 
+   <li id='limural'>
+      <a href="?pagina=../../classes/mural/visualizar_mural">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -20px;'>murals</b> 
       </a>
     </li>
     <!-- <li id='liUsuario'>

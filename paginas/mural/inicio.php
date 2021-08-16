@@ -22,15 +22,15 @@ include("../../classes/conexao_bd.php");
 //include para acessar as confguracoes definidas
 include("../../config/config.php");
 
-// include da classe informativo
-include("../../classes/informativo/informativo.class.php");
+// include da classe mural
+include("../../classes/mural/mural.class.php");
 
-// $i = new Informativo();
+// $i = new mural();
 global $pdo;
 
 
 
-$sql = "SELECT * FROM informativo WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00' ORDER BY id DESC";
+$sql = "SELECT * FROM mural WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00' ORDER BY id DESC";
 $consulta = $pdo->query($sql);
 
 $cont = 0;
@@ -81,7 +81,7 @@ if($cont > 0){
                         echo"<div class='row' style='height: 100px;'></div>";
                     echo "</center>";
 
-                    // esse echo define o espacamento do informativo dentro do mural de fundo branco
+                    // esse echo define o espacamento do mural dentro do mural de fundo branco
                     echo"<div class='row' style='height: 50px;'></div>";
 
                 echo "</td>";
@@ -92,7 +92,7 @@ if($cont > 0){
                 echo"<div class='print' style='border-bottom: 1px dotted black; margin: 20px;'></div>";
             
                 echo"</table>";
-            // esse echo define o espacamento entre os informativos
+            // esse echo define o espacamento entre os murals
             echo"<div class='row' ></div>";
                     }
 
@@ -111,9 +111,9 @@ else{
     echo "</style>";
 
   
-    echo "<h4 style='margin-top: 10%;'>Não há informativos cadastrados ou ativos com a data vigente para serem<br>exibidos no mural</h4>";
+    echo "<h4 style='margin-top: 10%;'>Não há murals cadastrados ou ativos com a data vigente para serem<br>exibidos no mural</h4>";
     echo "<br>";
-    echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_informativo'>Para cadastrar um novo informativo, clique aqui!</a>";
+    echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_mural'>Para cadastrar um novo mural, clique aqui!</a>";
 
 }
 

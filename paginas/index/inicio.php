@@ -5,7 +5,7 @@
 
         global $pdo;
 
-        $sql = "SELECT * FROM informativo  WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00'";
+        $sql = "SELECT * FROM mural  WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00'";
         $consulta = $pdo->query($sql);
 
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -17,7 +17,7 @@
         if($cont > 0){
 
 
-            $sql = "SELECT * FROM informativo ORDER BY id DESC";
+            $sql = "SELECT * FROM mural ORDER BY id DESC";
             $consulta = $pdo->query($sql);
     
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -55,7 +55,7 @@
                                     if(isset($linha['imagem'])){
                                         echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
                                     }
-                                    // esse echo define o espacamento do informativo dentro do mural de fundo branco
+                                    // esse echo define o espacamento do mural dentro do mural de fundo branco
                                     echo"<div class='row' style='height: 50px;'></div>";
                                 echo "</center>";
                             echo "</td>";

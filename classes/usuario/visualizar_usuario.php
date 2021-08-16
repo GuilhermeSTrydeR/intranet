@@ -83,7 +83,7 @@
                     <div class="row" style='float: left; margin-left: 700px; position: absolute;'>
                         <div class="col">
                             <a href="?pagina=../../paginas/cadastros/cadastrar_usuario">
-                                <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Usuario">
+                                <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo Usuario">
                                 </a>
                         </div>
                         <div class="col">
@@ -110,7 +110,7 @@
                     </div> -->
             </form>
        <br>
-            <table class='table tableInformativo table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; margin-top: 50px; table-layout:fixed; border: 2px solid ##00995D; max-width: 1000px; word-wrap: break-word; !important;'>
+            <table class='table tablemural table-striped table-bordered table-condensed table-hover' style='margin-left: 120px; margin-top: 50px; table-layout:fixed; border: 2px solid ##00995D; max-width: 1000px; word-wrap: break-word; !important;'>
             <thead>
             <tr>
             <div class='thead'>

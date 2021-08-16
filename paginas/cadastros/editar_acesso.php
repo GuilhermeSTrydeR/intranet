@@ -5,7 +5,7 @@
       
   }
 
-  // OBS: aqui vai ser recebido apenas o id do informativo por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
+  // OBS: aqui vai ser recebido apenas o id do mural por GET poi o texto nao pode ser recebido por esse meio, pois existe uma limiticao de caracteres enviados por GET
 
   // pega o id vindo por GET
   $id = $_GET['id'];
@@ -15,7 +15,7 @@
   //requer classe de conexao do banco
   require("../../classes/conexao_bd.php");
 
-  //requer o informativo.class onde o comando para gravar no banco ja esta pronto
+  //requer o mural.class onde o comando para gravar no banco ja esta pronto
   require("../../classes/acesso/acesso.class.php");
 
   // configuracoes, nesse caso o fuso horario
@@ -154,7 +154,7 @@
             Exibir nos Acessos
           </label>
 
-          <!-- nesse input sera checado se o informativo esta ativo, se o mesmo estiver ativo, sera escrito no html o atributo (checked) fazendo assim o input ficar marcado -->
+          <!-- nesse input sera checado se o mural esta ativo, se o mesmo estiver ativo, sera escrito no html o atributo (checked) fazendo assim o input ficar marcado -->
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' <?php 
 
             if($ac->retornaAtivo($id) == 1){

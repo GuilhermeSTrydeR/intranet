@@ -28,7 +28,7 @@
         //include para acessar as confguracoes definidas
         include("../../config/config.php");
 
-        // include da classe informativo
+        // include da classe mural
         include("Aniversario.class.php");
 
 
@@ -105,7 +105,7 @@
             ?>
             <div class="col" style='margin-left: 600px;'>
                             <a href="?pagina=../../paginas/cadastros/cadastrar_aniversario">
-                                <img src="../../imagens/navbar/plus.png" alt='botao-ativar-informativo' title="Novo Usuario">
+                                <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo Usuario">
                                 </a>
                         </div>
             <?php
@@ -119,7 +119,7 @@
                 
                     echo "<h4>Aniversariantes do Mês de " . $mesAtualSting  . "</h4>";
                     echo "<br>";
-                    echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
+                    echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
@@ -249,7 +249,7 @@
             
             echo "<h4 style='margin-top: 100px;'>Proximos Aniversarios</h4>";
             echo "<br>";
-            echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
+            echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
             echo "<thead>";
             echo "<tr>";
             echo "<div class='thead'>";
@@ -378,7 +378,7 @@
 
         echo "<h4 style='margin-top: 100px; '>Todos os Aniversarios</h4>";
         echo "<br>";
-        echo "<table class='tableInformativo table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
+        echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative;  table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
         echo "<thead>";
         echo "<tr>";
         echo "<div class='thead'>";

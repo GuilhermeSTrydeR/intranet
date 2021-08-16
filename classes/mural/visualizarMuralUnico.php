@@ -15,13 +15,13 @@
         //include para acessar as confguracoes definidas
         include("../../config/config.php");
 
-        // include da classe informativo
-        include("../../classes/informativo/informativo.class.php");
+        // include da classe mural
+        include("../../classes/mural/mural.class.php");
 
-        // $i = new Informativo();
+        // $i = new mural();
         global $pdo;
 
-        $sql = 'SELECT * FROM informativo ORDER BY id DESC;';
+        $sql = 'SELECT * FROM mural ORDER BY id DESC;';
         $consulta = $pdo->query($sql);
 
 
