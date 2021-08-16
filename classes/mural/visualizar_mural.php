@@ -107,12 +107,12 @@ error_reporting(0);
             
                     <div class="col">
                         <a href="../../classes/mural/desabilitarTodosMurais.php">
-                            <img src="../../imagens/navbar/off.png" alt='botao-desativar-mural' title="Desativar todos os murals">
+                            <img src="../../imagens/navbar/off.png" alt='botao-desativar-mural' title="Desativar todos os murais">
                         </a>
                     </div>
                     <div class="col">
                         <a href="../../classes/mural/habilitarTodosMurais.php">
-                            <img src="../../imagens/navbar/on.png" alt='botao-ativar-mural' title="Ativar todos os murals">
+                            <img src="../../imagens/navbar/on.png" alt='botao-ativar-mural' title="Ativar todos os murais">
                         </a>
                     </div>
               

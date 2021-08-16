@@ -143,19 +143,19 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/timeline.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: 5px;'>Mural</b> 
       </a>
     </li> -->
-    <li id='liAniversario'>
+    <!-- <li id='liAniversario'>
       <a href="?pagina=../../classes/aniversarios/visualizar_aniversario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/modal/cake.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -18px;'>Aniversarios</b> 
       </a>
-    </li>
+    </li> -->
     <li id='liAcesso'>
       <a href="?pagina=../../classes/acesso/visualizar_grupo_acesso">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b>Acessos</b> 
       </a>
     </li>
-    <li id='liContato'>
-      <a href="?pagina=../../classes/contato/visualizar_contato">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -5px;'>Contatos</b> 
+    <li id='liAgenda'>
+      <a href="?pagina=../../paginas/agenda/agenda">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: 0px;'>Agenda</b> 
       </a>
     </li>
     <li id='liInstitucional'>
