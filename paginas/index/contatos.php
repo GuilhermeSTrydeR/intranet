@@ -14,7 +14,7 @@
     // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o cabecalho, caso contrario, nem o cabecalho sera exibido
     if($cont > 0){
 
-        $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 AND ativo = 1");
+        $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 AND ativo = 1 order by setor");
 
         
         
@@ -63,14 +63,14 @@
                         }
 
 
-
-
-            echo "<center><div style='float: left;' class='boxItensContato'>";
+            echo "<center style='margin-left: 50px; margin-top: 50px;'>";
+                    
+            echo "<div style='float: left;' class='boxItensContato'>";
             
             echo "<i class='active'></i><p style='white-space: pre-line;
             width: 100%;
             overflow: hidden !important;             
-            text-overflow: ellipsis; max-height: 100px;'><b>{$linha['nome']}</b></p>";
+            word-break: break-word; max-height: 100px;'><b>{$linha['nome']}</b></p>";
             
             echo "<i class='active'></i><p style='white-space: pre-line;
             width: 100%;
@@ -87,7 +87,9 @@
             overflow: hidden !important;             
             word-break: break-all; max-height: 100px;'>{$linha['email']}</p>";
 
-            echo "</center></div>";
+            echo "</div>";
+
+            echo "</center>";
         }
         
     }

@@ -504,8 +504,9 @@ tr{
 /* classe referente as caixas de links da intranet na pagina inicial */
 .boxItensContato{
 
-  height: 180px;
-  width: 130px;
+  height: 220px;
+
+  width: 140px;
   display: block;
   /* flex-direction: row; */
   margin: 20px;
@@ -517,6 +518,8 @@ tr{
   border-top-right-radius: 10px;
   box-shadow: 5px 10px 8px #888888;
   font-size: 14px;
+  padding: px;
+  
   
 }
 
