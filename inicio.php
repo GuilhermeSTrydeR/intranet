@@ -70,6 +70,9 @@
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
               <a style='color: white !important;' class="nav-link" href="?pagina=/index/acesso"><b>Acessos</b></a>
             </li>
+            <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
+              <a style='color: white !important;' class="nav-link" href="?pagina=/index/contatos"><b>Contatos</b></a>
+            </li>
             <div id="form_login">
             <form method="POST" action="classes/usuario/logar.php">
               <div class="row">

@@ -499,6 +499,61 @@ tr{
 }
 
 
+/************************************************************************/
+
+/* classe referente as caixas de links da intranet na pagina inicial */
+.boxItensContato{
+
+  height: 180px;
+  width: 130px;
+  display: block;
+  /* flex-direction: row; */
+  margin: 20px;
+  /* padding: 5px; */
+  background: #00995D;
+  border: 2px solid #009b63;
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  border-top-right-radius: 10px;
+  box-shadow: 5px 10px 8px #888888;
+  font-size: 14px;
+  
+}
+
+.boxItensContato:hover{
+  box-shadow: 5px 10px 8px #F47920;
+}
+
+/* referente as caixas de link da pagina inicial, para que o link na caixa ocupe todo o espaço da div */
+.boxItensContato a{
+  margin-top: 10px;
+  margin-left: -3px;
+  display: block;
+  height: 80%;
+  width: 110%;
+  
+}
+.boxItensContato p{
+  color: #ffffff;
+  
+}
+
+.boxItensContato:hover p{
+  /* margin-left: -9px;
+  margin-top: 3px;
+  height: 95%;
+  width: 120.5%;
+  font-weight: 600;
+  background: #F47920;
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  border-top-right-radius: 10px; */
+
+  /* font-weight: 500 !important; */
+  /* color: #F47920 !important;  */
+  
+}
+
 .nav-link b:hover{
 
   /* color: #F47920; */
