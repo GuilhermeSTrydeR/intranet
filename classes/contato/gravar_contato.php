@@ -17,10 +17,10 @@
         $setor = addslashes($_POST["setor"]);
         $email = addslashes($_POST["email"]);
         $telefone = addslashes($_POST["telefone"]);
-
+        $nasc = addslashes($_POST["nasc"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $c->gravar($nome, $setor, $email, $telefone);
+        $c->gravar($nome, $setor, $email, $telefone, $nasc);
 
         echo "<script>alert('Contato cadastrado com sucesso!');</script>";
         $url = '/paginas/admin/main.php?pagina=../../classes/contato/visualizar_contato';

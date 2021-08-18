@@ -24,7 +24,7 @@ a{text-decoration: none;}
 <br><br>
 
 <div style='float: left;' class='boxItens'>
-    <a href="?pagina=../../classes/aniversarios/visualizar_aniversario" ><i class='active'></i><center><p style='white-space: pre-line;
+    <a href="?pagina=../../classes/contato/visualizar_aniversario" ><i class='active'></i><center><p style='white-space: pre-line;
     width: 100%;
     overflow: hidden !important;             
     text-overflow: ellipsis; max-height: 100px;'>Aniversarios</p></center></a>

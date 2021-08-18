@@ -14,6 +14,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $telefone = $linha['telefone'];
         $email = $linha['email'];
         $setor = $linha['setor'];
+        $nasc = $linha['nasc'];
 }
 
 
@@ -66,23 +67,30 @@ switch ($setor) {
 ?>
 <center style="margin-left: 60px; margin-top: 100px !important;">
     <h2>Editar Contato</h2>
-    <form action="../../classes/contato/gravar_contato.php" autocomplete="off" method="POST" style="margin-left: 220px;">
+    <form action="../../classes/contato/editar_contato.php" autocomplete="off" method="POST" style="margin-left: 120px;">
+
+        <input type="text" name='id' READONLY class='hidden' value='<?php echo $id;?>'>
+
         <!-- area de campos do form -->
         <hr />
         <div class="row">
-            <div class="form-group col-md-7"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" value="<?php echo $nome?>" name="nome" required size="60"> </div>
+            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" value="<?php echo $nome?>" name="nome"  size="60"> </div>
 
-            <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id="telefone" value="<?php echo $telefone; ?>" name="telefone" required size="15"> </div>
+            <div class="form-group col-md-2"> <label for="nome">Telefone</label> <input type="text" class="form-control" id="telefone" value="<?php echo $telefone; ?>" name="telefone"  size="15"> </div>
 
+            <div class="form-group col-md-3"> 
+                <label for="campo2">Data de Nascimento</label> 
+                <input type="date" class="form-control" value="<?php echo $nasc; ?>" name="nasc"  autocomplete="off" > 
+            </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" value="<?php echo $email; ?>" name="email" required> </div>
+            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" value="<?php echo $email; ?>" name="email" > </div>
 
        
         <div class="form-group col-md-4">
         <label for="setor">Setor</label>
-        <select class="form-select" aria-label="setor" name="setor" required>
+        <select class="form-select" aria-label="setor" name="setor" >
             <option selected value="<?php echo $setor; ?>"><?php echo $setor; ?></option>
             <option value="1">Comercial</option>
             <option value="2">Cadastro</option>

@@ -13,17 +13,17 @@
         $c = new Contato();
 
 
-        $id = addslashes($_GET["id"]);
+        $id = addslashes($_POST["id"]);
         $nome = addslashes($_POST["nome"]);
         $setor = addslashes($_POST["setor"]);
         $email = addslashes($_POST["email"]);
         $telefone = addslashes($_POST["telefone"]);
-
+        $nasc = addslashes($_POST["nasc"]);
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $c->editar($id, $nome, $setor, $email, $telefone);
+        $c->editar($id, $nome, $setor, $email, $telefone, $nasc);
 
-        echo "<script>alert('Contato cadastrado com sucesso!');</script>";
+
         $url = '/paginas/admin/main.php?pagina=../../classes/contato/visualizar_contato';
         echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 

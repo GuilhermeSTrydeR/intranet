@@ -67,9 +67,10 @@
                     echo "<div class='thead'>";
                     echo "<th style='width: 80px;' scope='col'>Nome</th>";
                     echo "<th style='width: 40px;' scope='col'>Setor</th>";
-                    echo "<th style='width: 50px;' scope='col'>Telefone</th>";
+                    echo "<th style='width: 40px;' scope='col'>Telefone</th>";
+                    echo "<th style='width: 35px;' scope='col'>Nascimento</th>";
                     echo "<th style='width: 60px;' scope='col'>E-mail</th>";
-                    echo "<th style='width: 30px;' scope='col' class='noprint'>Opções</th>";
+                    echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
@@ -121,9 +122,11 @@
                         }
 
 
+                    // nessa sera convertifo o formato de data do sql pro padrao brasileiro
+                    $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td><td> {$linha['email']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
                     echo "</tr>";
                     }
