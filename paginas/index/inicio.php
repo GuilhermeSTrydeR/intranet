@@ -123,7 +123,7 @@ $mesAtual = date('m');
 
 
 // essa consulta eh apenas feita para verificar se ha registros que satisfaçam as condicoes, pois se nao houver, o modal nao ira aparecer
-$consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' AND ativo = 1 AND excluido = 0 ORDER BY Day(nasc)");
+$consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM contato WHERE Month(nasc) = '$mesAtual' AND ativo = 1 AND excluido = 0 ORDER BY Day(nasc)");
 
 // o contador eh iniciado com zero
 $cont = 0;
@@ -157,7 +157,7 @@ if($cont > 0){
             <?php
                 global $pdo;
                 $mesAtual = date('m');
-                $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM aniversario WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
+                $consulta = $pdo->query("SELECT nome, setor, ativo, excluido, nasc FROM contato WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
                 echo "<table style='margin-top: 15px;'>";
 
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {

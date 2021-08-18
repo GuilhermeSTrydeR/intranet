@@ -67,12 +67,66 @@
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
               <a style='color: white !important;' class="nav-link" href="?pagina=/index/inicio"><b>Inicio</b></a>
             </li>
+
+
+
+
+
+
+
+               <!-- condicao para verificar se ha pelo menos 1 registro no banco na table acessos, caso nao haja, nao sera exibido o menu superior acessos -->
+               <?php
+            $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0");
+            
+              // o contador eh iniciado com zero
+              $cont = 0;
+                  
+              // para cada registro no banco a variavel $cont recebera 1 incremento
+              while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                    
+                  $cont++;
+      
+              }
+    
+              // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera exibido o menu acessos
+              if($cont > 0){
+              ?>
+
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
               <a style='color: white !important;' class="nav-link" href="?pagina=/index/acesso"><b>Acessos</b></a>
             </li>
-            <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-              <a style='color: white !important;' class="nav-link" href="?pagina=/index/contatos"><b>Contatos</b></a>
-            </li>
+
+            <?php 
+                } 
+              ?>
+
+            <!-- condicao para verificar se ha pelo menos 1 registro no banco na table contatos, caso nao haja, nao sera exibido o menu superior contatos -->
+            <?php
+            $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0");
+            
+              // o contador eh iniciado com zero
+              $cont = 0;
+                  
+              // para cada registro no banco a variavel $cont recebera 1 incremento
+              while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                    
+                  $cont++;
+      
+              }
+    
+              // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera exibido o menu contatos
+              if($cont > 0){
+              ?>
+
+                <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
+                  <a style='color: white !important;' class="nav-link" href="?pagina=/index/contatos"><b>Contatos</b></a>
+                </li>
+
+              <?php 
+                } 
+              ?>
+
+
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
               <a style='color: white !important;' class="nav-link" href="?pagina=/index/institucional"><b>Institucional</b></a>
             </li>
