@@ -1,5 +1,5 @@
-<center style="margin-left: 50px; margin-top: 50px; !important; position: relative !important;">
-        <style>
+<center class="visContato" style="margin-left: 50px; margin-top: 50px; !important; position: relative !important;">
+    <style>
 
         .hiddenBtnXUsuarios{
             display: inline-block !important;
@@ -18,10 +18,8 @@
         #licontato b{
             color: #F47920;
         }
-
-        </style>
-
-   
+        
+    </style>
 
         <?php
 
@@ -62,16 +60,16 @@
                         </a>
                     </div>
                 <?php
-                echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px; margin-top: -480px;' id='table'>";
+                echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px; margin-top: 10px;' id='table'>";
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
                     echo "<th style='width: 80px;' scope='col'>Nome</th>";
-                    echo "<th style='width: 40px;' scope='col'>Setor</th>";
-                    echo "<th style='width: 40px;' scope='col'>Telefone</th>";
-                    echo "<th style='width: 35px;' scope='col'>Nascimento</th>";
+                    echo "<th class='visContatoSetor' style='width: 40px;' scope='col'>Setor</th>";
+                    echo "<th class='visContatoTelefone' style='width: 40px;' scope='col'>Telefone</th>";
+                    echo "<th class='visContatoNasc' style='width: 35px;' scope='col'>Nascimento</th>";
                     echo "<th style='width: 60px;' scope='col'>E-mail</th>";
-                    echo "<th style='width: 30px;' scope='col'>Ativo?</th>";
+                    echo "<th style='width: 30px;' scope='col' class='noprint'>Ativo?</th>";
                     echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
@@ -139,7 +137,7 @@
                     $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
                     echo "</tr>";
                     }
@@ -152,10 +150,5 @@
 
             }
 ?>
-
-</center>
-<div style='height: 500px;'>
-
-
-
 </div>
+</center>

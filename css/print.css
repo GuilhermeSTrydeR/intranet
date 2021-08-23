@@ -89,7 +89,29 @@
         max-width: 700px !important;
       }
       
-      
+      .visContato{
 
+        margin-top: -50px !important;
+        margin-left: 0px !important;
+
+      }
+
+      .visContato td, th{
+
+        font-size: 10px;
+
+      }
+
+      .visContatoSetor{
+        width: 27px !important;
+      }
+
+      .visContatoTelefone{
+        width: 25px !important;
+      }
+
+      .visContatoNasc{
+        width: 23px !important;
+      }
 
 }

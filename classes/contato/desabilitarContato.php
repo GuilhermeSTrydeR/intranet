@@ -11,8 +11,7 @@
         //aqui instanciamos a classe
         $c = new Contato();
         
-
-        //aqui invocamos o metodo para marcar a coluna 'excluido' com '1' informando que esse usuario foi excluido
+        //aqui invocamos o metodo para marcar a coluna 'ativo' com '1' informando que esse usuario foi desativado
         $c->desabilitarContato($id);
        
         $url = '/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=' . $id;
