@@ -51,7 +51,44 @@
 
         }
         
+        public function retornaAtivo($id){
 
+            global $pdo;
+            
+            $sql = "SELECT ativo FROM contato WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+
+
+        }
+
+        public function desabilitarContato($id){
+
+            global $pdo;
+            $sql = "UPDATE contato SET ativo = '0' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+        
+
+
+        }
+
+        public function habilitarContato($id){
+        
+            global $pdo;
+            $sql = "UPDATE contato SET ativo = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+
+           
+        }
        
 
     }

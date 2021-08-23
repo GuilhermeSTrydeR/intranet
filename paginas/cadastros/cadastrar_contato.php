@@ -29,24 +29,24 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         <!-- area de campos do form -->
         <hr />
         <div class="row">
-            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" required size="60"> </div>
+            <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome"  size="60"> </div>
 
-            <div class="form-group col-md-2"> <label for="nome">Telefone</label> <input type="text" class="form-control" id="telefone" name="telefone" required size="15"> </div>
+            <div class="form-group col-md-2"> <label for="nome">Telefone</label> <input type="text" class="form-control" id="telefone" name="telefone"  size="15"> </div>
 
             <div class="form-group col-md-3"> 
                 <label for="campo2">Data de Nascimento</label> 
-                <input type="date" class="form-control" name="nasc"  autocomplete="off" required> 
+                <input type="date" class="form-control" name="nasc"  autocomplete="off" > 
             </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" required> 
+            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" > 
         </div>
 
        
         <div class="form-group col-md-4">
             <label for="setor">Setor</label>
-            <select class="form-select" aria-label="setor" name="setor" required>
+            <select class="form-select" aria-label="setor" name="setor" >
             <option selected></option>
             <option value="1">Comercial</option>
             <option value="2">Cadastro</option>

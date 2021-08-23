@@ -11,14 +11,6 @@
         
         $dataCadastro = gmdate("YmdHis", time());
 
-
-        
-
-
-
-
-
-
     ?>
 
 <center style="margin-left: 100px; margin-top: 50px !important; position: relative !important;">
@@ -55,9 +47,6 @@
         }
             // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
             if($cont > 0){
-
-
-             
 
 
                 

@@ -5,7 +5,9 @@
 
 $id = $_GET['id'];
 
+require("../../classes/contato/Contato.class.php");
 
+$c = new Contato();
 
 $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 AND id = '$id';");
 
@@ -15,8 +17,30 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $email = $linha['email'];
         $setor = $linha['setor'];
         $nasc = $linha['nasc'];
+        $ativo = $linha['ativo'];
 }
 
+
+if($ativo == 0){
+    $ativo = "Não";
+    $corBG = "Red";
+    $corFonte = "white";
+ 
+}
+
+elseif($ativo == 1){
+    $ativo = "Sim";
+    $corBG = "Green";
+    $corFonte = "white";
+ 
+}
+
+else{
+    $ativo = 'Erro';
+    $corBG = "Yellow";
+    $corFonte = "black";
+  
+}
 
 
 switch ($setor) {
@@ -71,6 +95,11 @@ switch ($setor) {
 
         <input type="text" name='id' READONLY class='hidden' value='<?php echo $id;?>'>
 
+        <div class="row">
+            <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
+
+            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
+        </div>
         <!-- area de campos do form -->
         <hr />
         <div class="row">
@@ -143,6 +172,24 @@ switch ($setor) {
                 <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/contato/apagar_contato&id=<?php echo $id;?>>" class="btn btn-danger-red">Excluir</a> 
             </div>
         
+
+            <div class="col-md-1">
+            <?php
+                        if($c->retornaAtivo($id) == 1){
+                    ?>
+                         <a href="../../classes/contato/desabilitarContato.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-danger' style='width: 100px;'>Desativar</button></a>
+                    <?php
+                        }
+                        else{
+                    ?>
+                        <a href="../../classes/contato/habilitarContato.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Ativar</button></a>
+                     <?php
+                        }
+                    ?>
+
+</div>
+
+
             <div class="col-md-4"> 
                 <button type="submit" class="btn btn-success">Salvar</button> 
                 <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/contato/visualizar_contato" class="btn btn-danger">Cancelar</a>

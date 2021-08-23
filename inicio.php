@@ -76,7 +76,7 @@
 
                <!-- condicao para verificar se ha pelo menos 1 registro no banco na table acessos, caso nao haja, nao sera exibido o menu superior acessos -->
                <?php
-            $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0");
+            $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 and ativo = 1");
             
               // o contador eh iniciado com zero
               $cont = 0;
@@ -102,7 +102,7 @@
 
             <!-- condicao para verificar se ha pelo menos 1 registro no banco na table contatos, caso nao haja, nao sera exibido o menu superior contatos -->
             <?php
-            $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0");
+            $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 and ativo = 1");
             
               // o contador eh iniciado com zero
               $cont = 0;

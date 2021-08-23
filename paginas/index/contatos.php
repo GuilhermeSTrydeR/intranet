@@ -14,7 +14,7 @@
     // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o cabecalho, caso contrario, nem o cabecalho sera exibido
     if($cont > 0){
 
-        $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 AND ativo = 1 order by setor");
+        $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 AND ativo = 1 order by nome");
 
         
         
@@ -61,8 +61,25 @@
                                 $linha['setor'] = 'Outros';
                                     break; 
                         }
-
-
+            
+        
+                //nessa parte o retorno da funcao 'nome' que retorna o nome completo do usuario logado, vai dividir o nome completo em um array onde cada nome ficara num indice, o fator definido para a divisao eh o espaco (' ')
+                $nome = $linha['nome'];
+                $nome = explode(" ", $nome);
+        
+                //esse bloco condicional ira exibir o nome do usuario com os seguintes temros, caso o usuario tenha cadastrado apenas 1 nome, ele ira entrar na condicao verdadeira e sera exibido o indice 0 (primeiro indice) do array, pois se nao houver essa condicao e tiver apenas 1 nome cadastrado o mesmo iria se repetir, e caso ele tenha cadastrado mais de um nome, sera exibido o primeiro e o ultimo
+                if(count($nome) == 1){
+                    ?>
+                    <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php $linha['nome'] = $nome[0]?></a>
+                    <?php
+                }
+                else{
+                    ?>
+                        <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php $linha['nome'] = $nome[0] . ' ' . end($nome) ?></a>
+                    <?php
+                }
+                
+                
             echo "<center style='margin-left: 50px; margin-top: 50px;'>";
                     
             echo "<div style='float: left;' class='boxItensContato'>";

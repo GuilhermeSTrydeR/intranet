@@ -4,6 +4,7 @@
         .hiddenBtnXUsuarios{
             display: inline-block !important;
         }
+
         .hiddenPrint{
             display: inline-block !important;
         }
@@ -70,15 +71,27 @@
                     echo "<th style='width: 40px;' scope='col'>Telefone</th>";
                     echo "<th style='width: 35px;' scope='col'>Nascimento</th>";
                     echo "<th style='width: 60px;' scope='col'>E-mail</th>";
+                    echo "<th style='width: 30px;' scope='col'>Ativo?</th>";
                     echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
-                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0");
-                    
+                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 order by nome");
                
-
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                        
+                        if($linha['ativo'] == 0){
+                            $linha['ativo'] = "<p style='color: red';>Não</p>";
+                        }
+        
+                        elseif($linha['ativo'] == 1){
+                            $linha['ativo'] = "<p style='color: green;'>Sim</p>";
+                        }
+        
+                        else{
+                            $linha['ativo'] = 'Erro';
+                        }
+
                         switch ($linha['setor']) {
                             case 1:
                                 $linha['setor'] = 'Comercial';
@@ -126,7 +139,7 @@
                     $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
                     echo "</tr>";
                     }
@@ -138,17 +151,7 @@
                 echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_contato'>Para cadastrar um novo contato, clique aqui!</a>";
 
             }
-
-
-
 ?>
-
-
-
-
-
- 
-
 
 </center>
 <div style='height: 500px;'>
