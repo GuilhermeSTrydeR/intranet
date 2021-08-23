@@ -54,11 +54,16 @@
             if($cont > 0){
                 ?>
                     <h4>Contatos</h4>
-                        <div class="col" style='margin-left: 600px;'>
-                        <a href="?pagina=../../paginas/cadastros/cadastrar_contato">
-                            <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo Usuario">
-                        </a>
-                    </div>
+                        <div class='row'>
+                            <div class="col" style='margin-left: 600px;'>
+                                <img src="/imagens/navbar/printer.png" class="noprint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
+                
+                                <a style='margin-left: 100px;' href="?pagina=../../paginas/cadastros/cadastrar_contato">
+                                    <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo Usuario">
+                                </a>
+
+                            </div>
+                        </div>
                 <?php
                 echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px; margin-top: 10px;' id='table'>";
                     echo "<thead>";
