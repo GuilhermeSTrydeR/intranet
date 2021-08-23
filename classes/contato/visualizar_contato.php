@@ -69,11 +69,11 @@
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
-                    echo "<th style='width: 80px;' scope='col'>Nome</th>";
+                    echo "<th class='visContatoNome'style='width: 80px;' scope='col'>Nome</th>";
                     echo "<th class='visContatoSetor' style='width: 40px;' scope='col'>Setor</th>";
                     echo "<th class='visContatoTelefone' style='width: 40px;' scope='col'>Telefone</th>";
                     echo "<th class='visContatoNasc' style='width: 35px;' scope='col'>Nascimento</th>";
-                    echo "<th style='width: 60px;' scope='col'>E-mail</th>";
+                    echo "<th class='visContatoEmail' style='width: 60px;' scope='col'>E-mail</th>";
                     echo "<th style='width: 30px;' scope='col' class='noprint'>Ativo?</th>";
                     echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";

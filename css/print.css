@@ -93,25 +93,37 @@
 
         margin-top: -50px !important;
         margin-left: 0px !important;
+       
+    
 
       }
 
       .visContato td, th{
 
         font-size: 10px;
+        padding: 0% !important;
+   
+      
+      }
 
+      .visContatoNome{
+        width: 45px !important;
       }
 
       .visContatoSetor{
-        width: 27px !important;
+        width: 18px !important;
       }
 
       .visContatoTelefone{
-        width: 25px !important;
+        width: 10px !important;
       }
 
       .visContatoNasc{
-        width: 23px !important;
+        width: 9px !important;
+      }
+
+      .visContatoEmail{
+        width: 30px !important;
       }
 
 }
