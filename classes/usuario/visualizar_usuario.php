@@ -5,7 +5,7 @@
     //include para acessar as confguracoes definidas
     include("../../config/config.php");
 ?>
-<center style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
+<center class="visUsuario" style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
         <style>
 
         .hiddenBtnXUsuarios{
@@ -116,11 +116,11 @@
             <div class='thead'>
             <th style='width: 30px;' scope='col'>ID</th>
             <th style='width: 180px;' scope='col'>Nome</th>
-            <th style='width: 120px;' scope='col'>Usuário</th>
+            <th style='width: 100px;' scope='col'>Usuário</th>
             <!-- <th style='width: 90px;' scope='col'>Permissão</th> -->
             <th style='width: 80px;' scope='col'>Setor</th>
-            <th style='width: 50px;' scope='col'>Ativo?</th>
-            <th class='noprint' style='width: 90px;' scope='col'>Opções</th>
+            <th style='width: 30px;' scope='col'>Ativo?</th>
+            <th class='noprint' style='width: 60px;' scope='col'>Opções</th>
             </div>
             </tr>
             </thead>
@@ -254,14 +254,14 @@
                     else{
                         $linha['ativo'] = 'Erro';
                     }
-    
+     
               
                     echo  "<td> {$linha['id']} </td>  <td> {$linha['nome']}  </td> <td> {$linha['user']} </td>   <td>". $linha['setor'] ."</td> <td>". $linha['ativo'] ."</td>";
     
                     ?>
     
                     <td class='noprint'>
-                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_usuario&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a>
+                    <a href="/paginas/admin/main.php?pagina=../cadastros/editar_usuario&id=<?php echo $linha['id']?>"><button type='button' class='btn btn-success btnForm' style='width: 100px;'>Editar</button></a>
     
                     <br><br>
     

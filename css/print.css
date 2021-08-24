@@ -91,7 +91,7 @@
       
       .visContato{
 
-        margin-top: -50px !important;
+        margin-top: -20px !important;
         margin-left: 0px !important;
        
     
@@ -103,11 +103,10 @@
         font-size: 10px;
         padding: 0% !important;
    
-      
       }
 
       .visContatoNome{
-        width: 45px !important;
+        width: 40px !important;
       }
 
       .visContatoSetor{
@@ -115,11 +114,11 @@
       }
 
       .visContatoTelefone{
-        width: 10px !important;
+        width: 12px !important;
       }
 
       .visContatoNasc{
-        width: 9px !important;
+        width: 10px !important;
       }
 
       .visContatoEmail{

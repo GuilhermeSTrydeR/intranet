@@ -1,4 +1,4 @@
-<center style="margin-left: 50px; margin-top: 30px !important; position: relative !important;">
+<center class="visAniversario" style="margin-left: 50px; margin-top: 30px !important; position: relative !important;">
         <style>
 
         .hiddenBtnXUsuarios{

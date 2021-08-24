@@ -125,17 +125,17 @@
   <br>
   <li id='liInicio'>
       <a href="/paginas/admin/main.php">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -15px;' height='50' width='50'><b style='margin-left: 5px '>Inicio</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -2px '>Inicio</b> 
       </a>
     </li>
    <li id='limural'>
       <a href="?pagina=../../classes/mural/visualizar_mural">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: 3px;'>Mural</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -3px;'>Mural</b> 
       </a>
     </li>
     <li id='liUsuario'>
       <a href="?pagina=../../classes/usuario/visualizar_usuario">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -5px;'>Usuarios</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -10px;'>Usuarios</b> 
       </a>
     </li>
     <!-- <li id='liMural'> 
@@ -150,17 +150,17 @@
     </li> -->
     <li id='liAcesso'>
       <a href="?pagina=../../classes/acesso/visualizar_grupo_acesso">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b>Acessos</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -7px;'>Acessos</b> 
       </a>
     </li>
     <li id='liAgenda'>
       <a href="?pagina=../../paginas/agenda/agenda">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: 0px;'>Agenda</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -7px;'>Agenda</b> 
       </a>
     </li>
     <li id='liInstitucional'>
       <a href="/">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -13px;'>Institucional</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
       </a>
     </li>
   </ul>
