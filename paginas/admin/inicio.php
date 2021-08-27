@@ -48,8 +48,7 @@
             // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
             if($cont > 0){
 
-
-                
+                // echo "<div id='root'></div>";
                 echo"<div class='container'>";
                 echo "<h4 style='float: left;'>Interno</h4>";
                 echo "<br><hr>";
@@ -119,4 +118,10 @@
         
 
     ?>
-
+    <!-- <script type="text/javascript">
+        
+        esquema para trocar o texto da div 'root' para exibir o diretorio
+        var div = document.getElementById('root');
+        div.innerHTML = window.document.URL;
+              
+    </script> -->

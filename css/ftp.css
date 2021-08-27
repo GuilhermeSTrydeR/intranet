@@ -3,7 +3,7 @@ body{
     background-color: 	#ffffff;
     /* position: relative; */
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
 
 }
 
@@ -12,7 +12,6 @@ body{
     background-color: #3b5998;
     width: 10%;
     z-index: 2;
-
     max-height: 40px;
 
 }
@@ -34,8 +33,6 @@ body{
     margin-left: 20px;
     margin-top: -5px;
    
-
-
 }
 
 #logo a{
@@ -95,19 +92,15 @@ footer p{
     right: -50px;
     padding: -10px !important;
     
-
 }
 
 #contato_esq{
 
-    background-color: #cad2e9;
-    margin: 10px;
-    padding: 5px;
-    
-    display: inline-block;
-    float: left;
-
-
+  background-color: #cad2e9;
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+  float: left;
 
 }
 
@@ -116,7 +109,6 @@ footer p{
     background-color: #cad2e9;
     margin: 10px;
     padding: 5px;
-
     display: inline-block;
     float: right;
 }
@@ -450,7 +442,6 @@ tr{
 
 /* classe referente as caixas de links da intranet na pagina inicial */
 .boxItens{
-
   height: 100px;
   width: 100px;
   display: block;
@@ -464,7 +455,7 @@ tr{
   border-top-right-radius: 10px;
   box-shadow: 5px 10px 8px #888888;
   font-size: 14px;
-  
+  word-break: break-all; 
 }
 
 .boxItens:hover{
@@ -476,13 +467,12 @@ tr{
   margin-top: 10px;
   margin-left: -3px;
   display: block;
-  height: 80%;
-  width: 110%;
-  
+  height: 100%;
+  width: 115%;
 }
+
 .boxItens p{
-  color: #ffffff;
-  
+  color: #ffffff;  
 }
 
 .boxItens:hover p{
@@ -507,9 +497,9 @@ tr{
 /* classe referente as caixas de links da intranet na pagina inicial */
 .boxItensContato{
 
-  height: 220px;
-
-  width: 140px;
+  height: 180px;
+  
+  width: 200px;
   display: block;
   /* flex-direction: row; */
   margin: 20px;

@@ -1,34 +1,28 @@
 @media print {
 
-
-
     nav{
 
-        display: none !important;
+      display: none !important;
 
     }
 
     .col{
 
-        display: none !important;
+      display: none !important;
 
     }
 
     .sidebar-container{
 
-        display: none !important;
+      display: none !important;
 
     }
-
-
-
+    
     .table{
-
         position: absolute !important;
         margin-left: -1px !important;
         margin-top: -100px;
         width: 750px !important;
-        
     }
 
     .print{
@@ -49,9 +43,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
-        
-    
-      
+  
       }
 
     .noprint{
@@ -83,26 +75,19 @@
         max-width: 700px;
       }
       
-      
       #tblInfUnico #img{
         margin-left: 50px !important;
         max-width: 700px !important;
       }
       
       .visContato{
-
         margin-top: -20px !important;
         margin-left: 0px !important;
-       
-    
-
       }
 
       .visContato td, th{
-
         font-size: 10px;
         padding: 0% !important;
-   
       }
 
       .visContatoNome{
