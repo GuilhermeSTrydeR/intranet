@@ -3,6 +3,11 @@
 <script src="../../js/jquery/jquery.mask.js"></script>
 <?php
 
+//nenhum erro sera exibido nessa pagina
+error_reporting(0);
+
+
+
 $id = $_GET['id'];
 
 require("../../classes/contato/Contato.class.php");
@@ -20,26 +25,30 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $ativo = $linha['ativo'];
         $ip = $linha['ip'];
 
+
         //nessa variavel eh cortado os 3 ultimos digitos do ip, poderia ser utilizado a prorpia variavel $ip porem optei por organizar assim, caso ele tenha apenas 1 ou 2 digitos, nessa variavel sera incluido independente por isso eh acertado abaixo
         $ipUltimosdigitos = substr($ip, -3, strlen($ip));
+
+
+
 
         // se caso tem apenas 1 numero de ip nas ultimas 3 casas, sera mostrado apenas ele excluindo '.' ou '0'
         if($ipUltimosdigitos[0] == '0' || $ipUltimosdigitos[0] == '.' && $ipUltimosdigitos[1] == '0' || $ipUltimosdigitos[1] == '.' ){
 
             $ipUltimosdigitos = substr($ipUltimosdigitos, -1, strlen($ipUltimosdigitos));
         }
-        else{
-            $ipUltimosdigitos = Null;
-        }
-        
         //se caso o ip tem apenas 2 digitos nas ultimas 3 casas, sera mostrado apenas os dois excluindo '.' ou '0'
-        if($ipUltimosdigitos[0] == '0' || $ipUltimosdigitos[0] == '.'){
+        elseif($ipUltimosdigitos[0] == '0' || $ipUltimosdigitos[0] == '.'){
             $ipUltimosdigitos = substr($ipUltimosdigitos, -2, strlen($ipUltimosdigitos));
         }
-        else{
-            $ipUltimosdigitos = Null;
-        }
+    
 
+        if($ipUltimosdigitos == '.'){
+
+            $ipUltimosdigitos = Null;
+
+        }
+        
         
     
       
@@ -182,6 +191,8 @@ switch ($setor) {
                 192.168.0.
                 
                 <div class="form-group col-md-1"><label for="ip">IP</label> <br><input type="text" class="form-control" name="ip" id="ip" value="<?php echo $ipUltimosdigitos?>" MAXLENGTH=3></div>
+
+                <label for=""><?php echo $ipUltimosdigitos ?></label>
 
             
         </div>
