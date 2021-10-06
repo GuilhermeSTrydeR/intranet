@@ -69,17 +69,18 @@
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
-                    echo "<th class='visContatoNome'style='width: 80px;' scope='col'>Nome</th>";
-                    echo "<th class='visContatoSetor' style='width: 40px;' scope='col'>Setor</th>";
-                    echo "<th class='visContatoTelefone' style='width: 40px;' scope='col'>Telefone</th>";
-                    echo "<th class='visContatoNasc' style='width: 35px;' scope='col'>Nascimento</th>";
+                    echo "<th class='visContatoNome'style='width: 70px;' scope='col'>Nome</th>";
+                    echo "<th class='visContatoSetor' style='width: 35px;' scope='col'>Setor</th>";
+                    echo "<th class='visContatoTelefone' style='width: 30px;' scope='col'>Telefone</th>";
+                    echo "<th class='visContatoNasc' style='width: 30px;' scope='col'>Nascimento</th>";
                     echo "<th class='visContatoEmail' style='width: 60px;' scope='col'>E-mail</th>";
-                    echo "<th style='width: 30px;' scope='col' class='noprint'>Ativo?</th>";
+                    echo "<th class='visContatoIp' style='width: 35px;' scope='col'>IP</th>";
+                    echo "<th style='width: 17px;' scope='col' class='noprint'>Ativo?</th>";
                     echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
-                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 order by nome");
+                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 order by setor");
                
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                         
@@ -142,7 +143,7 @@
                     $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td> {$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
                     echo "</tr>";
                     }

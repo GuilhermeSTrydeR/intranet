@@ -19,9 +19,14 @@
         $email = addslashes($_POST["email"]);
         $telefone = addslashes($_POST["telefone"]);
         $nasc = addslashes($_POST["nasc"]);
+        $ip = addslashes($_POST["ip"]);
+
+        // aqui concatenamos a faixa de ip com o ip
+        $ip = "192.168.0." . $ip;
+
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 
-        $c->editar($id, $nome, $setor, $email, $telefone, $nasc);
+        $c->editar($id, $nome, $setor, $email, $telefone, $nasc, $ip);
 
 
         $url = '/paginas/admin/main.php?pagina=../../classes/contato/visualizar_contato';

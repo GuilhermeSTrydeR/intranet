@@ -40,30 +40,39 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
         </div>
 
         <div class="row">
-            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" > 
-        </div>
-
+            <div class="form-group col-md-5"> <label for="campo1">E-mail</label> <input type="email" class="form-control" name="email" > </div>
        
-        <div class="form-group col-md-4">
-            <label for="setor">Setor</label>
-            <select class="form-select" aria-label="setor" name="setor" >
-            <option selected></option>
-            <option value="1">Comercial</option>
-            <option value="2">Cadastro</option>
-            <option value="3">Recepção</option>
-            <option value="4">Faturamento</option>
-            <option value="5">Tecnologia da Informação</option>
-            <option value="6">Contabilidade</option>
-            <option value="7">Interc./Audit.</option>
-            <option value="8">Diretoria</option>
-            <option value="9">Financeiro</option>
-            <option value="10">Gerência</option>
-            <option value="11">ANS</option>
-            <option value="12">GED</option>
-            <option value="13">Outros</option>
-            </select>
+            <div class="form-group col-md-4">
+                <label for="setor">Setor</label>
+                <select class="form-select" aria-label="setor" name="setor" >
+                <option selected></option>
+                <option value="1">Comercial</option>
+                <option value="2">Cadastro</option>
+                <option value="3">Recepção</option>
+                <option value="4">Faturamento</option>
+                <option value="5">Tecnologia da Informação</option>
+                <option value="6">Contabilidade</option>
+                <option value="7">Interc./Audit.</option>
+                <option value="8">Diretoria</option>
+                <option value="9">Financeiro</option>
+                <option value="10">Gerência</option>
+                <option value="11">ANS</option>
+                <option value="12">GED</option>
+                <option value="13">Outros</option>
+                </select>
+            </div>
         </div>
 
+        <div class="row">
+            <br>
+         
+                192.168.0.
+                
+                <div class="form-group col-md-1"><label for="ip">IP</label> <br><input type="text" class="form-control" name="ip" id="ip" MAXLENGTH=3></div>
+
+
+            
+        </div>
 
             
 
@@ -102,7 +111,8 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
     <!-- mascara para o telefone, nesse caso ele pega o id telefone e aplica essa mascara -->
     <script type="text/javascript">
-    $("#telefone").mask("(00) 0000-0000");
+        $("#telefone").mask("(00) 0000-0000");
+        
     </script>   
 </center>
 

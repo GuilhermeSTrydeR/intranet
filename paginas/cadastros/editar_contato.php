@@ -18,8 +18,32 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $setor = $linha['setor'];
         $nasc = $linha['nasc'];
         $ativo = $linha['ativo'];
-}
+        $ip = $linha['ip'];
 
+        //nessa variavel eh cortado os 3 ultimos digitos do ip, poderia ser utilizado a prorpia variavel $ip porem optei por organizar assim, caso ele tenha apenas 1 ou 2 digitos, nessa variavel sera incluido independente por isso eh acertado abaixo
+        $ipUltimosdigitos = substr($ip, -3, strlen($ip));
+
+        // se caso tem apenas 1 numero de ip nas ultimas 3 casas, sera mostrado apenas ele excluindo '.' ou '0'
+        if($ipUltimosdigitos[0] == '0' || $ipUltimosdigitos[0] == '.' && $ipUltimosdigitos[1] == '0' || $ipUltimosdigitos[1] == '.' ){
+
+            $ipUltimosdigitos = substr($ipUltimosdigitos, -1, strlen($ipUltimosdigitos));
+        }
+        else{
+            $ipUltimosdigitos = Null;
+        }
+        
+        //se caso o ip tem apenas 2 digitos nas ultimas 3 casas, sera mostrado apenas os dois excluindo '.' ou '0'
+        if($ipUltimosdigitos[0] == '0' || $ipUltimosdigitos[0] == '.'){
+            $ipUltimosdigitos = substr($ipUltimosdigitos, -2, strlen($ipUltimosdigitos));
+        }
+        else{
+            $ipUltimosdigitos = Null;
+        }
+
+        
+    
+      
+}
 
 if($ativo == 0){
     $ativo = "Não";
@@ -45,43 +69,43 @@ else{
 
 switch ($setor) {
     case 1:
-        $setor = 'Comercial';
+        $setorString = 'Comercial';
         break;
     case 2:
-        $setor = 'Cadastro';
+        $setorString = 'Cadastro';
         break;
     case 3:
-        $setor = 'Recepção';
+        $setorString = 'Recepção';
         break;
     case 4:
-        $setor = 'Faturamento';
+        $setorString = 'Faturamento';
         break;
     case 5:
-        $setor = 'Tecnologia da Informação';
+        $setorString = 'Tecnologia da Informação';
         break;
     case 6:
-        $setor = 'Contabilidade';
+        $setorString = 'Contabilidade';
         break;
     case 7:
-        $setor = 'Interc./Audit.';
+        $setorString = 'Interc./Audit.';
         break;
     case 8:
-        $setor = 'Diretoria';
+        $setorString = 'Diretoria';
         break;
     case 9:
-        $setor = 'Financeiro';
+        $setorString = 'Financeiro';
         break;
     case 10:
-        $setor = 'Gerência';
+        $setorString = 'Gerência';
         break;
     case 11:
-        $setor = 'ANS';
+        $setorString = 'ANS';
         break;
     case 12:
-        $setor = 'GED';
+        $setorString = 'GED';
             break; 
     case 13:
-        $setor = 'Outros';
+        $setorString = 'Outros';
             break; 
 }
 
@@ -120,7 +144,7 @@ switch ($setor) {
         <div class="form-group col-md-4">
         <label for="setor">Setor</label>
         <select class="form-select" aria-label="setor" name="setor" >
-            <option selected value="<?php echo $setor; ?>"><?php echo $setor; ?></option>
+            <option selected value="<?php echo $setor; ?>"><?php echo $setorString; ?></option>
             <option value="1">Comercial</option>
             <option value="2">Cadastro</option>
             <option value="3">Recepção</option>
@@ -149,6 +173,19 @@ switch ($setor) {
                 <option value="3">Administrador</option>
             </select> -->
         </div>
+
+
+    
+        <div class="row">
+            <br>
+         
+                192.168.0.
+                
+                <div class="form-group col-md-1"><label for="ip">IP</label> <br><input type="text" class="form-control" name="ip" id="ip" value="<?php echo $ipUltimosdigitos?>" MAXLENGTH=3></div>
+
+            
+        </div>
+
         <br>
         
         <br><br>
@@ -166,7 +203,7 @@ switch ($setor) {
         <!-- <div class="form-group col-md-2"> <label for="campo2">Tempo em Horas</label> <input type="number" class="form-control" name="tempo" required autocomplete="off"> </div>
             </div>
         </div> -->
-   
+   <br>
         <div id="actions" class="row">
             <div class="col-md-5">
                 <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/contato/apagar_contato&id=<?php echo $id;?>>" class="btn btn-danger-red">Excluir</a> 

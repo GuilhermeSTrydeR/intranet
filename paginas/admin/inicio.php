@@ -80,7 +80,7 @@
                 echo"<div class='container'>";
                 echo "<h4 style='float: left;'>Externo</h4>";
                 echo "<br><hr>";
-                $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 0");
+                $consulta = $pdo->query("SELECT * FROM acesso_grupo WHERE excluido = 0 AND ativo = 1 AND interno = 0 ");
                 
                 $numItensLinha = 4;
 

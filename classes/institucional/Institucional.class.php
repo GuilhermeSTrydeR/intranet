@@ -1,27 +1,26 @@
 
 <?php
-    class Contato{
+    class Institucional{
      
-        public function gravar($nome, $setor, $email, $telefone, $nasc, $ip){
+        public function gravar($nome, $setor, $email, $telefone, $nasc){
 
             global $pdo;
-            $sql = "INSERT INTO contato(nome, setor, email, telefone, nasc, ip) VALUES(:nome, :setor, :email, :telefone, :nasc, :ip)";
+            $sql = "INSERT INTO contato(nome, setor, email, telefone, nasc) VALUES(:nome, :setor, :email, :telefone, :nasc)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("nome", $nome);
             $sql->bindValue("setor", $setor);
             $sql->bindValue("email", $email);
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("nasc", $nasc);
-            $sql->bindValue("ip", $ip);
 
             $sql->execute();
             
         }
 
-        public function editar($id, $nome, $setor, $email, $telefone, $nasc, $ip){
+        public function editar($id, $nome, $setor, $email, $telefone, $nasc){
 
             global $pdo;
-            $sql = "UPDATE contato SET nome = :nome, setor = :setor, email = :email, telefone = :telefone, nasc = :nasc, ip = :ip WHERE id = '$id'";
+            $sql = "UPDATE contato SET nome = :nome, setor = :setor, email = :email, telefone = :telefone, nasc = :nasc WHERE id = '$id'";
             $sql = $pdo->prepare($sql);
           
             $sql->bindValue("nome", $nome);
@@ -29,7 +28,6 @@
             $sql->bindValue("email", $email);
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("nasc", $nasc);
-            $sql->bindValue("ip", $ip);
      
             
             $sql->execute();
