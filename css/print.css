@@ -91,7 +91,7 @@
       }
 
       .visContatoNome{
-        width: 35px !important;
+        width: 32px !important;
       }
 
       .visContatoSetor{
@@ -99,7 +99,7 @@
       }
 
       .visContatoTelefone{
-        width: 15px !important;
+        width: 12px !important;
       }
 
       .visContatoNasc{
@@ -112,7 +112,7 @@
       }
 
       .visContatoIp{
-        width: 15px !important;
+        width: 10px !important;
       }
 
 }
