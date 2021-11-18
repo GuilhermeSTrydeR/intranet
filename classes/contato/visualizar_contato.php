@@ -35,6 +35,9 @@
 
         $c = new Contato();
 
+        // faixa de ip definida na visualização
+        $faixaIp = '192.168.234.';
+
         global $pdo;
 
 
@@ -80,7 +83,7 @@
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
-                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 order by setor");
+                    $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 order by nome");
                
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                         
@@ -143,7 +146,7 @@
                     $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td> {$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td> $faixaIp{$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
                              
                     echo "</tr>";
                     }

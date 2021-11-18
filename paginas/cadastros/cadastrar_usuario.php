@@ -26,16 +26,16 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
             <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id="telefone" name="telefone" required size="15"> </div>
 
-            <div class="hidden"><input type="text" class="form-control" id="telefone" name="permissao" value="3" required> </div>
+   
 
-            <!-- <div class="form-group col-md-3">
+            <div class="form-group col-md-3">
             <label for="permissao">Permissão</label>
             <select class="form-select" aria-label="Permissao" name="permissao" required>
                 <option selected></option>
                 <option value="1">Comum</option>
                 <option value="2">Supervisor</option>
                 <option value="3">Administrador</option>
-            </select> -->
+            </select>
         </div>
         <br>
         <div class="row"> 

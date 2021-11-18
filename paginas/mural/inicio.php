@@ -92,7 +92,7 @@ if($cont > 0){
                 echo"<div class='print' style='border-bottom: 1px dotted black; margin: 20px;'></div>";
             
                 echo"</table>";
-            // esse echo define o espacamento entre os murals
+            // esse echo define o espacamento entre os murais
             echo"<div class='row' ></div>";
                     }
 
@@ -111,9 +111,15 @@ else{
     echo "</style>";
 
   
-    echo "<h4 style='margin-top: 10%;'>Não há murals cadastrados ou ativos com a data vigente para serem<br>exibidos no mural</h4>";
+    echo "<h4 style='margin-top: 10%;'>Não há mural cadastrado ou ativo com a data vigente para serem<br>exibidos</h4>";
     echo "<br>";
-    echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_mural'>Para cadastrar um novo mural, clique aqui!</a>";
+    
+    if($_SESSION['permissao'] == 3){
+        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_mural'>Para cadastrar um novo mural, clique aqui!</a>";
+
+    };
+
+
 
 }
 

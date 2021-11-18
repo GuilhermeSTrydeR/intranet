@@ -1,7 +1,19 @@
 <?php
 // desligar todos os erros e notices nessa pagina
 error_reporting(0);
+
+
+if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
+
+    header("Location: /");
+
+}
+
+
+
 ?>
+
+
 <center style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
         <style>
 

@@ -22,7 +22,7 @@
         $ip = addslashes($_POST["ip"]);
 
         // aqui concatenamos a faixa de ip com o ip
-        $ip = "192.168.0." . $ip;
+        // $ip = "192.168.0." . $ip;
 
 
         //se a funcao da classe tiver as variaveis, sera gravado no banco, se nao 

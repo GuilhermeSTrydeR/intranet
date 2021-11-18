@@ -192,7 +192,7 @@ switch ($setor) {
                 
                 <div class="form-group col-md-1"><label for="ip">IP</label> <br><input type="text" class="form-control" name="ip" id="ip" value="<?php echo $ipUltimosdigitos?>" MAXLENGTH=3></div>
 
-                <label for=""><?php echo $ipUltimosdigitos ?></label>
+             
 
             
         </div>

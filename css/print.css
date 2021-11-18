@@ -103,16 +103,16 @@
       }
 
       .visContatoNasc{
-        width: 12px !important;
+        width: 11px !important;
         
       }
 
       .visContatoEmail{
-        width: 28px !important;
+        width: 27px !important;
       }
 
       .visContatoIp{
-        width: 10px !important;
+        width: 14px !important;
       }
 
 }

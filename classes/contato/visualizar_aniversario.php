@@ -110,7 +110,12 @@
             
                 // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
                 if($cont > 0){
-                
+                    if($_SESSION['permissao'] == 3){
+                        echo "<p>Para cadastrar ou editar um aniversario, altere o contato em: Agenda -> Contatos</p>";
+                    };
+                    
+                    echo "<br>";
+                    echo "<br>";
                     echo "<h4>Aniversariantes do Mês de " . $mesAtualSting  . "</h4>";
                     echo "<br>";
                     echo "<table class='tablemural table table-striped table-bordered table-condensed table-hover' style='position: relative; table-layout:fixed; border: 2px solid ##00995D; word-wrap: break-word; max-width: 1000px;' id='table'>";
