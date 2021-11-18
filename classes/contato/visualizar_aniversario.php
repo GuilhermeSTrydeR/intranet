@@ -8,13 +8,13 @@
             display: inline-block !important;
         }
 
-        #liAniversario{
+        #liAniversarios{
             background: #009b63;
             border-right: 6px solid #F47920;
             color: #ffffff;
         }       
 
-        #liAniversario b{
+        #liAniversarios b{
             color: #F47920;
         }
 

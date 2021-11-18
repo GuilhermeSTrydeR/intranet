@@ -151,13 +151,12 @@
 
                 echo "<h4 style='margin-top: 100px;'>Não há nenhum aviso ou documento Institucional cadastrados.</h4>";
                 echo "<br>";
+                
                 if($_SESSION['permissao'] == 3){
 
                     echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_institucional'>Para cadastrar um novo institucional, clique aqui!</a>";
 
                 }
-             
-
             }
 ?>
 </div>

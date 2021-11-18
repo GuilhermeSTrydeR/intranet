@@ -34,6 +34,7 @@ $u = new Usuario();
     $excluido = $linha['excluido']; 
     $ativo = $linha['ativo']; 
     $setor = $linha['setor']; 
+    $nasc = $linha['nasc']; 
    
 
 
@@ -204,6 +205,10 @@ $u = new Usuario();
             <option value="13">Outros</option>
         </select>
 </div>
+
+        <div class="form-group col-md-3"> 
+            <label for="campo2">Data de Nascimento</label> <input type="date" class="form-control" name="nasc" required autocomplete="off" value="<?php echo $nasc; ?>"> 
+        </div>
            
             <div class="form-group col-md-3"> <label for="campo2">Senha</label> <input type="password" class="form-control" name="pass" placeholder="••••••••••••••••••••••••••" autocomplete="off"> 
         </div>

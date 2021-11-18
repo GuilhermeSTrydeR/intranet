@@ -42,9 +42,7 @@
                 $configOuEdit = $_SESSION['configOuEdit'];
                 $nasc = $_POST["nasc"];
                 
-        
                 $u->editarSemSenhaDigitada($id, $nome, $email, $permissao, $telefone, $setor, $nasc);
-                
  
         }
         if($configOuEdit == 1){
