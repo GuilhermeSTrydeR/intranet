@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../css/ftp.css">
     <link rel="stylesheet" href="../../css/print.css">
+    
   
   </head>
 <body>
@@ -179,6 +180,8 @@
         echo "<br>";
         include("$pagina.php");
     ?>
+
+
 
 
 </body>

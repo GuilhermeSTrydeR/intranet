@@ -1,9 +1,6 @@
 <?php
 
-  include("config/config.php");
-  
-
-  session_start(); 
+  session_start();
   if(isset($_SESSION['logado'])){
 
     header("Location: /");
@@ -22,22 +19,6 @@
   exit;
 
   }
-
-
-  // try{
-
-  //   require("classes/conexao_bd.php");
-
-  // }catch(PDOException $e){
-
-  //   include("paginas/erros/conexao_banco.php");
-  //   exit;
-
-  // }
-
-
-  //a variavel abaixo define a pagina selecionada ao clicar nos menus
-  $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'index/inicio';
 
 
 ?>
@@ -65,70 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav">
             <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-              <a style='color: white !important;' class="nav-link" href="?pagina=/index/inicio"><b>Inicio</b></a>
-            </li>
-
-
-
-
-
-
-
-               <!-- condicao para verificar se ha pelo menos 1 registro no banco na table acessos, caso nao haja, nao sera exibido o menu superior acessos -->
-               <?php
-            $consulta = $pdo->query("SELECT * FROM acesso WHERE excluido = 0 and ativo = 1");
-            
-              // o contador eh iniciado com zero
-              $cont = 0;
-                  
-              // para cada registro no banco a variavel $cont recebera 1 incremento
-              while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                    
-                  $cont++;
-      
-              }
-    
-              // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera exibido o menu acessos
-              if($cont > 0){
-              ?>
-
-            <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-              <a style='color: white !important;' class="nav-link" href="?pagina=/index/acesso"><b>Acessos</b></a>
-            </li>
-
-            <?php 
-                } 
-              ?>
-
-            <!-- condicao para verificar se ha pelo menos 1 registro no banco na table contatos, caso nao haja, nao sera exibido o menu superior contatos -->
-            <?php
-            $consulta = $pdo->query("SELECT * FROM contato WHERE excluido = 0 and ativo = 1");
-            
-              // o contador eh iniciado com zero
-              $cont = 0;
-                  
-              // para cada registro no banco a variavel $cont recebera 1 incremento
-              while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                    
-                  $cont++;
-      
-              }
-    
-              // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera exibido o menu contatos
-              if($cont > 0){
-              ?>
-
-                <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-                  <a style='color: white !important;' class="nav-link" href="?pagina=/index/contatos"><b>Contatos</b></a>
-                </li>
-
-              <?php 
-                } 
-              ?>
-
-
-            <li class="nav-item <?= ($pagina == 'inicio')?'active':'' ?>">
-              <a style='color: white !important;' class="nav-link" href="?pagina=/index/institucional"><b>Institucional</b></a>
+              <a style='color: white !important;' class="nav-link" href="?pagina=/index/institucional"><b>&nbsp;</b></a>
             </li>
             <div id="form_login">
             <form method="POST" action="classes/usuario/logar.php">
@@ -148,24 +66,27 @@
                   </div>
                 </div>
             </form>
-
             </div>
           </ul>
         </div>
       </nav>
-      <br><br>
+    
+      <!-- imagem de background alinhada no meio -->
+      <div class="d-flex align-items-center justify-content-center h-100" >
+        <div class="d-flex flex-column" style='margin-top: 150px;'>
+          <img src="./imagens/unimed/logo_unimed_tc.png" alt="logo-unimedtc" height=360>
+      </div>
+
       <script src="../../js/bootstrap/popper/popper.min.js"></script>
       <script src="../../js/jquery/jquery.js"></script>
       <script src="js/bootstrap/bootstrap.js"></script>
       <script src="js/script.js"></script>
 
-      <?php
-        //esse include ira colocar na tela a pagina selecionada e que foi atribuida a variavel $pagina, assim sempre que uma pagina for atribuida a variavel $pagina, ela sera incluida abaixo
-        include("paginas/$pagina.php");
-      ?>
       </body>
       <footer>
         
         <!-- <p style='color: #00401A;'>Mesa Preta Sistemas - Versão 0.13</p> -->
       </footer>
 </html>
+
+

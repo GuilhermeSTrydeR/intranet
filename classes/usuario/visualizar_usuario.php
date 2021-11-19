@@ -1,3 +1,4 @@
+
 <?php
     // desligar todos os erros e notices nessa pagina, sem isso trocar o sentido da lista nao funciona
     error_reporting(0);
