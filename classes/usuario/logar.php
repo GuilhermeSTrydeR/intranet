@@ -3,7 +3,7 @@
 
     // os erros sao ocultados nessa pagina pois se alguem digitar alguma aspas vai acontecer um erro na hora de fazer a query no banco de dados, por isso foi retirado a exibicao de erros e feito um try catch logo abaixo
     error_reporting(0);
-    ini_set(“display_errors”, 0 );
+    ini_set("display_errors", 0 );
 
     if(!isset($_POST['user']) && !isset($_POST['pass'])){
 

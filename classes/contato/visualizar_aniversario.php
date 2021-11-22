@@ -122,12 +122,15 @@
                     echo "<thead>";
                     echo "<tr>";
                     echo "<div class='thead'>";
-                    // echo "<th style='width: 50px;' scope='col'>ID</th>";
                     echo "<th style='width: 140px;' scope='col'>Nome</th>";
                     echo "<th style='width: 50px;' scope='col'>Setor</th>";
                     echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
-                    echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
-                    // echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
+                    
+                    if($_SESSION['permissao'] == 3){
+                        echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
+                    }
+                       
+                  
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
@@ -196,8 +199,12 @@
                                 // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                                 $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
                     
-                                echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td> ";
-                             
+                                echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td>";
+
+                                if($_SESSION['permissao'] == 3){
+                                    echo "<td> {$linha['ativo']} </td> ";
+                                }
+
                                 echo "</tr>";
                             }
     
@@ -255,7 +262,11 @@
             echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
             echo "<th style='width: 140px;' scope='col'>Nome</th>";
             echo "<th style='width: 50px;' scope='col'>Setor</th>";
-            echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
+
+            if($_SESSION['permissao'] == 3){
+                echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
+            }
+            
             echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
             // echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
             echo "</div>";
@@ -333,7 +344,12 @@
                         // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                         $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
             
-                        echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td>";
+                        echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td>";
+                        
+                        if($_SESSION['permissao'] == 3){
+                            echo "<td> {$linha['ativo']} </td>";
+                        }
+                    
                     }
 
                 }
@@ -385,7 +401,11 @@
         echo "<th style='width: 140px;' scope='col'>Nome</th>";
         echo "<th style='width: 50px;' scope='col'>Setor</th>";
         echo "<th style='width: 40px;' scope='col'>Aniversario</th>";
-        echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
+
+        if($_SESSION['permissao'] == 3){
+            echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
+        }
+            
         // echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
         echo "</div>";
         echo "</tr>";
@@ -457,9 +477,11 @@
                     // nessa parte alem de converter o formato de data do sql pro padrao brasileiro, ainda eh escondido o ano pois nao eh relevante saer o ano de um aniversario
                     $linha['nasc'] = date('d/m', strtotime($linha['nasc']));
         
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td><td> {$linha['ativo']} </td>";
-                 
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['nasc']} </td>";
                     
+                    if($_SESSION['permissao'] == 3){
+                        echo "<td> {$linha['ativo']} </td>";
+                    }
                 }
 
                 
