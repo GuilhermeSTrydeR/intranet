@@ -271,29 +271,33 @@ $u = new Usuario();
     </form>
 
     <br><br><br><br><br>
-    <h2>Configurações do Sistema</h2>
-    <hr>
-    
-    <div style='float: left;' id='backup_banco' class='boxItens'>
-        <a href='../../config/backupBanco.php'><i class='active'></i><center><p style='white-space: pre-line;
-        width: 100%;
-        overflow: hidden !important;             
-        text-overflow: ellipsis; max-height: 100px;'>Fazer Backup do Banco de Dados</p></center></a>
-    </div>
-
-    <div style='float: left;' id='backup_banco' class='boxItens'>
-        <a href='https://localhost/phpmyadmin' target="_blank"><i class='active'></i><center><p style='white-space: pre-line;
-        width: 100%;
-        overflow: hidden !important;             
-        text-overflow: ellipsis; max-height: 100px;'>Acessar o PHP<br>MyAdmin</p></center></a>
-    </div>
-
-    <div style='float: left;' id='backup_banco' class='boxItens'>
-        <a href='https://localhost/phpinfo.php' target="_blank"><i class='active'></i><center><p style='white-space: pre-line;
-        width: 100%;
-        overflow: hidden !important;             
-        text-overflow: ellipsis; max-height: 100px;'>PHPInfo</p></center></a>
-    </div>
-
- 
+    <?php
+        if($_SESSION['permissao'] == 3){
+    ?>
+            <h2>Configurações do Sistema</h2>
+            <hr>
+            
+            <div style='float: left;' id='backup_banco' class='boxItens'>
+                <a href='../../config/backupBanco.php'><i class='active'></i><center><p style='white-space: pre-line;
+                width: 100%;
+                overflow: hidden !important;             
+                text-overflow: ellipsis; max-height: 100px;'>Fazer Backup do Banco de Dados</p></center></a>
+            </div>
+        
+            <div style='float: left;' id='backup_banco' class='boxItens'>
+                <a href='https://localhost/phpmyadmin' target="_blank"><i class='active'></i><center><p style='white-space: pre-line;
+                width: 100%;
+                overflow: hidden !important;             
+                text-overflow: ellipsis; max-height: 100px;'>Acessar o PHP<br>MyAdmin</p></center></a>
+            </div>
+        
+            <div style='float: left;' id='backup_banco' class='boxItens'>
+                <a href='https://localhost/phpinfo.php' target="_blank"><i class='active'></i><center><p style='white-space: pre-line;
+                width: 100%;
+                overflow: hidden !important;             
+                text-overflow: ellipsis; max-height: 100px;'>PHPInfo</p></center></a>
+            </div>
+        <?php
+            }
+        ?>
 </center>

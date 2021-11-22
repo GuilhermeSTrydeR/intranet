@@ -141,7 +141,7 @@
     </li>
     <li id='liContatos'>
       <a href="/paginas/comum/main.php?pagina=../../classes/contato/visualizar_contato">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -10px '>Contatos</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/userBlack.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -10px '>Contatos</b> 
       </a>
     </li>
     <!-- o usuario COMUM nao pode visualizar os ususarios -->
@@ -159,7 +159,7 @@
     </li> -->
     <li id='liAniversarios'>
       <a href="?pagina=../../classes/contato/visualizar_aniversario">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -20px;'>Aniversarios</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Aniversarios</b> 
       </a>
     </li>
   </ul>
