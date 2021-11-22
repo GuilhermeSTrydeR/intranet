@@ -9,13 +9,13 @@
             display: inline-block !important;
         }
 
-        #licontato{
+        #liContatos{
             background: #009b63;
             border-right: 6px solid #F47920;
             color: #ffffff;
         }       
 
-        #licontato b{
+        #liContatos b{
             color: #F47920;
         }
         
@@ -60,11 +60,15 @@
                         <div class='row'>
                             <div class="col" style='margin-left: 600px;'>
                                 <img src="/imagens/navbar/printer.png" class="noprint" onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" title="Imprimir">
-                
+                                <?php
+                                    if($_SESSION['permissao'] == 3){
+                                ?>
                                 <a style='margin-left: 100px;' href="?pagina=../../paginas/cadastros/cadastrar_contato">
                                     <img src="../../imagens/navbar/plus.png" alt='botao-ativar-mural' title="Novo Usuario">
                                 </a>
-
+                                <?php
+                                    }
+                                ?>
                             </div>
                         </div>
                 <?php
@@ -77,9 +81,13 @@
                     echo "<th class='visContatoTelefone' style='width: 30px;' scope='col'>Telefone</th>";
                     echo "<th class='visContatoNasc' style='width: 30px;' scope='col'>Nascimento</th>";
                     echo "<th class='visContatoEmail' style='width: 60px;' scope='col'>E-mail</th>";
-                    echo "<th class='visContatoIp' style='width: 35px;' scope='col'>IP</th>";
-                    echo "<th style='width: 17px;' scope='col' class='noprint'>Ativo?</th>";
-                    echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
+                    
+                                    if($_SESSION['permissao'] == 3){
+                                        echo "<th class='visContatoIp' style='width: 35px;' scope='col'>IP</th>";
+                                        echo "<th style='width: 17px;' scope='col' class='noprint'>Ativo?</th>";
+                                        echo "<th style='width: 40px;' scope='col' class='noprint'>Opções</th>";
+                                    }
+          
                     echo "</div>";
                     echo "</tr>";
                     echo "</thead>";
@@ -146,8 +154,18 @@
                     $linha['nasc'] = date('d/m/Y', strtotime($linha['nasc']));
 
                     echo"<tr>";
-                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td><td> $faixaIp{$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td> <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>";
+                    echo "<td> {$linha['nome']} </td> <td> {$linha['setor']} </td>  <td> {$linha['telefone']} </td> <td> {$linha['nasc']} </td>  <td> {$linha['email']} </td>";
                              
+                        if($_SESSION['permissao'] == 3){
+                          
+                                echo "<td> $faixaIp{$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td>"; 
+                                
+                                ?>  
+                                <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>
+                            <?php
+                        }
+                            
+
                     echo "</tr>";
                     }
             }

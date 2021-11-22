@@ -129,6 +129,11 @@
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -2px '>Inicio</b> 
       </a>
     </li>
+    <li id='liInstitucional'>
+      <a href="?pagina=../../classes/institucional/visualizar_institucional"">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
+      </a>
+    </li>
    <li id='limural'>
       <a href="?pagina=../../classes/mural/visualizar_mural">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -3px;'>Mural</b> 
@@ -157,11 +162,6 @@
     <li id='liAgenda'>
       <a href="?pagina=../../paginas/agenda/agenda">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -7px;'>Agenda</b> 
-      </a>
-    </li>
-    <li id='liInstitucional'>
-      <a href="?pagina=../../classes/institucional/visualizar_institucional"">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
       </a>
     </li>
   </ul>

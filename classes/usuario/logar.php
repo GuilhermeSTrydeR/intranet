@@ -69,7 +69,7 @@
             if($u->verificaAtivo($id) == 1){
 
                 $_SESSION['logado'] = 1;
-                header("location: ../../paginas/comum/main.php");
+                header("location: ../../paginas/comum/main.php?pagina=../../paginas/mural/inicio");
 
 
             }

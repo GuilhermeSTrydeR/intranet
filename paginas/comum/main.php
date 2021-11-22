@@ -123,17 +123,27 @@
   <ul class="sidebar-navigation">
   <center><h4></h4></center>
   <br>
-  <li id='liInicio'>
-      <a href="/paginas/admin/main.php">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/home.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -2px '>Inicio</b> 
-      </a>
-    </li>
-   <li id='liMural'>
+  <li id='liMural'>
       <a href="?pagina=../../paginas/mural/inicio">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/feedBlack.png" class="d-inline-block align-top" alt="sair" height='40' style='margin-left: -5px;'><b style='margin-left: -3px;'>Mural</b> 
       </a>
     </li>
-
+    <li id='liInstitucional'>
+      <a href="?pagina=../../classes/institucional/visualizar_institucional"">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
+      </a>
+    </li>
+    <!-- trocar essa 'liInicios' po 'liAcessos' obviamente criar a propriedade do css relativa à liAcessos -->
+    <li id='liInicio'>
+      <a href="/paginas/admin/main.php">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -10px '>Acessos</b> 
+      </a>
+    </li>
+    <li id='liContatos'>
+      <a href="/paginas/comum/main.php?pagina=../../classes/contato/visualizar_contato">
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -10px '>Contatos</b> 
+      </a>
+    </li>
     <!-- o usuario COMUM nao pode visualizar os ususarios -->
     <!-- <li id='liUsuario'>
       <a href="?pagina=../../classes/usuario/visualizar_usuario">
@@ -150,11 +160,6 @@
     <li id='liAniversarios'>
       <a href="?pagina=../../classes/contato/visualizar_aniversario">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -20px;'>Aniversarios</b> 
-      </a>
-    </li>
-    <li id='liInstitucional'>
-      <a href="?pagina=../../classes/institucional/visualizar_institucional"">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
       </a>
     </li>
   </ul>
