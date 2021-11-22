@@ -159,7 +159,7 @@
     </li> -->
     <li id='liAniversarios'>
       <a href="?pagina=../../classes/contato/visualizar_aniversario">
-        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/contato.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Aniversarios</b> 
+        <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/modal/cake.png" height='50' class="d-inline-block align-top" alt="sair" style='margin-left: -12px;'><b style='margin-left: -22px;'>Aniversarios</b> 
       </a>
     </li>
   </ul>
