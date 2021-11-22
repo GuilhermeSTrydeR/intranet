@@ -135,7 +135,7 @@
     </li>
     <!-- trocar essa 'liInicios' po 'liAcessos' obviamente criar a propriedade do css relativa à liAcessos -->
     <li id='liInicio'>
-      <a href="/paginas/admin/main.php">
+      <a href="/paginas/comum/main.php?pagina=acessos">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/acessos.png" class="d-inline-block align-top" alt="sair" style='margin-left: -12px;' height='50' width='50'><b style='margin-left: -10px '>Acessos</b> 
       </a>
     </li>
