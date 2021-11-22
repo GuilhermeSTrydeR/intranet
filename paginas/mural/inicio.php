@@ -113,7 +113,7 @@
             echo "</style>";
 
         
-            echo "<h4 style='margin-top: 10%;'>Não há mural cadastrado ou ativo com a data vigente para serem<br>exibidos</h4>";
+            echo "<h4 style='margin-top: 10%;'>Não há mural cadastrado ou ativo com a data vigente para ser<br>exibido</h4>";
             echo "<br>";
             
             if($_SESSION['permissao'] == 3){

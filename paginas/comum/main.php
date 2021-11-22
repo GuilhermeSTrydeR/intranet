@@ -90,7 +90,7 @@
 
   <ul class="navbar-nav" id="navbar-main" style="margin-left: 900px !important; position: fixed;">
     <center>
-        <a href="?pagina=inicio">
+        <a href="?pagina=../../paginas/mural/inicio">
           <img src="/imagens/navbar/home.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="home" style="margin-left: 50px !important;" title="Tela Inicial">
       </center>
       <center>
