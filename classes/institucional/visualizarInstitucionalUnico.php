@@ -1,3 +1,8 @@
+<script>
+
+    alert("###################################\n\nLEIA COM ATENÇÃO ESSE DOCUMENTO INSTITUCIONAL! \nassim que terminar aperte no botão 'Lido' abaixo do documento para confirmar sua ação!\n\n###################################");
+
+</script>
 <style>
 
     body{
@@ -92,14 +97,28 @@
                     echo "<div style='margin-left: 200px;' class='noprint'>";
 
                         // sera exibido o link para download apenas se houver uma imagem na variavel
-                        if(isset($linha['imagem'])){
-                            echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
-                        }
+                        // if(isset($linha['imagem'])){
+                        //     echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
+                        // }
 
                     echo "</div>";
-                    
-                    
+                    ?>
+
+                    <style>
+                        .hidden{
+                            display: none !important;
+                        }
+                    </style>
+                    <?php
+
+                    // aqui pegamos o id do ususario logado apartir da session e a id desse institucional para entao enviar por POST para a classe responsavel por salvar no  banco
+                    $idUsuario = $_SESSION['id'];
+
+                    $idInstitucional = $id;
+
+                    echo "<form action='../../classes/institucional/gravarInstitucionalUsuario.php' method='POST'><input type='text' class='hidden' readonly name='idUsuario' value='$idUsuario'><input type='text' class='hidden' readonly name='idInstitucional' value='$idInstitucional'><div class='col-md-4' style='float: right;'> <button type='submit' class='btn btn-success'>Lido</button></form>";
                     echo"<div class='row' style='height: 100px;'></div>";
+                    
                     echo "</center>";
                     echo "</td>";
                     echo "</tr>";
@@ -108,7 +127,7 @@
                     
                 
                 echo"</table>";
-                
+               
 
                 }
                 
