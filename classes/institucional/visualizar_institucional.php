@@ -115,8 +115,8 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
                         </a>
                     </div> -->
                     <div class="col">
-                        <a href="?pagina=../../paginas/mural/inicio">
-                            <img src="../../imagens/sidebar/timeline.png" height="50" alt='botao-desativar-mural' title="Visualizar o mural">
+                        <a href="?pagina=../../paginas/institucional/inicio">
+                            <img src="../../imagens/sidebar/timeline.png" height="50" alt='botao-visualiza-institucional' title="Visualizar os institucionais">
                         </a>
                     </div>
                     <div class="col">
@@ -246,7 +246,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
            
                 <br>
                 <br>
-            <a href="?pagina=../../classes/mural/visualizarmuralUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
+            <a href="?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-primary' style='width: 100px;'>Visualizar</button></a>
             
 
             <?php
