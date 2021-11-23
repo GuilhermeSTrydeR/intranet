@@ -16,12 +16,12 @@
         include("../../config/config.php");
 
         // include da classe mural
-        include("../../classes/mural/mural.class.php");
+        include("../../classes/institucional/institucional.class.php");
 
         // $i = new mural();
         global $pdo;
 
-        $sql = 'SELECT * FROM mural ORDER BY id DESC;';
+        $sql = 'SELECT * FROM institucional ORDER BY id DESC;';
         $consulta = $pdo->query($sql);
 
 
@@ -46,11 +46,11 @@
 
 
     <div class="row" style='float: left; margin-left: 200px; position: absolute;'>
-            <div class='col'>
+            <!-- <div class='col'>
     
             <img src="/imagens/navbar/printer.png"  onClick="window.print()" width="50"  height="50" class="row" alt="imprimir" style='margin-left: 700px; margin-top: 50px;' title="Imprimir">
 
-            </div>
+            </div> -->
 
     </div>
     <div class='noprint' style='height: 50px;'></div>
