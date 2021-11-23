@@ -129,7 +129,7 @@
       </a>
     </li>
     <li id='liInstitucional'>
-      <a href="?pagina=../../classes/institucional/visualizar_institucional"">
+      <a href="?pagina=../../paginas/institucional/inicio">
         <i class="fa fa-home" aria-hidden="true"></i><img src="../../imagens/sidebar/inst.png" height='40' class="d-inline-block align-top" alt="sair" style='margin-left: -5px;'><b style='margin-left: -22px;'>Institucional</b> 
       </a>
     </li>

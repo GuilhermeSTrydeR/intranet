@@ -458,7 +458,30 @@ tr{
   word-break: break-all; 
 }
 
+.boxItensInstitucional{
+  height: 80px;
+  width: 1000px;
+  display: flex;
+  /* flex-direction: row; */
+  margin: 20px;
+  margin-left: 70px;
+  /* padding: 5px; */
+  background: #00995D;
+  border: 2px solid #009b63;
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  border-top-right-radius: 10px;
+  box-shadow: 5px 10px 8px #888888;
+  font-size: 32px;
+  /* word-break: break-all;  */
+}
+
+
+
 .boxItens:hover{
+  box-shadow: 5px 10px 8px #F47920;
+}
+.boxItensInstitucional:hover{
   box-shadow: 5px 10px 8px #F47920;
 }
 
@@ -471,7 +494,19 @@ tr{
   width: 115%;
 }
 
+.boxItensInstitucional a{
+  margin-top: 10px;
+  margin-left: -3px;
+  display: block;
+  height: 100%;
+  width: 115%;
+}
+
 .boxItens p{
+  color: #ffffff;  
+}
+
+.boxItensInstitucional p{
   color: #ffffff;  
 }
 

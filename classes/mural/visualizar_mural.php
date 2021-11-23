@@ -38,6 +38,8 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
             color: #F47920;
         }
 
+
+
         </style>
         
         <h4>Mural</h4>
