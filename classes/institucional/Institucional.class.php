@@ -158,8 +158,7 @@
             $sql->execute();
             $i = $i + 1;
 
-
-    }
+        }
 
         public function habilitarTodosInstitucionais(){
 
@@ -172,19 +171,49 @@
             $sql->execute();
             $i = $i + 1;
 
-    }
-    public function habilitarInstitucional($id){
+        }
 
-        $i = 0;
-        global $pdo;
-        $sql = "UPDATE institucional SET ativo = '1' WHERE id = '$id'";
-        $sql = $pdo->prepare($sql);
-        $sql->execute();
-        $i = $i + 1;
+        public function habilitarInstitucional($id){
+
+            $i = 0;
+            global $pdo;
+            $sql = "UPDATE institucional SET ativo = '1' WHERE id = '$id'";
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+            $i = $i + 1;
 
 
-    }
-        
+        }
+            
+
+
+        public function gravarInstitucionalUsuario($idInstitucional, $idUsuario, $lido){
+
+            global $pdo;
+            $sql = "INSERT INTO institucionalxusuario(idInstitucional, idUsuario, lido) VALUES(:idInstitucional, :idUsuario, :lido)";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("idInstitucional", $idInstitucional);
+            $sql->bindValue("idUsuario", $idUsuario);
+            $sql->bindValue("lido", $lido);
+            $sql->execute();
+            
+        }
+
+        public function retornaInstitucionalLido($idInstitucional){
+            global $pdo;
+            
+            $sql = "SELECT idusuario FROM Institucionalxusuario WHERE idInstitucional = '$idInstitucional'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam(':idInstitucional', $idInstitucional );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+            return $res;
+
+        }
+
+
 
 
     }

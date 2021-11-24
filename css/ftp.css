@@ -318,6 +318,14 @@ li:hover b{
  
 }
 
+.laranja{
+  color: #F47920 !important;
+}
+
+.verde{
+  color: #00995D !important;
+}
+
 img{
 
   cursor: pointer;
