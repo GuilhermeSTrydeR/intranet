@@ -15,10 +15,10 @@
 
     $lido = 1;
 
-    $i->gravarInstitucionalUsuario($idInstitucional, $idUsuario, $lido);
+    $i->gravarInstitucionalUsuario($idInstitucional, $idUsuario);
 
-
-    $url = '/paginas/comum/main.php?pagina=../../paginas/institucional/inicio';
+    $url = '/paginas/admin/main.php?pagina=../../paginas/institucional/inicio';
+     
     echo'<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 
 

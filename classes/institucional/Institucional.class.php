@@ -85,6 +85,8 @@
         }
 
 
+
+
         public function retornaImagem($id){
             global $pdo;
             
@@ -187,14 +189,13 @@
             
 
 
-        public function gravarInstitucionalUsuario($idInstitucional, $idUsuario, $lido){
+        public function gravarInstitucionalUsuario($idInstitucional, $idUsuario){
 
             global $pdo;
-            $sql = "INSERT INTO institucionalxusuario(idInstitucional, idUsuario, lido) VALUES(:idInstitucional, :idUsuario, :lido)";
+            $sql = "INSERT INTO institucionalxusuario(idInstitucional, idUsuario) VALUES(:idInstitucional, :idUsuario)";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("idInstitucional", $idInstitucional);
             $sql->bindValue("idUsuario", $idUsuario);
-            $sql->bindValue("lido", $lido);
             $sql->execute();
             
         }

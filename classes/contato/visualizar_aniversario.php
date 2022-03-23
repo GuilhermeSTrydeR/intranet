@@ -262,22 +262,20 @@
             echo "<!-- <th style='width: 50px;' scope='col'>ID</th> -->";
             echo "<th style='width: 140px;' scope='col'>Nome</th>";
             echo "<th style='width: 50px;' scope='col'>Setor</th>";
+            echo "<th style='width: 60px;' scope='col'>Aniversario</th>";
 
             if($_SESSION['permissao'] == 3){
                 echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
             }
-            
-            echo "<th style='width: 60px;' scope='col'>Exibir Aniversario?</th>";
+
             // echo "<th style='width: 50px;' scope='col' class='noprint'>Opções</th>";
+            
+      
             echo "</div>";
             echo "</tr>";
             echo "</thead>";
 
 
-        
-            
-
-    
 
             $consulta = $pdo->query("SELECT * FROM contato WHERE Month(nasc) = '$mesAtual' ORDER BY Day(nasc)");
     

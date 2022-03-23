@@ -161,7 +161,7 @@
                                 echo "<td> $faixaIp{$linha['ip']} </td><td class='noprint'>{$linha['ativo']}</td>"; 
                                 
                                 ?>  
-                                <td class='noprint'><a href='/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=".$linha['id']."'><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>
+                                <td class='noprint'><a href="/paginas/admin/main.php?pagina=../cadastros/editar_contato&id=<?php echo $linha['id']; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Editar</button></a></td>
                             <?php
                         }
                             

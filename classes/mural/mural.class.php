@@ -14,8 +14,7 @@
             $sql->bindValue("imagem", $imagem);
             $sql->bindValue("inicio", $inicio);
             $sql->bindValue("fim", $fim);
-            
-    
+        
             $sql->execute();
             
         }
@@ -34,7 +33,6 @@
             $sql->bindValue("inicio", $inicio);
             $sql->bindValue("fim", $fim);
             
-    
             $sql->execute();
             
         }
@@ -48,7 +46,6 @@
             $stmt->execute();
 
             $res = $stmt->fetchColumn();
-    
         
             return $res;
 
@@ -64,7 +61,6 @@
 
             $res = $stmt->fetchColumn();
     
-        
             return $res;
 
         }
