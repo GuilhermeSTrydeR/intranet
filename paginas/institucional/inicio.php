@@ -67,6 +67,7 @@ $consulta = $pdo->query("SELECT * FROM institucional WHERE ativo = 1 and excluid
     
 // o contador eh iniciado com zero
 $cont = 0;
+
     
 // para cada registro no banco a variavel $cont recebera 1 incremento
 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {

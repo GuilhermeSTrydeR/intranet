@@ -111,7 +111,7 @@
                 // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
                 if($cont > 0){
                     if($_SESSION['permissao'] == 3){
-                        echo "<p>Para cadastrar ou editar um aniversario, altere o contato em: Agenda -> Contatos</p>";
+                        echo "<p>Para cadastrar editar ou excluir um aniversario, altere o contato em: Agenda -> Contatos</p>";
                     };
                     
                     echo "<br>";

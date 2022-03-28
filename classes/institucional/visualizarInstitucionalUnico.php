@@ -117,8 +117,9 @@
                             }
                      
                                 echo "<div class='col-md-2 offset-md-1'>";
-                                    echo "<a style='color: white !important' href='/paginas/admin/main.php?pagina=../../paginas/institucional/inicio' class='btn btn-danger'>Voltar</a>";
+                                    echo "<a style='color: white !important' href='?pagina=../institucional/inicio' class='btn btn-danger'>Voltar</a>";
                                 echo "</div>";
+
                             echo "</div>";
                         echo "</form>";
                         }

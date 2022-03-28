@@ -70,12 +70,21 @@
                     echo "<tr>";
                         echo "<td>";
                             echo "<center>";
-                                echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; ' src='" . $linha['imagem'] ."'></img></a>";
-                                echo"<br>";
+                                // echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px;' type='application/pdf' src='" . $linha['imagem'] ."'></img></a>";
+                              
+
+                                
+
+
 
                                 // sera exibido o link para download apenas se houver uma imagem na variavel
                                 if(isset($linha['imagem'])){
+                                    
+                                    ECHO "<embed src='http://localhost/" . $linha['imagem'] ."' width='760' height='500' >";
 
+                                    echo"<br>";
+                                    echo"<br>";
+                                    
                                     echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
 
                                 }
