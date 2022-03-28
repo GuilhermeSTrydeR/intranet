@@ -29,7 +29,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
         </div>
         <div class="col-sm-12">
         <br>
-          <input type="file" class="form-control" name="Arquivo" id="Arquivo">
+          <input type="file" class="form-control" name="Arquivo" id="Arquivo" multiple accept="image/*, application/pdf" />
           <br>
           <div class='col' style='float: left;'>
           <label class="form-check-label" for="ativo" >
@@ -37,7 +37,7 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
           </label>
           <input class="form-check-input" type="checkbox" name='ativo' value= '1' checked>
           <div id="actions" class="col" style='float: right; margin-right: -375px;'>
-            <div class="col-md-12"> <button type="submit" class="btn btn-success">Salvar</button> 
+            <div class="col-md-12"> <button type="submit" id="submitButton" class="btn btn-success">Salvar</button> 
             <a style='color: white !important' href="/paginas/admin/main.php?pagina=../../classes/mural/visualizar_mural" class="btn btn-danger">Cancelar</a> 
             </div>
           </div>
@@ -53,3 +53,11 @@ if(!isset($_SESSION['logado']) && $_SESSION['permissao'] == '1'){
   <div class='row' style='height: 100px;'></div>
 </form>
 </center>
+<script>
+
+  var ext = $('.form-control').val().split('.').pop().toLowerCase();
+  if($.inArray(ext, ['gif','png','jpg','jpeg', 'pdf']) == -1) {
+      alert('invalid extension!');
+  }
+
+</script>

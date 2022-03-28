@@ -70,26 +70,30 @@
                     echo "<tr>";
                         echo "<td>";
                             echo "<center>";
-                                // echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px;' type='application/pdf' src='" . $linha['imagem'] ."'></img></a>";
-                              
-
-                                
-
-
-
                                 // sera exibido o link para download apenas se houver uma imagem na variavel
-                                if(isset($linha['imagem'])){
-                                    
-                                    ECHO "<embed src='http://localhost/" . $linha['imagem'] ."' width='760' height='500' >";
+                                if(isset($linha['imagem']) && pathinfo($linha['imagem'], PATHINFO_EXTENSION)!= 'pdf'){
+
+                                    echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; ' src='" . $linha['imagem'] ."'></img></a>";
 
                                     echo"<br>";
                                     echo"<br>";
-                                    
-                                    echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Imagem</a>";
 
+                               
+
+                                    echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Documento</a>";
+                      
+                                }
+                                else{
+                                    echo "<embed src='http://localhost/" . $linha['imagem'] ."' width='1000' height='700' style='border: 1px solid black;'";
+
+                                    echo"<br>";
+                                    echo"<br>";
+
+                                    echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Documento</a>";
                                 }
                                 
-                                echo"<div class='row' style='height: 100px;'></div>";
+                                
+
                             echo "</center>";
 
                             // esse echo define o espacamento do mural dentro do mural de fundo branco

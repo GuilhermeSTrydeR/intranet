@@ -261,7 +261,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
 
         echo "<h4>Não há nenhum aviso ou documento institucional cadastrado</h4>";
         echo "<br>";
-        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_institucional'>Para cadastrar um novo mural, clique aqui!</a>";
+        echo "<a href='/paginas/admin/main.php?pagina=../../paginas/cadastros/cadastrar_institucional'>Para cadastrar um novo institucional, clique aqui!</a>";
 
     }
 

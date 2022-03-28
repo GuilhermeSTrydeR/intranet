@@ -73,22 +73,54 @@
         <!-- linha referente ao corpo do texto -->
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <center>
+        
                     <?php
                         echo nl2br("<td><p id='texto' style='width: 100%;'>{$linha['texto']}</p></td>");
                     ?>
-                </center>
+               
             </div>
         </div>
         <br>
         <!-- linha referente a imagem -->
         <div class="row">
             <div class="col-md-1 offset-md-1">
-                <center>
+           
                     <?php
-                        echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 800px; ' src='" . $linha['imagem'] ."'></img></a>";
+                        echo "<div style='margin-left: -50px;'>";
+                      
+                        // sera exibido o link para download apenas se houver uma imagem na variavel
+                        if(isset($linha['imagem']) && pathinfo($linha['imagem'], PATHINFO_EXTENSION)!= 'pdf'){
+
+                            echo "<a href='" . $linha['imagem'] ."' target='_blank'><img onMouseOver='aumenta(this)' onMouseOut='diminui(this)' class='imagem' style='max-width: 1200px; margin-left: 150px;' src='" . $linha['imagem'] ."'></img></a>";
+
+                            echo"<br>";
+                            echo"<br>";
+
+                       
+
+                            echo "<div style='margin-left: 500px; width: 200px'>";
+                            echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Documento</a>";
+                            echo"<br>";
+                            echo"<br>";
+
+                        echo "</div>";
+              
+                        }
+                        else{
+                            echo "<embed src='http://localhost/" . $linha['imagem'] ."' width='1000' height='700' style='border: 1px solid black;'";
+
+                            echo"<br>";
+                            echo"<br>";
+                                echo "<div style='margin-left: 500px; width: 200px'>";
+                                    echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Documento</a>";
+                                echo "</div>";
+                         
+                            echo"<br>";
+                            echo"<br>";
+                        }
+                        
                     ?>
-                </center>
+
             </div>
         </div>
         <br>
@@ -100,6 +132,7 @@
                             display: none !important;
                         }
                     </style>
+                    <br><br>
                     <?php
                         // aqui pegamos o id do ususario logado apartir da session e a id desse institucional para entao enviar por POST para a classe responsavel por salvar no  banco
                         $idInstitucional = $id;
@@ -124,10 +157,12 @@
                         echo "</form>";
                         }
                     }
-                    ?>
+                 
+            ?>
             </div>
         </div>
     </div>
+    <br><br><br>
 <script>
 
     alert("###################################\n\nLEIA COM ATENÇÃO ESSE DOCUMENTO INSTITUCIONAL! \nassim que terminar aperte no botão 'Lido' abaixo do documento para confirmar sua ação!\n\n###################################");
