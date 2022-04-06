@@ -163,8 +163,16 @@
         </div>
     </div>
     <br><br><br>
-<script>
+<?php
+    if($i->retornaInstitucionalLido($idInstitucional) == False){
+        ?>
+        <script>
 
-    alert("###################################\n\nLEIA COM ATENÇÃO ESSE DOCUMENTO INSTITUCIONAL! \nassim que terminar aperte no botão 'Lido' abaixo do documento para confirmar sua ação!\n\n###################################");
+            alert("###################################\n\nLEIA COM ATENÇÃO ESSE DOCUMENTO INSTITUCIONAL! \nassim que terminar aperte no botão 'Lido' abaixo do documento para confirmar sua ação!\n\n###################################");
 
-</script>
+        </script>
+    <?php
+    }
+
+
+?>

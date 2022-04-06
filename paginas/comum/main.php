@@ -46,7 +46,7 @@
 <?php
 
   $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'inicio';
-
+  $id = $_SESSION['id'];
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: 	#0A5F55;">
 
@@ -68,21 +68,25 @@
         //esse bloco condicional ira exibir o nome do usuario com os seguintes temros, caso o usuario tenha cadastrado apenas 1 nome, ele ira entrar na condicao verdadeira e sera exibido o indice 0 (primeiro indice) do array, pois se nao houver essa condicao e tiver apenas 1 nome cadastrado o mesmo iria se repetir, e caso ele tenha cadastrado mais de um nome, sera exibido o primeiro e o ultimo
         if(count($nome) == 1){
           ?>
-            <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $nome[0]?></a>
+                <a style='color: white !important;' href='?pagina=../cadastros/editar_configuracoes&id=<?php echo $id; ?>'><?php echo $nome[0]?></a>
+        
+
+     
           <?php
         }
         else{
+          
           ?>
-             <a style='color: white !important; ' href="?pagina=../cadastros/editar_configuracoes"> <?php echo $nome[0] . ' ' . end($nome) ?></a>
+          
+            <a style='color: white !important;' href='?pagina=../cadastros/editar_configuracoes&id=<?php echo $id; ?>'>  <?php echo $nome[0] . ' ' . end($nome) ?></a>
           <?php
         }
-
 
       ?>
      
      
 
-      <a href="?pagina=../cadastros/editar_configuracoes">
+      <a href='?pagina=../cadastros/editar_configuracoes&id=<?php echo $id; ?>'>
         <img src="/imagens/navbar/engrenagem.png" style='margin-left: 20px;'  onclick="" width="30" height="30" alt="config" title="Configurações">
       </a>
     </div>

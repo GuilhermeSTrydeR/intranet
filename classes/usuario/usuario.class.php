@@ -122,6 +122,21 @@
 
         }
 
+        public function permissaoXId($id){
+            global $pdo;
+            
+            $sql = "SELECT permissao FROM usuarios WHERE id = '$id'";
+            $stmt = $pdo->prepare( $sql );
+            $stmt->bindParam( ':id', $id );        
+            $stmt->execute();
+
+            $res = $stmt->fetchColumn();
+    
+        
+            return $res;
+
+        }
+
         public function habilitarUsuario($id){
         
             global $pdo;

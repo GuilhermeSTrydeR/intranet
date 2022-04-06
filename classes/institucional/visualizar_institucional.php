@@ -1,23 +1,14 @@
-
-
 <?php
-// desligar todos os erros e notices nessa pagina
-error_reporting(0);
+    // desligar todos os erros e notices nessa pagina
+    error_reporting(0);
 
-
-if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
-
-    header("Location: /");
-
-}
-
-
-
+    if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
+        header("Location: /");
+    }
 ?>
 
-
 <center style="margin-left: 100px; margin-top: 30px !important; position: relative !important;">
-        <style>
+    <style>
 
         .hiddenBtnXUsuarios{
             display: inline-block !important;
@@ -39,18 +30,17 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] != '3'){
             color: #F47920;
         }
 
-        </style>
+    </style>
         
-        <h4>Institucional</h4>
+    <h4>Institucional</h4>
         
-        <div class='print'><?php
+    <div class='print'>
+        <?php
             
             echo gmdate('d/m/y \á\s\ H:i:s', time() + $fusoHorario);
-          
+            
         ?>
-        
-        
-        </div>
+    </div>
         <br><br>
 
         

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ans:mensagemEnvioANS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ans:cabecalho>
+		<ans:identificacaoTransacao>
+			<ans:tipoTransacao>MONITORAMENTO</ans:tipoTransacao>
+			<ans:numeroLote>387</ans:numeroLote>
+			<ans:competenciaLote>202107</ans:competenciaLote>
+			<ans:dataRegistroTransacao>2022-03-04</ans:dataRegistroTransacao>
+			<ans:horaRegistroTransacao>12:48:30</ans:horaRegistroTransacao>
+		</ans:identificacaoTransacao>
+		<ans:registroANS>359033</ans:registroANS>
+		<ans:versaoPadrao>1.01.00</ans:versaoPadrao>
+	</ans:cabecalho>
+	<ans:Mensagem>
+		<ans:ansParaOperadora>
+			<ans:resumoProcessamento>
+				<ans:nomeArquivo>3590332021070387.XTE</ans:nomeArquivo>
+				<ans:resumoProcessamentoTotais>
+					<ans:registrosIncluidos>23</ans:registrosIncluidos>
+					<ans:registrosAlterados>0</ans:registrosAlterados>
+					<ans:registrosExcluidos>0</ans:registrosExcluidos>
+					<ans:registrosComErros>0</ans:registrosComErros>
+				</ans:resumoProcessamentoTotais>
+				<ans:arquivoProcessadoPelaANS>5017</ans:arquivoProcessadoPelaANS>
+			</ans:resumoProcessamento>
+		</ans:ansParaOperadora>
+	</ans:Mensagem>
+	<ans:epilogo>
+		<ans:hash>50b87a7f67da351ad86deb878a627e2b</ans:hash>
+	</ans:epilogo>
+</ans:mensagemEnvioANS>

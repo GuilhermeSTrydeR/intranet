@@ -1,6 +1,7 @@
 <script src="../../js/jquery/jquery.js"></script>
 <script src="../../js/jquery/jquery.mask.js"></script>
 <?php
+error_reporting(0);
 
 if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
@@ -13,8 +14,16 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
   // pega o id vindo por GET
   $id = $_GET['id'];
 
-  $u = new Usuario();
 
+
+  $u = new Usuario();
+  
+  //caso o usuario logado, tenha um nivel de permissao menor que 3, algumas partes não estarao disponiveis para edicao
+  if($u->permissaoXId($id) != 3){
+    $classePermissao = 'hidden';
+  }
+  
+  
   global $pdo;
 
   $sql = "SELECT * FROM usuarios WHERE id = '$id';";
@@ -67,14 +76,17 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 ?>
 <center style=" margin-top: 100px !important;">
     <h2>Editar Usuario</h2>
+    
     <form action="../../classes/usuario/editar_usuario.php" method="POST" style="margin-left: 220px;">
         <!-- area de campos do form -->
         <hr />
 
-        <div class="row">
-            <div class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
 
-            <div class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
+        <div class="row">
+      
+            <div <?php echo $classePermissao; ?> class="form-group col-md-1"> <label for="nome">ID</label> <input READONLY type="text" class="form-control" name="id"  value="<?php echo $id ?>"  size="60"> </div>
+
+            <div <?php echo $classePermissao; ?> class="form-group col-md-1"> <label for="nome">Ativo?</label> <input READONLY type="text" class="form-control" name="ativo" style='color: <?php echo $corFonte; ?>; background-color: <?php echo $corBG; ?>' value="<?php echo $ativo ?>"  size="60"> </div>
 
             <div class="form-group col-md-6"> <label for="nome">Nome Completo</label> <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>"  size="60" REQUIRED> </div>
 
@@ -86,24 +98,25 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
             <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id='telefone' name="telefone" value="<?php echo $telefone ?>"  size="15" REQUIRED> </div>
 
-            <div class="hidden"><input type="text" class="form-control" id="telefone" name="permissao" value="3" required> </div>
+            <?php     echo gettype($nivelPermissao); ?>
 
-            <!-- <div class="form-group col-md-3">
+            <div <?php echo $classePermissao; ?> class="form-group col-md-3">
             <label for="permissao">Permissão</label>
-            <select class="form-select" aria-label="Permissao" name="permissao" REQUIRED>
+            <select class="form-select" name="permissao" REQUIRED>
 
             <?php
-                // switch ($permissao) {
-                //     case 1:
-                //         $permissaoString = "Comum";
-                //         break;
-                //     case 2:
-                //         $permissaoString = "Supervisor";
-                //         break;
-                //     case 3:
-                //         $permissaoString = "Administrador";
-                //         break;
-                // }
+          
+                switch ($permissao) {
+                    case 1:
+                        $permissaoString = "Comum";
+                        break;
+                    case 2:
+                        $permissaoString = "Supervisor";
+                        break;
+                    case 3:
+                        $permissaoString = "Administrador";
+                        break;
+                }
               
             
             ?>
@@ -113,10 +126,10 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                 <option value="2">Supervisor</option>
                 <option value="3">Administrador</option>
             </select>
-        </div> -->
+        </div> 
         <br>
         <div class="row"> 
-        <div class="form-group col-md-4">
+        <div <?php echo $classePermissao; ?> class="form-group col-md-4">
         <label for="setor">Setor</label>
         <select class="form-select" aria-label="setor" name="setor" REQUIRED>
 
@@ -207,7 +220,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
                 
 
-                <div class="col">
+                <div <?php echo $classePermissao; ?> class="col">
                 <a href="?pagina=../confirmaExcluir/usuario&id=<?php echo $id; ?>"><button type='button' class='btn btn-danger-red' style='float: left;'>Excluir</button></a> 
 
 
@@ -219,7 +232,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
                         }
                         else{
                     ?>
-                        <a href="../../classes/usuario/habilitarUsuario.php?id=<?php echo $id; ?>"><button type='button' class='btn btn-success' style='width: 100px;'>Ativar</button></a>
+                        <a  href="../../classes/usuario/habilitarUsuario.php?id=<?php echo $id; ?>"><button  type='button' class='btn btn-success' style='width: 100px;'>Ativar</button></a>
                      <?php
                         }
                     ?>
