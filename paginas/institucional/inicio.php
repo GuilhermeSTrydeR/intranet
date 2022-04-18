@@ -71,8 +71,10 @@ $cont = 0;
     
 // para cada registro no banco a variavel $cont recebera 1 incremento
 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-       
+  
     $cont++;
+
+
 }
     // caso cont for maior que zero, ou seja se ha pelo menos um registro no banco que satisfaca a condicao acima, sera mostrado o modal
     if($cont > 0){
@@ -81,66 +83,79 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         echo"<div class='container'>";
         echo "<br><br>";
         $consulta = $pdo->query("SELECT * FROM institucional WHERE ativo = 1 and excluido = 0 and fim >= CURDATE() or ativo = 1 and excluido = 0 and fim = '0000-00-00' ORDER BY id DESC");
-        
-        $numItensLinha = 4;
+    
+
 
         $i = 0;
-        echo "<div style='margin-left: 100px;'>";
-            echo "<div class='row' style= border-top-right-radius: 35px; border-top-left-radius: 35px; border-bottom-left-radius: 35px; max-width: 95%'>";
+        echo "<div>";
+
+        
+
+        ?>
+        <center>
+ 
+            <div class="card" style=" width: 45rem; margin-bottom: 45px; border-radius: 40px ; ">
+            <div class="card-body" style='border: 2px solid green; background-color: #e6f7b2; color: black; 
+                border-bottom-left-radius: 40px ; border-top-left-radius: 40px ; border-top-right-radius: 40px ;' >
+
+            <h5 class="card-text">Institucionais Cadastrados:<b> <?php echo $cont; ?></b></h5>
+            <h5 class="card-text">Institucionais não Lidos:(arrumar)<b> <?php echo $cont; ?></b></h5>
+      
+              <!-- <h5 class="card-title"><?php echo $linha['titulo'];?></h5>
+              <p class="card-text">Status:<b> <?php echo $texto; ?></b></p> -->
+              <!-- <a href="?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=<?php echo $linha['id'];?>" class="btn btn-primary">ler institucional</a> -->
+            </div>
+          </div></center>
+           
+        <?php
+           
+
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                    
                     // aqui pegamos o ID do institucional exibido na tela como uma lista
                     $idInstitucional = $linha['id'];
 
                     if($ins->retornaInstitucionalLido($idInstitucional) == True){
-                        $classe = 'boxItensInstitucionalPequenoVerde';
-                        $texto = 'Lido';
-                        $texto = "<p style=color: white !important;><b>Lido</b></p>";
+                   
+                        $texto = "<red style='color:green;'>Lido!</red>";
+                        $cor = "#e6f7b2";
+                        $fonte = "black";
+                        $borda = "2px solid green";
                     }
                     else{
-                        $classe = 'boxItensInstitucionalPequenoVermelho';
-                        $texto = '<center>Não Lido</center>';
-                        $texto = "<p style=color: white;><b>Não Lido!</b></p>";
+           
+                        $texto = "<red style='color:red;'>Não Lido!</red>";
+                        $cor = "white";
+                        $fonte = "black";
+                        $borda = "2px solid red";
                     }
 
-
-                    // echo "<div class='col'>";
-                    //             echo "<div class='".$classe."'>";
-                    //                 echo "<p>".$texto."</p>";
-                    //             echo "</div>";
-                    //         echo "</div>";
-
                     if($linha['ativo'] == 1){
-                   
-                        echo "<div class='row'>";
-                            echo "<div class='col'>";
-                                echo "<div style='float: left;' id={$linha['id']} class='boxItensInstitucional'>";
-                                    echo "<a href=?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=" .$linha['id'] . "&nome=" . $linha['titulo'] . " ><i class='active'></i><center><p style='white-space: pre-line;
-                                    width: 100%;
-                                    overflow: hidden !important;             
-                                    text-overflow: ellipsis; max-height: 100px;'>{$linha['titulo']}</p></center></a>";
-                                echo "</div>";
-                            echo "</div>";
-                            echo "<div class='col'>";
-                                echo "<center><div class='".$classe."'>";
-                                    echo "<p>$texto</p>";
-                                echo "</div></center>";
-                        echo "</div>";
-                        $i++;
+                    ?>
+                    <center>
+             
+                        <div class="card" style="height:10rem; width: 30rem; margin: 25px; border-radius: 40px ; ">
+                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                        <div class="card-body" style='color:<?php echo $fonte;?>; background-color: <?php echo $cor;?>; 
+                            border-bottom-left-radius: 40px ; border-top-left-radius: 40px ; border-top-right-radius: 40px; border: <?php echo $borda;?>' >
+                  
+                          <h5 class="card-title"><?php echo $linha['titulo'];?></h5>
+                          <p class="card-text">Status:<b> <?php echo $texto; ?></b></p>
+                          <a href="?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=<?php echo $linha['id'];?>" class="btn btn-primary">ler institucional</a>
+                        </div>
+                      </div></center>
+                       
+                    <?php
+                  
                 }
-
-
+            $i++;
+        echo "</div>";
                 
-        echo "</div>";
-                echo "<br>";
         }
-        echo "</div>";
-
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
+        
          
         
-        echo "</div>";
+
 
 
     }

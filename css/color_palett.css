@@ -42,7 +42,8 @@ de cores esta disponivel em pdf no link: http://docs.unimedmedianeira.com.br/ind
 
     /* borda do logo */
     color:(
-        #009b63
+        #009b63,
+
 
     );
     
@@ -55,8 +56,13 @@ de cores esta disponivel em pdf no link: http://docs.unimedmedianeira.com.br/ind
     /*background do mural*/
     color:(
         #f0f2f8
-    )
+        
+    );
    
+    /*institucional não lido*/
+    color:(
+        #ed1616
+    );
   
            
 }
