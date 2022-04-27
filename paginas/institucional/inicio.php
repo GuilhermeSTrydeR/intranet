@@ -99,7 +99,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 border-bottom-left-radius: 40px ; border-top-left-radius: 40px ; border-top-right-radius: 40px ;' >
 
             <h5 class="card-text">Institucionais Cadastrados:<b> <?php echo $cont; ?></b></h5>
-            <h5 class="card-text">Institucionais não Lidos:(arrumar)<b> <?php echo $cont; ?></b></h5>
+            <!-- <h5 class="card-text">Institucionais não Lidos:(arrumar)<b> <?php echo $cont; ?></b></h5> -->
       
               <!-- <h5 class="card-title"><?php echo $linha['titulo'];?></h5>
               <p class="card-text">Status:<b> <?php echo $texto; ?></b></p> -->
@@ -118,14 +118,14 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($ins->retornaInstitucionalLido($idInstitucional) == True){
                    
                         $texto = "<red style='color:green;'>Lido!</red>";
-                        $cor = "#e6f7b2";
+                        // $cor = "#e6f7b2";
                         $fonte = "black";
                         $borda = "2px solid green";
                     }
                     else{
            
                         $texto = "<red style='color:red;'>Não Lido!</red>";
-                        $cor = "white";
+                        // $cor = "white";
                         $fonte = "black";
                         $borda = "2px solid red";
                     }
@@ -133,17 +133,20 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                     if($linha['ativo'] == 1){
                     ?>
                     <center>
+
+
              
                         <div class="card" style="height:10rem; width: 30rem; margin: 25px; border-radius: 40px ; ">
-                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                        <div class="card-body" style='color:<?php echo $fonte;?>; background-color: <?php echo $cor;?>; 
-                            border-bottom-left-radius: 40px ; border-top-left-radius: 40px ; border-top-right-radius: 40px; border: <?php echo $borda;?>' >
-                  
-                          <h5 class="card-title"><?php echo $linha['titulo'];?></h5>
-                          <p class="card-text">Status:<b> <?php echo $texto; ?></b></p>
-                          <a href="?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=<?php echo $linha['id'];?>" class="btn btn-primary">ler institucional</a>
-                        </div>
-                      </div></center>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body" style='color:<?php echo $fonte;?>; background-color: <?php echo $cor;?>; 
+                                border-bottom-left-radius: 40px ; border-top-left-radius: 40px ; border-top-right-radius: 40px; border: <?php echo $borda;?>' >
+                    
+                            <h5 class="card-title"><?php echo $linha['titulo'];?></h5>
+                            <p class="card-text">Status:<b> <?php echo $texto; ?></b></p>
+                            <a href="?pagina=../../classes/institucional/visualizarInstitucionalUnico&id=<?php echo $linha['id'];?>" class="btn btn-primary">ler institucional</a>
+                            </div>
+                      </div>
+                    </center>
                        
                     <?php
                   

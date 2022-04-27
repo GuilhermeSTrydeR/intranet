@@ -11,6 +11,8 @@
 
 <?php
 
+    
+
     include("../../classes/conexao_bd.php");
 
     //include para acessar as confguracoes definidas
@@ -96,7 +98,6 @@
                             echo"<br>";
                             echo"<br>";
 
-                       
 
                             echo "<div style='margin-left: 500px; width: 200px'>";
                             echo "<a id='linkImagem' href='../../" . $linha['imagem'] ."' download>Baixar Documento</a>";

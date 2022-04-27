@@ -1,5 +1,8 @@
 <?php
     $id = $_GET['id'];
-
-    include("editar_usuario.php");
+    echo "<center style='align-items:center;'>";
+        include("editar_usuario.php");
+        echo "<br><br>";
+        include("editar_configuracoes_sistema.php");
+    echo "</center>";
 ?>

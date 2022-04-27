@@ -98,7 +98,8 @@ if(!isset($_SESSION['logado']) || $_SESSION['permissao'] == '1'){
 
             <div class="form-group col-md-3"> <label for="nome">Telefone</label> <input type="text" class="form-control" id='telefone' name="telefone" value="<?php echo $telefone ?>"  size="15" REQUIRED> </div>
 
-            <?php     echo gettype($nivelPermissao); ?>
+            <!-- NAO ME LEMBRO PRA QUE USEI ISSO -->
+            <!-- <?php     echo gettype($nivelPermissao); ?> -->
 
             <div <?php echo $classePermissao; ?> class="form-group col-md-3">
             <label for="permissao">Permissão</label>
